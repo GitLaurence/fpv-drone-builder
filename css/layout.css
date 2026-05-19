@@ -1,0 +1,196 @@
+:root {
+  --bg-base:       #08080f;
+  --bg-panel:      #0f0f1a;
+  --bg-surface:    #161625;
+  --bg-hover:      #1e1e32;
+  --border:        #1e1e35;
+  --border-bright: #2e2e50;
+
+  --text-primary:  #e4e4f0;
+  --text-secondary:#7878a0;
+  --text-muted:    #44445a;
+
+  --accent:        #00c8ff;
+  --accent-dim:    rgba(0, 200, 255, 0.12);
+  --accent-glow:   rgba(0, 200, 255, 0.25);
+  --success:       #00e887;
+  --warning:       #ff8c42;
+  --danger:        #ff4d6d;
+
+  --panel-width:   380px;
+  --header-height: 56px;
+  --radius:        8px;
+  --radius-sm:     5px;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-base);
+  color: var(--text-primary);
+}
+
+/* ── HEADER ─────────────────────────────────────────── */
+.app-header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.25rem;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  z-index: 10;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.brand-icon { width: 28px; height: 28px; }
+.brand-name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.header-build-name {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.header-build-name input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  width: 220px;
+  padding: 0.2rem 0.4rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.header-build-name input:focus,
+.header-build-name input:hover {
+  border-bottom-color: var(--border-bright);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* ── MAIN LAYOUT ─────────────────────────────────────── */
+.app-main {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+
+/* ── SIDE PANEL ─────────────────────────────────────── */
+.side-panel {
+  width: var(--panel-width);
+  flex-shrink: 0;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.panel-view {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.panel-view::-webkit-scrollbar { width: 4px; }
+.panel-view::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 2px; }
+
+.panel-section-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.5rem 0 0.25rem;
+}
+
+/* ── BUILD SUMMARY ───────────────────────────────────── */
+.build-summary {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.summary-row span:last-child {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.compat-violations {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.violation-item {
+  font-size: 0.78rem;
+  color: var(--warning);
+  background: rgba(255, 140, 66, 0.1);
+  border: 1px solid rgba(255, 140, 66, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.6rem;
+  line-height: 1.4;
+}
+
+/* ── PRESETS ─────────────────────────────────────────── */
+.preset-section { margin-top: 0.5rem; }
+.preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+/* ── VIEWER ─────────────────────────────────────────── */
+.viewer-section {
+  flex: 1;
+  position: relative;
+  background: var(--bg-base);
+  overflow: hidden;
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────── */
+@media (max-width: 700px) {
+  .app-main { flex-direction: column; }
+  .side-panel {
+    width: 100%;
+    height: 50%;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    order: 2;
+  }
+  .viewer-section { order: 1; height: 50%; }
+  .header-build-name { display: none; }
+}

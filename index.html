@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FPV Drone Builder</title>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/catalog.css" />
+  <link rel="stylesheet" href="css/viewer.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="app-header">
+    <div class="header-brand">
+      <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="3" fill="currentColor"/>
+        <rect x="5" y="14.5" width="22" height="3" rx="1.5" fill="currentColor" opacity="0.4"/>
+        <rect x="14.5" y="5" width="3" height="22" rx="1.5" fill="currentColor" opacity="0.4"/>
+        <circle cx="6" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="26" cy="6" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="6" cy="26" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="26" cy="26" r="3.5" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+      <span class="brand-name">FPV Builder</span>
+    </div>
+
+    <div class="header-build-name">
+      <input
+        id="build-name"
+        type="text"
+        value="My Build"
+        maxlength="40"
+        spellcheck="false"
+        aria-label="Build name"
+      />
+    </div>
+
+    <div class="header-actions">
+      <button id="btn-reset" class="btn btn-ghost" title="Start over">Reset</button>
+      <button id="btn-save" class="btn btn-ghost" title="Save to browser">Save</button>
+      <button id="btn-share" class="btn btn-accent" title="Copy share link">Share</button>
+    </div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="app-main">
+
+    <!-- LEFT PANEL -->
+    <aside class="side-panel" id="side-panel">
+
+      <!-- SLOT LIST VIEW -->
+      <div class="panel-view" id="view-slots">
+        <div class="panel-section-title">Build Components</div>
+        <ul class="slot-list" id="slot-list" role="list">
+          <!-- Populated by builder.js -->
+        </ul>
+
+        <div class="panel-section-title" style="margin-top: 1.5rem;">Build Summary</div>
+        <div class="build-summary" id="build-summary">
+          <div class="summary-row">
+            <span>Total Weight</span>
+            <span id="summary-weight">—</span>
+          </div>
+          <div class="summary-row">
+            <span>Est. Price</span>
+            <span id="summary-price">—</span>
+          </div>
+          <div class="summary-row">
+            <span>Thrust-to-Weight</span>
+            <span id="summary-twr">—</span>
+          </div>
+          <div class="summary-row">
+            <span>Battery Config</span>
+            <span id="summary-battery">—</span>
+          </div>
+          <div class="compat-violations" id="compat-violations" hidden></div>
+        </div>
+
+        <div class="preset-section">
+          <div class="panel-section-title">Quick Presets</div>
+          <div class="preset-buttons">
+            <button class="btn btn-preset" data-preset="freestyle-5inch">5" Freestyle</button>
+            <button class="btn btn-preset" data-preset="race-5inch">5" Race</button>
+            <button class="btn btn-preset" data-preset="toothpick-3inch">3" Toothpick</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATALOG VIEW (shown when a slot is active) -->
+      <div class="panel-view" id="view-catalog" hidden>
+        <div class="catalog-header">
+          <button class="btn btn-ghost btn-back" id="btn-back">
+            <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor"><path d="M10 12L6 8l4-4"/></svg>
+            Back
+          </button>
+          <span class="catalog-slot-label" id="catalog-slot-label">Select Frame</span>
+        </div>
+
+        <div class="catalog-search-row">
+          <input
+            id="catalog-search"
+            type="search"
+            placeholder="Search parts…"
+            autocomplete="off"
+          />
+          <select id="catalog-sort">
+            <option value="name">A–Z</option>
+            <option value="price_asc">Price ↑</option>
+            <option value="price_desc">Price ↓</option>
+            <option value="weight_asc">Weight ↑</option>
+          </select>
+        </div>
+
+        <div class="filter-pills" id="filter-pills">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="in_stock">In Stock</button>
+        </div>
+
+        <ul class="part-list" id="part-list" role="list">
+          <!-- Populated by catalog.js -->
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- 3D VIEWER -->
+    <section class="viewer-section">
+      <canvas id="drone-canvas"></canvas>
+
+      <div class="viewer-hud">
+        <div class="hud-hint" id="hud-hint">Select a component to begin building</div>
+      </div>
+
+      <div class="viewer-controls">
+        <button class="viewer-btn" id="btn-reset-camera" title="Reset camera">
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 10a7 7 0 1 1 1.5 4.3"/>
+            <path d="M3 14V10H7"/>
+          </svg>
+        </button>
+        <button class="viewer-btn" id="btn-screenshot" title="Save screenshot">
+          <svg viewBox="0 0 20 20" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="5" width="16" height="12" rx="2"/>
+            <circle cx="10" cy="11" r="3"/>
+            <path d="M7 5l1.5-2h3L13 5"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
