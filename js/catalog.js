@@ -1,107 +1,136 @@
 import { getState, getPartsByCategory, getPartById, dispatch } from './store.js';
 import { closeSlot } from './builder.js';
+import * as Compare from './compare.js';
 
-let _currentCategory = null;
-let _searchQuery     = '';
-let _sortMode        = 'name';
-let _filterStock     = false;
+const UTM = '?ref=fpvbuilder&utm_source=fpvbuilder&utm_medium=referral';
+
+let _category      = null;
+let _search        = '';
+let _sort          = 'name';
+let _filterStock   = false;
+let _compareMode   = false;
 
 const $ = id => document.getElementById(id);
 
 export function init() {
   $('btn-back').addEventListener('click', closeSlot);
-  $('catalog-search').addEventListener('input', e => {
-    _searchQuery = e.target.value.toLowerCase();
-    renderParts();
-  });
-  $('catalog-sort').addEventListener('change', e => {
-    _sortMode = e.target.value;
-    renderParts();
-  });
+  $('catalog-search').addEventListener('input', e => { _search = e.target.value.toLowerCase(); renderParts(); });
+  $('catalog-sort').addEventListener('change', e => { _sort = e.target.value; renderParts(); });
+
   $('filter-pills').addEventListener('click', e => {
-    const pill = e.target.closest('.pill');
+    const pill = e.target.closest('.pill[data-filter]');
     if (!pill) return;
     _filterStock = pill.dataset.filter === 'in_stock';
-    document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.pill[data-filter]').forEach(p => p.classList.remove('active'));
     pill.classList.add('active');
     renderParts();
+  });
+
+  // Compare mode toggle
+  $('btn-compare-toggle').addEventListener('click', () => {
+    _compareMode = !_compareMode;
+    $('btn-compare-toggle').classList.toggle('active', _compareMode);
+    $('btn-compare-toggle').textContent = _compareMode ? 'Done' : 'Compare';
+    if (!_compareMode) Compare.clear();
+    renderParts();
+    updateCompareBar();
+  });
+
+  // Detail back button
+  $('btn-detail-back').addEventListener('click', () => {
+    $('view-detail').hidden = true;
+    $('view-catalog').hidden = false;
   });
 }
 
 export function showCatalog(categoryId) {
-  _currentCategory = categoryId;
-  _searchQuery = '';
+  _category    = categoryId;
+  _search      = '';
   _filterStock = false;
-  _sortMode = 'name';
+  _sort        = 'name';
+  _compareMode = false;
 
   $('catalog-search').value = '';
-  $('catalog-sort').value = 'name';
-  document.querySelectorAll('.pill').forEach(p => {
-    p.classList.toggle('active', p.dataset.filter === 'all');
-  });
+  $('catalog-sort').value   = 'name';
+  $('btn-compare-toggle').classList.remove('active');
+  $('btn-compare-toggle').textContent = 'Compare';
+  Compare.setCategory(categoryId);
+  Compare.clear();
 
-  const { categories } = getState();
-  const cat = categories.find(c => c.id === categoryId);
+  document.querySelectorAll('.pill[data-filter]').forEach(p =>
+    p.classList.toggle('active', p.dataset.filter === 'all')
+  );
+
+  const cat = getState().categories.find(c => c.id === categoryId);
   $('catalog-slot-label').textContent = cat ? `Select ${cat.label}` : 'Select Part';
 
   $('view-slots').hidden   = true;
   $('view-catalog').hidden = false;
+  $('view-detail').hidden  = true;
 
+  updateCompareBar();
   renderParts();
 }
 
 export function hideCatalog() {
   $('view-slots').hidden   = false;
   $('view-catalog').hidden = true;
-  _currentCategory = null;
+  $('view-detail').hidden  = true;
+  _category    = null;
+  _compareMode = false;
+  Compare.clear();
 }
 
+// ── Part list rendering ───────────────────────────────
+
 function renderParts() {
-  if (!_currentCategory) return;
+  if (!_category) return;
 
-  let parts = getPartsByCategory(_currentCategory);
-
+  let parts = getPartsByCategory(_category);
   if (_filterStock) parts = parts.filter(p => p.in_stock);
-
-  if (_searchQuery) {
+  if (_search) {
     parts = parts.filter(p =>
-      p.name.toLowerCase().includes(_searchQuery) ||
-      p.brand.toLowerCase().includes(_searchQuery)
+      p.name.toLowerCase().includes(_search) ||
+      p.brand.toLowerCase().includes(_search)
     );
   }
 
   parts = [...parts].sort((a, b) => {
-    switch (_sortMode) {
-      case 'price_asc':  return a.price_usd - b.price_usd;
-      case 'price_desc': return b.price_usd - a.price_usd;
-      case 'weight_asc': return a.weight_g  - b.weight_g;
-      default:           return a.name.localeCompare(b.name);
-    }
+    if (_sort === 'price_asc')  return a.price_usd - b.price_usd;
+    if (_sort === 'price_desc') return b.price_usd - a.price_usd;
+    if (_sort === 'weight_asc') return a.weight_g - b.weight_g;
+    return a.name.localeCompare(b.name);
   });
 
-  const selectedId = getState().build[_currentCategory] || null;
+  const selectedId = getState().build[_category] || null;
   const list = $('part-list');
 
-  if (parts.length === 0) {
-    list.innerHTML = `<li style="color:var(--text-muted);font-size:0.85rem;padding:1rem 0;text-align:center;">No parts found</li>`;
+  if (!parts.length) {
+    list.innerHTML = `<li class="parts-empty">No parts match your filters</li>`;
     return;
   }
 
   list.innerHTML = '';
   parts.forEach(part => {
+    const isSelected  = part.id === selectedId;
+    const isComparing = Compare.isComparing(part.id);
     const li = document.createElement('li');
-    li.className = 'part-card' +
-      (part.id === selectedId ? ' selected' : '') +
-      (!part.in_stock ? ' out-of-stock' : '');
+
+    li.className = [
+      'part-card',
+      isSelected  ? 'selected'     : '',
+      isComparing ? 'in-compare'   : '',
+      !part.in_stock ? 'out-of-stock' : '',
+    ].filter(Boolean).join(' ');
     li.setAttribute('role', 'button');
     li.setAttribute('tabindex', '0');
 
     li.innerHTML = `
-      <div class="part-card-thumb">${categoryEmoji(_currentCategory)}</div>
+      <div class="part-card-thumb">${catEmoji(_category)}</div>
       <div class="part-card-info">
         <div class="part-card-brand">${part.brand}</div>
         <div class="part-card-name">${part.name}</div>
-        <div class="part-card-specs">${specLine(_currentCategory, part)}</div>
+        <div class="part-card-specs">${specLine(_category, part)}</div>
       </div>
       <div class="part-card-right">
         <div class="part-card-price">$${part.price_usd.toFixed(2)}</div>
@@ -110,14 +139,38 @@ function renderParts() {
           ${part.in_stock ? '● In Stock' : '○ Out of Stock'}
         </div>
       </div>
-      ${part.id === selectedId
+      ${isSelected && !_compareMode
         ? '<div class="part-card-selected-check">✓</div>'
+        : ''}
+      ${_compareMode
+        ? `<div class="compare-check ${isComparing ? 'active' : ''}">
+             ${isComparing ? '✓' : '+'}
+           </div>`
         : ''}
     `;
 
-    li.addEventListener('click', () => selectPart(part.id));
+    // Info button (always visible on hover via CSS)
+    const infoBtn = document.createElement('button');
+    infoBtn.className   = 'part-info-btn';
+    infoBtn.textContent = 'ℹ';
+    infoBtn.title       = 'View details';
+    infoBtn.addEventListener('click', e => { e.stopPropagation(); showDetail(part.id); });
+    li.appendChild(infoBtn);
+
+    li.addEventListener('click', () => {
+      if (_compareMode) {
+        Compare.toggle(part.id);
+        renderParts();
+        updateCompareBar();
+      } else {
+        selectPart(part.id);
+      }
+    });
     li.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectPart(part.id); }
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        _compareMode ? Compare.toggle(part.id) : selectPart(part.id);
+      }
     });
 
     list.appendChild(li);
@@ -125,20 +178,109 @@ function renderParts() {
 }
 
 function selectPart(partId) {
-  if (!_currentCategory) return;
-  const alreadySelected = getState().build[_currentCategory] === partId;
-  dispatch('SELECT_PART', {
-    slot: _currentCategory,
-    partId: alreadySelected ? null : partId,
-  });
+  if (!_category) return;
+  const already = getState().build[_category] === partId;
+  dispatch('SELECT_PART', { slot: _category, partId: already ? null : partId });
 }
 
-function categoryEmoji(cat) {
-  const map = {
-    frame:'🛸', motor:'⚙️', esc:'⚡', fc:'💻',
-    propeller:'🌀', camera:'📷', vtx:'📡', battery:'🔋', receiver:'📻'
-  };
-  return map[cat] || '•';
+// ── Compare bar ───────────────────────────────────────
+
+function updateCompareBar() {
+  const bar = $('compare-bar');
+  const count = Compare.getCount();
+
+  if (!_compareMode) { bar.hidden = true; return; }
+
+  bar.hidden = false;
+  const partsEl = $('compare-bar-parts');
+  const list    = Compare.getList();
+  partsEl.innerHTML = list.map(id => {
+    const p = getPartById(id);
+    return p ? `<span class="compare-chip">${p.name} <button class="compare-chip-remove" data-id="${id}">✕</button></span>` : '';
+  }).join('');
+
+  partsEl.querySelectorAll('.compare-chip-remove').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      Compare.toggle(btn.dataset.id);
+      renderParts();
+      updateCompareBar();
+    });
+  });
+
+  const openBtn = $('btn-compare-open');
+  openBtn.textContent = `Compare (${count})`;
+  openBtn.disabled    = count < 2;
+}
+
+// ── Part detail view ─────────────────────────────────
+
+function showDetail(partId) {
+  const part = getPartById(partId);
+  if (!part) return;
+
+  const selectedId = getState().build[_category] || null;
+  const isSelected = part.id === selectedId;
+
+  const specRows = Object.entries(part.specs || {}).map(([k, v]) => `
+    <tr>
+      <td class="spec-key">${fmtKey(k)}</td>
+      <td class="spec-val">${fmtVal(v)}</td>
+    </tr>
+  `).join('');
+
+  $('detail-content').innerHTML = `
+    <div class="detail-header-card">
+      <div class="detail-thumb">${catEmoji(_category)}</div>
+      <div>
+        <div class="detail-brand">${part.brand}</div>
+        <div class="detail-name">${part.name}</div>
+        <div class="detail-price">$${part.price_usd.toFixed(2)}</div>
+      </div>
+    </div>
+
+    <div class="detail-badges">
+      <span class="detail-badge detail-badge-weight">⚖ ${part.weight_g}g</span>
+      <span class="detail-badge ${part.in_stock ? 'detail-badge-stock' : 'detail-badge-nostock'}">
+        ${part.in_stock ? '● In Stock' : '○ Out of Stock'}
+      </span>
+    </div>
+
+    <table class="detail-spec-table">
+      <tbody>${specRows}</tbody>
+    </table>
+
+    <div class="detail-actions">
+      <button class="btn ${isSelected ? 'btn-ghost' : 'btn-accent'} detail-select-btn" data-id="${part.id}">
+        ${isSelected ? 'Remove from Build' : 'Add to Build'}
+      </button>
+      <a
+        class="btn btn-ghost detail-buy-btn"
+        href="${part.buy_url + UTM}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Buy ↗</a>
+    </div>
+  `;
+
+  $('detail-content').querySelector('.detail-select-btn').addEventListener('click', () => {
+    if (isSelected) {
+      dispatch('SELECT_PART', { slot: _category, partId: null });
+    } else {
+      dispatch('SELECT_PART', { slot: _category, partId: part.id });
+    }
+    $('view-detail').hidden = true;
+    $('view-catalog').hidden = false;
+  });
+
+  $('view-catalog').hidden = true;
+  $('view-detail').hidden  = false;
+}
+
+// ── Helpers ───────────────────────────────────────────
+
+function catEmoji(cat) {
+  return { frame:'🛸',motor:'⚙️',esc:'⚡',fc:'💻',propeller:'🌀',camera:'📷',vtx:'📡',battery:'🔋',receiver:'📻' }[cat] || '•';
 }
 
 function specLine(cat, part) {
@@ -155,4 +297,12 @@ function specLine(cat, part) {
     case 'receiver':  return `${s.protocol} · ${s.frequency_mhz}MHz`;
     default:          return '';
   }
+}
+
+function fmtKey(k) { return k.replace(/_/g,' ').replace(/\b\w/g, c => c.toUpperCase()); }
+function fmtVal(v) {
+  if (v === true)  return '✓';
+  if (v === false) return '—';
+  if (Array.isArray(v)) return v.join(', ');
+  return v ?? '—';
 }

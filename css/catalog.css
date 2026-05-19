@@ -36,13 +36,10 @@
   color: var(--text-muted);
   font-size: 1rem;
 }
-.slot-item.active .slot-icon { background: var(--accent-dim); color: var(--accent); }
+.slot-item.active .slot-icon    { background: var(--accent-dim); color: var(--accent); }
 .slot-item.slot-filled .slot-icon { color: var(--accent); }
 
-.slot-info {
-  flex: 1;
-  min-width: 0;
-}
+.slot-info  { flex: 1; min-width: 0; }
 .slot-category {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -59,18 +56,9 @@
   text-overflow: ellipsis;
 }
 .slot-empty .slot-part-name { color: var(--text-muted); font-style: italic; }
+.slot-meta { font-size: 0.73rem; color: var(--text-secondary); }
 
-.slot-meta {
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-}
-
-.slot-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  flex-shrink: 0;
-}
+.slot-actions { display: flex; align-items: center; gap: 0.25rem; flex-shrink: 0; }
 .slot-clear-btn {
   width: 22px;
   height: 22px;
@@ -80,32 +68,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   opacity: 0;
   transition: opacity 0.15s, color 0.15s;
-  flex-shrink: 0;
 }
 .slot-item:hover .slot-clear-btn { opacity: 1; }
 .slot-clear-btn:hover { color: var(--danger); }
 
-.slot-arrow {
-  color: var(--text-muted);
-  flex-shrink: 0;
-}
+.slot-arrow { color: var(--text-muted); flex-shrink: 0; }
 
 /* ── CATALOG HEADER ──────────────────────────────────── */
 .catalog-header {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
   margin-bottom: 0.75rem;
 }
 .catalog-slot-label {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-primary);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .catalog-search-row {
@@ -119,7 +107,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text-primary);
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 0.65rem;
   font-size: 0.85rem;
   outline: none;
   transition: border-color 0.15s;
@@ -162,13 +150,21 @@
   flex-direction: column;
   gap: 0.4rem;
   flex: 1;
+  overflow-y: auto;
+}
+.parts-empty {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 1.5rem 0;
 }
 
 .part-card {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.6rem 0.75rem;
+  padding: 0.55rem 0.7rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -180,31 +176,28 @@
   border-color: var(--accent);
   background: var(--accent-dim);
 }
+.part-card.in-compare {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
 .part-card.out-of-stock { opacity: 0.5; }
 
 .part-card-thumb {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-sm);
   background: var(--bg-hover);
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-muted);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   overflow: hidden;
-}
-.part-card-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
 }
 
 .part-card-info { flex: 1; min-width: 0; }
 .part-card-brand {
-  font-size: 0.68rem;
+  font-size: 0.67rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-muted);
@@ -219,34 +212,24 @@
   text-overflow: ellipsis;
 }
 .part-card-specs {
-  font-size: 0.72rem;
+  font-size: 0.71rem;
   color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.part-card-right {
-  text-align: right;
-  flex-shrink: 0;
-}
+.part-card-right { text-align: right; flex-shrink: 0; }
 .part-card-price {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-primary);
   font-variant-numeric: tabular-nums;
 }
-.part-card-weight {
-  font-size: 0.72rem;
-  color: var(--text-secondary);
-}
-.part-card-stock {
-  font-size: 0.68rem;
-  padding: 0.1rem 0.35rem;
-  border-radius: 999px;
-}
-.in-stock { color: var(--success); }
-.out-of-stock-label { color: var(--text-muted); }
+.part-card-weight { font-size: 0.71rem; color: var(--text-secondary); }
+.part-card-stock  { font-size: 0.68rem; }
+.in-stock              { color: var(--success); }
+.out-of-stock-label    { color: var(--text-muted); }
 
 .part-card-selected-check {
   width: 18px;
@@ -258,5 +241,28 @@
   align-items: center;
   justify-content: center;
   font-size: 0.65rem;
+  font-weight: 700;
   flex-shrink: 0;
 }
+
+/* Info button — appears on hover */
+.part-info-btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+  z-index: 1;
+}
+.part-card:hover .part-info-btn { opacity: 1; }
+.part-info-btn:hover { color: var(--accent); border-color: var(--accent); }
