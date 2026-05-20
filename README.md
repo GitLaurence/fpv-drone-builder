@@ -32,7 +32,7 @@ Users open a single-page builder, browse a categorized parts catalog, select par
 | Styling | **Modern CSS** | Custom properties, Grid, Flexbox, `@layer`, `@container`, transitions |
 | Logic | **Vanilla JS (ES Modules)** | Native `import/export`, no transpiler |
 | 3D rendering | **Three.js** (ESM build) | Loaded via import map, no bundler needed |
-| GLTF loading | **Three.js GLTFLoader** | Loads `.glb` part models |
+| 3D geometry | **Procedural Three.js** | All parts built from Three.js primitives — no `.glb` files required |
 | Persistence | **`localStorage`** | Save and restore builds client-side |
 | Dev server | **none required** | Open `index.html` directly, or use `npx serve .` |
 | Hosting | **any static host** | GitHub Pages, Netlify, Cloudflare Pages |
@@ -46,23 +46,30 @@ No npm install required. No build step. No framework. All features use APIs avai
 ### Phase 1 — MVP
 - Parts catalog JSON file with real parts per category
 - Slot-based builder UI: each category has exactly one active slot
-- Live 3D drone viewer powered by Three.js — swaps part models on selection
+- Live 3D drone viewer powered by Three.js — renders procedural part geometry on selection
 - Compatibility checker: evaluates rules against the current build, shows inline warnings
 - Build summary panel: total weight, estimated thrust-to-weight, total price
 - Save build to `localStorage`; share via URL hash (base64-encoded build state)
 
 ### Phase 2 — Enhanced UX
 - Part search with instant client-side filtering
-- Part comparison drawer (select up to 3, see specs side by side)
-- Recommended presets (5" freestyle, 3" toothpick, micro whoop)
-- Battery life estimator based on capacity + estimated amp draw
-- "Suggest missing parts" when slots are empty
+- Filter pills: in-stock toggle; sort by price, weight, or name
+- Part detail panel (slide-in view): full specs, buy link
+- Part comparison: pin up to 3 parts, see specs side by side in a modal table
+- Preset builds (5" freestyle, 5" race, 3" toothpick): populate all slots from one click
 
-### Phase 3 — Marketplace & Social
-- Direct buy links (affiliate UTM links to GetFPV, RaceDayQuads)
-- Export build as PNG (Three.js renderer snapshot)
-- Export build as shareable card (HTML Canvas → PNG)
-- Community builds via a lightweight JSON API or static JSON gallery
+### Phase 3 — 3D Polish
+- Per-part procedural geometry with accurate visual detail per category
+- Pop-in animation on part select (scale 0 → 1 with cubic easing)
+- Emissive highlight on the active slot's model (cyan tint)
+- Camera auto-orbit to selected component on slot click
+- Frame size drives overall model scale across all attached parts
+- Export PNG: `renderer.domElement.toDataURL()` → instant download
+
+### Phase 4 — Share & Extras
+- Build card exporter: Canvas 2D overlay (1280×720) with 3D snapshot + part list + stats
+- Multiple saved builds in `localStorage`, keyed by build name with timestamps
+- Affiliate UTM params appended to buy links at click time
 
 ---
 
@@ -89,6 +96,10 @@ index.html
     ├── builder.js                 ← slot panel logic, compatibility checks
     ├── viewer.js                  ← Three.js scene, camera, lighting, part swap
     ├── compat.js                  ← rule evaluator (reads rules from parts.json)
+    ├── summary.js                 ← weight / price / TWR calc + violation badges
+    ├── compare.js                 ← part comparison modal (up to 3 parts)
+    ├── saves.js                   ← multiple saved builds in localStorage
+    ├── export.js                  ← build card PNG generator (Canvas 2D)
     └── share.js                   ← encode/decode build state in URL hash
 ```
 
@@ -101,7 +112,7 @@ User clicks part
 store.dispatch('SELECT_PART', { slot, partId })
       │
       ├──► builder.js  re-renders slot panel, triggers compat check
-      ├──► viewer.js   swaps GLTF model for that slot
+      ├──► viewer.js   rebuilds procedural mesh for that slot
       └──► summary.js  recalculates weight / price / TWR
 ```
 
@@ -117,7 +128,8 @@ All data lives in `data/parts.json`. No database. No server.
 {
   "categories": [...],
   "parts": [...],
-  "compatibility_rules": [...]
+  "compatibility_rules": [...],
+  "presets": {}
 }
 ```
 
@@ -129,7 +141,7 @@ All data lives in `data/parts.json`. No database. No server.
   "label": "Frame",
   "slot_count": 1,
   "required": true,
-  "icon": "icons/frame.svg"
+  "icon": "🛸"
 }
 ```
 
@@ -139,11 +151,11 @@ All data lives in `data/parts.json`. No database. No server.
 {
   "id": "iflight-titan-dc5",
   "category": "frame",
-  "name": "iFlight Titan DC5 V2",
+  "name": "iFlight Titan DC5 V3",
   "brand": "iFlight",
-  "price_usd": 49.99,
+  "price_usd": 52.99,
   "weight_g": 68,
-  "image": "images/parts/iflight-titan-dc5.webp",
+  "color": "#1a1a1a",
   "buy_url": "https://www.getfpv.com/...",
   "in_stock": true,
   "specs": {
@@ -198,45 +210,46 @@ All data lives in `data/parts.json`. No database. No server.
 
 ## Implementation Phases
 
-### Phase 1 — Foundation (Weeks 1–2)
+### Phase 1 — Foundation ✅
 
-- [ ] `index.html` shell: split layout, import map, slot panel, canvas placeholder
-- [ ] `css/` base styles: CSS custom properties (colors, spacing, radius), layout grid
-- [ ] `data/parts.json`: seed ~10 real parts per category with full specs
-- [ ] `js/store.js`: minimal pub/sub state store (no external lib)
-- [ ] `js/catalog.js`: render part cards from JSON, filter by category
-- [ ] `js/builder.js`: slot rows, open part picker dialog, select a part
-- [ ] `js/viewer.js`: Three.js scene with OrbitControls, ambient + directional lights
-- [ ] Load a base drone GLTF; swap per-slot GLTF on part select
-- [ ] `js/compat.js`: evaluate rules, return violations array
-- [ ] Display compatibility badges inline in slot panel
-- [ ] Build summary: weight, price, basic thrust estimate
-- [ ] `js/share.js`: encode build → URL hash; decode on load
+- [x] `index.html` shell: split layout, import map, slot panel, canvas placeholder
+- [x] `css/` base styles: CSS custom properties (colors, spacing, radius), layout grid
+- [x] `data/parts.json`: ~10 real parts per category with full specs
+- [x] `js/store.js`: minimal pub/sub state store (no external lib)
+- [x] `js/catalog.js`: render part cards from JSON, filter by category
+- [x] `js/builder.js`: slot rows, open part picker, select a part, clear a slot
+- [x] `js/viewer.js`: Three.js scene with OrbitControls, ambient + directional lights
+- [x] Procedural 3D part geometry per category — no `.glb` files required
+- [x] `js/compat.js`: evaluate rules, return violations array
+- [x] Compatibility violation badges inline in slot panel
+- [x] Build summary: weight, price, thrust-to-weight estimate
+- [x] `js/share.js`: encode build → URL hash; decode on load
 
-### Phase 2 — Catalog & Filtering (Weeks 3–4)
+### Phase 2 — Catalog & Filtering ✅
 
-- [ ] Live search input (filters `parts.json` client-side as user types)
-- [ ] Filter pills: brand, price range, in-stock toggle
-- [ ] Sort: price ↑↓, weight ↑↓, name A–Z
-- [ ] Part detail panel (slide-in drawer): full specs, buy link, image gallery
-- [ ] Part comparison: pin up to 3 parts, see specs in a table
-- [ ] Preset builds: populate all slots from a preset JSON object
+- [x] Live search input (filters `parts.json` client-side as user types)
+- [x] Filter pills: in-stock toggle
+- [x] Sort: price ↑↓, weight ↑↓, name A–Z
+- [x] Part detail view: full specs table, add-to-build button, buy link with UTM
+- [x] Part comparison: pin up to 3 parts, specs highlighted side by side in modal
+- [x] Preset builds: populate all slots from a preset JSON object
 
-### Phase 3 — 3D Polish (Weeks 5–6)
+### Phase 3 — 3D Polish ✅
 
-- [ ] Per-category GLTF assets (source from Sketchfab / GrabCAD, optimize with `gltf-transform`)
-- [ ] Animate part snap-in on select (scale from 0 → 1 with easing)
-- [ ] Highlight selected slot's model in the viewer (emissive tint)
-- [ ] Camera auto-orbit to selected component on slot click
-- [ ] Frame size class drives overall model scale
-- [ ] Export PNG: `renderer.domElement.toDataURL()` → download link
+- [x] Procedural per-category geometry (frame, motors, ESC, FC, props, camera, VTX, battery, receiver)
+- [x] Pop-in animation on part select (scale 0 → 1 with cubic easing)
+- [x] Emissive highlight on active slot's model (cyan tint)
+- [x] Camera auto-lerp to selected component on slot click
+- [x] Frame size drives overall model scale for all attached parts
+- [x] Propeller spin animation when motor is selected
+- [x] Export PNG: `renderer.domElement.toDataURL()` → download via screenshot button
 
-### Phase 4 — Share & Extras (Weeks 7–8)
+### Phase 4 — Share & Extras ✅ / 🔲
 
-- [ ] Build card generator: Canvas 2D overlay with part list + 3D screenshot
-- [ ] Multiple saved builds (localStorage, keyed by build ID)
+- [x] Build card generator: Canvas 2D overlay (1280×720) with 3D snapshot + part list + stats
+- [x] Multiple saved builds (`localStorage`, keyed by build name with timestamps, load/delete)
+- [x] Affiliate UTM param injection on buy links at click time
 - [ ] Print/PDF-friendly build summary view
-- [ ] Affiliate UTM param injection on buy links at click time
 
 ---
 
@@ -254,24 +267,17 @@ fpv-drone-builder/
 ├── js/
 │   ├── main.js              ← entry: imports all modules, init()
 │   ├── store.js             ← state + event bus
-│   ├── catalog.js           ← part cards, filters, search
-│   ├── builder.js           ← slot panel, part picker dialog
-│   ├── viewer.js            ← Three.js scene
+│   ├── catalog.js           ← part cards, filters, search, detail view
+│   ├── builder.js           ← slot panel, preset loader
+│   ├── viewer.js            ← Three.js scene, procedural part meshes
 │   ├── compat.js            ← rule evaluator
-│   ├── summary.js           ← weight / price / TWR calc
+│   ├── summary.js           ← weight / price / TWR calc + violation badges
+│   ├── compare.js           ← part comparison modal (up to 3 parts)
+│   ├── saves.js             ← multiple saved builds in localStorage
+│   ├── export.js            ← build card PNG generator (Canvas 2D)
 │   └── share.js             ← URL hash encode/decode
-├── data/
-│   └── parts.json           ← all parts + categories + compat rules
-├── models/
-│   ├── frame-5inch.glb
-│   ├── motor-2306.glb
-│   ├── esc-4in1.glb
-│   ├── fc.glb
-│   ├── camera.glb
-│   └── ...
-└── images/
-    ├── parts/               ← part product photos (.webp)
-    └── icons/               ← category SVG icons
+└── data/
+    └── parts.json           ← all parts + categories + compat rules + presets
 ```
 
 ---
@@ -296,26 +302,36 @@ The 3D viewer lives in `js/viewer.js` and uses Three.js loaded as an ES module v
 // js/viewer.js
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 ```
 
-**How part swapping works:**
+**How part rendering works:**
 
-1. The scene keeps a `Map<slotKey, THREE.Object3D>` of currently loaded part meshes.
-2. On `SELECT_PART` event: remove the old mesh, load the new part's `.glb`, position it at the slot's attachment point, add to scene.
-3. Attachment points are named empties baked into the frame model (e.g. `motor_fl`, `motor_fr`, `motor_rl`, `motor_rr`, `stack`, `camera_mount`).
-4. If a slot is cleared, a wireframe placeholder sphere occupies the attachment point.
+All parts are built from Three.js primitives (`BoxGeometry`, `CylinderGeometry`, `ExtrudeGeometry`, etc.) — no external `.glb` assets are required. Each part category has a dedicated mesh builder:
+
+| Function | Output |
+|---|---|
+| `addFrameMesh` | Center plate, top plate, 4 arms, standoffs, motor-mount rings |
+| `addMotorMeshes` | 4× motor groups (stator, bell, cap, shaft, screws) at arm endpoints |
+| `addPropMeshes` | 4× prop groups (tapered extruded blades, hub) with live spin animation |
+| `addESCMesh` | PCB, corner MOSFETs, capacitor |
+| `addFCMesh` | PCB, gyro chip, USB port, emissive LEDs |
+| `addCameraMesh` | Body, lens barrel, glass disc, reflection ring |
+| `addVTXMesh` | PCB, heatsink fins, antenna wire + mushroom tip, status LED |
+| `addBatteryMesh` | Cell-sized body, label strip, XT60 plug, cell separation lines |
+| `addReceiverMesh` | PCB, RF chip, dipole antennas (UHF or 2.4 GHz variant) |
+
+**Attachment points** are hardcoded `THREE.Vector3` offsets in the `ATTACH` map. When a slot is active, `highlightSlot()` adds a cyan emissive tint to that part's mesh group. On slot click, `startCamAnim()` smoothly lerps the camera to a preset position focused on that component.
 
 ---
 
 ## Marketplace & Parts Catalog
 
 `data/parts.json` is seeded manually from:
-- **GetFPV** product pages (copy specs by hand or from their CSV export)
+- **GetFPV** product pages
 - **RaceDayQuads** — motors and frames
 - **Rotor Riot** — curated freestyle parts
 
-Each part has a `buy_url` field. Affiliate tags (`?ref=fpvbuilder`) are appended in `js/share.js` at click time so they stay out of the data file.
+Each part has a `buy_url` field. Affiliate tags (`?ref=fpvbuilder&utm_source=fpvbuilder&utm_medium=referral`) are appended in `js/catalog.js` at render time so they stay out of the data file.
 
 To update prices: edit `data/parts.json` directly, or write a small Node script (`scripts/sync-prices.js`) that fetches from supplier APIs and rewrites the file.
 
@@ -338,4 +354,4 @@ npx serve .
 
 Then open `http://localhost:8080` in a modern browser.
 
-> Note: Three.js GLTF loading requires a real HTTP server (not `file://`) due to CORS.
+> Note: Three.js requires a real HTTP server (not `file://`) due to CORS restrictions on ES module imports.
