@@ -323,6 +323,30 @@
   text-overflow: ellipsis;
   margin-top: 0.08rem;
 }
+.part-card-buy {
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  margin-top: 0.28rem;
+}
+.part-buy-link {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.38rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.12s, border-color 0.12s, background 0.12s;
+  white-space: nowrap;
+}
+.part-buy-link:hover {
+  color: var(--accent);
+  border-color: var(--border-accent);
+  background: var(--accent-dim);
+}
 
 .part-card-right {
   text-align: right;

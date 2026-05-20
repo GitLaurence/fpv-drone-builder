@@ -13,6 +13,7 @@ let _compareMode   = false;
 const $ = id => document.getElementById(id);
 
 export function init() {
+  $('right-panel').classList.add('panel-empty');
   $('btn-back').addEventListener('click', closeSlot);
   $('catalog-search').addEventListener('input', e => { _search = e.target.value.toLowerCase(); renderParts(); });
   $('catalog-sort').addEventListener('change', e => { _sort = e.target.value; renderParts(); });
@@ -57,8 +58,8 @@ export function showCatalog(categoryId) {
   const cat = getState().categories.find(c => c.id === categoryId);
   $('catalog-slot-label').textContent = cat ? `Select ${cat.label}` : 'Select Part';
 
-  $('catalog-idle').hidden = true;
   $('view-catalog').hidden = false;
+  $('right-panel').classList.remove('panel-empty');
 
   if (window.innerWidth <= 900) {
     $('right-panel').classList.add('panel-open');
@@ -70,8 +71,8 @@ export function showCatalog(categoryId) {
 }
 
 export function hideCatalog() {
-  $('catalog-idle').hidden = false;
   $('view-catalog').hidden = true;
+  $('right-panel').classList.add('panel-empty');
   _category    = null;
   _compareMode = false;
   Compare.clear();
@@ -132,6 +133,7 @@ function renderParts() {
         <div class="part-card-brand">${part.brand}</div>
         <div class="part-card-name">${part.name}</div>
         <div class="part-card-specs">${specLine(_category, part)}</div>
+        <div class="part-card-buy">${buyLinks(part)}</div>
       </div>
       <div class="part-card-right">
         <div class="part-card-price">$${part.price_usd.toFixed(2)}</div>
@@ -148,7 +150,8 @@ function renderParts() {
         : ''}
     `;
 
-    li.addEventListener('click', () => {
+    li.addEventListener('click', e => {
+      if (e.target.closest('.part-buy-link')) return;
       if (_compareMode) {
         Compare.toggle(part.id);
         renderParts();
@@ -205,6 +208,19 @@ function updateCompareBar() {
 }
 
 // ── Helpers ───────────────────────────────────────────
+
+const STORES = [
+  { name: 'GetFPV',  search: q => `https://www.getfpv.com/catalogsearch/result/?q=${q}` },
+  { name: 'RDQ',     search: q => `https://www.racedayquads.com/search?type=product&q=${q}` },
+  { name: 'Rotor Riot', search: q => `https://rotorriot.com/search?q=${q}` },
+];
+
+function buyLinks(part) {
+  const q = encodeURIComponent(`${part.brand} ${part.name}`);
+  return STORES.map(s =>
+    `<a class="part-buy-link" href="${s.search(q)}" target="_blank" rel="noopener noreferrer">${s.name} ↗</a>`
+  ).join('');
+}
 
 function catEmoji(cat) {
   return { frame:'🛸',motor:'⚙️',esc:'⚡',fc:'💻',propeller:'🌀',camera:'📷',vtx:'📡',battery:'🔋',receiver:'📻' }[cat] || '•';

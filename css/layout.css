@@ -120,38 +120,22 @@ html, body {
   background: var(--bg-panel);
   border-left: 1px solid var(--border);
   overflow: hidden;
+  position: relative;
 }
-
-/* Idle state */
-.catalog-idle {
-  flex: 1;
+.right-panel.panel-empty::after {
+  content: 'Select a component to browse parts';
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.25rem;
-}
-.idle-inner {
+  font-size: 0.8rem;
+  color: var(--text-muted);
   text-align: center;
-  max-width: 220px;
+  padding: 1.5rem;
+  pointer-events: none;
 }
-.idle-icon {
-  width: 52px;
-  height: 52px;
-  margin: 0 auto 1.1rem;
-  color: var(--text-muted);
-  opacity: 0.6;
-}
-.idle-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 0.55rem;
-}
-.idle-sub {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
+
 
 /* ── DRAWER HANDLE (mobile only) ─────────────────────── */
 .drawer-handle {
