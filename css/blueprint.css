@@ -1,0 +1,312 @@
+/* ── Blueprint section ───────────────────────────────── */
+.blueprint-section {
+  flex: 1;
+  position: relative;
+  background: #040c16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.blueprint-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.blueprint-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 560px;
+  max-height: 560px;
+  display: block;
+  overflow: visible;
+}
+
+/* ── Typography ─────────────────────────────────────── */
+.bp-compass {
+  font-family: 'Courier New', 'Courier', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  fill: #0e2a3e;
+  letter-spacing: 2px;
+}
+
+.bp-code {
+  font-family: 'Courier New', 'Courier', monospace;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
+/* ── State-based group coloring ─────────────────────── */
+
+/* Empty: barely visible — placeholder outline */
+.bp-group.bp-empty .bp-shape,
+.bp-group.bp-empty .bp-plate,
+.bp-group.bp-empty .bp-arm {
+  stroke: #0e2e48;
+  fill: #060f18;
+}
+.bp-group.bp-empty .bp-prop-sweep {
+  stroke: #0a2234;
+}
+.bp-group.bp-empty .bp-blade,
+.bp-group.bp-empty .bp-arm-thin,
+.bp-group.bp-empty .bp-mount-line,
+.bp-group.bp-empty .bp-cell-line {
+  stroke: #0a2234;
+}
+.bp-group.bp-empty .bp-connector,
+.bp-group.bp-empty .bp-mosfet {
+  fill: #0a1e2e;
+  stroke: #0e2e48;
+}
+.bp-group.bp-empty .bp-mount-hole {
+  stroke: #0e2e48;
+}
+.bp-group.bp-empty .bp-shaft {
+  fill: #0a1e2e;
+  stroke: #0e2e48;
+}
+.bp-group.bp-empty .bp-lens {
+  fill: #060e16;
+  stroke: #0e2e48;
+}
+.bp-group.bp-empty .bp-lens-inner {
+  fill: #040c14;
+  stroke: none;
+}
+.bp-group.bp-empty .bp-cross {
+  stroke: #0e2e48;
+}
+.bp-group.bp-empty .bp-antenna,
+.bp-group.bp-empty .bp-antenna-tip {
+  stroke: #0a2234;
+  fill: #060f18;
+}
+.bp-group.bp-empty .bp-code {
+  fill: #102840;
+}
+
+/* Filled: bright cyan blueprint lines */
+.bp-group.bp-filled .bp-shape,
+.bp-group.bp-filled .bp-plate {
+  stroke: #008bb0;
+  stroke-width: 1.5;
+  fill: rgba(0, 139, 176, 0.1);
+}
+.bp-group.bp-filled .bp-arm {
+  stroke: #008bb0;
+  stroke-width: 10;
+  fill: none;
+}
+.bp-group.bp-filled .bp-prop-sweep {
+  stroke: #006880;
+  stroke-width: 1.2;
+}
+.bp-group.bp-filled .bp-blade,
+.bp-group.bp-filled .bp-arm-thin {
+  stroke: #007898;
+  stroke-width: 2.5;
+}
+.bp-group.bp-filled .bp-mount-line,
+.bp-group.bp-filled .bp-cell-line {
+  stroke: #005870;
+  stroke-width: 1;
+}
+.bp-group.bp-filled .bp-connector {
+  fill: rgba(0,139,176,0.2);
+  stroke: #008bb0;
+  stroke-width: 1;
+}
+.bp-group.bp-filled .bp-mosfet {
+  fill: rgba(0,139,176,0.2);
+  stroke: #008bb0;
+  stroke-width: 1;
+}
+.bp-group.bp-filled .bp-mount-hole {
+  stroke: #008bb0;
+  stroke-width: 1;
+}
+.bp-group.bp-filled .bp-shaft {
+  fill: rgba(0,139,176,0.3);
+  stroke: #00a0c8;
+  stroke-width: 1;
+}
+.bp-group.bp-filled .bp-lens {
+  fill: rgba(0,80,110,0.5);
+  stroke: #008bb0;
+  stroke-width: 1;
+}
+.bp-group.bp-filled .bp-lens-inner {
+  fill: #001820;
+  stroke: none;
+}
+.bp-group.bp-filled .bp-cross {
+  stroke: #00a0c8;
+  stroke-width: 1.2;
+  fill: none;
+}
+.bp-group.bp-filled .bp-antenna {
+  stroke: #008bb0;
+  stroke-width: 1.8;
+}
+.bp-group.bp-filled .bp-antenna-tip {
+  fill: rgba(0,139,176,0.3);
+  stroke: #008bb0;
+  stroke-width: 1;
+}
+.bp-group.bp-filled .bp-code {
+  fill: #0098c0;
+}
+
+/* Active: bright white-cyan with glow */
+.bp-group.bp-active .bp-shape,
+.bp-group.bp-active .bp-plate {
+  stroke: #00e8ff;
+  stroke-width: 2;
+  fill: rgba(0, 232, 255, 0.14);
+}
+.bp-group.bp-active .bp-arm {
+  stroke: #00e8ff;
+  stroke-width: 10;
+  fill: none;
+}
+.bp-group.bp-active .bp-prop-sweep {
+  stroke: #00c8e8;
+  stroke-width: 1.5;
+}
+.bp-group.bp-active .bp-blade,
+.bp-group.bp-active .bp-arm-thin {
+  stroke: #00d8f0;
+  stroke-width: 2.5;
+}
+.bp-group.bp-active .bp-mount-line,
+.bp-group.bp-active .bp-cell-line {
+  stroke: #00a0c0;
+  stroke-width: 1;
+}
+.bp-group.bp-active .bp-connector {
+  fill: rgba(0,232,255,0.2);
+  stroke: #00e8ff;
+  stroke-width: 1.2;
+}
+.bp-group.bp-active .bp-mosfet {
+  fill: rgba(0,232,255,0.2);
+  stroke: #00e8ff;
+  stroke-width: 1;
+}
+.bp-group.bp-active .bp-mount-hole {
+  stroke: #00e8ff;
+  stroke-width: 1.2;
+}
+.bp-group.bp-active .bp-shaft {
+  fill: rgba(0,232,255,0.35);
+  stroke: #00f0ff;
+  stroke-width: 1.5;
+}
+.bp-group.bp-active .bp-lens {
+  fill: rgba(0,100,140,0.7);
+  stroke: #00e8ff;
+  stroke-width: 1.2;
+}
+.bp-group.bp-active .bp-lens-inner {
+  fill: #001e28;
+  stroke: none;
+}
+.bp-group.bp-active .bp-cross {
+  stroke: #00e8ff;
+  stroke-width: 1.5;
+  fill: none;
+}
+.bp-group.bp-active .bp-antenna {
+  stroke: #00d8f0;
+  stroke-width: 2;
+}
+.bp-group.bp-active .bp-antenna-tip {
+  fill: rgba(0,232,255,0.4);
+  stroke: #00e8ff;
+  stroke-width: 1.2;
+}
+.bp-group.bp-active .bp-code {
+  fill: #00e8ff;
+  font-weight: 900;
+}
+
+/* Violation: orange warning */
+.bp-group.bp-violation .bp-shape,
+.bp-group.bp-violation .bp-plate {
+  stroke: #ff8c42;
+  stroke-width: 1.8;
+  fill: rgba(255, 140, 66, 0.1);
+}
+.bp-group.bp-violation .bp-arm {
+  stroke: #cc6020;
+  stroke-width: 10;
+  fill: none;
+}
+.bp-group.bp-violation .bp-prop-sweep { stroke: #cc6020; }
+.bp-group.bp-violation .bp-blade,
+.bp-group.bp-violation .bp-arm-thin   { stroke: #cc6020; }
+.bp-group.bp-violation .bp-mount-line,
+.bp-group.bp-violation .bp-cell-line  { stroke: #804020; }
+.bp-group.bp-violation .bp-connector,
+.bp-group.bp-violation .bp-mosfet {
+  fill: rgba(255,140,66,0.15);
+  stroke: #ff8c42;
+}
+.bp-group.bp-violation .bp-mount-hole { stroke: #ff8c42; }
+.bp-group.bp-violation .bp-shaft {
+  fill: rgba(255,140,66,0.2);
+  stroke: #ff8c42;
+}
+.bp-group.bp-violation .bp-lens { fill: rgba(80,40,0,0.5); stroke: #ff8c42; }
+.bp-group.bp-violation .bp-cross { stroke: #ff8c42; fill: none; }
+.bp-group.bp-violation .bp-antenna { stroke: #cc6020; }
+.bp-group.bp-violation .bp-antenna-tip { fill: rgba(255,140,66,0.3); stroke: #ff8c42; }
+.bp-group.bp-violation .bp-code { fill: #ff8c42; }
+
+/* Hover — lighten slightly */
+.bp-group:hover .bp-shape,
+.bp-group:hover .bp-plate { opacity: 0.85; }
+
+/* ── Blueprint HUD overlay ───────────────────────────── */
+.blueprint-hud {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 5;
+}
+.blueprint-hint {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: rgba(180, 200, 220, 0.8);
+  background: rgba(4, 12, 22, 0.78);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  backdrop-filter: blur(8px);
+  white-space: nowrap;
+  transition: opacity 0.5s;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.04em;
+}
+.blueprint-hint.hidden { opacity: 0; }
+
+/* ── Mobile ─────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .blueprint-section {
+    position: absolute;
+    inset: 0;
+  }
+  .blueprint-wrap { padding: 0.5rem; }
+  .blueprint-hud { top: 0.6rem; }
+}

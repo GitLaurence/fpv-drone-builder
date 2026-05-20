@@ -5,19 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FPV Drone Builder</title>
 
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
-    }
-  }
-  </script>
-
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/catalog.css" />
-  <link rel="stylesheet" href="css/viewer.css" />
+  <link rel="stylesheet" href="css/blueprint.css" />
   <link rel="stylesheet" href="css/components.css" />
 </head>
 <body>
@@ -25,7 +16,7 @@
   <!-- HEADER -->
   <header class="app-header">
     <div class="header-brand">
-      <svg class="brand-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="brand-icon" viewBox="0 0 32 32" fill="none">
         <circle cx="16" cy="16" r="3" fill="currentColor"/>
         <rect x="5" y="14.5" width="22" height="3" rx="1.5" fill="currentColor" opacity="0.35"/>
         <rect x="14.5" y="5" width="3" height="22" rx="1.5" fill="currentColor" opacity="0.35"/>
@@ -46,22 +37,21 @@
       <button id="btn-reset"     class="btn btn-ghost"  title="Clear build">Reset</button>
       <button id="btn-my-builds" class="btn btn-ghost"  title="Saved builds">Builds</button>
       <button id="btn-save"      class="btn btn-ghost"  title="Save to browser">Save</button>
-      <button id="btn-export"    class="btn btn-ghost"  title="Export build card PNG">Export</button>
       <button id="btn-share"     class="btn btn-accent" title="Copy share link">Share</button>
     </div>
   </header>
 
-  <!-- MAIN LAYOUT -->
+  <!-- MAIN — 3-COLUMN LAYOUT -->
   <main class="app-main">
 
-    <!-- LEFT PANEL / MOBILE DRAWER -->
-    <aside class="side-panel" id="side-panel">
+    <!-- LEFT PANEL — Slot list (always visible) -->
+    <aside class="left-panel" id="left-panel">
 
-      <!-- MOBILE DRAWER HANDLE (hidden on desktop) -->
+      <!-- Mobile drawer handle -->
       <div class="drawer-handle" id="drawer-handle" role="button" aria-label="Toggle build panel">
         <div class="drawer-pill"></div>
         <div class="drawer-status">
-          <span class="drawer-status-text" id="drawer-status-text">Tap to configure build</span>
+          <span class="drawer-status-text" id="drawer-status-text">Tap to configure</span>
           <div class="drawer-progress-wrap">
             <span class="drawer-progress-count" id="drawer-progress-count">0 / 9</span>
             <div class="drawer-progress-bar">
@@ -71,7 +61,7 @@
         </div>
       </div>
 
-      <!-- DESKTOP PROGRESS BAR (hidden on mobile) -->
+      <!-- Desktop progress bar -->
       <div class="build-progress-row">
         <span class="build-progress-label">Build</span>
         <div class="build-progress-track">
@@ -80,22 +70,22 @@
         <span class="build-progress-count" id="build-progress-count">0 / 9</span>
       </div>
 
-      <!-- VIEW: SLOT LIST -->
-      <div class="panel-view" id="view-slots">
+      <!-- Slot list (always rendered here) -->
+      <div class="panel-view">
         <div class="panel-section-title">Components</div>
         <ul class="slot-list" id="slot-list" role="list"></ul>
 
         <div class="panel-section-title" style="margin-top:1rem">Summary</div>
         <div class="build-summary" id="build-summary">
-          <div class="summary-row"><span>Total Weight</span>   <span id="summary-weight">—</span></div>
-          <div class="summary-row"><span>Est. Price</span>     <span id="summary-price">—</span></div>
+          <div class="summary-row"><span>Total Weight</span>    <span id="summary-weight">—</span></div>
+          <div class="summary-row"><span>Est. Price</span>      <span id="summary-price">—</span></div>
           <div class="summary-row"><span>Thrust-to-Weight</span><span id="summary-twr">—</span></div>
-          <div class="summary-row"><span>Battery Config</span> <span id="summary-battery">—</span></div>
+          <div class="summary-row"><span>Battery Config</span>  <span id="summary-battery">—</span></div>
           <div class="compat-violations" id="compat-violations" hidden></div>
         </div>
 
         <div class="preset-section">
-          <div class="panel-section-title">Quick Presets</div>
+          <div class="panel-section-title">Presets</div>
           <div class="preset-buttons">
             <button class="btn btn-preset" data-preset="freestyle-5inch">5" Freestyle</button>
             <button class="btn btn-preset" data-preset="race-5inch">5" Race</button>
@@ -103,13 +93,42 @@
           </div>
         </div>
       </div>
+    </aside>
 
-      <!-- VIEW: CATALOG -->
+    <!-- CENTER — Blueprint diagram -->
+    <section class="blueprint-section" id="blueprint-section">
+      <div id="blueprint-wrap" class="blueprint-wrap"></div>
+      <div class="blueprint-hud">
+        <div class="blueprint-hint" id="blueprint-hint">Click a component to select parts</div>
+      </div>
+    </section>
+
+    <!-- RIGHT PANEL — Parts catalog (always present) -->
+    <aside class="right-panel" id="right-panel">
+
+      <!-- Idle state: no slot selected -->
+      <div class="catalog-idle" id="catalog-idle">
+        <div class="idle-inner">
+          <svg class="idle-icon" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="4" fill="currentColor" opacity="0.5"/>
+            <rect x="8"  y="22.5" width="32" height="3" rx="1.5" fill="currentColor" opacity="0.2"/>
+            <rect x="22.5" y="8" width="3" height="32" rx="1.5" fill="currentColor" opacity="0.2"/>
+            <circle cx="9"  cy="9"  r="5" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            <circle cx="39" cy="9"  r="5" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            <circle cx="9"  cy="39" r="5" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+            <circle cx="39" cy="39" r="5" stroke="currentColor" stroke-width="2" opacity="0.5"/>
+          </svg>
+          <p class="idle-title">No slot selected</p>
+          <p class="idle-sub">Click a component on the blueprint or a slot in the panel to browse parts.</p>
+        </div>
+      </div>
+
+      <!-- Catalog view (slot selected) -->
       <div class="panel-view" id="view-catalog" hidden>
         <div class="catalog-header">
           <button class="btn btn-ghost btn-back" id="btn-back">
-            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor"
-                 stroke-width="1.8" stroke-linecap="round">
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none"
+                 stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
               <path d="M10 3L5 8l5 5"/>
             </svg>
             Back
@@ -145,12 +164,12 @@
         </div>
       </div>
 
-      <!-- VIEW: PART DETAIL -->
+      <!-- Detail view -->
       <div class="panel-view" id="view-detail" hidden>
         <div class="catalog-header">
           <button class="btn btn-ghost btn-back" id="btn-detail-back">
-            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor"
-                 stroke-width="1.8" stroke-linecap="round">
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none"
+                 stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
               <path d="M10 3L5 8l5 5"/>
             </svg>
             Back
@@ -161,34 +180,6 @@
       </div>
 
     </aside>
-
-    <!-- 3D VIEWER -->
-    <section class="viewer-section">
-      <canvas id="drone-canvas"></canvas>
-
-      <div class="viewer-hud">
-        <div class="hud-hint" id="hud-hint">Select a component to begin building</div>
-      </div>
-
-      <div class="viewer-controls">
-        <button class="viewer-btn" id="btn-reset-camera" title="Reset camera">
-          <svg viewBox="0 0 20 20" width="17" height="17" fill="none"
-               stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-            <path d="M3 10a7 7 0 1 1 1.5 4.3"/>
-            <path d="M3 14V10H7"/>
-          </svg>
-        </button>
-        <button class="viewer-btn" id="btn-screenshot" title="Save screenshot">
-          <svg viewBox="0 0 20 20" width="17" height="17" fill="none"
-               stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
-            <rect x="2" y="5" width="16" height="12" rx="2"/>
-            <circle cx="10" cy="11" r="3"/>
-            <path d="M7 5l1.5-2h3L13 5"/>
-          </svg>
-        </button>
-      </div>
-    </section>
-
   </main>
 
   <!-- MOBILE OVERLAY -->

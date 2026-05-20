@@ -64,21 +64,35 @@ export function showCatalog(categoryId) {
   const cat = getState().categories.find(c => c.id === categoryId);
   $('catalog-slot-label').textContent = cat ? `Select ${cat.label}` : 'Select Part';
 
-  $('view-slots').hidden   = true;
-  $('view-catalog').hidden = false;
-  $('view-detail').hidden  = true;
+  // Right panel: hide idle, show catalog
+  $('catalog-idle').hidden  = true;
+  $('view-catalog').hidden  = false;
+  $('view-detail').hidden   = true;
+
+  // On mobile: open the right panel overlay
+  if (window.innerWidth <= 900) {
+    $('right-panel').classList.add('panel-open');
+    $('mobile-overlay').classList.add('visible');
+  }
 
   updateCompareBar();
   renderParts();
 }
 
 export function hideCatalog() {
-  $('view-slots').hidden   = false;
-  $('view-catalog').hidden = true;
-  $('view-detail').hidden  = true;
+  // Right panel: back to idle
+  $('catalog-idle').hidden  = false;
+  $('view-catalog').hidden  = true;
+  $('view-detail').hidden   = true;
   _category    = null;
   _compareMode = false;
   Compare.clear();
+
+  // On mobile: close the right panel overlay
+  if (window.innerWidth <= 900) {
+    $('right-panel').classList.remove('panel-open');
+    $('mobile-overlay').classList.remove('visible');
+  }
 }
 
 // ── Part list rendering ───────────────────────────────
