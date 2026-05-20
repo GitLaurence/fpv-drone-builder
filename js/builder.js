@@ -94,7 +94,7 @@ function partMeta(categoryId, part) {
   }
 }
 
-function openSlot(slotId) {
+export function openSlot(slotId) {
   dispatch('SET_ACTIVE_SLOT', { slot: slotId });
   showCatalog(slotId);
 }

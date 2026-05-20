@@ -70,6 +70,20 @@
         <span class="build-progress-count" id="build-progress-count">0 / 9</span>
       </div>
 
+      <!-- Step Navigator -->
+      <div class="step-nav" id="step-nav">
+        <button class="step-nav-btn" id="btn-step-prev" aria-label="Previous component" disabled>‹</button>
+        <div class="step-nav-center">
+          <div class="step-nav-header">
+            <span class="step-nav-icon" id="step-nav-icon">🛸</span>
+            <span class="step-nav-label" id="step-nav-label">Frame</span>
+          </div>
+          <div class="step-nav-sub" id="step-nav-sub">Not selected</div>
+          <div class="step-nav-dots" id="step-nav-dots"></div>
+        </div>
+        <button class="step-nav-btn" id="btn-step-next" aria-label="Next component">›</button>
+      </div>
+
       <!-- Slot list (always rendered here) -->
       <div class="panel-view">
         <div class="panel-section-title">Components</div>
@@ -105,6 +119,12 @@
 
     <!-- RIGHT PANEL — Parts catalog (always present) -->
     <aside class="right-panel" id="right-panel">
+
+      <!-- Mobile bottom-sheet handle -->
+      <div class="right-drawer-handle" id="right-drawer-handle">
+        <div class="drawer-pill"></div>
+        <button class="mobile-panel-close" id="btn-right-close" aria-label="Close parts panel">✕</button>
+      </div>
 
       <!-- Catalog view (slot selected) -->
       <div class="panel-view" id="view-catalog" hidden>

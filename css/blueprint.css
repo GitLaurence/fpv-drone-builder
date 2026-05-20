@@ -302,10 +302,11 @@
 .blueprint-hint.hidden { opacity: 0; }
 
 /* ── Mobile ─────────────────────────────────────────── */
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .blueprint-section {
     position: absolute;
     inset: 0;
+    padding-bottom: var(--drawer-peek);
   }
   .blueprint-wrap { padding: 0.5rem; }
   .blueprint-hud { top: 0.6rem; }

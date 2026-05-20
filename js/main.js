@@ -1,5 +1,6 @@
 import { dispatch, on, getState } from './store.js';
-import { init as initBuilder } from './builder.js';
+import { init as initBuilder, closeSlot } from './builder.js';
+import { init as initStepper } from './stepper.js';
 import { init as initCatalog } from './catalog.js';
 import { init as initBlueprint } from './blueprint.js';
 import { init as initCompare } from './compare.js';
@@ -18,6 +19,7 @@ async function main() {
   initBlueprint();
   initCompare(() => {});
   initSaves();
+  initStepper();
   applyFromHash();
   initMobileDrawer();
 
@@ -94,53 +96,79 @@ function updateBlueprintHint(slot) {
 // ── Mobile drawer (left panel) ───────────────────────
 
 function initMobileDrawer() {
-  const panel   = document.getElementById('left-panel');
-  const overlay = document.getElementById('mobile-overlay');
-  const handle  = document.getElementById('drawer-handle');
-  const rightPanel = document.getElementById('right-panel');
+  const panel       = document.getElementById('left-panel');
+  const overlay     = document.getElementById('mobile-overlay');
+  const handle      = document.getElementById('drawer-handle');
+  const rightPanel  = document.getElementById('right-panel');
+  const rightHandle = document.getElementById('right-drawer-handle');
+  const closeBtn    = document.getElementById('btn-right-close');
 
   function isMobile() { return window.innerWidth <= 900; }
 
   function openDrawer() {
     panel.classList.add('drawer-open');
-    if (!rightPanel.classList.contains('panel-open')) {
-      overlay.classList.add('visible');
-    }
+    // Overlay is managed by catalog.js — don't interfere here
   }
 
   function closeDrawer() {
     panel.classList.remove('drawer-open');
-    if (!rightPanel.classList.contains('panel-open')) {
-      overlay.classList.remove('visible');
-    }
   }
+
+  // ── Left drawer swipe gesture ─────────────────────
+  let _swipeStartY = 0;
+  let _didSwipe    = false;
+
+  handle?.addEventListener('touchstart', e => {
+    if (!isMobile()) return;
+    _swipeStartY = e.touches[0].clientY;
+    _didSwipe    = false;
+  }, { passive: true });
+
+  handle?.addEventListener('touchend', e => {
+    if (!isMobile()) return;
+    const dy = e.changedTouches[0].clientY - _swipeStartY;
+    if (Math.abs(dy) > 30) {
+      _didSwipe = true;
+      if (dy > 0) closeDrawer();
+      else openDrawer();
+    }
+  }, { passive: true });
 
   handle?.addEventListener('click', () => {
     if (!isMobile()) return;
+    if (_didSwipe) { _didSwipe = false; return; }
     panel.classList.contains('drawer-open') ? closeDrawer() : openDrawer();
   });
 
-  // Overlay closes whichever panel is open
-  overlay?.addEventListener('click', () => {
-    rightPanel.classList.remove('panel-open');
-    panel.classList.remove('drawer-open');
-    overlay.classList.remove('visible');
-    dispatch('SET_ACTIVE_SLOT', { slot: null });
+  // ── Right panel (catalog) swipe-down to dismiss ───
+  let _rightSwipeStart = 0;
+
+  rightHandle?.addEventListener('touchstart', e => {
+    if (!isMobile()) return;
+    _rightSwipeStart = e.touches[0].clientY;
+  }, { passive: true });
+
+  rightHandle?.addEventListener('touchend', e => {
+    if (!isMobile()) return;
+    const dy = e.changedTouches[0].clientY - _rightSwipeStart;
+    if (dy > 50) closeSlot();
+  }, { passive: true });
+
+  // Right panel close button
+  closeBtn?.addEventListener('click', () => {
+    if (!isMobile()) return;
+    closeSlot();
   });
 
-  // Auto-open left drawer when slot activated on mobile
-  on('slot:active', ({ slot }) => {
-    if (!isMobile()) return;
-    if (slot) {
-      // Right panel opens (handled by catalog.js showCatalog)
-      // Keep left panel open behind it
-      openDrawer();
-    }
+  // Overlay tap — close the catalog popup
+  overlay?.addEventListener('click', () => {
+    closeSlot();
+    overlay.classList.remove('visible');
   });
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && isMobile()) {
-      rightPanel.classList.remove('panel-open');
+      closeSlot();
       panel.classList.remove('drawer-open');
       overlay.classList.remove('visible');
     }
