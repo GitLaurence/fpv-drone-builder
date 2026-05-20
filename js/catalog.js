@@ -26,7 +26,6 @@ export function init() {
     renderParts();
   });
 
-  // Compare mode toggle
   $('btn-compare-toggle').addEventListener('click', () => {
     _compareMode = !_compareMode;
     $('btn-compare-toggle').classList.toggle('active', _compareMode);
@@ -34,12 +33,6 @@ export function init() {
     if (!_compareMode) Compare.clear();
     renderParts();
     updateCompareBar();
-  });
-
-  // Detail back button
-  $('btn-detail-back').addEventListener('click', () => {
-    $('view-detail').hidden = true;
-    $('view-catalog').hidden = false;
   });
 }
 
@@ -64,12 +57,9 @@ export function showCatalog(categoryId) {
   const cat = getState().categories.find(c => c.id === categoryId);
   $('catalog-slot-label').textContent = cat ? `Select ${cat.label}` : 'Select Part';
 
-  // Right panel: hide idle, show catalog
-  $('catalog-idle').hidden  = true;
-  $('view-catalog').hidden  = false;
-  $('view-detail').hidden   = true;
+  $('catalog-idle').hidden = true;
+  $('view-catalog').hidden = false;
 
-  // On mobile: open the right panel overlay
   if (window.innerWidth <= 900) {
     $('right-panel').classList.add('panel-open');
     $('mobile-overlay').classList.add('visible');
@@ -80,15 +70,12 @@ export function showCatalog(categoryId) {
 }
 
 export function hideCatalog() {
-  // Right panel: back to idle
-  $('catalog-idle').hidden  = false;
-  $('view-catalog').hidden  = true;
-  $('view-detail').hidden   = true;
+  $('catalog-idle').hidden = false;
+  $('view-catalog').hidden = true;
   _category    = null;
   _compareMode = false;
   Compare.clear();
 
-  // On mobile: close the right panel overlay
   if (window.innerWidth <= 900) {
     $('right-panel').classList.remove('panel-open');
     $('mobile-overlay').classList.remove('visible');
@@ -132,8 +119,8 @@ function renderParts() {
 
     li.className = [
       'part-card',
-      isSelected  ? 'selected'     : '',
-      isComparing ? 'in-compare'   : '',
+      isSelected  ? 'selected'   : '',
+      isComparing ? 'in-compare' : '',
       !part.in_stock ? 'out-of-stock' : '',
     ].filter(Boolean).join(' ');
     li.setAttribute('role', 'button');
@@ -157,19 +144,9 @@ function renderParts() {
         ? '<div class="part-card-selected-check">✓</div>'
         : ''}
       ${_compareMode
-        ? `<div class="compare-check ${isComparing ? 'active' : ''}">
-             ${isComparing ? '✓' : '+'}
-           </div>`
+        ? `<div class="compare-check ${isComparing ? 'active' : ''}">${isComparing ? '✓' : '+'}</div>`
         : ''}
     `;
-
-    // Info button (always visible on hover via CSS)
-    const infoBtn = document.createElement('button');
-    infoBtn.className   = 'part-info-btn';
-    infoBtn.textContent = 'ℹ';
-    infoBtn.title       = 'View details';
-    infoBtn.addEventListener('click', e => { e.stopPropagation(); showDetail(part.id); });
-    li.appendChild(infoBtn);
 
     li.addEventListener('click', () => {
       if (_compareMode) {
@@ -227,70 +204,6 @@ function updateCompareBar() {
   openBtn.disabled    = count < 2;
 }
 
-// ── Part detail view ─────────────────────────────────
-
-function showDetail(partId) {
-  const part = getPartById(partId);
-  if (!part) return;
-
-  const selectedId = getState().build[_category] || null;
-  const isSelected = part.id === selectedId;
-
-  const specRows = Object.entries(part.specs || {}).map(([k, v]) => `
-    <tr>
-      <td class="spec-key">${fmtKey(k)}</td>
-      <td class="spec-val">${fmtVal(v)}</td>
-    </tr>
-  `).join('');
-
-  $('detail-content').innerHTML = `
-    <div class="detail-header-card">
-      <div class="detail-thumb">${catEmoji(_category)}</div>
-      <div>
-        <div class="detail-brand">${part.brand}</div>
-        <div class="detail-name">${part.name}</div>
-        <div class="detail-price">$${part.price_usd.toFixed(2)}</div>
-      </div>
-    </div>
-
-    <div class="detail-badges">
-      <span class="detail-badge detail-badge-weight">⚖ ${part.weight_g}g</span>
-      <span class="detail-badge ${part.in_stock ? 'detail-badge-stock' : 'detail-badge-nostock'}">
-        ${part.in_stock ? '● In Stock' : '○ Out of Stock'}
-      </span>
-    </div>
-
-    <table class="detail-spec-table">
-      <tbody>${specRows}</tbody>
-    </table>
-
-    <div class="detail-actions">
-      <button class="btn ${isSelected ? 'btn-ghost' : 'btn-accent'} detail-select-btn" data-id="${part.id}">
-        ${isSelected ? 'Remove from Build' : 'Add to Build'}
-      </button>
-      <a
-        class="btn btn-ghost detail-buy-btn"
-        href="${part.buy_url + UTM}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >Buy ↗</a>
-    </div>
-  `;
-
-  $('detail-content').querySelector('.detail-select-btn').addEventListener('click', () => {
-    if (isSelected) {
-      dispatch('SELECT_PART', { slot: _category, partId: null });
-    } else {
-      dispatch('SELECT_PART', { slot: _category, partId: part.id });
-    }
-    $('view-detail').hidden = true;
-    $('view-catalog').hidden = false;
-  });
-
-  $('view-catalog').hidden = true;
-  $('view-detail').hidden  = false;
-}
-
 // ── Helpers ───────────────────────────────────────────
 
 function catEmoji(cat) {
@@ -311,12 +224,4 @@ function specLine(cat, part) {
     case 'receiver':  return `${s.protocol} · ${s.frequency_mhz}MHz`;
     default:          return '';
   }
-}
-
-function fmtKey(k) { return k.replace(/_/g,' ').replace(/\b\w/g, c => c.toUpperCase()); }
-function fmtVal(v) {
-  if (v === true)  return '✓';
-  if (v === false) return '—';
-  if (Array.isArray(v)) return v.join(', ');
-  return v ?? '—';
 }
