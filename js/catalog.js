@@ -129,9 +129,6 @@ function renderParts() {
 
     const extraLinks = _category === 'frame' ? thingiLink(part) : '';
     const detailHtml = _category === 'fc' ? fcDetailSection(part) : '';
-    const detailToggle = _category === 'fc'
-      ? '<button class="part-card-detail-toggle" aria-label="Toggle details">Details ▾</button>'
-      : '';
 
     li.innerHTML = `
       <div class="part-card-thumb">${catEmoji(_category)}</div>
@@ -139,8 +136,8 @@ function renderParts() {
         <div class="part-card-brand">${part.brand}</div>
         <div class="part-card-name">${part.name}</div>
         <div class="part-card-specs">${specLine(_category, part)}</div>
-        <div class="part-card-buy">${buyLinks(part)}${extraLinks}${detailToggle}</div>
         ${detailHtml}
+        <div class="part-card-buy">${buyLinks(part)}${extraLinks}</div>
       </div>
       <div class="part-card-right">
         <div class="part-card-price">$${part.price_usd.toFixed(2)}</div>
@@ -159,12 +156,6 @@ function renderParts() {
 
     li.addEventListener('click', e => {
       if (e.target.closest('.part-buy-link')) return;
-      if (e.target.closest('.part-card-detail-toggle')) {
-        li.classList.toggle('detail-open');
-        const toggle = li.querySelector('.part-card-detail-toggle');
-        toggle.textContent = li.classList.contains('detail-open') ? 'Details ▴' : 'Details ▾';
-        return;
-      }
       if (_compareMode) {
         Compare.toggle(part.id);
         renderParts();
@@ -263,12 +254,12 @@ function fcDetailSection(part) {
   return `
     <div class="part-card-detail">
       <div class="part-card-detail-row">
-        <span>UARTs: <strong>${s.uart_count ?? '–'}</strong></span>
-        <span>5V pads: <strong>${s['5v_pad_count'] ?? '–'}</strong></span>
-        <span>Current sensor: <strong>${s.curr_sensor ? '✓' : '✗'}</strong></span>
-        <span>Baro: <strong>${s.barometer ? '✓' : '✗'}</strong></span>
+        <span class="fc-badge">UARTs&nbsp;<strong>${s.uart_count ?? '–'}</strong></span>
+        <span class="fc-badge">5V&nbsp;pads&nbsp;<strong>${s['5v_pad_count'] ?? '–'}</strong></span>
+        <span class="fc-badge">${s.curr_sensor ? '✓ Curr' : '✗ Curr'}</span>
+        <span class="fc-badge">${s.barometer ? '✓ Baro' : '✗ Baro'}</span>
+        ${diagLink}
       </div>
-      ${diagLink ? `<div class="part-card-detail-links">${diagLink}</div>` : ''}
     </div>
   `;
 }
