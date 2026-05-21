@@ -160,6 +160,132 @@
         "thingiverse_url": "https://www.thingiverse.com/search?q=flywoo+apex+3"
       }
     },
+    {
+      "id": "iflight-nazgul-evoque-f5-v2",
+      "category": "frame",
+      "name": "Nazgul Evoque F5 V2",
+      "brand": "iFlight",
+      "price_usd": 83.99,
+      "weight_g": 150,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/Evoque-F5-V2-Frame-Kit-Pro1887",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 225,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 20,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=iflight+nazgul+evoque+f5+v2"
+      }
+    },
+    {
+      "id": "iflight-chimera7-pro-v2",
+      "category": "frame",
+      "name": "Chimera7 Pro V2",
+      "brand": "iFlight",
+      "price_usd": 109.99,
+      "weight_g": 300,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/Chimera7-O4-Frame-Kit-Pro2286",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 327,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 7.5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 21,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=iflight+chimera7+pro"
+      }
+    },
+    {
+      "id": "betafpv-beta95x-v3",
+      "category": "frame",
+      "name": "Beta95X V3",
+      "brand": "BetaFPV",
+      "price_usd": 14.99,
+      "weight_g": 39,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/beta95x-v3-frame-kit",
+      "color": "#1a1a2e",
+      "specs": {
+        "size_mm": 100,
+        "motor_mount_mm": 16,
+        "prop_clearance_inch": 2.5,
+        "stack_mount_mm": 20,
+        "material": "PA12 nylon",
+        "arm_thickness_mm": 2,
+        "standoff_height_mm": 20,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=betafpv+beta95x"
+      }
+    },
+    {
+      "id": "betafpv-hx115",
+      "category": "frame",
+      "name": "HX115 Toothpick",
+      "brand": "BetaFPV",
+      "price_usd": 14.99,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/hx115-lr-frame-kit",
+      "color": "#0f0f0f",
+      "specs": {
+        "size_mm": 115,
+        "motor_mount_mm": 16,
+        "prop_clearance_inch": 3,
+        "stack_mount_mm": 20,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 20,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=betafpv+hx115"
+      }
+    },
+    {
+      "id": "flyfishrc-volador-vd5",
+      "category": "frame",
+      "name": "Volador VD5 Deadcat",
+      "brand": "FlyFishRC",
+      "price_usd": 49.99,
+      "weight_g": 186,
+      "in_stock": true,
+      "buy_url": "https://www.flyfish-rc.com/products/volador-vd5-deadcat-fpv-lr-t700-frame-kit",
+      "color": "#0d0d0d",
+      "specs": {
+        "size_mm": 225,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "T700 carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=flyfishrc+volador+vd5"
+      }
+    },
+    {
+      "id": "flyfishrc-fifty5",
+      "category": "frame",
+      "name": "FIFTY5 Freestyle",
+      "brand": "FlyFishRC",
+      "price_usd": 44.99,
+      "weight_g": 127,
+      "in_stock": true,
+      "buy_url": "https://www.flyfish-rc.com/products/fifty-5-freestyle-fpv-frame-kit",
+      "color": "#141414",
+      "specs": {
+        "size_mm": 255,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5.5,
+        "stack_mount_mm": 30,
+        "material": "T700 carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 25,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=flyfishrc+fifty5"
+      }
+    },
 
     {
       "id": "tmotor-f40-pro-iv",
@@ -281,6 +407,246 @@
         "peak_current_a": 18
       }
     },
+    {
+      "id": "iflight-xing2-2306-6s",
+      "category": "motor",
+      "name": "XING2 2306 1755KV 6S",
+      "brand": "iFlight",
+      "price_usd": 20.99,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/xing2-2306-4s-6s-fpv-motor-unibell-pro1465",
+      "color": "#333",
+      "specs": {
+        "kv": 1755,
+        "stator_size": "2306",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 51
+      }
+    },
+    {
+      "id": "iflight-xing-e-pro-2207",
+      "category": "motor",
+      "name": "XING-E Pro 2207 1800KV",
+      "brand": "iFlight",
+      "price_usd": 17.99,
+      "weight_g": 34,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/xing-e-pro-2207-2-6s-fpv-nextgen-motor-pro874",
+      "color": "#333",
+      "specs": {
+        "kv": 1800,
+        "stator_size": "2207",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 4,
+        "peak_current_a": 45
+      }
+    },
+    {
+      "id": "speedybee-master-2306",
+      "category": "motor",
+      "name": "Master 2306.5 1800KV",
+      "brand": "SpeedyBee",
+      "price_usd": 19.99,
+      "weight_g": 34,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/speedybee-2306-5-1800kv-motor-master5v2-5-inch-fpv/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 1800,
+        "stator_size": "2306",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 31
+      }
+    },
+    {
+      "id": "tmotor-velox-v3-2306",
+      "category": "motor",
+      "name": "Velox V3 2306 1950KV",
+      "brand": "T-Motor",
+      "price_usd": 24.99,
+      "weight_g": 34,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/t-motor-velox-v2306-v3-motor-1500kv-1750kv-1950kv-2550kv.html",
+      "color": "#2a2a2a",
+      "specs": {
+        "kv": 1950,
+        "stator_size": "2306",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 46
+      }
+    },
+    {
+      "id": "tmotor-f60-pro-v",
+      "category": "motor",
+      "name": "F60 PRO V 2207.5 1950KV",
+      "brand": "T-Motor",
+      "price_usd": 32.99,
+      "weight_g": 34,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/t-motor-f60-pro-v-motor-1750kv-1950kv-2020kv-2550kv.html",
+      "color": "#2a2a2a",
+      "specs": {
+        "kv": 1950,
+        "stator_size": "2207",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 4,
+        "peak_current_a": 54
+      }
+    },
+    {
+      "id": "betafpv-1404-3800kv",
+      "category": "motor",
+      "name": "1404 3800KV",
+      "brand": "BetaFPV",
+      "price_usd": 13.25,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/1404-3800kv-brushless-motors",
+      "color": "#1a1a2e",
+      "specs": {
+        "kv": 3800,
+        "stator_size": "1404",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 2,
+        "max_voltage_s": 4,
+        "shaft_mm": 2,
+        "peak_current_a": 14
+      }
+    },
+    {
+      "id": "betafpv-1106-4500kv",
+      "category": "motor",
+      "name": "1106 4500KV",
+      "brand": "BetaFPV",
+      "price_usd": 11.25,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/1106-5000kv-brushless-motors",
+      "color": "#1a1a2e",
+      "specs": {
+        "kv": 4500,
+        "stator_size": "1106",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 2,
+        "max_voltage_s": 3,
+        "shaft_mm": 2,
+        "peak_current_a": 12
+      }
+    },
+    {
+      "id": "meps-sz2306-v2",
+      "category": "motor",
+      "name": "SZ2306 V2 1950KV",
+      "brand": "MEPS",
+      "price_usd": 12.90,
+      "weight_g": 33,
+      "in_stock": true,
+      "buy_url": "https://www.mepsking.shop/sz2306-fpv-brushless-motor-for-5inch-freestyle-drone.html",
+      "color": "#222",
+      "specs": {
+        "kv": 1950,
+        "stator_size": "2306",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 40
+      }
+    },
+    {
+      "id": "meps-neon-2207",
+      "category": "motor",
+      "name": "NEON 2207 1950KV",
+      "brand": "MEPS",
+      "price_usd": 20.00,
+      "weight_g": 35,
+      "in_stock": true,
+      "buy_url": "https://www.mepsking.shop/neon-2207-fpv-brushless-motor.html",
+      "color": "#222",
+      "specs": {
+        "kv": 1950,
+        "stator_size": "2207",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 42
+      }
+    },
+    {
+      "id": "meps-sz1404",
+      "category": "motor",
+      "name": "SZ1404 3800KV",
+      "brand": "MEPS",
+      "price_usd": 13.90,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.mepsking.shop/sz1404-fpv-motor.html",
+      "color": "#222",
+      "specs": {
+        "kv": 3800,
+        "stator_size": "1404",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 2,
+        "max_voltage_s": 4,
+        "shaft_mm": 2,
+        "peak_current_a": 14
+      }
+    },
+    {
+      "id": "flyfishrc-flash-2306",
+      "category": "motor",
+      "name": "Flash 2306 1750KV",
+      "brand": "FlyFishRC",
+      "price_usd": 18.99,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://www.flyfish-rc.com/products/flash-2306-5-motor",
+      "color": "#0f0f0f",
+      "specs": {
+        "kv": 1750,
+        "stator_size": "2306",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 42
+      }
+    },
+    {
+      "id": "flyfishrc-sword-2207",
+      "category": "motor",
+      "name": "Sword 2207 1950KV 6S",
+      "brand": "FlyFishRC",
+      "price_usd": 20.99,
+      "weight_g": 38,
+      "in_stock": true,
+      "buy_url": "https://www.flyfish-rc.com/products/sword-2207-6s-fpv-motor",
+      "color": "#0f0f0f",
+      "specs": {
+        "kv": 1950,
+        "stator_size": "2207",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 6,
+        "max_voltage_s": 6,
+        "shaft_mm": 4,
+        "peak_current_a": 40
+      }
+    },
 
     {
       "id": "tmotor-f55a-pro-ii",
@@ -372,6 +738,78 @@
         "burst_amp": 25
       }
     },
+    {
+      "id": "iflight-blitz-e55",
+      "category": "esc",
+      "name": "BLITZ E55 4-in-1",
+      "brand": "iFlight",
+      "price_usd": 49.99,
+      "weight_g": 15,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/BLITZ-E55-4-IN-1-2-6S-ESC-Pro1694",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 55,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 70
+      }
+    },
+    {
+      "id": "speedybee-bls-55a",
+      "category": "esc",
+      "name": "BLS 55A 4-in-1",
+      "brand": "SpeedyBee",
+      "price_usd": 34.99,
+      "weight_g": 24,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 55,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 70
+      }
+    },
+    {
+      "id": "tmotor-f55a-am32",
+      "category": "esc",
+      "name": "F55A Pro II AM32 4-in-1",
+      "brand": "T-Motor",
+      "price_usd": 59.99,
+      "weight_g": 18,
+      "in_stock": true,
+      "buy_url": "https://store.tmotor.com/goods-821-F55A_PRO_6S_4IN1_.html",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 55,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT1200",
+        "form_factor_mm": 30,
+        "burst_amp": 75
+      }
+    },
+    {
+      "id": "tmotor-mini-f45a",
+      "category": "esc",
+      "name": "Mini F45A 4-in-1 20×20",
+      "brand": "T-Motor",
+      "price_usd": 34.99,
+      "weight_g": 9,
+      "in_stock": false,
+      "buy_url": "https://store.tmotor.com/product/mini-f45a-4in1-fpv-esc.html",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 45,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT600",
+        "form_factor_mm": 20,
+        "burst_amp": 55
+      }
+    },
 
     {
       "id": "matek-f722-se",
@@ -393,7 +831,7 @@
         "uart_count": 6,
         "5v_pad_count": 3,
         "curr_sensor": true,
-        "diagram_url": "https://www.matek.com/product/f722-se.html"
+        "diagram_url": "https://www.mateksys.com/?portfolio=f722-se"
       }
     },
     {
@@ -416,7 +854,7 @@
         "uart_count": 5,
         "5v_pad_count": 2,
         "curr_sensor": false,
-        "diagram_url": "https://www.diatone.us/products/mamba-f722-fc"
+        "diagram_url": "https://www.diatone.us/apps/help-center"
       }
     },
     {
@@ -462,7 +900,76 @@
         "uart_count": 2,
         "5v_pad_count": 2,
         "curr_sensor": true,
-        "diagram_url": "https://jhemcu.com/ghf411aio"
+        "diagram_url": "https://jhemcu.com/e_productshow/?79-GHF411AIO-ICM-79.html="
+      }
+    },
+    {
+      "id": "iflight-blitz-f7",
+      "category": "fc",
+      "name": "BLITZ F7 V1.2",
+      "brand": "iFlight",
+      "price_usd": 44.99,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/BLITZ-F7-Flight-Controller-Pro1692",
+      "color": "#000055",
+      "specs": {
+        "gyro": "ICM42688",
+        "firmware": "Betaflight",
+        "form_factor_mm": 30,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "blackbox": true,
+        "uart_count": 6,
+        "5v_pad_count": 2,
+        "curr_sensor": true,
+        "diagram_url": "https://shop.iflight.com/BLITZ-F7-Flight-Controller-Pro1692"
+      }
+    },
+    {
+      "id": "speedybee-f7-v3",
+      "category": "fc",
+      "name": "F7 V3",
+      "brand": "SpeedyBee",
+      "price_usd": 44.99,
+      "weight_g": 11,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/speedybee-f7-v3-flight-controller/",
+      "color": "#000055",
+      "specs": {
+        "gyro": "BMI270",
+        "firmware": "Betaflight",
+        "form_factor_mm": 30,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "blackbox": true,
+        "uart_count": 4,
+        "5v_pad_count": 3,
+        "curr_sensor": true,
+        "diagram_url": "https://www.speedybee.com/speedybee-f7-v3-flight-controller/"
+      }
+    },
+    {
+      "id": "betafpv-f4-aio",
+      "category": "fc",
+      "name": "F4 2-3S 20A AIO",
+      "brand": "BetaFPV",
+      "price_usd": 39.99,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/f4-2-3s-20a-aio-fc-v1",
+      "color": "#000055",
+      "specs": {
+        "gyro": "BMI270",
+        "firmware": "Betaflight",
+        "form_factor_mm": 20,
+        "stack_mount_mm": 20,
+        "barometer": false,
+        "blackbox": true,
+        "uart_count": 3,
+        "5v_pad_count": 1,
+        "curr_sensor": true,
+        "diagram_url": "https://betafpv.com/products/f4-2-3s-20a-aio-fc-v1"
       }
     },
 
