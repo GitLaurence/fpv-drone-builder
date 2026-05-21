@@ -13,7 +13,6 @@ let _compareMode   = false;
 const $ = id => document.getElementById(id);
 
 export function init() {
-  $('right-panel').classList.add('panel-empty');
   $('btn-back').addEventListener('click', closeSlot);
   $('catalog-search').addEventListener('input', e => { _search = e.target.value.toLowerCase(); renderParts(); });
   $('catalog-sort').addEventListener('change', e => { _sort = e.target.value; renderParts(); });
@@ -59,7 +58,7 @@ export function showCatalog(categoryId) {
   $('catalog-slot-label').textContent = cat ? `Select ${cat.label}` : 'Select Part';
 
   $('view-catalog').hidden = false;
-  $('right-panel').classList.remove('panel-empty');
+  $('view-empty').hidden = true;
 
   if (window.innerWidth <= 900) {
     $('right-panel').classList.add('panel-open');
@@ -72,7 +71,7 @@ export function showCatalog(categoryId) {
 
 export function hideCatalog() {
   $('view-catalog').hidden = true;
-  $('right-panel').classList.add('panel-empty');
+  $('view-empty').hidden = false;
   _category    = null;
   _compareMode = false;
   Compare.clear();
