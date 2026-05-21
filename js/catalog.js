@@ -58,7 +58,6 @@ export function showCatalog(categoryId) {
   $('catalog-slot-label').textContent = cat ? `Select ${cat.label}` : 'Select Part';
 
   $('view-catalog').hidden = false;
-  $('view-empty').hidden = true;
 
   if (window.innerWidth <= 900) {
     $('right-panel').classList.add('panel-open');
@@ -71,7 +70,6 @@ export function showCatalog(categoryId) {
 
 export function hideCatalog() {
   $('view-catalog').hidden = true;
-  $('view-empty').hidden = false;
   _category    = null;
   _compareMode = false;
   Compare.clear();
