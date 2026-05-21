@@ -127,13 +127,20 @@ function renderParts() {
     li.setAttribute('role', 'button');
     li.setAttribute('tabindex', '0');
 
+    const extraLinks = _category === 'frame' ? thingiLink(part) : '';
+    const detailHtml = _category === 'fc' ? fcDetailSection(part) : '';
+    const detailToggle = _category === 'fc'
+      ? '<button class="part-card-detail-toggle" aria-label="Toggle details">Details ▾</button>'
+      : '';
+
     li.innerHTML = `
       <div class="part-card-thumb">${catEmoji(_category)}</div>
       <div class="part-card-info">
         <div class="part-card-brand">${part.brand}</div>
         <div class="part-card-name">${part.name}</div>
         <div class="part-card-specs">${specLine(_category, part)}</div>
-        <div class="part-card-buy">${buyLinks(part)}</div>
+        <div class="part-card-buy">${buyLinks(part)}${extraLinks}${detailToggle}</div>
+        ${detailHtml}
       </div>
       <div class="part-card-right">
         <div class="part-card-price">$${part.price_usd.toFixed(2)}</div>
@@ -152,6 +159,12 @@ function renderParts() {
 
     li.addEventListener('click', e => {
       if (e.target.closest('.part-buy-link')) return;
+      if (e.target.closest('.part-card-detail-toggle')) {
+        li.classList.toggle('detail-open');
+        const toggle = li.querySelector('.part-card-detail-toggle');
+        toggle.textContent = li.classList.contains('detail-open') ? 'Details ▴' : 'Details ▾';
+        return;
+      }
       if (_compareMode) {
         Compare.toggle(part.id);
         renderParts();
@@ -229,10 +242,10 @@ function catEmoji(cat) {
 function specLine(cat, part) {
   const s = part.specs;
   switch (cat) {
-    case 'frame':     return `${s.size_mm}mm · ${s.motor_mount_mm}mm mounts · ${s.material}`;
-    case 'motor':     return `${s.kv}KV · ${s.stator_size} · max ${s.max_voltage_s}S`;
+    case 'frame':     return `${s.size_mm}mm · ${s.motor_mount_mm}mm mounts · ${s.standoff_height_mm ? s.standoff_height_mm + 'mm standoffs · ' : ''}${s.material}`;
+    case 'motor':     return `${s.kv}KV · ${s.stator_size} · ${s.min_voltage_s ? s.min_voltage_s + '–' : ''}${s.max_voltage_s}S`;
     case 'esc':       return `${s.amp_rating}A · ${s.protocol} · max ${s.input_voltage_s}S`;
-    case 'fc':        return `${s.gyro} · ${s.firmware}`;
+    case 'fc':        return `${s.gyro} · ${s.firmware} · ${s.uart_count ? s.uart_count + ' UARTs' : ''}`;
     case 'propeller': return `${s.diameter_inch}" · pitch ${s.pitch} · ${s.blade_count}-blade`;
     case 'camera':    return `${s.fov_deg}° FOV · ${s.format}`;
     case 'vtx':       return `${s.power_mw_max}mW · ${s.protocol}`;
@@ -240,4 +253,28 @@ function specLine(cat, part) {
     case 'receiver':  return `${s.protocol} · ${s.frequency_mhz}MHz`;
     default:          return '';
   }
+}
+
+function fcDetailSection(part) {
+  const s = part.specs;
+  const diagLink = s.diagram_url
+    ? `<a class="part-card-diagram-link part-buy-link" href="${s.diagram_url}" target="_blank" rel="noopener noreferrer">📋 Wiring Diagram ↗</a>`
+    : '';
+  return `
+    <div class="part-card-detail">
+      <div class="part-card-detail-row">
+        <span>UARTs: <strong>${s.uart_count ?? '–'}</strong></span>
+        <span>5V pads: <strong>${s['5v_pad_count'] ?? '–'}</strong></span>
+        <span>Current sensor: <strong>${s.curr_sensor ? '✓' : '✗'}</strong></span>
+        <span>Baro: <strong>${s.barometer ? '✓' : '✗'}</strong></span>
+      </div>
+      ${diagLink ? `<div class="part-card-detail-links">${diagLink}</div>` : ''}
+    </div>
+  `;
+}
+
+function thingiLink(part) {
+  const url = part.specs.thingiverse_url;
+  if (!url) return '';
+  return `<a class="part-buy-link part-thingi-link" href="${url}" target="_blank" rel="noopener noreferrer">🖨 3D Prints ↗</a>`;
 }

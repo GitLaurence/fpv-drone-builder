@@ -81,10 +81,10 @@ function renderSlotList() {
 function partMeta(categoryId, part) {
   const s = part.specs;
   switch (categoryId) {
-    case 'frame':     return `${s.size_mm}mm · ${s.material || ''}`;
-    case 'motor':     return `${s.kv}KV · ${s.stator_size}`;
+    case 'frame':     return `${s.size_mm}mm · ${s.standoff_height_mm ? s.standoff_height_mm + 'mm standoffs · ' : ''}${s.material || ''}`;
+    case 'motor':     return `${s.kv}KV · ${s.stator_size} · ${s.min_voltage_s ? s.min_voltage_s + '–' : ''}${s.max_voltage_s}S`;
     case 'esc':       return `${s.amp_rating}A · ${s.protocol}`;
-    case 'fc':        return `${s.gyro} · ${s.firmware}`;
+    case 'fc':        return `${s.gyro} · ${s.uart_count ? s.uart_count + ' UARTs' : s.firmware}`;
     case 'propeller': return `${s.diameter_inch}" · ${s.blade_count}-blade`;
     case 'camera':    return `${s.fov_deg}° · ${s.format}`;
     case 'vtx':       return `${s.power_mw_max}mW · ${s.protocol}`;

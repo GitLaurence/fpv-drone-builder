@@ -406,6 +406,58 @@
   color: #000;
 }
 
+/* ── FC DETAIL SECTION ───────────────────────────────── */
+.part-card-detail-toggle {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1rem 0.38rem;
+  cursor: pointer;
+  transition: color 0.12s, border-color 0.12s, background 0.12s;
+  white-space: nowrap;
+}
+.part-card-detail-toggle:hover {
+  color: var(--accent);
+  border-color: var(--border-accent);
+  background: var(--accent-dim);
+}
+
+.part-card-detail {
+  display: none;
+  margin-top: 0.45rem;
+  padding: 0.45rem 0.55rem;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.68rem;
+}
+.part-card.detail-open .part-card-detail { display: block; }
+
+.part-card-detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  color: var(--text-secondary);
+}
+.part-card-detail-row strong { color: var(--text-primary); }
+
+.part-card-detail-links {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.part-card-diagram-link {
+  color: var(--text-muted) !important;
+}
+.part-card-diagram-link:hover {
+  color: var(--accent) !important;
+}
+
 /* ── COMPARE BAR ─────────────────────────────────────── */
 .compare-bar {
   flex-shrink: 0;
