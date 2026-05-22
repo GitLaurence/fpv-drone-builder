@@ -1,24 +1,76 @@
 {
   "categories": [
-    { "id": "frame",      "label": "Frame",            "icon": "🛸", "required": true,  "slot_count": 1 },
-    { "id": "motor",      "label": "Motors (×4)",      "icon": "⚙️", "required": true,  "slot_count": 1 },
-    { "id": "esc",        "label": "ESC",               "icon": "⚡", "required": true,  "slot_count": 1 },
-    { "id": "fc",         "label": "Flight Controller", "icon": "💻", "required": true,  "slot_count": 1 },
-    { "id": "propeller",  "label": "Propellers",        "icon": "🌀", "required": true,  "slot_count": 1 },
-    { "id": "camera",     "label": "FPV Camera",        "icon": "📷", "required": false, "slot_count": 1 },
-    { "id": "vtx",        "label": "Video Transmitter", "icon": "📡", "required": false, "slot_count": 1 },
-    { "id": "battery",    "label": "Battery",           "icon": "🔋", "required": true,  "slot_count": 1 },
-    { "id": "receiver",   "label": "RC Receiver",       "icon": "📻", "required": false, "slot_count": 1 }
+    {
+      "id": "frame",
+      "label": "Frame",
+      "icon": "\ud83d\udef8",
+      "required": true,
+      "slot_count": 1
+    },
+    {
+      "id": "motor",
+      "label": "Motors (\u00d74)",
+      "icon": "\u2699\ufe0f",
+      "required": true,
+      "slot_count": 1
+    },
+    {
+      "id": "esc",
+      "label": "ESC",
+      "icon": "\u26a1",
+      "required": true,
+      "slot_count": 1
+    },
+    {
+      "id": "fc",
+      "label": "Flight Controller",
+      "icon": "\ud83d\udcbb",
+      "required": true,
+      "slot_count": 1
+    },
+    {
+      "id": "propeller",
+      "label": "Propellers",
+      "icon": "\ud83c\udf00",
+      "required": true,
+      "slot_count": 1
+    },
+    {
+      "id": "camera",
+      "label": "FPV Camera",
+      "icon": "\ud83d\udcf7",
+      "required": false,
+      "slot_count": 1
+    },
+    {
+      "id": "vtx",
+      "label": "Video Transmitter",
+      "icon": "\ud83d\udce1",
+      "required": false,
+      "slot_count": 1
+    },
+    {
+      "id": "battery",
+      "label": "Battery",
+      "icon": "\ud83d\udd0b",
+      "required": true,
+      "slot_count": 1
+    },
+    {
+      "id": "receiver",
+      "label": "RC Receiver",
+      "icon": "\ud83d\udcfb",
+      "required": false,
+      "slot_count": 1
+    }
   ],
-
   "parts": [
-
     {
       "id": "iflight-titan-dc5",
       "category": "frame",
       "name": "Titan DC5 V3",
       "brand": "iFlight",
-      "price_usd": 52.99,
+      "price_php": 2967,
       "weight_g": 68,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -39,7 +91,7 @@
       "category": "frame",
       "name": "Source One V5",
       "brand": "TBS",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 71,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -60,7 +112,7 @@
       "category": "frame",
       "name": "Roma F5 V2",
       "brand": "Diatone",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 74,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -81,7 +133,7 @@
       "category": "frame",
       "name": "Nazgul Evoque F5",
       "brand": "iFlight",
-      "price_usd": 49.99,
+      "price_php": 2799,
       "weight_g": 80,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -102,7 +154,7 @@
       "category": "frame",
       "name": "Japex 5\" Freestyle",
       "brand": "Japex",
-      "price_usd": 45.00,
+      "price_php": 2520,
       "weight_g": 72,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -123,7 +175,7 @@
       "category": "frame",
       "name": "Pavo25 Frame",
       "brand": "BetaFPV",
-      "price_usd": 18.99,
+      "price_php": 1063,
       "weight_g": 29,
       "in_stock": true,
       "buy_url": "https://betafpv.com",
@@ -144,7 +196,7 @@
       "category": "frame",
       "name": "Apex 3\" Frame",
       "brand": "Flywoo",
-      "price_usd": 19.99,
+      "price_php": 1119,
       "weight_g": 32,
       "in_stock": true,
       "buy_url": "https://flywoo.net",
@@ -165,7 +217,7 @@
       "category": "frame",
       "name": "Nazgul Evoque F5 V2",
       "brand": "iFlight",
-      "price_usd": 83.99,
+      "price_php": 4703,
       "weight_g": 150,
       "in_stock": true,
       "buy_url": "https://shop.iflight.com/Evoque-F5-V2-Frame-Kit-Pro1887",
@@ -186,7 +238,7 @@
       "category": "frame",
       "name": "Chimera7 Pro V2",
       "brand": "iFlight",
-      "price_usd": 109.99,
+      "price_php": 6159,
       "weight_g": 300,
       "in_stock": true,
       "buy_url": "https://shop.iflight.com/Chimera7-O4-Frame-Kit-Pro2286",
@@ -207,7 +259,7 @@
       "category": "frame",
       "name": "Beta95X V3",
       "brand": "BetaFPV",
-      "price_usd": 14.99,
+      "price_php": 839,
       "weight_g": 39,
       "in_stock": true,
       "buy_url": "https://betafpv.com/products/beta95x-v3-frame-kit",
@@ -228,7 +280,7 @@
       "category": "frame",
       "name": "HX115 Toothpick",
       "brand": "BetaFPV",
-      "price_usd": 14.99,
+      "price_php": 839,
       "weight_g": 10,
       "in_stock": true,
       "buy_url": "https://betafpv.com/products/hx115-lr-frame-kit",
@@ -249,7 +301,7 @@
       "category": "frame",
       "name": "Volador VD5 Deadcat",
       "brand": "FlyFishRC",
-      "price_usd": 49.99,
+      "price_php": 2799,
       "weight_g": 186,
       "in_stock": true,
       "buy_url": "https://www.flyfish-rc.com/products/volador-vd5-deadcat-fpv-lr-t700-frame-kit",
@@ -270,7 +322,7 @@
       "category": "frame",
       "name": "FIFTY5 Freestyle",
       "brand": "FlyFishRC",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 127,
       "in_stock": true,
       "buy_url": "https://www.flyfish-rc.com/products/fifty-5-freestyle-fpv-frame-kit",
@@ -291,7 +343,7 @@
       "category": "frame",
       "name": "Rooster 5\" Freestyle",
       "brand": "Armattan",
-      "price_usd": 79.99,
+      "price_php": 4479,
       "weight_g": 83,
       "in_stock": true,
       "buy_url": "https://www.armattanproductions.com/pages/shop_product_list_cat/4",
@@ -312,7 +364,7 @@
       "category": "frame",
       "name": "Marmotte 5\" Stretch X",
       "brand": "Armattan",
-      "price_usd": 74.99,
+      "price_php": 4199,
       "weight_g": 72,
       "in_stock": true,
       "buy_url": "https://www.armattanproductions.com/pages/shop_product_list_cat/4",
@@ -333,7 +385,7 @@
       "category": "frame",
       "name": "Kopis 2 SE 5\"",
       "brand": "Holybro",
-      "price_usd": 39.99,
+      "price_php": 2239,
       "weight_g": 70,
       "in_stock": true,
       "buy_url": "https://holybro.com/products/kopis-2-se",
@@ -354,7 +406,7 @@
       "category": "frame",
       "name": "QAV-S 2 5\" Squished-X",
       "brand": "Lumenier",
-      "price_usd": 64.99,
+      "price_php": 3639,
       "weight_g": 75,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com/lumenier-qav-s-2-5-freestyle-squished-x-frame.html",
@@ -375,7 +427,7 @@
       "category": "frame",
       "name": "Explorer LR 4\" HD",
       "brand": "Flywoo",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 65,
       "in_stock": true,
       "buy_url": "https://flywoo.net/products/explorer-lr-4-hd-frame-kit",
@@ -396,7 +448,7 @@
       "category": "frame",
       "name": "Goku HX5 5\" Freestyle",
       "brand": "Flywoo",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 88,
       "in_stock": true,
       "buy_url": "https://flywoo.net/products/goku-hx5-5-inch-hd-fpv-freestyle-racing-frame",
@@ -417,7 +469,7 @@
       "category": "frame",
       "name": "Beetle HD 5\"",
       "brand": "TransTEC",
-      "price_usd": 54.99,
+      "price_php": 3079,
       "weight_g": 90,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com/products/transtec-beetle-hd-5-freestyle-frame",
@@ -433,13 +485,12 @@
         "thingiverse_url": "https://www.thingiverse.com/search?q=transtec+beetle+hd"
       }
     },
-
     {
       "id": "tmotor-f40-pro-iv",
       "category": "motor",
       "name": "F40 PRO IV 2306",
       "brand": "T-Motor",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 30,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -459,7 +510,7 @@
       "category": "motor",
       "name": "Tornado T2 2306",
       "brand": "BrotherHobby",
-      "price_usd": 18.99,
+      "price_php": 1063,
       "weight_g": 31,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -479,7 +530,7 @@
       "category": "motor",
       "name": "ECO II 2306 2400KV",
       "brand": "Emax",
-      "price_usd": 16.99,
+      "price_php": 951,
       "weight_g": 28,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -499,7 +550,7 @@
       "category": "motor",
       "name": "XING2 2306 2450KV",
       "brand": "iFlight",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 30.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -519,7 +570,7 @@
       "category": "motor",
       "name": "F15 1507 3800KV",
       "brand": "T-Motor",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 12.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -539,7 +590,7 @@
       "category": "motor",
       "name": "1404 3800KV",
       "brand": "Gemfan",
-      "price_usd": 12.99,
+      "price_php": 727,
       "weight_g": 10,
       "in_stock": false,
       "buy_url": "https://www.racedayquads.com",
@@ -559,7 +610,7 @@
       "category": "motor",
       "name": "XING2 2306 1755KV 6S",
       "brand": "iFlight",
-      "price_usd": 20.99,
+      "price_php": 1175,
       "weight_g": 32,
       "in_stock": true,
       "buy_url": "https://shop.iflight.com/xing2-2306-4s-6s-fpv-motor-unibell-pro1465",
@@ -579,7 +630,7 @@
       "category": "motor",
       "name": "XING-E Pro 2207 1800KV",
       "brand": "iFlight",
-      "price_usd": 17.99,
+      "price_php": 1007,
       "weight_g": 34,
       "in_stock": true,
       "buy_url": "https://shop.iflight.com/xing-e-pro-2207-2-6s-fpv-nextgen-motor-pro874",
@@ -599,7 +650,7 @@
       "category": "motor",
       "name": "Master 2306.5 1800KV",
       "brand": "SpeedyBee",
-      "price_usd": 19.99,
+      "price_php": 1119,
       "weight_g": 34,
       "in_stock": true,
       "buy_url": "https://www.speedybee.com/speedybee-2306-5-1800kv-motor-master5v2-5-inch-fpv/",
@@ -619,7 +670,7 @@
       "category": "motor",
       "name": "Velox V3 2306 1950KV",
       "brand": "T-Motor",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 34,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com/t-motor-velox-v2306-v3-motor-1500kv-1750kv-1950kv-2550kv.html",
@@ -639,7 +690,7 @@
       "category": "motor",
       "name": "F60 PRO V 2207.5 1950KV",
       "brand": "T-Motor",
-      "price_usd": 32.99,
+      "price_php": 1847,
       "weight_g": 34,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com/t-motor-f60-pro-v-motor-1750kv-1950kv-2020kv-2550kv.html",
@@ -659,7 +710,7 @@
       "category": "motor",
       "name": "1404 3800KV",
       "brand": "BetaFPV",
-      "price_usd": 13.25,
+      "price_php": 742,
       "weight_g": 9,
       "in_stock": true,
       "buy_url": "https://betafpv.com/products/1404-3800kv-brushless-motors",
@@ -679,7 +730,7 @@
       "category": "motor",
       "name": "1106 4500KV",
       "brand": "BetaFPV",
-      "price_usd": 11.25,
+      "price_php": 630,
       "weight_g": 7,
       "in_stock": true,
       "buy_url": "https://betafpv.com/products/1106-5000kv-brushless-motors",
@@ -699,7 +750,7 @@
       "category": "motor",
       "name": "SZ2306 V2 1950KV",
       "brand": "MEPS",
-      "price_usd": 12.90,
+      "price_php": 722,
       "weight_g": 33,
       "in_stock": true,
       "buy_url": "https://www.mepsking.shop/sz2306-fpv-brushless-motor-for-5inch-freestyle-drone.html",
@@ -719,7 +770,7 @@
       "category": "motor",
       "name": "NEON 2207 1950KV",
       "brand": "MEPS",
-      "price_usd": 20.00,
+      "price_php": 1120,
       "weight_g": 35,
       "in_stock": true,
       "buy_url": "https://www.mepsking.shop/neon-2207-fpv-brushless-motor.html",
@@ -739,7 +790,7 @@
       "category": "motor",
       "name": "SZ1404 3800KV",
       "brand": "MEPS",
-      "price_usd": 13.90,
+      "price_php": 778,
       "weight_g": 10,
       "in_stock": true,
       "buy_url": "https://www.mepsking.shop/sz1404-fpv-motor.html",
@@ -759,7 +810,7 @@
       "category": "motor",
       "name": "Flash 2306 1750KV",
       "brand": "FlyFishRC",
-      "price_usd": 18.99,
+      "price_php": 1063,
       "weight_g": 32,
       "in_stock": true,
       "buy_url": "https://www.flyfish-rc.com/products/flash-2306-5-motor",
@@ -779,7 +830,7 @@
       "category": "motor",
       "name": "Sword 2207 1950KV 6S",
       "brand": "FlyFishRC",
-      "price_usd": 20.99,
+      "price_php": 1175,
       "weight_g": 38,
       "in_stock": true,
       "buy_url": "https://www.flyfish-rc.com/products/sword-2207-6s-fpv-motor",
@@ -794,13 +845,12 @@
         "peak_current_a": 40
       }
     },
-
     {
       "id": "hypetrain-le-drib-2306",
       "category": "motor",
       "name": "Le Drib 2306 1722KV",
       "brand": "Hypetrain",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 29,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -815,13 +865,12 @@
         "peak_current_a": 38
       }
     },
-
     {
       "id": "hypetrain-blaster-2207",
       "category": "motor",
       "name": "Blaster 2207 1855KV",
       "brand": "Hypetrain",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 32,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -836,13 +885,12 @@
         "peak_current_a": 42
       }
     },
-
     {
       "id": "brotherhobby-returner-r5-2306",
       "category": "motor",
       "name": "Returner R5 2306 1620KV",
       "brand": "BrotherHobby",
-      "price_usd": 20.99,
+      "price_php": 1175,
       "weight_g": 31,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -857,13 +905,12 @@
         "peak_current_a": 36
       }
     },
-
     {
       "id": "emax-eco-ii-2207",
       "category": "motor",
       "name": "ECO II 2207 1900KV",
       "brand": "EMAX",
-      "price_usd": 17.99,
+      "price_php": 1007,
       "weight_g": 29,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -878,13 +925,12 @@
         "peak_current_a": 38
       }
     },
-
     {
       "id": "foxeer-reaper-2306",
       "category": "motor",
       "name": "Reaper 2306 1500KV",
       "brand": "Foxeer",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 33,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -899,13 +945,12 @@
         "peak_current_a": 40
       }
     },
-
     {
       "id": "tmotor-f55a-pro-ii",
       "category": "esc",
       "name": "F55A PRO II 4-in-1",
       "brand": "T-Motor",
-      "price_usd": 79.99,
+      "price_php": 4479,
       "weight_g": 28,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -923,7 +968,7 @@
       "category": "esc",
       "name": "XRotor 40A 4-in-1",
       "brand": "Hobbywing",
-      "price_usd": 54.99,
+      "price_php": 3079,
       "weight_g": 26,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -941,7 +986,7 @@
       "category": "esc",
       "name": "Mamba F50 4-in-1",
       "brand": "Diatone",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 22,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -959,7 +1004,7 @@
       "category": "esc",
       "name": "BLS 45A 4-in-1",
       "brand": "SpeedyBee",
-      "price_usd": 39.99,
+      "price_php": 2239,
       "weight_g": 20,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -977,7 +1022,7 @@
       "category": "esc",
       "name": "GHF411AIO 20A 4-in-1",
       "brand": "JHEMCU",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 12,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -995,7 +1040,7 @@
       "category": "esc",
       "name": "BLITZ E55 4-in-1",
       "brand": "iFlight",
-      "price_usd": 49.99,
+      "price_php": 2799,
       "weight_g": 15,
       "in_stock": true,
       "buy_url": "https://shop.iflight.com/BLITZ-E55-4-IN-1-2-6S-ESC-Pro1694",
@@ -1013,7 +1058,7 @@
       "category": "esc",
       "name": "BLS 55A 4-in-1",
       "brand": "SpeedyBee",
-      "price_usd": 34.99,
+      "price_php": 1959,
       "weight_g": 24,
       "in_stock": true,
       "buy_url": "https://www.speedybee.com/speedybee-f405-v4-bls-55a-30x30-fc-esc-stack/",
@@ -1031,7 +1076,7 @@
       "category": "esc",
       "name": "F55A Pro II AM32 4-in-1",
       "brand": "T-Motor",
-      "price_usd": 59.99,
+      "price_php": 3359,
       "weight_g": 18,
       "in_stock": true,
       "buy_url": "https://store.tmotor.com/goods-821-F55A_PRO_6S_4IN1_.html",
@@ -1047,9 +1092,9 @@
     {
       "id": "tmotor-mini-f45a",
       "category": "esc",
-      "name": "Mini F45A 4-in-1 20×20",
+      "name": "Mini F45A 4-in-1 20\u00d720",
       "brand": "T-Motor",
-      "price_usd": 34.99,
+      "price_php": 1959,
       "weight_g": 9,
       "in_stock": false,
       "buy_url": "https://store.tmotor.com/product/mini-f45a-4in1-fpv-esc.html",
@@ -1062,13 +1107,12 @@
         "burst_amp": 55
       }
     },
-
     {
       "id": "holybro-tekko32-65a",
       "category": "esc",
       "name": "Tekko32 F4 65A 4-in-1",
       "brand": "Holybro",
-      "price_usd": 59.99,
+      "price_php": 3359,
       "weight_g": 26,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1081,13 +1125,12 @@
         "burst_amp": 80
       }
     },
-
     {
       "id": "flywoo-goku-45a",
       "category": "esc",
       "name": "GOKU 45A 4-in-1",
       "brand": "Flywoo",
-      "price_usd": 38.99,
+      "price_php": 2183,
       "weight_g": 22,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1100,13 +1143,12 @@
         "burst_amp": 55
       }
     },
-
     {
       "id": "matek-f722-se",
       "category": "fc",
       "name": "F722-SE",
       "brand": "Matek",
-      "price_usd": 64.99,
+      "price_php": 3639,
       "weight_g": 11,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1129,7 +1171,7 @@
       "category": "fc",
       "name": "Mamba F722 FC",
       "brand": "Diatone",
-      "price_usd": 49.99,
+      "price_php": 2799,
       "weight_g": 10,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1152,7 +1194,7 @@
       "category": "fc",
       "name": "F405 V4",
       "brand": "SpeedyBee",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 9,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1175,7 +1217,7 @@
       "category": "fc",
       "name": "GHF411AIO FC+ESC",
       "brand": "JHEMCU",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 8,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1198,7 +1240,7 @@
       "category": "fc",
       "name": "BLITZ F7 V1.2",
       "brand": "iFlight",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 8,
       "in_stock": true,
       "buy_url": "https://shop.iflight.com/BLITZ-F7-Flight-Controller-Pro1692",
@@ -1221,7 +1263,7 @@
       "category": "fc",
       "name": "F7 V3",
       "brand": "SpeedyBee",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 11,
       "in_stock": true,
       "buy_url": "https://www.speedybee.com/speedybee-f7-v3-flight-controller/",
@@ -1244,7 +1286,7 @@
       "category": "fc",
       "name": "F4 2-3S 20A AIO",
       "brand": "BetaFPV",
-      "price_usd": 39.99,
+      "price_php": 2239,
       "weight_g": 6,
       "in_stock": true,
       "buy_url": "https://betafpv.com/products/f4-2-3s-20a-aio-fc-v1",
@@ -1262,13 +1304,12 @@
         "diagram_url": "https://betafpv.com/products/f4-2-3s-20a-aio-fc-v1"
       }
     },
-
     {
       "id": "holybro-kakute-h7-v2",
       "category": "fc",
       "name": "Kakute H7 V2",
       "brand": "Holybro",
-      "price_usd": 55.99,
+      "price_php": 3135,
       "weight_g": 11,
       "in_stock": true,
       "buy_url": "https://holybro.com/products/kakute-h7-v2",
@@ -1286,13 +1327,12 @@
         "diagram_url": "https://holybro.com/products/kakute-h7-v2"
       }
     },
-
     {
       "id": "flywoo-goku-f7-dual",
       "category": "fc",
       "name": "GOKU F7 Dual",
       "brand": "Flywoo",
-      "price_usd": 54.99,
+      "price_php": 3079,
       "weight_g": 9,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1310,13 +1350,12 @@
         "diagram_url": "https://flywoo.net/products/goku-f7-dual"
       }
     },
-
     {
       "id": "hqprop-dp-5x4.5x3",
       "category": "propeller",
-      "name": "DP 5×4.5×3",
+      "name": "DP 5\u00d74.5\u00d73",
       "brand": "HQProp",
-      "price_usd": 3.99,
+      "price_php": 223,
       "weight_g": 5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1326,7 +1365,12 @@
         "pitch": 4.5,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "blue", "red", "yellow"]
+        "color_options": [
+          "black",
+          "blue",
+          "red",
+          "yellow"
+        ]
       }
     },
     {
@@ -1334,7 +1378,7 @@
       "category": "propeller",
       "name": "Hurricane 51499",
       "brand": "Gemfan",
-      "price_usd": 4.99,
+      "price_php": 279,
       "weight_g": 6,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1344,15 +1388,18 @@
         "pitch": 4.99,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "clear"]
+        "color_options": [
+          "black",
+          "clear"
+        ]
       }
     },
     {
       "id": "hqprop-5x4.3x3",
       "category": "propeller",
-      "name": "5×4.3×3V1S",
+      "name": "5\u00d74.3\u00d73V1S",
       "brand": "HQProp",
-      "price_usd": 3.49,
+      "price_php": 195,
       "weight_g": 5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1362,7 +1409,11 @@
         "pitch": 4.3,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "green", "orange"]
+        "color_options": [
+          "black",
+          "green",
+          "orange"
+        ]
       }
     },
     {
@@ -1370,7 +1421,7 @@
       "category": "propeller",
       "name": "3052 3-blade",
       "brand": "Gemfan",
-      "price_usd": 2.99,
+      "price_php": 167,
       "weight_g": 2,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1380,15 +1431,18 @@
         "pitch": 5.2,
         "blade_count": 3,
         "shaft_mm": 3,
-        "color_options": ["black", "blue"]
+        "color_options": [
+          "black",
+          "blue"
+        ]
       }
     },
     {
       "id": "hqprop-2.5x2.5x4",
       "category": "propeller",
-      "name": "2.5×2.5×4",
+      "name": "2.5\u00d72.5\u00d74",
       "brand": "HQProp",
-      "price_usd": 2.49,
+      "price_php": 139,
       "weight_g": 1.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1398,16 +1452,17 @@
         "pitch": 2.5,
         "blade_count": 4,
         "shaft_mm": 3,
-        "color_options": ["black"]
+        "color_options": [
+          "black"
+        ]
       }
     },
-
     {
       "id": "dal-t5045c",
       "category": "propeller",
       "name": "T5045C Cyclone 5\"",
       "brand": "DAL",
-      "price_usd": 3.99,
+      "price_php": 223,
       "weight_g": 5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1417,16 +1472,19 @@
         "pitch": 4.5,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "white", "clear"]
+        "color_options": [
+          "black",
+          "white",
+          "clear"
+        ]
       }
     },
-
     {
       "id": "dal-t5050c",
       "category": "propeller",
       "name": "T5050C Cyclone 5\"",
       "brand": "DAL",
-      "price_usd": 3.99,
+      "price_php": 223,
       "weight_g": 5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1436,16 +1494,19 @@
         "pitch": 5.0,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "white", "clear"]
+        "color_options": [
+          "black",
+          "white",
+          "clear"
+        ]
       }
     },
-
     {
       "id": "ethix-s5-light",
       "category": "propeller",
       "name": "S5 Light 5045",
       "brand": "Ethix",
-      "price_usd": 3.99,
+      "price_php": 223,
       "weight_g": 4,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1455,16 +1516,17 @@
         "pitch": 4.5,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black"]
+        "color_options": [
+          "black"
+        ]
       }
     },
-
     {
       "id": "gemfan-5152",
       "category": "propeller",
       "name": "5152 Flash 3-Blade",
       "brand": "Gemfan",
-      "price_usd": 3.99,
+      "price_php": 223,
       "weight_g": 5.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1474,16 +1536,19 @@
         "pitch": 5.2,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "blue", "orange"]
+        "color_options": [
+          "black",
+          "blue",
+          "orange"
+        ]
       }
     },
-
     {
       "id": "gemfan-5040-3blade",
       "category": "propeller",
       "name": "5040 3-Blade",
       "brand": "Gemfan",
-      "price_usd": 2.99,
+      "price_php": 167,
       "weight_g": 4.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1493,16 +1558,18 @@
         "pitch": 4.0,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "white"]
+        "color_options": [
+          "black",
+          "white"
+        ]
       }
     },
-
     {
       "id": "hqprop-4x4x4",
       "category": "propeller",
-      "name": "4×4×4 Quad-Blade",
+      "name": "4\u00d74\u00d74 Quad-Blade",
       "brand": "HQProp",
-      "price_usd": 2.99,
+      "price_php": 167,
       "weight_g": 3.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1512,16 +1579,18 @@
         "pitch": 4.0,
         "blade_count": 4,
         "shaft_mm": 5,
-        "color_options": ["black", "white"]
+        "color_options": [
+          "black",
+          "white"
+        ]
       }
     },
-
     {
       "id": "gemfan-4052-3blade",
       "category": "propeller",
       "name": "4052 3-Blade",
       "brand": "Gemfan",
-      "price_usd": 2.99,
+      "price_php": 167,
       "weight_g": 3.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1531,16 +1600,18 @@
         "pitch": 5.2,
         "blade_count": 3,
         "shaft_mm": 5,
-        "color_options": ["black", "green"]
+        "color_options": [
+          "black",
+          "green"
+        ]
       }
     },
-
     {
       "id": "runcam-phoenix-2-nano",
       "category": "camera",
       "name": "Phoenix 2 Nano",
       "brand": "RunCam",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 4.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1558,7 +1629,7 @@
       "category": "camera",
       "name": "Razer Nano",
       "brand": "Foxeer",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 4,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1576,7 +1647,7 @@
       "category": "camera",
       "name": "Ratel 2",
       "brand": "Caddx",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 4.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1594,7 +1665,7 @@
       "category": "camera",
       "name": "O3 Air Unit",
       "brand": "DJI",
-      "price_usd": 229.99,
+      "price_php": 12879,
       "weight_g": 34,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1607,13 +1678,12 @@
         "voltage_range": "7.4-26.4V"
       }
     },
-
     {
       "id": "walksnail-avatar-nano-cam",
       "category": "camera",
       "name": "Avatar Nano Camera",
       "brand": "Walksnail",
-      "price_usd": 149.99,
+      "price_php": 8399,
       "weight_g": 4,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1625,13 +1695,12 @@
         "resolution": "1080p60"
       }
     },
-
     {
       "id": "caddx-ant-nano",
       "category": "camera",
       "name": "Ant Nano",
       "brand": "Caddx",
-      "price_usd": 18.99,
+      "price_php": 1063,
       "weight_g": 3,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1643,13 +1712,12 @@
         "resolution": "1200TVL"
       }
     },
-
     {
       "id": "runcam-nano-4",
       "category": "camera",
       "name": "Nano 4",
       "brand": "RunCam",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 4,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1661,13 +1729,12 @@
         "resolution": "1200TVL"
       }
     },
-
     {
       "id": "caddx-nebula-nano",
       "category": "camera",
       "name": "Nebula Nano",
       "brand": "Caddx",
-      "price_usd": 34.99,
+      "price_php": 1959,
       "weight_g": 7,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1679,13 +1746,12 @@
         "resolution": "1080p60"
       }
     },
-
     {
       "id": "hdzero-nano-90",
       "category": "camera",
       "name": "HDZero Nano 90",
       "brand": "HDZero",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 3.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1697,13 +1763,12 @@
         "resolution": "720p60"
       }
     },
-
     {
       "id": "foxeer-predator-nano-v5",
       "category": "camera",
       "name": "Predator Nano V5",
       "brand": "Foxeer",
-      "price_usd": 26.99,
+      "price_php": 1511,
       "weight_g": 4,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1715,13 +1780,12 @@
         "resolution": "1200TVL"
       }
     },
-
     {
       "id": "rush-tank-ultimate",
       "category": "vtx",
       "name": "Tank Ultimate",
       "brand": "Rush",
-      "price_usd": 39.99,
+      "price_php": 2239,
       "weight_g": 10,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1739,7 +1803,7 @@
       "category": "vtx",
       "name": "Unify Pro32 Nano",
       "brand": "TBS",
-      "price_usd": 44.99,
+      "price_php": 2519,
       "weight_g": 3,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1757,7 +1821,7 @@
       "category": "vtx",
       "name": "Reaper Nano",
       "brand": "Foxeer",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 2.5,
       "in_stock": false,
       "buy_url": "https://www.getfpv.com",
@@ -1775,7 +1839,7 @@
       "category": "vtx",
       "name": "O3 Air Unit (VTX)",
       "brand": "DJI",
-      "price_usd": 229.99,
+      "price_php": 12879,
       "weight_g": 34,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1788,13 +1852,12 @@
         "connector": "proprietary"
       }
     },
-
     {
       "id": "immersionrc-tramp-hv",
       "category": "vtx",
       "name": "Tramp HV",
       "brand": "ImmersionRC",
-      "price_usd": 59.99,
+      "price_php": 3359,
       "weight_g": 12,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1807,13 +1870,12 @@
         "connector": "SMA"
       }
     },
-
     {
       "id": "walksnail-avatar-nano-vtx",
       "category": "vtx",
       "name": "Avatar Nano VTX",
       "brand": "Walksnail",
-      "price_usd": 149.99,
+      "price_php": 8399,
       "weight_g": 6,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1826,13 +1888,12 @@
         "connector": "U.FL"
       }
     },
-
     {
       "id": "hdzero-race-vtx",
       "category": "vtx",
       "name": "HDZero Race VTX",
       "brand": "HDZero",
-      "price_usd": 49.99,
+      "price_php": 2799,
       "weight_g": 3.5,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1845,13 +1906,12 @@
         "connector": "U.FL"
       }
     },
-
     {
       "id": "akk-fx3-ultimate",
       "category": "vtx",
       "name": "FX3 Ultimate 2000mW",
       "brand": "AKK",
-      "price_usd": 39.99,
+      "price_php": 2239,
       "weight_g": 18,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1864,13 +1924,12 @@
         "connector": "SMA"
       }
     },
-
     {
       "id": "speedybee-tx800",
       "category": "vtx",
       "name": "TX800 800mW",
       "brand": "SpeedyBee",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 13,
       "in_stock": true,
       "buy_url": "https://www.speedybee.com",
@@ -1883,13 +1942,12 @@
         "connector": "SMA"
       }
     },
-
     {
       "id": "cnhl-4s-1500mah",
       "category": "battery",
       "name": "1500mAh 4S 120C",
       "brand": "CNHL",
-      "price_usd": 18.99,
+      "price_php": 1063,
       "weight_g": 175,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1907,7 +1965,7 @@
       "category": "battery",
       "name": "R-Line 4S 1550mAh 130C",
       "brand": "Tattu",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 185,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1925,7 +1983,7 @@
       "category": "battery",
       "name": "1100mAh 6S 120C",
       "brand": "GNB",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 195,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1943,7 +2001,7 @@
       "category": "battery",
       "name": "850mAh 3S 120C",
       "brand": "CNHL",
-      "price_usd": 12.99,
+      "price_php": 727,
       "weight_g": 108,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -1956,13 +2014,12 @@
         "voltage_nominal": 11.1
       }
     },
-
     {
       "id": "lumenier-n2o-4s-1500",
       "category": "battery",
       "name": "N2O 4S 1500mAh 120C",
       "brand": "Lumenier",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 180,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1975,13 +2032,12 @@
         "voltage_nominal": 14.8
       }
     },
-
     {
       "id": "ovonic-4s-1500",
       "category": "battery",
       "name": "4S 1500mAh 100C",
       "brand": "Ovonic",
-      "price_usd": 19.99,
+      "price_php": 1119,
       "weight_g": 185,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -1994,13 +2050,12 @@
         "voltage_nominal": 14.8
       }
     },
-
     {
       "id": "dogcom-4s-1500",
       "category": "battery",
       "name": "4S 1500mAh 120C",
       "brand": "Dogcom",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 175,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -2013,13 +2068,12 @@
         "voltage_nominal": 14.8
       }
     },
-
     {
       "id": "tattu-rline-v4-6s-1050",
       "category": "battery",
       "name": "R-Line V4 6S 1050mAh 130C",
       "brand": "Tattu",
-      "price_usd": 32.99,
+      "price_php": 1847,
       "weight_g": 190,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -2032,13 +2086,12 @@
         "voltage_nominal": 22.2
       }
     },
-
     {
       "id": "gnb-4s-1100",
       "category": "battery",
       "name": "4S 1100mAh 120C",
       "brand": "GNB",
-      "price_usd": 16.99,
+      "price_php": 951,
       "weight_g": 125,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -2051,13 +2104,12 @@
         "voltage_nominal": 14.8
       }
     },
-
     {
       "id": "cnhl-4s-1800",
       "category": "battery",
       "name": "4S 1800mAh 100C",
       "brand": "CNHL",
-      "price_usd": 24.99,
+      "price_php": 1399,
       "weight_g": 220,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -2070,13 +2122,12 @@
         "voltage_nominal": 14.8
       }
     },
-
     {
       "id": "expresslrs-ep2",
       "category": "receiver",
       "name": "ELRS EP2",
       "brand": "ExpressLRS",
-      "price_usd": 17.99,
+      "price_php": 1007,
       "weight_g": 1.5,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -2093,7 +2144,7 @@
       "category": "receiver",
       "name": "Crossfire Nano",
       "brand": "TBS",
-      "price_usd": 22.99,
+      "price_php": 1287,
       "weight_g": 1.8,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -2110,7 +2161,7 @@
       "category": "receiver",
       "name": "XM+ Micro",
       "brand": "FrSky",
-      "price_usd": 14.99,
+      "price_php": 839,
       "weight_g": 2,
       "in_stock": false,
       "buy_url": "https://www.getfpv.com",
@@ -2127,7 +2178,7 @@
       "category": "receiver",
       "name": "RP3 Nano ELRS",
       "brand": "RadioMaster",
-      "price_usd": 9.99,
+      "price_php": 559,
       "weight_g": 0.9,
       "in_stock": true,
       "buy_url": "https://www.racedayquads.com",
@@ -2139,13 +2190,12 @@
         "range_km": 30
       }
     },
-
     {
       "id": "flysky-fsa8s-v2",
       "category": "receiver",
       "name": "FS-A8S V2",
       "brand": "FlySky",
-      "price_usd": 12.99,
+      "price_php": 727,
       "weight_g": 1.7,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -2157,13 +2207,12 @@
         "range_km": 1
       }
     },
-
     {
       "id": "betafpv-elrs-lite",
       "category": "receiver",
       "name": "ELRS Lite Receiver",
       "brand": "BetaFPV",
-      "price_usd": 12.99,
+      "price_php": 727,
       "weight_g": 0.9,
       "in_stock": true,
       "buy_url": "https://betafpv.com/products/elrs-lite-receiver",
@@ -2175,13 +2224,12 @@
         "range_km": 25
       }
     },
-
     {
       "id": "happymodel-ep1-elrs",
       "category": "receiver",
       "name": "EP1 ELRS",
       "brand": "HappyModel",
-      "price_usd": 7.99,
+      "price_php": 447,
       "weight_g": 1.0,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -2193,13 +2241,12 @@
         "range_km": 25
       }
     },
-
     {
       "id": "frsky-rxsr",
       "category": "receiver",
       "name": "RX-SR ACCST D16",
       "brand": "FrSky",
-      "price_usd": 19.99,
+      "price_php": 1119,
       "weight_g": 1.5,
       "in_stock": false,
       "buy_url": "https://www.getfpv.com",
@@ -2211,13 +2258,12 @@
         "range_km": 2
       }
     },
-
     {
       "id": "spektrum-sr2000",
       "category": "receiver",
       "name": "SR2000 DSMX",
       "brand": "Spektrum",
-      "price_usd": 29.99,
+      "price_php": 1679,
       "weight_g": 2.3,
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
@@ -2395,9 +2441,7 @@
         "range_km": 30
       }
     }
-
   ],
-
   "compatibility_rules": [
     {
       "id": "motor-mount-frame",
@@ -2416,7 +2460,7 @@
       "operator": ">=",
       "slot_b": "battery",
       "spec_b": "cell_count_s",
-      "message": "Motor max voltage ({a}S) is less than battery ({b}S) — risk of motor damage"
+      "message": "Motor max voltage ({a}S) is less than battery ({b}S) \u2014 risk of motor damage"
     },
     {
       "id": "esc-battery-voltage",
@@ -2466,48 +2510,47 @@
       "message": "Prop shaft hole ({b}mm) doesn't fit motor shaft ({a}mm)"
     }
   ],
-
   "presets": {
     "freestyle-5inch": {
       "name": "5\" Freestyle Build",
       "parts": {
-        "frame":     "iflight-titan-dc5",
-        "motor":     "tmotor-f40-pro-iv",
-        "esc":       "hobbywing-xrotor-40a",
-        "fc":        "matek-f722-se",
+        "frame": "iflight-titan-dc5",
+        "motor": "tmotor-f40-pro-iv",
+        "esc": "hobbywing-xrotor-40a",
+        "fc": "matek-f722-se",
         "propeller": "hqprop-dp-5x4.5x3",
-        "camera":    "runcam-phoenix-2-nano",
-        "vtx":       "rush-tank-ultimate",
-        "battery":   "tattu-rline-4s-1550",
-        "receiver":  "expresslrs-ep2"
+        "camera": "runcam-phoenix-2-nano",
+        "vtx": "rush-tank-ultimate",
+        "battery": "tattu-rline-4s-1550",
+        "receiver": "expresslrs-ep2"
       }
     },
     "race-5inch": {
       "name": "5\" Race Build",
       "parts": {
-        "frame":     "tbs-source-one-v5",
-        "motor":     "iflight-xing2-2306",
-        "esc":       "tmotor-f55a-pro-ii",
-        "fc":        "diatone-mamba-f722",
+        "frame": "tbs-source-one-v5",
+        "motor": "iflight-xing2-2306",
+        "esc": "tmotor-f55a-pro-ii",
+        "fc": "diatone-mamba-f722",
         "propeller": "gemfan-hurricane-51499",
-        "camera":    "foxeer-razer-nano",
-        "vtx":       "tbs-unify-pro32-nano",
-        "battery":   "gnb-6s-1100mah",
-        "receiver":  "tbs-crossfire-nano"
+        "camera": "foxeer-razer-nano",
+        "vtx": "tbs-unify-pro32-nano",
+        "battery": "gnb-6s-1100mah",
+        "receiver": "tbs-crossfire-nano"
       }
     },
     "toothpick-3inch": {
       "name": "3\" Toothpick",
       "parts": {
-        "frame":     "apex-3inch",
-        "motor":     "tmotor-f1507-3800kv",
-        "esc":       "jhemcu-20a-4in1",
-        "fc":        "jhemcu-411-aio",
+        "frame": "apex-3inch",
+        "motor": "tmotor-f1507-3800kv",
+        "esc": "jhemcu-20a-4in1",
+        "fc": "jhemcu-411-aio",
         "propeller": "gemfan-3052-3blade",
-        "camera":    "foxeer-razer-nano",
-        "vtx":       "foxeer-reaper-nano",
-        "battery":   "cnhl-3s-850mah",
-        "receiver":  "radiomaster-rp3"
+        "camera": "foxeer-razer-nano",
+        "vtx": "foxeer-reaper-nano",
+        "battery": "cnhl-3s-850mah",
+        "receiver": "radiomaster-rp3"
       }
     }
   }

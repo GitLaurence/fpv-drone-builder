@@ -57,7 +57,7 @@ function renderTable() {
     <th>
       <div class="ct-brand">${p.brand}</div>
       <div class="ct-name">${p.name}</div>
-      <div class="ct-price">$${p.price_usd.toFixed(2)}</div>
+      <div class="ct-price">₱${p.price_php.toFixed(2)}</div>
       <div class="ct-weight">${p.weight_g}g</div>
       <span class="ct-stock ${p.in_stock ? 'in-stock' : ''}">${p.in_stock ? '● In Stock' : '○ Out of Stock'}</span>
     </th>

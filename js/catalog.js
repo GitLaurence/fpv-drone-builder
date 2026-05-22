@@ -95,8 +95,8 @@ function renderParts() {
   }
 
   parts = [...parts].sort((a, b) => {
-    if (_sort === 'price_asc')  return a.price_usd - b.price_usd;
-    if (_sort === 'price_desc') return b.price_usd - a.price_usd;
+    if (_sort === 'price_asc')  return a.price_php - b.price_php;
+    if (_sort === 'price_desc') return b.price_php - a.price_php;
     if (_sort === 'weight_asc') return a.weight_g - b.weight_g;
     return a.name.localeCompare(b.name);
   });
@@ -137,7 +137,7 @@ function renderParts() {
         <div class="part-card-buy">${buyLinks(part)}${extraLinks}</div>
       </div>
       <div class="part-card-right">
-        <div class="part-card-price">$${part.price_usd.toFixed(2)}</div>
+        <div class="part-card-price">₱${part.price_php.toFixed(2)}</div>
         <div class="part-card-weight">${part.weight_g}g</div>
         <div class="part-card-stock ${part.in_stock ? 'in-stock' : 'out-of-stock-label'}">
           ${part.in_stock ? '● In Stock' : '○ Out of Stock'}

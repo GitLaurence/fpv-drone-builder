@@ -14,11 +14,11 @@ export function update() {
   const motor = getPartById(build['motor']);
   const totalWeight = weight + (motor ? motor.weight_g * 3 : 0);
 
-  const price = selectedParts.reduce((sum, p) => sum + (p.price_usd || 0), 0);
-  const totalPrice = price + (motor ? motor.price_usd * 3 : 0);
+  const price = selectedParts.reduce((sum, p) => sum + (p.price_php || 0), 0);
+  const totalPrice = price + (motor ? motor.price_php * 3 : 0);
 
   $('summary-weight').textContent = totalWeight > 0 ? `${Math.round(totalWeight)}g` : '—';
-  $('summary-price').textContent  = totalPrice  > 0 ? `$${totalPrice.toFixed(2)}` : '—';
+  $('summary-price').textContent  = totalPrice  > 0 ? `₱${totalPrice.toFixed(2)}` : '—';
 
   const battery = getPartById(build['battery']);
   $('summary-battery').textContent = battery

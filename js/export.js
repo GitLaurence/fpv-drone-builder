@@ -102,10 +102,10 @@ function buildStats(build) {
   const parts = Object.values(build).map(id => getPartById(id)).filter(Boolean);
   const motor = getPartById(build['motor']);
   const weight = parts.reduce((s, p) => s + p.weight_g, 0) + (motor ? motor.weight_g * 3 : 0);
-  const price  = parts.reduce((s, p) => s + p.price_usd, 0) + (motor ? motor.price_usd * 3 : 0);
+  const price  = parts.reduce((s, p) => s + p.price_php, 0) + (motor ? motor.price_php * 3 : 0);
   return {
     weight: weight > 0 ? `${Math.round(weight)}g` : '—',
-    price:  price  > 0 ? `$${price.toFixed(0)}`   : '—',
+    price:  price  > 0 ? `₱${price.toFixed(0)}`   : '—',
     twr:    '—',
   };
 }
