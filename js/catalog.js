@@ -345,8 +345,10 @@ function brandBadge(brand) {
   const { bg, fg, border } = brandColor(brand);
   const domain = BRAND_DOMAINS[brand];
   if (domain) {
+    const googleFavicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
     return `<span class="brand-logo brand-logo-img-wrap" style="border-color:var(--border)">` +
-      `<img class="brand-logo-img" src="https://logo.clearbit.com/${domain}" alt="${brand}" loading="lazy" ` +
+      `<img class="brand-logo-img" src="https://${domain}/favicon.ico" alt="${brand}" loading="lazy" ` +
+      `onerror="this.onerror=null;this.src='${googleFavicon}'" ` +
       `data-brand="${brand}" data-bg="${bg}" data-fg="${fg}" data-border="${border}" /></span>`;
   }
   return `<span class="brand-logo" style="background:${bg};color:${fg};border-color:${border}">${brandInitials(brand)}</span>`;
