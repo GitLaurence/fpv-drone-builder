@@ -8,6 +8,7 @@ let _category      = null;
 let _search        = '';
 let _sort          = 'name';
 let _filterStock   = false;
+let _filterBrand   = null;
 let _compareMode   = false;
 
 const $ = id => document.getElementById(id);
@@ -26,6 +27,17 @@ export function init() {
     renderParts();
   });
 
+  $('brand-filter-pills').addEventListener('click', e => {
+    const pill = e.target.closest('.pill[data-brand]');
+    if (!pill) return;
+    const brand = pill.dataset.brand;
+    _filterBrand = _filterBrand === brand ? null : brand;
+    document.querySelectorAll('.pill[data-brand]').forEach(p =>
+      p.classList.toggle('active', p.dataset.brand === _filterBrand)
+    );
+    renderParts();
+  });
+
   $('btn-compare-toggle').addEventListener('click', () => {
     _compareMode = !_compareMode;
     $('btn-compare-toggle').classList.toggle('active', _compareMode);
@@ -40,6 +52,7 @@ export function showCatalog(categoryId) {
   _category    = categoryId;
   _search      = '';
   _filterStock = false;
+  _filterBrand = null;
   _sort        = 'name';
   _compareMode = false;
 
@@ -65,6 +78,7 @@ export function showCatalog(categoryId) {
   }
 
   updateCompareBar();
+  renderBrandFilter();
   renderParts();
 }
 
@@ -87,6 +101,7 @@ function renderParts() {
 
   let parts = getPartsByCategory(_category);
   if (_filterStock) parts = parts.filter(p => p.in_stock);
+  if (_filterBrand) parts = parts.filter(p => p.brand === _filterBrand);
   if (_search) {
     parts = parts.filter(p =>
       p.name.toLowerCase().includes(_search) ||
@@ -128,7 +143,7 @@ function renderParts() {
     const detailHtml = _category === 'fc' ? fcDetailSection(part) : '';
 
     li.innerHTML = `
-      <div class="part-card-thumb">${catEmoji(_category)}</div>
+      <div class="part-card-thumb">${brandBadge(part.brand)}</div>
       <div class="part-card-info">
         <div class="part-card-brand">${part.brand}</div>
         <div class="part-card-name">${part.name}</div>
@@ -208,6 +223,19 @@ function updateCompareBar() {
   openBtn.disabled    = count < 2;
 }
 
+// ── Brand filter ──────────────────────────────────────
+
+function renderBrandFilter() {
+  const all = getPartsByCategory(_category);
+  const brands = [...new Set(all.map(p => p.brand))].sort();
+  const pills = $('brand-filter-pills');
+  pills.innerHTML = brands.map(brand => {
+    const badge = brandBadge(brand);
+    const active = brand === _filterBrand ? ' active' : '';
+    return `<button class="pill pill-brand${active}" data-brand="${brand}">${badge}<span>${brand}</span></button>`;
+  }).join('');
+}
+
 // ── Helpers ───────────────────────────────────────────
 
 const STORES = [
@@ -225,6 +253,31 @@ function buyLinks(part) {
 
 function catEmoji(cat) {
   return { frame:'🛸',motor:'⚙️',esc:'⚡',fc:'💻',propeller:'🌀',camera:'📷',vtx:'📡',battery:'🔋',receiver:'📻' }[cat] || '•';
+}
+
+const BRAND_PALETTES = [
+  { bg: '#dbeafe', fg: '#1d4ed8', border: '#93c5fd' },
+  { bg: '#dcfce7', fg: '#15803d', border: '#86efac' },
+  { bg: '#fce7f3', fg: '#be185d', border: '#f9a8d4' },
+  { bg: '#fef3c7', fg: '#b45309', border: '#fcd34d' },
+  { bg: '#f3e8ff', fg: '#7e22ce', border: '#d8b4fe' },
+  { bg: '#cffafe', fg: '#0e7490', border: '#67e8f9' },
+  { bg: '#fee2e2', fg: '#b91c1c', border: '#fca5a5' },
+  { bg: '#ecfdf5', fg: '#065f46', border: '#6ee7b7' },
+  { bg: '#fff7ed', fg: '#c2410c', border: '#fdba74' },
+  { bg: '#f0f9ff', fg: '#075985', border: '#7dd3fc' },
+];
+
+function brandColor(brand) {
+  let h = 0;
+  for (let i = 0; i < brand.length; i++) h = (h * 31 + brand.charCodeAt(i)) & 0xffff;
+  return BRAND_PALETTES[h % BRAND_PALETTES.length];
+}
+
+function brandBadge(brand) {
+  const { bg, fg, border } = brandColor(brand);
+  const initials = brand.replace(/[^A-Za-z0-9]/g, '').slice(0, 2).toUpperCase() || brand.slice(0, 2).toUpperCase();
+  return `<span class="brand-logo" style="background:${bg};color:${fg};border-color:${border}">${initials}</span>`;
 }
 
 function specLine(cat, part) {
