@@ -73,7 +73,11 @@
 }
 
 /* ── MODAL ───────────────────────────────────────────── */
-dialog.modal {
+dialog.modal:not([open]) {
+  display: none;
+}
+
+dialog.modal[open] {
   /* Reliable centering across all browsers */
   position: fixed;
   inset: 0;
