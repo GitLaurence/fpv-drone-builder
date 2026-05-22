@@ -163,6 +163,23 @@ html, body {
 .drawer-progress-bar { width: 64px; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
 .drawer-progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.35s ease; width: 0%; }
 
+.drawer-stats-btn {
+  display: none; /* shown only on mobile via media query */
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 0.75rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+.drawer-stats-btn:hover { background: var(--accent); border-color: var(--accent); filter: brightness(1.1); }
+
 /* ── BUILD CARD ──────────────────────────────────────── */
 .build-card {
   background: var(--bg-card);
@@ -412,8 +429,11 @@ html, body {
     pointer-events: auto;
   }
 
-  .build-card { margin: 0.5rem 0.5rem 0; }
+  .build-card:not(.build-card-modal) { display: none; }
+  .drawer-stats-btn { display: flex; }
+  .build-card-modal { margin: 0; box-shadow: none; border: none; padding: 0; }
 }
+
 
 /* ── LANDSCAPE MOBILE ────────────────────────────────── */
 @media (max-width: 900px) and (orientation: landscape) {

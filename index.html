@@ -63,6 +63,7 @@
               <div class="drawer-progress-fill" id="drawer-progress-fill"></div>
             </div>
           </div>
+          <button id="btn-stats" class="drawer-stats-btn" title="Build summary" aria-label="Build summary">📊</button>
         </div>
       </div>
 
@@ -188,6 +189,47 @@
 
   <!-- MOBILE OVERLAY -->
   <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+  <!-- MODAL: BUILD STATS (mobile) -->
+  <dialog id="modal-stats" class="modal">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <h2 class="modal-title">Build Summary</h2>
+        <span class="modal-saves-count" id="modal-stats-count"></span>
+      </div>
+      <button id="modal-stats-close" class="modal-close-btn" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="build-card build-card-modal">
+        <div class="build-card-header">
+          <span class="build-card-title">Build Progress</span>
+          <span class="build-card-count" id="modal-build-progress-count">0 / 9</span>
+        </div>
+        <div class="build-progress-track">
+          <div class="build-progress-fill" id="modal-build-progress-fill"></div>
+        </div>
+        <div class="build-stats">
+          <div class="build-stat">
+            <span class="build-stat-value" id="modal-summary-weight">—</span>
+            <span class="build-stat-label">Weight</span>
+          </div>
+          <div class="build-stat">
+            <span class="build-stat-value" id="modal-summary-price">—</span>
+            <span class="build-stat-label">Price</span>
+          </div>
+          <div class="build-stat">
+            <span class="build-stat-value" id="modal-summary-twr">—</span>
+            <span class="build-stat-label">TWR</span>
+          </div>
+          <div class="build-stat">
+            <span class="build-stat-value" id="modal-summary-battery">—</span>
+            <span class="build-stat-label">Battery</span>
+          </div>
+        </div>
+        <div class="compat-violations" id="modal-compat-violations" hidden></div>
+      </div>
+    </div>
+  </dialog>
 
   <!-- MODAL: HELP -->
   <dialog id="modal-help" class="modal modal-help">

@@ -3,6 +3,13 @@ import { evaluate, slotsWithViolations } from './compat.js';
 
 const $ = id => document.getElementById(id);
 
+function setVal(id, value) {
+  const main  = $(id);
+  const modal = $('modal-' + id);
+  if (main)  main.textContent  = value;
+  if (modal) modal.textContent = value;
+}
+
 export function update() {
   const { build, categories } = getState();
   const selectedParts = Object.values(build)
@@ -17,16 +24,16 @@ export function update() {
   const price = selectedParts.reduce((sum, p) => sum + (p.price_php || 0), 0);
   const totalPrice = price + (motor ? motor.price_php * 3 : 0);
 
-  $('summary-weight').textContent = totalWeight > 0 ? `${Math.round(totalWeight)}g` : '—';
-  $('summary-price').textContent  = totalPrice  > 0 ? `₱${totalPrice.toFixed(2)}` : '—';
+  setVal('summary-weight',  totalWeight > 0 ? `${Math.round(totalWeight)}g` : '—');
+  setVal('summary-price',   totalPrice  > 0 ? `₱${totalPrice.toFixed(2)}` : '—');
 
   const battery = getPartById(build['battery']);
-  $('summary-battery').textContent = battery
+  setVal('summary-battery', battery
     ? `${battery.specs.cell_count_s}S / ${battery.specs.capacity_mah}mAh`
-    : '—';
+    : '—');
 
   const twr = estimateTWR(build);
-  $('summary-twr').textContent = twr ? `${twr.toFixed(1)}:1` : '—';
+  setVal('summary-twr', twr ? `${twr.toFixed(1)}:1` : '—');
 
   const violations = evaluate();
   renderViolations(violations);
@@ -53,16 +60,19 @@ function estimateTWR(build) {
 }
 
 function renderViolations(violations) {
-  const el = $('compat-violations');
-  if (violations.length === 0) {
-    el.hidden = true;
-    el.innerHTML = '';
-    return;
-  }
-  el.hidden = false;
-  el.innerHTML = violations.map(v =>
-    `<div class="violation-item">⚠ ${v.message}</div>`
-  ).join('');
+  ['compat-violations', 'modal-compat-violations'].forEach(id => {
+    const el = $(id);
+    if (!el) return;
+    if (violations.length === 0) {
+      el.hidden = true;
+      el.innerHTML = '';
+    } else {
+      el.hidden = false;
+      el.innerHTML = violations.map(v =>
+        `<div class="violation-item">⚠ ${v.message}</div>`
+      ).join('');
+    }
+  });
 }
 
 function renderSlotViolationBadges() {

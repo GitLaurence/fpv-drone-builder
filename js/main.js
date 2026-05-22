@@ -38,6 +38,14 @@ async function main() {
   document.getElementById('modal-help-close').addEventListener('click', () => helpModal.close());
   helpModal.addEventListener('click', e => { if (e.target === helpModal) helpModal.close(); });
 
+  const statsModal = document.getElementById('modal-stats');
+  document.getElementById('btn-stats')?.addEventListener('click', e => {
+    e.stopPropagation(); // don't toggle the drawer
+    statsModal.showModal();
+  });
+  document.getElementById('modal-stats-close')?.addEventListener('click', () => statsModal.close());
+  statsModal?.addEventListener('click', e => { if (e.target === statsModal) statsModal.close(); });
+
   // Update progress + hint on build changes
   on('build:changed', ({ build }) => {
     updateProgress(build);
@@ -62,6 +70,13 @@ function updateProgress(build) {
   const label = document.getElementById('build-progress-count');
   if (fill)  fill.style.width  = `${pct}%`;
   if (label) label.textContent = `${count} / ${TOTAL_SLOTS}`;
+
+  const mfill  = document.getElementById('modal-build-progress-fill');
+  const mlabel = document.getElementById('modal-build-progress-count');
+  const mcount = document.getElementById('modal-stats-count');
+  if (mfill)  mfill.style.width  = `${pct}%`;
+  if (mlabel) mlabel.textContent = `${count} / ${TOTAL_SLOTS}`;
+  if (mcount) mcount.textContent = count > 0 ? `${count} / ${TOTAL_SLOTS}` : '';
 
   const dfill  = document.getElementById('drawer-progress-fill');
   const dlabel = document.getElementById('drawer-progress-count');
