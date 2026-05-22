@@ -44,14 +44,40 @@
   pointer-events: none;
 }
 
-/* ── State-based group coloring ─────────────────────── */
+.bp-part-name {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 7.5px;
+  font-weight: 600;
+  fill: #94a3b8;
+  pointer-events: none;
+  transition: fill 0.3s;
+}
 
-/* Empty: barely visible on white — light gray outlines */
+.bp-part-spec {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 6.5px;
+  font-weight: 400;
+  fill: #b8c4d0;
+  pointer-events: none;
+  transition: fill 0.3s;
+}
+
+/* ── Shape transitions ──────────────────────────────── */
+.bp-group .bp-shape,
+.bp-group .bp-plate,
+.bp-group .bp-arm {
+  transition: stroke 0.3s ease, fill 0.3s ease;
+}
+
+/* ── Empty: light gray outlines on white bg ─────────── */
 .bp-group.bp-empty .bp-shape,
 .bp-group.bp-empty .bp-plate,
 .bp-group.bp-empty .bp-arm {
   stroke: #d1dae6;
   fill: #eef2f7;
+}
+.bp-group.bp-empty .bp-arm-shadow {
+  stroke: transparent;
 }
 .bp-group.bp-empty .bp-prop-sweep {
   stroke: #cbd5e1;
@@ -82,6 +108,9 @@
   fill: #dce4ee;
   stroke: none;
 }
+.bp-group.bp-empty .bp-lens-highlight {
+  fill: none;
+}
 .bp-group.bp-empty .bp-cross {
   stroke: #d1dae6;
 }
@@ -93,153 +122,212 @@
 .bp-group.bp-empty .bp-code {
   fill: #c8d4e0;
 }
+.bp-group.bp-empty .bp-motor-grad-layer {
+  opacity: 0;
+}
+.bp-group.bp-empty .bp-winding {
+  stroke: #d1dae6;
+}
 
-/* Filled: clean blue lines */
+/* ── Filled: per-part color via CSS custom properties ── */
 .bp-group.bp-filled .bp-shape,
 .bp-group.bp-filled .bp-plate {
-  stroke: #3b82f6;
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1.5;
-  fill: rgba(59, 130, 246, 0.08);
+  fill: var(--pf, rgba(59, 130, 246, 0.08));
 }
 .bp-group.bp-filled .bp-arm {
-  stroke: #3b82f6;
+  stroke: var(--pc, #3b82f6);
   stroke-width: 10;
   fill: none;
 }
+.bp-group.bp-filled .bp-arm-shadow {
+  stroke: var(--pc, #3b82f6);
+  opacity: 0.12;
+  fill: none;
+}
 .bp-group.bp-filled .bp-prop-sweep {
-  stroke: #60a5fa;
+  stroke: var(--pc, #60a5fa);
   stroke-width: 1.2;
 }
 .bp-group.bp-filled .bp-blade,
 .bp-group.bp-filled .bp-arm-thin {
-  stroke: #2d74e7;
+  stroke: var(--pc, #2d74e7);
   stroke-width: 2.5;
 }
 .bp-group.bp-filled .bp-mount-line,
 .bp-group.bp-filled .bp-cell-line {
-  stroke: #93c5fd;
+  stroke: var(--pc, #93c5fd);
+  opacity: 0.55;
   stroke-width: 1;
 }
 .bp-group.bp-filled .bp-connector {
-  fill: rgba(59, 130, 246, 0.12);
-  stroke: #3b82f6;
+  fill: var(--pf, rgba(59, 130, 246, 0.12));
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1;
 }
 .bp-group.bp-filled .bp-mosfet {
-  fill: rgba(59, 130, 246, 0.12);
-  stroke: #3b82f6;
+  fill: var(--pf, rgba(59, 130, 246, 0.12));
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1;
 }
 .bp-group.bp-filled .bp-mount-hole {
-  stroke: #3b82f6;
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1;
 }
 .bp-group.bp-filled .bp-shaft {
-  fill: rgba(59, 130, 246, 0.2);
-  stroke: #2563eb;
+  fill: var(--pf, rgba(59, 130, 246, 0.2));
+  stroke: var(--pc, #2563eb);
   stroke-width: 1;
 }
 .bp-group.bp-filled .bp-lens {
-  fill: rgba(37, 99, 235, 0.2);
-  stroke: #3b82f6;
+  fill: var(--pf, rgba(37, 99, 235, 0.2));
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1;
 }
 .bp-group.bp-filled .bp-lens-inner {
-  fill: #bfdbfe;
+  fill: var(--pc, #bfdbfe);
+  opacity: 0.45;
   stroke: none;
 }
+.bp-group.bp-filled .bp-lens-highlight {
+  fill: rgba(255, 255, 255, 0.7);
+}
 .bp-group.bp-filled .bp-cross {
-  stroke: #2563eb;
+  stroke: var(--pc, #2563eb);
   stroke-width: 1.2;
   fill: none;
 }
 .bp-group.bp-filled .bp-antenna {
-  stroke: #3b82f6;
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1.8;
 }
 .bp-group.bp-filled .bp-antenna-tip {
-  fill: rgba(59, 130, 246, 0.2);
-  stroke: #3b82f6;
+  fill: var(--pf, rgba(59, 130, 246, 0.2));
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1;
 }
 .bp-group.bp-filled .bp-code {
-  fill: #2563eb;
+  fill: var(--pc, #2563eb);
+}
+.bp-group.bp-filled .bp-part-name {
+  fill: var(--pc, #2563eb);
+}
+.bp-group.bp-filled .bp-part-spec {
+  fill: var(--pc, #60a5fa);
+  opacity: 0.8;
+}
+.bp-group.bp-filled .bp-motor-grad-layer {
+  opacity: 1;
+}
+.bp-group.bp-filled .bp-winding {
+  stroke: var(--pc, #93c5fd);
+  opacity: 0.55;
 }
 
-/* Active: bright blue with more intensity */
+/* ── Active: bright blue with more intensity ─────────── */
 .bp-group.bp-active .bp-shape,
 .bp-group.bp-active .bp-plate {
-  stroke: #1d4ed8;
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 2;
-  fill: rgba(29, 78, 216, 0.12);
+  fill: var(--pf, rgba(29, 78, 216, 0.12));
 }
 .bp-group.bp-active .bp-arm {
-  stroke: #1d4ed8;
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 10;
   fill: none;
 }
+.bp-group.bp-active .bp-arm-shadow {
+  stroke: var(--pc, #1d4ed8);
+  opacity: 0.18;
+  fill: none;
+}
 .bp-group.bp-active .bp-prop-sweep {
-  stroke: #3b82f6;
+  stroke: var(--pc, #3b82f6);
   stroke-width: 1.5;
 }
 .bp-group.bp-active .bp-blade,
 .bp-group.bp-active .bp-arm-thin {
-  stroke: #1d4ed8;
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 2.5;
 }
 .bp-group.bp-active .bp-mount-line,
 .bp-group.bp-active .bp-cell-line {
-  stroke: #60a5fa;
+  stroke: var(--pc, #60a5fa);
+  opacity: 0.7;
   stroke-width: 1;
 }
 .bp-group.bp-active .bp-connector {
-  fill: rgba(29, 78, 216, 0.15);
-  stroke: #1d4ed8;
+  fill: var(--pf, rgba(29, 78, 216, 0.15));
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 1.2;
 }
 .bp-group.bp-active .bp-mosfet {
-  fill: rgba(29, 78, 216, 0.15);
-  stroke: #1d4ed8;
+  fill: var(--pf, rgba(29, 78, 216, 0.15));
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 1;
 }
 .bp-group.bp-active .bp-mount-hole {
-  stroke: #1d4ed8;
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 1.2;
 }
 .bp-group.bp-active .bp-shaft {
-  fill: rgba(29, 78, 216, 0.28);
-  stroke: #1d4ed8;
+  fill: var(--pf, rgba(29, 78, 216, 0.28));
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 1.5;
 }
 .bp-group.bp-active .bp-lens {
-  fill: rgba(29, 78, 216, 0.3);
-  stroke: #1d4ed8;
+  fill: var(--pf, rgba(29, 78, 216, 0.3));
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 1.2;
 }
 .bp-group.bp-active .bp-lens-inner {
-  fill: #93c5fd;
+  fill: var(--pc, #93c5fd);
+  opacity: 0.6;
   stroke: none;
 }
+.bp-group.bp-active .bp-lens-highlight {
+  fill: rgba(255, 255, 255, 0.8);
+}
 .bp-group.bp-active .bp-cross {
-  stroke: #1d4ed8;
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 1.5;
   fill: none;
 }
 .bp-group.bp-active .bp-antenna {
-  stroke: #2563eb;
+  stroke: var(--pc, #2563eb);
   stroke-width: 2;
 }
 .bp-group.bp-active .bp-antenna-tip {
-  fill: rgba(29, 78, 216, 0.3);
-  stroke: #1d4ed8;
+  fill: var(--pf, rgba(29, 78, 216, 0.3));
+  stroke: var(--pc, #1d4ed8);
   stroke-width: 1.2;
 }
 .bp-group.bp-active .bp-code {
-  fill: #1d4ed8;
+  fill: var(--pc, #1d4ed8);
   font-weight: 900;
 }
+.bp-group.bp-active .bp-part-name {
+  fill: var(--pc, #1d4ed8);
+  font-weight: 700;
+}
+.bp-group.bp-active .bp-part-spec {
+  fill: var(--pc, #3b82f6);
+  opacity: 0.9;
+}
+.bp-group.bp-active .bp-motor-grad-layer {
+  opacity: 1;
+}
+.bp-group.bp-active .bp-winding {
+  stroke: var(--pc, #60a5fa);
+  opacity: 0.7;
+}
 
-/* Violation: amber/orange warning */
+/* ── Violation: amber/orange warning ─────────────────── */
+.bp-group.bp-violation {
+  --pc: #f59e0b;
+  --pf: rgba(245, 158, 11, 0.12);
+}
 .bp-group.bp-violation .bp-shape,
 .bp-group.bp-violation .bp-plate {
   stroke: #f59e0b;
@@ -251,11 +339,15 @@
   stroke-width: 10;
   fill: none;
 }
+.bp-group.bp-violation .bp-arm-shadow {
+  stroke: #d97706;
+  opacity: 0.15;
+}
 .bp-group.bp-violation .bp-prop-sweep { stroke: #d97706; }
 .bp-group.bp-violation .bp-blade,
 .bp-group.bp-violation .bp-arm-thin   { stroke: #d97706; }
 .bp-group.bp-violation .bp-mount-line,
-.bp-group.bp-violation .bp-cell-line  { stroke: #fbbf24; }
+.bp-group.bp-violation .bp-cell-line  { stroke: #fbbf24; opacity: 0.7; }
 .bp-group.bp-violation .bp-connector,
 .bp-group.bp-violation .bp-mosfet {
   fill: rgba(245, 158, 11, 0.12);
@@ -267,12 +359,17 @@
   stroke: #f59e0b;
 }
 .bp-group.bp-violation .bp-lens { fill: rgba(180, 100, 0, 0.2); stroke: #f59e0b; }
+.bp-group.bp-violation .bp-lens-highlight { fill: rgba(255, 200, 100, 0.5); }
 .bp-group.bp-violation .bp-cross { stroke: #f59e0b; fill: none; }
 .bp-group.bp-violation .bp-antenna { stroke: #d97706; }
 .bp-group.bp-violation .bp-antenna-tip { fill: rgba(245, 158, 11, 0.2); stroke: #f59e0b; }
 .bp-group.bp-violation .bp-code { fill: #f59e0b; }
+.bp-group.bp-violation .bp-part-name { fill: #f59e0b; }
+.bp-group.bp-violation .bp-part-spec { fill: #fbbf24; opacity: 0.85; }
+.bp-group.bp-violation .bp-winding { stroke: #d97706; opacity: 0.6; }
+.bp-group.bp-violation .bp-motor-grad-layer { opacity: 0.5; }
 
-/* Hover — lighten slightly */
+/* ── Hover ───────────────────────────────────────────── */
 .bp-group:hover .bp-shape,
 .bp-group:hover .bp-plate { opacity: 0.82; }
 
