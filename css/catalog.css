@@ -220,6 +220,55 @@
   color: var(--accent);
 }
 
+/* ── BRAND FILTER ROW ────────────────────────────────── */
+.brand-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.7rem;
+  flex-shrink: 0;
+  min-height: 1.6rem;
+}
+.brand-filter-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.brand-filter-pills {
+  display: flex;
+  gap: 0.28rem;
+  overflow-x: auto;
+  flex: 1;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+.brand-filter-pills::-webkit-scrollbar { display: none; }
+
+.pill-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+.pill-brand .brand-logo {
+  width: 14px;
+  height: 14px;
+  font-size: 0.44rem;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
 /* ── PART CARDS ──────────────────────────────────────── */
 .part-list {
   display: flex;
@@ -300,6 +349,22 @@
 .part-card.selected .part-card-thumb {
   background: var(--accent-dim);
   border-color: var(--border-accent);
+}
+
+/* Brand logo badge inside the thumb */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1.5px solid;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .part-card-info { flex: 1; min-width: 0; }
