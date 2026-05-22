@@ -200,10 +200,16 @@
   </dialog>
 
   <!-- MODAL: MY BUILDS -->
-  <dialog id="modal-saves" class="modal">
+  <dialog id="modal-saves" class="modal modal-saves">
     <div class="modal-header">
-      <h2 class="modal-title">My Builds</h2>
-      <button id="modal-saves-close" class="modal-close-btn" aria-label="Close">✕</button>
+      <div class="modal-title-group">
+        <h2 class="modal-title">My Builds</h2>
+        <span class="modal-saves-count" id="modal-saves-count"></span>
+      </div>
+      <div class="modal-header-actions">
+        <button id="btn-save-in-modal" class="btn btn-accent btn-sm">+ Save Current</button>
+        <button id="modal-saves-close" class="modal-close-btn" aria-label="Close">✕</button>
+      </div>
     </div>
     <div class="modal-body">
       <div id="saves-list"></div>

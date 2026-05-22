@@ -9,11 +9,20 @@ export function init() {
   document.getElementById('modal-saves').addEventListener('click', e => {
     if (e.target === e.currentTarget) close();
   });
-  document.getElementById('btn-save').addEventListener('click', saveCurrentBuild);
+  document.getElementById('btn-save').addEventListener('click', () => {
+    saveCurrentBuild();
+    toast('Build saved!', 'success');
+  });
+  document.getElementById('btn-save-in-modal').addEventListener('click', () => {
+    saveCurrentBuild();
+    renderList();
+    toast('Build saved!', 'success');
+  });
 }
 
 function open() {
   renderList();
+  updateCountChip();
   document.getElementById('modal-saves').showModal();
 }
 
@@ -42,19 +51,33 @@ function renderList() {
   const container = document.getElementById('saves-list');
 
   if (keys.length === 0) {
-    container.innerHTML = `<p class="saves-empty">No saved builds yet.<br>Use the <strong>Save</strong> button in the header to save your build.</p>`;
+    container.innerHTML = `
+      <div class="saves-empty">
+        <span class="saves-empty-icon">🛸</span>
+        No saved builds yet.<br>
+        Hit <strong>+ Save Current</strong> above to save your first build.
+      </div>`;
     return;
   }
 
   container.innerHTML = keys.map(name => {
-    const { date } = saves[name];
+    const { date, encoded } = saves[name];
     const d = new Date(date);
     const ago = timeAgo(d);
+    const partCount = countParts(encoded);
+    const partBadge = partCount > 0
+      ? `<span class="save-parts-badge">⚙ ${partCount} part${partCount !== 1 ? 's' : ''}</span>`
+      : '';
     return `
       <div class="save-item" data-name="${escAttr(name)}">
+        <div class="save-item-icon">🛸</div>
         <div class="save-item-info">
           <div class="save-item-name">${esc(name)}</div>
-          <div class="save-item-date">${ago}</div>
+          <div class="save-item-meta">
+            ${partBadge}
+            ${partCount > 0 ? '<span class="save-item-meta-sep">·</span>' : ''}
+            <span>${ago}</span>
+          </div>
         </div>
         <div class="save-item-actions">
           <button class="btn btn-ghost save-load-btn">Load</button>
@@ -63,6 +86,7 @@ function renderList() {
       </div>
     `;
   }).join('');
+  updateCountChip();
 
   container.querySelectorAll('.save-load-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -119,3 +143,28 @@ function timeAgo(date) {
 
 function esc(s)     { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function escAttr(s) { return s.replace(/"/g, '&quot;'); }
+
+function toast(msg, type = '') {
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.className   = `toast${type ? ' ' + type : ''} show`;
+  clearTimeout(el._timer);
+  el._timer = setTimeout(() => el.classList.remove('show'), 2800);
+}
+
+function countParts(encoded) {
+  try {
+    const data = JSON.parse(atob(encoded));
+    if (!data.b) return 0;
+    return Object.values(data.b).filter(Boolean).length;
+  } catch { return 0; }
+}
+
+function updateCountChip() {
+  const count = Object.keys(load()).length;
+  const chip  = document.getElementById('modal-saves-count');
+  if (!chip) return;
+  chip.textContent  = count > 0 ? `${count} saved` : '';
+  chip.style.display = count > 0 ? '' : 'none';
+}
