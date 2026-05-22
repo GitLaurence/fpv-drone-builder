@@ -38,6 +38,7 @@
     </div>
 
     <div class="header-actions">
+      <button id="btn-help"     class="btn btn-ghost btn-help" title="How to use">?</button>
       <button id="btn-reset"     class="btn btn-ghost"  title="Clear build">Reset</button>
       <button id="btn-my-builds" class="btn btn-ghost"  title="Saved builds">Builds</button>
       <button id="btn-save"      class="btn btn-ghost"  title="Save to browser">Save</button>
@@ -187,6 +188,108 @@
 
   <!-- MOBILE OVERLAY -->
   <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+
+  <!-- MODAL: HELP -->
+  <dialog id="modal-help" class="modal modal-help">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <h2 class="modal-title">How to Use FPV Builder</h2>
+      </div>
+      <button id="modal-help-close" class="modal-close-btn" aria-label="Close">✕</button>
+    </div>
+    <div class="modal-body help-body">
+
+      <div class="help-intro">
+        Build your ideal FPV drone by selecting compatible parts step by step.
+        The app checks compatibility as you go and shows live weight, price, and performance stats.
+      </div>
+
+      <div class="help-sections">
+
+        <div class="help-section">
+          <div class="help-section-icon">🛸</div>
+          <div class="help-section-content">
+            <div class="help-section-title">Pick Your Parts</div>
+            <div class="help-section-body">
+              Click any component slot in the left panel — <strong>Frame, Motors, ESC, Flight Controller, Props, Camera, VTX, Battery, Receiver</strong> —
+              to open the parts catalog on the right. Browse, search, sort by price or weight, and click a part to select it.
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-icon">🗺️</div>
+          <div class="help-section-content">
+            <div class="help-section-title">Blueprint Diagram</div>
+            <div class="help-section-body">
+              The center shows a live blueprint of your build. Parts light up <span class="help-pill help-pill-blue">blue</span> when selected and
+              <span class="help-pill help-pill-amber">amber</span> when there's a compatibility warning.
+              Click any part in the diagram to jump straight to its catalog.
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-icon">⚡</div>
+          <div class="help-section-content">
+            <div class="help-section-title">Quick Builds</div>
+            <div class="help-section-body">
+              In a hurry? Scroll to the bottom of the left panel and tap a preset —
+              <strong>5" Freestyle, 5" Race, 3" Toothpick, LR 5", Micro 3.5"</strong> — to instantly fill all slots with a curated parts list.
+              You can then swap individual parts to customise it.
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-icon">⚖️</div>
+          <div class="help-section-content">
+            <div class="help-section-title">Compare Parts</div>
+            <div class="help-section-body">
+              Inside any catalog view, tap <strong>Compare</strong>, select 2–4 parts, then hit <strong>Compare (n)</strong>
+              to see a side-by-side spec table. Great for deciding between motors or flight controllers.
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-icon">⚠️</div>
+          <div class="help-section-content">
+            <div class="help-section-title">Compatibility Warnings</div>
+            <div class="help-section-body">
+              The app automatically checks motor-mount sizing, voltage ranges, ESC amp ratings,
+              propeller shaft sizes, and stack dimensions. Warnings appear in the build card and highlight the offending part in amber on the diagram.
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-icon">💾</div>
+          <div class="help-section-content">
+            <div class="help-section-title">Save &amp; Share</div>
+            <div class="help-section-body">
+              <strong>Save</strong> stores your build in the browser (no account needed).
+              <strong>Builds</strong> lets you load or delete saved builds.
+              <strong>Share</strong> copies a link you can send to anyone — the full build is encoded in the URL.
+            </div>
+          </div>
+        </div>
+
+        <div class="help-section">
+          <div class="help-section-icon">📊</div>
+          <div class="help-section-content">
+            <div class="help-section-title">Build Stats</div>
+            <div class="help-section-body">
+              The build card shows <strong>total weight</strong>, <strong>estimated price (₱)</strong>,
+              <strong>thrust-to-weight ratio (TWR)</strong>, and <strong>battery cell count</strong> — updating live as you select parts.
+              A TWR above 4:1 is good for freestyle; above 6:1 for racing.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </dialog>
 
   <!-- MODAL: COMPARE -->
   <dialog id="modal-compare" class="modal modal-wide">

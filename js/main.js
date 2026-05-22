@@ -33,6 +33,11 @@ async function main() {
     if (confirm('Clear the current build?')) dispatch('RESET_BUILD', {});
   });
 
+  const helpModal = document.getElementById('modal-help');
+  document.getElementById('btn-help').addEventListener('click', () => helpModal.showModal());
+  document.getElementById('modal-help-close').addEventListener('click', () => helpModal.close());
+  helpModal.addEventListener('click', e => { if (e.target === helpModal) helpModal.close(); });
+
   // Update progress + hint on build changes
   on('build:changed', ({ build }) => {
     updateProgress(build);
