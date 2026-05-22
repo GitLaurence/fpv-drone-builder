@@ -277,7 +277,9 @@ function _drawBattery() {
     class: 'bp-code', 'text-anchor': 'middle', 'font-size': 8,
   }));
 
-  const specT = _txt('', { class: 'bp-part-spec', 'text-anchor': 'middle', x: CX, y: by + H + 12 });
+  const nameT = _txt('', { class: 'bp-part-name', 'text-anchor': 'middle', x: CX, y: by + H + 12 });
+  const specT = _txt('', { class: 'bp-part-spec', 'text-anchor': 'middle', x: CX, y: by + H + 22 });
+  g.appendChild(nameT);
   g.appendChild(specT);
 
   _svg.appendChild(g);
