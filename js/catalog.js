@@ -14,6 +14,18 @@ let _compareMode   = false;
 const $ = id => document.getElementById(id);
 
 export function init() {
+  // Fallback: if a Clearbit logo fails to load, swap to colored initials badge
+  document.addEventListener('error', e => {
+    const img = e.target;
+    if (!img.classList.contains('brand-logo-img')) return;
+    const wrap = img.closest('.brand-logo-img-wrap');
+    if (!wrap) return;
+    const { dataset: d } = img;
+    wrap.className = 'brand-logo';
+    wrap.style.cssText = `background:${d.bg};color:${d.fg};border-color:${d.border}`;
+    wrap.textContent = brandInitials(d.brand);
+  }, true);
+
   $('btn-back').addEventListener('click', closeSlot);
   $('catalog-search').addEventListener('input', e => { _search = e.target.value.toLowerCase(); renderParts(); });
   $('catalog-sort').addEventListener('change', e => { _sort = e.target.value; renderParts(); });
@@ -255,6 +267,57 @@ function catEmoji(cat) {
   return { frame:'🛸',motor:'⚙️',esc:'⚡',fc:'💻',propeller:'🌀',camera:'📷',vtx:'📡',battery:'🔋',receiver:'📻' }[cat] || '•';
 }
 
+// Official domains verified from each brand's website
+const BRAND_DOMAINS = {
+  'AKK':          'akktek.com',
+  'Aikon':        'aikonfpv.com',
+  'Armattan':     'armattanquads.com',
+  'BetaFPV':      'betafpv.com',
+  'Caddx':        'caddxfpv.com',
+  'CNHL':         'chinahobbyline.com',
+  'DAL':          'dalprops.com',
+  'Diatone':      'diatone.us',
+  'DJI':          'dji.com',
+  'EMAX':         'emaxmodel.com',
+  'Ethix':        'ethix.cc',
+  'ExpressLRS':   'expresslrs.org',
+  'FlyFishRC':    'flyfish-rc.com',
+  'FlySky':       'flysky.com',
+  'Flywoo':       'flywoo.net',
+  'Foxeer':       'foxeer.com',
+  'FrSky':        'frsky-rc.com',
+  'Gemfan':       'gemfanhobby.com',
+  'GEPRC':        'geprc.com',
+  'GNB':          'gaonengmodels.com',
+  'HappyModel':   'happymodel.cn',
+  'HDZero':       'hd-zero.com',
+  'HGLRC':        'hglrc.com',
+  'Hobbywing':    'hobbywing.com',
+  'Holybro':      'holybro.com',
+  'HQProp':       'hqprop.com',
+  'Hypetrain':    'hypetrain.io',
+  'iFlight':      'iflight.com',
+  'ImmersionRC':  'immersionrc.com',
+  'ImpulseRC':    'impulserc.com',
+  'JHEMCU':       'jhemcu.com',
+  'Jumper':       'jumper-rc.com',
+  'Lumenier':     'lumenier.com',
+  'Matek':        'mateksys.com',
+  'MEPS':         'mepsrc.com',
+  'Ovonic':       'ovonicshop.com',
+  'Racerstar':    'racerstar.com',
+  'RadioMaster':  'radiomasterrc.com',
+  'RunCam':       'runcam.com',
+  'Rush':         'rushfpv.net',
+  'ShenDrones':   'shendrones.com',
+  'Spektrum':     'spektrumrc.com',
+  'SpeedyBee':    'speedybee.com',
+  'Tattu':        'genstattu.com',
+  'TBS':          'team-blacksheep.com',
+  'T-Motor':      'tmotor.com',
+  'Walksnail':    'caddxfpv.com',
+};
+
 const BRAND_PALETTES = [
   { bg: '#dbeafe', fg: '#1d4ed8', border: '#93c5fd' },
   { bg: '#dcfce7', fg: '#15803d', border: '#86efac' },
@@ -274,10 +337,19 @@ function brandColor(brand) {
   return BRAND_PALETTES[h % BRAND_PALETTES.length];
 }
 
+function brandInitials(brand) {
+  return brand.replace(/[^A-Za-z0-9]/g, '').slice(0, 2).toUpperCase() || brand.slice(0, 2).toUpperCase();
+}
+
 function brandBadge(brand) {
   const { bg, fg, border } = brandColor(brand);
-  const initials = brand.replace(/[^A-Za-z0-9]/g, '').slice(0, 2).toUpperCase() || brand.slice(0, 2).toUpperCase();
-  return `<span class="brand-logo" style="background:${bg};color:${fg};border-color:${border}">${initials}</span>`;
+  const domain = BRAND_DOMAINS[brand];
+  if (domain) {
+    return `<span class="brand-logo brand-logo-img-wrap" style="border-color:var(--border)">` +
+      `<img class="brand-logo-img" src="https://logo.clearbit.com/${domain}" alt="${brand}" loading="lazy" ` +
+      `data-brand="${brand}" data-bg="${bg}" data-fg="${fg}" data-border="${border}" /></span>`;
+  }
+  return `<span class="brand-logo" style="background:${bg};color:${fg};border-color:${border}">${brandInitials(brand)}</span>`;
 }
 
 function specLine(cat, part) {

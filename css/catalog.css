@@ -267,6 +267,13 @@
   letter-spacing: -0.02em;
   flex-shrink: 0;
   line-height: 1;
+  overflow: hidden;
+}
+.pill-brand .brand-logo-img-wrap {
+  background: #fff;
+}
+.pill-brand .brand-logo-img {
+  padding: 1px;
 }
 
 /* ── PART CARDS ──────────────────────────────────────── */
@@ -365,6 +372,17 @@
   letter-spacing: -0.02em;
   line-height: 1;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.brand-logo-img-wrap {
+  background: #fff;
+}
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 3px;
+  display: block;
 }
 
 .part-card-info { flex: 1; min-width: 0; }
