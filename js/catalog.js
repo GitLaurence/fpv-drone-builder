@@ -14,7 +14,9 @@ let _compareMode   = false;
 const $ = id => document.getElementById(id);
 
 export function init() {
-  // Fallback: if a Clearbit logo fails to load, swap to colored initials badge
+  // img error events don't bubble, so we must use capture phase.
+  // Google's favicon service always returns 200 (never 404), so this listener
+  // only fires on genuine network failures — no risk of racing with a fallback chain.
   document.addEventListener('error', e => {
     const img = e.target;
     if (!img.classList.contains('brand-logo-img')) return;
@@ -345,10 +347,11 @@ function brandBadge(brand) {
   const { bg, fg, border } = brandColor(brand);
   const domain = BRAND_DOMAINS[brand];
   if (domain) {
-    const googleFavicon = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+    // Google's favicon service always returns 200 (fallback globe if no favicon found),
+    // so the capture-phase error listener only fires on genuine network failures.
+    const src = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
     return `<span class="brand-logo brand-logo-img-wrap" style="border-color:var(--border)">` +
-      `<img class="brand-logo-img" src="https://${domain}/favicon.ico" alt="${brand}" loading="lazy" ` +
-      `onerror="this.onerror=null;this.src='${googleFavicon}'" ` +
+      `<img class="brand-logo-img" src="${src}" alt="${brand}" loading="lazy" ` +
       `data-brand="${brand}" data-bg="${bg}" data-fg="${fg}" data-border="${border}" /></span>`;
   }
   return `<span class="brand-logo" style="background:${bg};color:${fg};border-color:${border}">${brandInitials(brand)}</span>`;
