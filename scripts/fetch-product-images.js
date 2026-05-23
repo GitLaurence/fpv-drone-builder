@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 /**
- * Fetch product images from each brand's official website using fetch().
+ * Fetch product images using fetch(). No npm install needed.
  *
  * Strategy per part (tried in order):
- *   1. Shopify predictive search  — /search/suggest.json returns direct
- *      product matches with image URLs; fastest and most accurate.
- *   2. Shopify /products.json     — full catalog fuzzy match; one HTTP
- *      call per brand regardless of how many parts they have.
- *   3. HTML search fallback       — fetch /search?q=<name> and extract
- *      the first product image from the response HTML.
+ *   1. Brand Shopify predictive search  — /search/suggest.json on the
+ *      brand's own site (works for Shopify brands like iFlight, BetaFPV…)
+ *   2. Brand Shopify catalog match      — /products.json fuzzy match
+ *   3. Retailer predictive search       — searches GetFPV and RaceDayQuads,
+ *      which carry essentially every FPV brand including non-Shopify ones
+ *      (Gemfan, HQProp, RunCam, Foxeer, Matek, T-Motor, CNHL, FlySky…)
+ *   4. HTML search on brand site        — last resort; extracts structured
+ *      product image from the response HTML
  *
  * All strategies filter out logo/banner/social images via isProductImage().
  * Parts whose current image_url looks like a logo are automatically
@@ -266,7 +268,28 @@ async function fetchShopifyCatalog(domain) {
   return products;
 }
 
-// ── Strategy 3: HTML search fallback ──────────────────
+// ── Strategy 3: FPV retailer search ───────────────────
+// GetFPV and RaceDayQuads carry essentially every FPV brand, including
+// ones whose own sites are not on Shopify (Gemfan, HQProp, RunCam,
+// Foxeer, Matek, T-Motor, CNHL, FlySky, DJI, Hobbywing…).
+// Query includes the brand name to disambiguate generic part names.
+
+const FPV_RETAILERS = [
+  'www.getfpv.com',
+  'www.racedayquads.com',
+];
+
+async function searchRetailers(brand, partName) {
+  const query = `${brand} ${partName}`;
+  for (const domain of FPV_RETAILERS) {
+    const img = await searchShopifyPredictive(domain, query);
+    if (img) return img;
+    await delay(300);
+  }
+  return null;
+}
+
+// ── Strategy 4: HTML search on brand site (last resort) ──
 
 async function searchHTML(domain, partName) {
   const queries = [
@@ -287,22 +310,29 @@ async function searchHTML(domain, partName) {
 
 async function findImage(part) {
   const domain = BRAND_DOMAINS[part.brand];
-  if (!domain) return null;
 
-  // Strategy 1: Shopify predictive search
-  const predictive = await searchShopifyPredictive(domain, part.name);
-  if (predictive) return predictive;
-  await delay(200);
+  if (domain) {
+    // Strategy 1: Brand Shopify predictive search
+    const predictive = await searchShopifyPredictive(domain, part.name);
+    if (predictive) return predictive;
+    await delay(200);
 
-  // Strategy 2: Full Shopify catalog match
-  const products = await fetchShopifyCatalog(domain);
-  if (products.length > 0) {
-    const match = bestMatch(products, part.name);
-    if (match && isProductImage(match.image)) return match.image;
+    // Strategy 2: Brand Shopify catalog match
+    const products = await fetchShopifyCatalog(domain);
+    if (products.length > 0) {
+      const match = bestMatch(products, part.name);
+      if (match && isProductImage(match.image)) return match.image;
+    }
   }
 
-  // Strategy 3: HTML search
-  return await searchHTML(domain, part.name);
+  // Strategy 3: FPV retailer search (covers non-Shopify brands)
+  const retailer = await searchRetailers(part.brand, part.name);
+  if (retailer) return retailer;
+
+  // Strategy 4: HTML search on brand site
+  if (domain) return await searchHTML(domain, part.name);
+
+  return null;
 }
 
 // ── Utilities ──────────────────────────────────────────
@@ -328,14 +358,8 @@ for (const brand of brands) {
   const domain = BRAND_DOMAINS[brand];
   console.log(`\n── ${brand} (${domain || 'no domain'}) — ${parts.length} parts`);
 
-  if (!domain) {
-    parts.forEach(p => { cache[p.id] = null; });
-    saveCache();
-    continue;
-  }
-
-  // Warm Shopify catalog once per brand (reused by all parts of this brand)
-  await fetchShopifyCatalog(domain).catch(() => []);
+  // Warm brand Shopify catalog once (skipped for non-Shopify sites — returns [] quickly)
+  if (domain) await fetchShopifyCatalog(domain).catch(() => []);
 
   for (const part of parts) {
     idx++;
