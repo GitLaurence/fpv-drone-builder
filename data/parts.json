@@ -3,63 +3,63 @@
     {
       "id": "frame",
       "label": "Frame",
-      "icon": "\ud83d\udef8",
+      "icon": "🛸",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "motor",
-      "label": "Motors (\u00d74)",
-      "icon": "\u2699\ufe0f",
+      "label": "Motors (×4)",
+      "icon": "⚙️",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "esc",
       "label": "ESC",
-      "icon": "\u26a1",
+      "icon": "⚡",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "fc",
       "label": "Flight Controller",
-      "icon": "\ud83d\udcbb",
+      "icon": "💻",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "propeller",
       "label": "Propellers",
-      "icon": "\ud83c\udf00",
+      "icon": "🌀",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "camera",
       "label": "FPV Camera",
-      "icon": "\ud83d\udcf7",
+      "icon": "📷",
       "required": false,
       "slot_count": 1
     },
     {
       "id": "vtx",
       "label": "Video Transmitter",
-      "icon": "\ud83d\udce1",
+      "icon": "📡",
       "required": false,
       "slot_count": 1
     },
     {
       "id": "battery",
       "label": "Battery",
-      "icon": "\ud83d\udd0b",
+      "icon": "🔋",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "receiver",
       "label": "RC Receiver",
-      "icon": "\ud83d\udcfb",
+      "icon": "📻",
       "required": false,
       "slot_count": 1
     }
@@ -1359,7 +1359,7 @@
     {
       "id": "tmotor-mini-f45a",
       "category": "esc",
-      "name": "Mini F45A 4-in-1 20\u00d720",
+      "name": "Mini F45A 4-in-1 20×20",
       "brand": "T-Motor",
       "price_php": 1959,
       "weight_g": 9,
@@ -1784,7 +1784,7 @@
     {
       "id": "hqprop-dp-5x4.5x3",
       "category": "propeller",
-      "name": "DP 5\u00d74.5\u00d73",
+      "name": "DP 5×4.5×3",
       "brand": "HQProp",
       "price_php": 223,
       "weight_g": 5,
@@ -1828,7 +1828,7 @@
     {
       "id": "hqprop-5x4.3x3",
       "category": "propeller",
-      "name": "5\u00d74.3\u00d73V1S",
+      "name": "5×4.3×3V1S",
       "brand": "HQProp",
       "price_php": 195,
       "weight_g": 5,
@@ -1871,7 +1871,7 @@
     {
       "id": "hqprop-2.5x2.5x4",
       "category": "propeller",
-      "name": "2.5\u00d72.5\u00d74",
+      "name": "2.5×2.5×4",
       "brand": "HQProp",
       "price_php": 139,
       "weight_g": 1.5,
@@ -1998,7 +1998,7 @@
     {
       "id": "hqprop-4x4x4",
       "category": "propeller",
-      "name": "4\u00d74\u00d74 Quad-Blade",
+      "name": "4×4×4 Quad-Blade",
       "brand": "HQProp",
       "price_php": 167,
       "weight_g": 3.5,
@@ -2213,7 +2213,8 @@
         "fov_deg": 155,
         "format": "Digital",
         "resolution": "1080p60",
-        "voltage_range": "7.4-26.4V"
+        "voltage_range": "7.4-26.4V",
+        "video_system": "DJI-O3"
       }
     },
     {
@@ -2230,7 +2231,8 @@
         "sensor": "1/2.35\" STARVIS2",
         "fov_deg": 160,
         "format": "Digital",
-        "resolution": "1080p60"
+        "resolution": "1080p60",
+        "video_system": "Walksnail"
       }
     },
     {
@@ -2281,7 +2283,8 @@
         "sensor": "1/3\" CMOS",
         "fov_deg": 150,
         "format": "Digital",
-        "resolution": "1080p60"
+        "resolution": "1080p60",
+        "video_system": "DJI-FPV"
       }
     },
     {
@@ -2298,7 +2301,8 @@
         "sensor": "1/3\" CMOS",
         "fov_deg": 90,
         "format": "Digital",
-        "resolution": "720p60"
+        "resolution": "720p60",
+        "video_system": "HDZero"
       }
     },
     {
@@ -2455,7 +2459,8 @@
         "protocol": "Digital",
         "bands": "DJI O3",
         "voltage_range": "7.4-26.4V",
-        "connector": "proprietary"
+        "connector": "proprietary",
+        "video_system": "DJI-O3"
       }
     },
     {
@@ -2491,7 +2496,8 @@
         "protocol": "Digital",
         "bands": "Walksnail",
         "voltage_range": "7.4-26.4V",
-        "connector": "U.FL"
+        "connector": "U.FL",
+        "video_system": "Walksnail"
       }
     },
     {
@@ -2509,7 +2515,8 @@
         "protocol": "Digital",
         "bands": "HDZero",
         "voltage_range": "5-17V",
-        "connector": "U.FL"
+        "connector": "U.FL",
+        "video_system": "HDZero"
       }
     },
     {
@@ -3249,7 +3256,8 @@
         "protocol": "Digital",
         "bands": "DJI FPV",
         "voltage_range": "7.4-26.4V",
-        "connector": "U.FL"
+        "connector": "U.FL",
+        "video_system": "DJI-FPV"
       }
     },
     {
@@ -3559,7 +3567,7 @@
     {
       "id": "hqprop-3.5x2.9x3",
       "category": "propeller",
-      "name": "3.5\u00d72.9\u00d73 Tri-Blade",
+      "name": "3.5×2.9×3 Tri-Blade",
       "brand": "HQProp",
       "price_php": 167,
       "weight_g": 2,
@@ -3669,7 +3677,8 @@
         "fov_deg": 165,
         "format": "Digital",
         "resolution": "1080p60",
-        "voltage_range": "5-17V"
+        "voltage_range": "5-17V",
+        "video_system": "DJI-FPV"
       }
     },
     {
@@ -3687,7 +3696,8 @@
         "protocol": "Digital",
         "bands": "HDZero",
         "voltage_range": "5-17V",
-        "connector": "U.FL"
+        "connector": "U.FL",
+        "video_system": "HDZero"
       }
     },
     {
@@ -4057,7 +4067,7 @@
     {
       "id": "flywoo-goku-hex-35a",
       "category": "esc",
-      "name": "GOKU HEX 35A 20\u00d720 4-in-1",
+      "name": "GOKU HEX 35A 20×20 4-in-1",
       "brand": "Flywoo",
       "price_php": 1959,
       "weight_g": 12,
@@ -4111,7 +4121,7 @@
     {
       "id": "flywoo-goku-f7-mini",
       "category": "fc",
-      "name": "GOKU F7 Mini 20\u00d720",
+      "name": "GOKU F7 Mini 20×20",
       "brand": "Flywoo",
       "price_php": 2239,
       "weight_g": 6,
@@ -4203,7 +4213,7 @@
     {
       "id": "hqprop-5x4x4-v3",
       "category": "propeller",
-      "name": "5\u00d74\u00d74 V3 Quad-Blade",
+      "name": "5×4×4 V3 Quad-Blade",
       "brand": "HQProp",
       "price_php": 223,
       "weight_g": 6,
@@ -4318,7 +4328,8 @@
         "sensor": "1/2.35\" STARVIS2",
         "fov_deg": 155,
         "format": "Digital",
-        "resolution": "1080p60"
+        "resolution": "1080p60",
+        "video_system": "Walksnail"
       }
     },
     {
@@ -4918,7 +4929,7 @@
     {
       "id": "hglrc-zeus-45a",
       "category": "esc",
-      "name": "Zeus 45A 4-in-1 30\u00d730",
+      "name": "Zeus 45A 4-in-1 30×30",
       "brand": "HGLRC",
       "price_php": 2519,
       "weight_g": 21,
@@ -4954,7 +4965,7 @@
     {
       "id": "betafpv-f4-aio-20a-esc",
       "category": "esc",
-      "name": "F4 AIO 20A 4-in-1 20\u00d720",
+      "name": "F4 AIO 20A 4-in-1 20×20",
       "brand": "BetaFPV",
       "price_php": 1679,
       "weight_g": 8,
@@ -5041,7 +5052,7 @@
     {
       "id": "flywoo-goku-f745-mini",
       "category": "fc",
-      "name": "GOKU F745 Mini 20\u00d720",
+      "name": "GOKU F745 Mini 20×20",
       "brand": "Flywoo",
       "price_php": 2799,
       "weight_g": 8,
@@ -5087,7 +5098,7 @@
     {
       "id": "hqprop-7x3.5x3",
       "category": "propeller",
-      "name": "7\u00d73.5\u00d73 Tri-Blade 7\"",
+      "name": "7×3.5×3 Tri-Blade 7\"",
       "brand": "HQProp",
       "price_php": 307,
       "weight_g": 12,
@@ -5151,7 +5162,7 @@
     {
       "id": "hqprop-5.1x4.1x3-pc",
       "category": "propeller",
-      "name": "5.1\u00d74.1\u00d73 PC Tri-Blade",
+      "name": "5.1×4.1×3 PC Tri-Blade",
       "brand": "HQProp",
       "price_php": 251,
       "weight_g": 5.5,
@@ -5284,7 +5295,8 @@
         "fov_deg": 162,
         "format": "Digital",
         "resolution": "1080p60",
-        "voltage_range": "7.4-26.4V"
+        "voltage_range": "7.4-26.4V",
+        "video_system": "Walksnail"
       }
     },
     {
@@ -5302,7 +5314,8 @@
         "fov_deg": 160,
         "format": "Digital",
         "resolution": "1080p60",
-        "voltage_range": "5-20V"
+        "voltage_range": "5-20V",
+        "video_system": "DJI-FPV"
       }
     },
     {
@@ -5356,7 +5369,8 @@
         "protocol": "Digital",
         "bands": "Walksnail",
         "voltage_range": "7.4-26.4V",
-        "connector": "U.FL"
+        "connector": "U.FL",
+        "video_system": "Walksnail"
       }
     },
     {
@@ -5607,7 +5621,7 @@
       "operator": ">=",
       "slot_b": "battery",
       "spec_b": "cell_count_s",
-      "message": "Motor max voltage ({a}S) is less than battery ({b}S) \u2014 risk of motor damage"
+      "message": "Motor max voltage ({a}S) is less than battery ({b}S) — risk of motor damage"
     },
     {
       "id": "esc-battery-voltage",
@@ -5655,6 +5669,24 @@
       "slot_b": "propeller",
       "spec_b": "shaft_mm",
       "message": "Prop shaft hole ({b}mm) doesn't fit motor shaft ({a}mm)"
+    },
+    {
+      "id": "camera-vtx-format",
+      "type": "spec_match",
+      "slot_a": "camera",
+      "spec_a": "format",
+      "slot_b": "vtx",
+      "spec_b": "protocol",
+      "message": "Camera ({a}) is not compatible with {b} VTX — digital and analog video systems cannot be mixed"
+    },
+    {
+      "id": "camera-vtx-digital-system",
+      "type": "spec_match",
+      "slot_a": "camera",
+      "spec_a": "video_system",
+      "slot_b": "vtx",
+      "spec_b": "video_system",
+      "message": "Camera ({a}) is not compatible with {b} VTX — different digital video systems"
     }
   ],
   "presets": {
