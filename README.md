@@ -1,126 +1,120 @@
 # FPV Drone Builder
 
-A browser-native app where users configure custom FPV drones from real marketplace parts, with a live 3D visual that updates as they build. Built entirely with modern HTML, CSS, and JavaScript — no frameworks, no build step.
+A browser-native app for configuring custom FPV drones from a catalog of real parts. Select components across all 9 slots, see a live blueprint diagram update in real time, catch compatibility problems before you buy, and share your build with a link.
+
+No frameworks. No build step. No install required.
 
 ---
 
 ## Table of Contents
 
-1. [Overview](#overview)
+1. [Features](#features)
 2. [Tech Stack](#tech-stack)
-3. [Core Features](#core-features)
+3. [Running Locally](#running-locally)
 4. [Architecture](#architecture)
 5. [Data Model](#data-model)
-6. [Implementation Phases](#implementation-phases)
-7. [Folder Structure](#folder-structure)
-8. [Visual Renderer](#visual-renderer)
-9. [Marketplace & Parts Catalog](#marketplace--parts-catalog)
+6. [Folder Structure](#folder-structure)
+7. [Blueprint Diagram](#blueprint-diagram)
+8. [Parts Gallery](#parts-gallery)
+9. [Compatibility Engine](#compatibility-engine)
+10. [Scripts](#scripts)
 
 ---
 
-## Overview
+## Features
 
-Users open a single-page builder, browse a categorized parts catalog, select parts for each slot (frame, motors, ESC, flight controller, propellers, camera, VTX, battery, receiver), and watch a 3D drone assemble in real time inside a Three.js canvas. Compatibility warnings fire when parts conflict. Finished builds are saved to `localStorage` and shareable via a URL hash.
+- **283 real parts** across 9 categories (frame, motor, ESC, FC, propeller, FPV camera, VTX, battery, receiver)
+- **Live SVG blueprint** — top-down drone diagram updates in real time as you select parts; each component takes the part's actual color, shows the brand favicon + key spec
+- **Parts gallery modal** — click any component in the diagram or the Gallery button to see all selected parts in a visual card grid with specs and retailer links
+- **Compatibility checker** — 9 rules covering motor mount sizing, voltage limits, prop clearance, ESC current, digital video system pairing (DJI O3, Walksnail, HDZero) and cross-system mismatches; violations shown inline and highlighted amber on the diagram
+- **Part catalog** — search, filter by brand / in-stock, sort by price/weight/name, view full specs, compare up to 3 parts side by side
+- **5 preset builds** — 5" freestyle, 5" race, 3" toothpick, long-range 5", micro 3.5"
+- **Saved builds** — multiple named builds in `localStorage`, load/delete anytime
+- **Share link** — full build state encoded in URL hash, shareable and bookmark-able
+- **Build stats modal** — total weight, estimated thrust-to-weight ratio, total price (PHP)
 
 ---
 
 ## Tech Stack
 
-| Concern | Choice | Notes |
-|---|---|---|
-| Markup | **HTML5** | Semantic elements, `<dialog>`, `<details>`, `<template>` |
-| Styling | **Modern CSS** | Custom properties, Grid, Flexbox, `@layer`, `@container`, transitions |
-| Logic | **Vanilla JS (ES Modules)** | Native `import/export`, no transpiler |
-| 3D rendering | **Three.js** (ESM build) | Loaded via import map, no bundler needed |
-| 3D geometry | **Procedural Three.js** | All parts built from Three.js primitives — no `.glb` files required |
-| Persistence | **`localStorage`** | Save and restore builds client-side |
-| Dev server | **none required** | Open `index.html` directly, or use `npx serve .` |
-| Hosting | **any static host** | GitHub Pages, Netlify, Cloudflare Pages |
+| Concern | Choice |
+|---|---|
+| Markup | HTML5 — `<dialog>`, semantic elements, SVG |
+| Styling | Vanilla CSS — custom properties, Grid, Flexbox, transitions |
+| Logic | Vanilla JS (ES Modules) — native `import/export`, no transpiler |
+| Diagram | Hand-crafted SVG generated in JS — no canvas, no Three.js |
+| Persistence | `localStorage` — save/restore builds client-side |
+| Dev server | None required — `python3 -m http.server` or `npx serve .` |
+| Hosting | Any static host — GitHub Pages, Netlify, Cloudflare Pages |
 
-No npm install required. No build step. No framework. All features use APIs available natively in modern browsers (Chrome 105+, Firefox 110+, Safari 16+).
+No npm install. No build step. No framework. Runs in Chrome 105+, Firefox 110+, Safari 16+.
 
 ---
 
-## Core Features
+## Running Locally
 
-### Phase 1 — MVP
-- Parts catalog JSON file with real parts per category
-- Slot-based builder UI: each category has exactly one active slot
-- Live 3D drone viewer powered by Three.js — renders procedural part geometry on selection
-- Compatibility checker: evaluates rules against the current build, shows inline warnings
-- Build summary panel: total weight, estimated thrust-to-weight, total price
-- Save build to `localStorage`; share via URL hash (base64-encoded build state)
+```bash
+# Python (built into macOS/Linux)
+python3 -m http.server 8080
 
-### Phase 2 — Enhanced UX
-- Part search with instant client-side filtering
-- Filter pills: in-stock toggle; sort by price, weight, or name
-- Part detail panel (slide-in view): full specs, buy link
-- Part comparison: pin up to 3 parts, see specs side by side in a modal table
-- Preset builds (5" freestyle, 5" race, 3" toothpick): populate all slots from one click
+# Node
+npx serve .
+```
 
-### Phase 3 — 3D Polish
-- Per-part procedural geometry with accurate visual detail per category
-- Pop-in animation on part select (scale 0 → 1 with cubic easing)
-- Emissive highlight on the active slot's model (cyan tint)
-- Camera auto-orbit to selected component on slot click
-- Frame size drives overall model scale across all attached parts
-- Export PNG: `renderer.domElement.toDataURL()` → instant download
-
-### Phase 4 — Share & Extras
-- Build card exporter: Canvas 2D overlay (1280×720) with 3D snapshot + part list + stats
-- Multiple saved builds in `localStorage`, keyed by build name with timestamps
-- Affiliate UTM params appended to buy links at click time
+Open `http://localhost:8080`. A real HTTP server is required (not `file://`) because ES module imports are subject to CORS.
 
 ---
 
 ## Architecture
 
-Everything runs in the browser. There is no server-side code.
-
 ```
 index.html
 │
-├── <script type="importmap">      ← maps "three" to ESM CDN URL
-│
 ├── css/
-│   ├── reset.css
-│   ├── layout.css                 ← grid split: catalog panel | 3D viewer
-│   ├── catalog.css                ← part cards, slot rows, filters
-│   ├── viewer.css                 ← canvas wrapper, HUD overlay
-│   └── components.css             ← dialogs, tooltips, badges
+│   ├── reset.css          ← base reset + CSS custom properties
+│   ├── layout.css         ← three-column split: left panel | blueprint | right panel
+│   ├── catalog.css        ← part cards, filters, search, comparison modal
+│   ├── blueprint.css      ← SVG diagram states (empty / filled / active / violation)
+│   ├── components.css     ← modals, buttons, toasts, gallery cards
+│   └── viewer.css         ← mobile drawer animations
 │
 └── js/
-    ├── main.js                    ← app entry point, wires everything together
-    ├── store.js                   ← plain-object state + pub/sub event bus
-    ├── catalog.js                 ← loads parts.json, renders part cards
-    ├── builder.js                 ← slot panel logic, compatibility checks
-    ├── viewer.js                  ← Three.js scene, camera, lighting, part swap
-    ├── compat.js                  ← rule evaluator (reads rules from parts.json)
-    ├── summary.js                 ← weight / price / TWR calc + violation badges
-    ├── compare.js                 ← part comparison modal (up to 3 parts)
-    ├── saves.js                   ← multiple saved builds in localStorage
-    ├── export.js                  ← build card PNG generator (Canvas 2D)
-    └── share.js                   ← encode/decode build state in URL hash
+    ├── main.js            ← app entry — wires all modules, mobile drawer
+    ├── store.js           ← plain-object state + pub/sub event bus
+    ├── builder.js         ← slot panel, preset loader, active-slot management
+    ├── catalog.js         ← part cards, search/filter/sort, detail view, brand logos
+    ├── blueprint.js       ← SVG diagram — draws and updates all 9 components
+    ├── gallery.js         ← parts gallery modal (card grid with specs + retailer links)
+    ├── compat.js          ← compatibility rule evaluator
+    ├── summary.js         ← weight / price / TWR calc + violation badge count
+    ├── compare.js         ← side-by-side part comparison modal
+    ├── saves.js           ← multiple saved builds in localStorage
+    ├── stepper.js         ← guided build flow (step through slots in order)
+    ├── share.js           ← encode/decode build state in URL hash
+    └── export.js          ← build card PNG generator
 ```
 
 ### State flow
 
 ```
-User clicks part
-      │
-      ▼
+User clicks part card
+        │
+        ▼
 store.dispatch('SELECT_PART', { slot, partId })
-      │
-      ├──► builder.js  re-renders slot panel, triggers compat check
-      ├──► viewer.js   rebuilds procedural mesh for that slot
-      └──► summary.js  recalculates weight / price / TWR
+        │
+        ├──► builder.js   updates slot panel, triggers compat.evaluate()
+        ├──► blueprint.js redraws component with part color + name + spec
+        ├──► gallery.js   updates card grid if modal is open
+        └──► summary.js   recalculates weight / price / TWR
 ```
+
+All inter-module communication goes through the store's pub/sub bus (`on` / `dispatch`). Modules never import each other directly — this keeps the dependency graph flat.
 
 ---
 
 ## Data Model
 
-All data lives in `data/parts.json`. No database. No server.
+Everything lives in `data/parts.json`. No database, no server.
 
 ### Top-level shape
 
@@ -133,33 +127,22 @@ All data lives in `data/parts.json`. No database. No server.
 }
 ```
 
-### Category object
-
-```json
-{
-  "id": "frame",
-  "label": "Frame",
-  "slot_count": 1,
-  "required": true,
-  "icon": "🛸"
-}
-```
-
 ### Part object
 
 ```json
 {
-  "id": "iflight-titan-dc5",
+  "id": "iflight-nazgul-evoque-f5",
   "category": "frame",
-  "name": "iFlight Titan DC5 V3",
+  "name": "iFlight Nazgul Evoque F5 V2",
   "brand": "iFlight",
-  "price_usd": 52.99,
+  "price_php": 3800,
   "weight_g": 68,
   "color": "#1a1a1a",
-  "buy_url": "https://www.getfpv.com/...",
+  "buy_url": "https://iflight.com/...",
+  "image_url": "https://...",
   "in_stock": true,
   "specs": {
-    "size_mm": 215,
+    "size_mm": 225,
     "motor_mount_mm": 30,
     "prop_clearance_inch": 5,
     "material": "carbon fiber",
@@ -168,88 +151,36 @@ All data lives in `data/parts.json`. No database. No server.
 }
 ```
 
-**Specs shape by category:**
+`image_url` is optional — the gallery shows a color-tinted header when absent. Run `scripts/fetch-product-images.js` to auto-populate images for all parts (see [Scripts](#scripts)).
+
+### Spec fields by category
 
 | Category | Key spec fields |
 |---|---|
-| Frame | `size_mm`, `motor_mount_mm`, `prop_clearance_inch`, `stack_mount_mm` |
-| Motor | `kv`, `stator_size`, `motor_mount_mm`, `max_voltage_s`, `weight_g` |
+| Frame | `size_mm`, `motor_mount_mm`, `prop_clearance_inch`, `stack_mount_mm`, `material` |
+| Motor | `kv`, `stator_size`, `motor_mount_mm`, `max_voltage_s` |
 | ESC | `amp_rating`, `input_voltage_s`, `protocol`, `form_factor_mm` |
 | Flight Controller | `gyro`, `firmware`, `form_factor_mm`, `stack_mount_mm` |
 | Propeller | `diameter_inch`, `pitch`, `blade_count`, `shaft_mm` |
-| Camera | `sensor`, `fov_deg`, `format`, `weight_g` |
-| VTX | `power_mw_max`, `protocol`, `connector` |
-| Battery | `cell_count_s`, `capacity_mah`, `c_rating`, `connector`, `weight_g` |
-| Receiver | `protocol`, `frequency_mhz`, `weight_g` |
+| Camera | `sensor`, `fov_deg`, `format`, `video_system` |
+| VTX | `power_mw_max`, `protocol`, `video_system` |
+| Battery | `cell_count_s`, `capacity_mah`, `c_rating`, `connector` |
+| Receiver | `protocol`, `frequency_mhz` |
 
 ### Compatibility rule object
 
+Two rule types are supported:
+
 ```json
-{
-  "id": "motor-mount-match",
-  "type": "spec_match",
-  "slot_a": "frame",
-  "spec_a": "motor_mount_mm",
-  "slot_b": "motor",
-  "spec_b": "motor_mount_mm",
-  "message": "Motor mount ({b}mm) doesn't match frame ({a}mm)"
-},
-{
-  "id": "battery-voltage-range",
-  "type": "range",
-  "slot_a": "motor",
-  "spec_a": "max_voltage_s",
-  "operator": ">=",
-  "slot_b": "battery",
-  "spec_b": "cell_count_s",
-  "message": "Motor max voltage ({a}S) is less than battery ({b}S)"
-}
+{ "type": "spec_match", "slot_a": "frame", "spec_a": "motor_mount_mm",
+  "slot_b": "motor", "spec_b": "motor_mount_mm",
+  "message": "Motor mount ({b}mm) doesn't match frame ({a}mm)" }
+
+{ "type": "range", "operator": ">=",
+  "slot_a": "motor", "spec_a": "max_voltage_s",
+  "slot_b": "battery", "spec_b": "cell_count_s",
+  "message": "Motor max voltage ({a}S) is less than battery ({b}S)" }
 ```
-
----
-
-## Implementation Phases
-
-### Phase 1 — Foundation ✅
-
-- [x] `index.html` shell: split layout, import map, slot panel, canvas placeholder
-- [x] `css/` base styles: CSS custom properties (colors, spacing, radius), layout grid
-- [x] `data/parts.json`: ~10 real parts per category with full specs
-- [x] `js/store.js`: minimal pub/sub state store (no external lib)
-- [x] `js/catalog.js`: render part cards from JSON, filter by category
-- [x] `js/builder.js`: slot rows, open part picker, select a part, clear a slot
-- [x] `js/viewer.js`: Three.js scene with OrbitControls, ambient + directional lights
-- [x] Procedural 3D part geometry per category — no `.glb` files required
-- [x] `js/compat.js`: evaluate rules, return violations array
-- [x] Compatibility violation badges inline in slot panel
-- [x] Build summary: weight, price, thrust-to-weight estimate
-- [x] `js/share.js`: encode build → URL hash; decode on load
-
-### Phase 2 — Catalog & Filtering ✅
-
-- [x] Live search input (filters `parts.json` client-side as user types)
-- [x] Filter pills: in-stock toggle
-- [x] Sort: price ↑↓, weight ↑↓, name A–Z
-- [x] Part detail view: full specs table, add-to-build button, buy link with UTM
-- [x] Part comparison: pin up to 3 parts, specs highlighted side by side in modal
-- [x] Preset builds: populate all slots from a preset JSON object
-
-### Phase 3 — 3D Polish ✅
-
-- [x] Procedural per-category geometry (frame, motors, ESC, FC, props, camera, VTX, battery, receiver)
-- [x] Pop-in animation on part select (scale 0 → 1 with cubic easing)
-- [x] Emissive highlight on active slot's model (cyan tint)
-- [x] Camera auto-lerp to selected component on slot click
-- [x] Frame size drives overall model scale for all attached parts
-- [x] Propeller spin animation when motor is selected
-- [x] Export PNG: `renderer.domElement.toDataURL()` → download via screenshot button
-
-### Phase 4 — Share & Extras ✅ / 🔲
-
-- [x] Build card generator: Canvas 2D overlay (1280×720) with 3D snapshot + part list + stats
-- [x] Multiple saved builds (`localStorage`, keyed by build name with timestamps, load/delete)
-- [x] Affiliate UTM param injection on buy links at click time
-- [ ] Print/PDF-friendly build summary view
 
 ---
 
@@ -257,101 +188,115 @@ All data lives in `data/parts.json`. No database. No server.
 
 ```
 fpv-drone-builder/
-├── index.html               ← single HTML file, import map, app shell
+├── index.html
 ├── css/
 │   ├── reset.css
 │   ├── layout.css
 │   ├── catalog.css
-│   ├── viewer.css
-│   └── components.css
+│   ├── blueprint.css
+│   ├── components.css
+│   └── viewer.css
 ├── js/
-│   ├── main.js              ← entry: imports all modules, init()
-│   ├── store.js             ← state + event bus
-│   ├── catalog.js           ← part cards, filters, search, detail view
-│   ├── builder.js           ← slot panel, preset loader
-│   ├── viewer.js            ← Three.js scene, procedural part meshes
-│   ├── compat.js            ← rule evaluator
-│   ├── summary.js           ← weight / price / TWR calc + violation badges
-│   ├── compare.js           ← part comparison modal (up to 3 parts)
-│   ├── saves.js             ← multiple saved builds in localStorage
-│   ├── export.js            ← build card PNG generator (Canvas 2D)
-│   └── share.js             ← URL hash encode/decode
-└── data/
-    └── parts.json           ← all parts + categories + compat rules + presets
+│   ├── main.js
+│   ├── store.js
+│   ├── builder.js
+│   ├── catalog.js
+│   ├── blueprint.js
+│   ├── gallery.js
+│   ├── compat.js
+│   ├── summary.js
+│   ├── compare.js
+│   ├── saves.js
+│   ├── stepper.js
+│   ├── share.js
+│   └── export.js
+├── data/
+│   └── parts.json
+└── scripts/
+    └── fetch-product-images.js
 ```
 
 ---
 
-## Visual Renderer
+## Blueprint Diagram
 
-The 3D viewer lives in `js/viewer.js` and uses Three.js loaded as an ES module via an import map — no bundler needed.
+The SVG diagram in `js/blueprint.js` is fully dynamic — no static SVG file. The entire diagram is built programmatically on page load via `document.createElementNS`.
 
-```html
-<!-- in index.html -->
-<script type="importmap">
-{
-  "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
-  }
-}
-</script>
-```
+**Per-part color** is applied through CSS custom properties set on each component's `<g>` element:
 
 ```js
-// js/viewer.js
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+el.style.setProperty('--pc', part.color);         // stroke / accent
+el.style.setProperty('--pf', hexAlpha(color, 0.15)); // fill
 ```
 
-**How part rendering works:**
+CSS uses `var(--pc)` and `var(--pf)` for all strokes and fills. Violation state overrides both via a hard-coded amber rule in `.bp-group.bp-violation`.
 
-All parts are built from Three.js primitives (`BoxGeometry`, `CylinderGeometry`, `ExtrudeGeometry`, etc.) — no external `.glb` assets are required. Each part category has a dedicated mesh builder:
+**Component states:**
 
-| Function | Output |
+| Class | Appearance |
 |---|---|
-| `addFrameMesh` | Center plate, top plate, 4 arms, standoffs, motor-mount rings |
-| `addMotorMeshes` | 4× motor groups (stator, bell, cap, shaft, screws) at arm endpoints |
-| `addPropMeshes` | 4× prop groups (tapered extruded blades, hub) with live spin animation |
-| `addESCMesh` | PCB, corner MOSFETs, capacitor |
-| `addFCMesh` | PCB, gyro chip, USB port, emissive LEDs |
-| `addCameraMesh` | Body, lens barrel, glass disc, reflection ring |
-| `addVTXMesh` | PCB, heatsink fins, antenna wire + mushroom tip, status LED |
-| `addBatteryMesh` | Cell-sized body, label strip, XT60 plug, cell separation lines |
-| `addReceiverMesh` | PCB, RF chip, dipole antennas (UHF or 2.4 GHz variant) |
+| `.bp-empty` | Light gray outlines on white |
+| `.bp-filled` | Part's color via `--pc` / `--pf`, subtle drop shadow |
+| `.bp-active` | Brighter stroke, glow filter, bolder labels |
+| `.bp-violation` | Amber override, all `--pc` / `--pf` ignored |
 
-**Attachment points** are hardcoded `THREE.Vector3` offsets in the `ATTACH` map. When a slot is active, `highlightSlot()` adds a cyan emissive tint to that part's mesh group. On slot click, `startCamAnim()` smoothly lerps the camera to a preset position focused on that component.
-
----
-
-## Marketplace & Parts Catalog
-
-`data/parts.json` is seeded manually from:
-- **GetFPV** product pages
-- **RaceDayQuads** — motors and frames
-- **Rotor Riot** — curated freestyle parts
-
-Each part has a `buy_url` field. Affiliate tags (`?ref=fpvbuilder&utm_source=fpvbuilder&utm_medium=referral`) are appended in `js/catalog.js` at render time so they stay out of the data file.
-
-To update prices: edit `data/parts.json` directly, or write a small Node script (`scripts/sync-prices.js`) that fetches from supplier APIs and rewrites the file.
+**Dynamic features:**
+- Propeller blade count and sweep radius scale from `specs.diameter_inch` and `specs.blade_count`
+- Battery cell dividers match `specs.cell_count_s`
+- Brand favicon loads from Google's favicon service per brand domain
+- Gallery icon pill appears on each component when a part is selected
 
 ---
 
-## Running Locally
+## Parts Gallery
 
-No install required. Just serve the folder as static files:
+The gallery modal (`js/gallery.js`) shows all 9 build slots as cards. Each filled card displays:
+
+- Colored header area (tinted from the part's color)
+- Product photo (`image_url`) if available, otherwise shows the category emoji
+- Brand favicon (top-right)
+- "View product ↗" overlay on hover (links to retailer)
+- Part name, brand, key spec, price, weight
+
+Open the gallery by:
+- Clicking the **Gallery** button in the blueprint HUD (shows count badge of selected parts)
+- Clicking the **📷 icon** that appears on any selected component in the blueprint
+
+---
+
+## Compatibility Engine
+
+`js/compat.js` evaluates rules from `data/parts.json` against the current build on every change. It only checks slots where both parts are selected.
+
+Active rules:
+
+| Rule | Type | What it checks |
+|---|---|---|
+| `motor-mount-match` | spec_match | Frame and motor mounting hole size |
+| `prop-frame-clearance` | range | Prop diameter fits inside frame |
+| `battery-voltage-motor` | range | Motor max voltage ≥ battery cell count |
+| `esc-current-motor` | range | ESC amp rating ≥ motor current draw |
+| `esc-battery-voltage` | range | ESC input voltage ≥ battery cell count |
+| `fc-esc-stack-size` | spec_match | FC and ESC stack mounting pattern |
+| `prop-motor-shaft` | spec_match | Prop shaft hole matches motor shaft |
+| `camera-vtx-format` | spec_match | Camera and VTX both analog or both digital |
+| `camera-vtx-digital-system` | spec_match | Digital camera and VTX use the same ecosystem (DJI O3, Walksnail, HDZero) |
+
+---
+
+## Scripts
+
+### `scripts/fetch-product-images.js`
+
+Populates `image_url` for all 283 parts by searching Bing Images (Google Images as fallback) via a headless Playwright browser. Requires network access — run locally, not in a sandboxed CI environment.
 
 ```bash
-# Option 1: Python (built into macOS/Linux)
-python3 -m http.server 8080
+npm install playwright
+npx playwright install chromium
 
-# Option 2: Node
-npx serve .
-
-# Option 3: VS Code Live Server extension
-# Right-click index.html → "Open with Live Server"
+node scripts/fetch-product-images.js            # fetch all missing images (~6 min)
+node scripts/fetch-product-images.js --dry-run  # show queries without fetching
+node scripts/fetch-product-images.js --force    # re-fetch even if already cached
 ```
 
-Then open `http://localhost:8080` in a modern browser.
-
-> Note: Three.js requires a real HTTP server (not `file://`) due to CORS restrictions on ES module imports.
+Progress is saved to `scripts/image-cache.json` after each part — safe to interrupt and resume. Updates `data/parts.json` in place when complete.
