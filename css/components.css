@@ -717,6 +717,10 @@ dialog.modal-gallery {
   padding: 8px;
   transition: filter 0.18s;
 }
+.gallery-product-placeholder {
+  object-fit: cover;
+  padding: 0;
+}
 .gallery-card-icon {
   position: absolute;
   bottom: 6px;
@@ -729,6 +733,10 @@ dialog.modal-gallery {
 .gallery-card-visual-empty .gallery-card-icon {
   position: static;
   font-size: 2rem;
+}
+/* Hide the bottom-left icon when the SVG placeholder already shows it */
+.gallery-card-visual:has(.gallery-product-placeholder) .gallery-card-icon {
+  display: none;
 }
 .gallery-favicon-wrap {
   position: absolute;

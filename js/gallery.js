@@ -115,18 +115,17 @@ function _cardHTML(slot, part, focused) {
 
   const color  = _expandHex(part.color || '#3b82f6');
   const [r, g, b] = _hexToRgb(color);
-  const headerBg   = `rgba(${r},${g},${b},0.1)`;
   const borderClr  = `rgba(${r},${g},${b},0.28)`;
   const iconClr    = _isLight(r, g, b) ? `rgba(${r},${g},${b},0.7)` : color;
 
   const domain   = BRAND_DOMAINS[part.brand];
   const favicon  = domain
-    ? `<img class="gallery-favicon" src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" alt="${part.brand}" loading="lazy">`
+    ? `<img class="gallery-favicon" src="https://www.google.com/s2/favicons?domain=${domain}&sz=32" alt="${part.brand}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'gallery-favicon-text',textContent:'${(part.brand||'?')[0]}'}));">`
     : `<span class="gallery-favicon-text">${(part.brand || '?')[0]}</span>`;
 
-  const imgTag   = part.image_url
-    ? `<img class="gallery-product-img" src="${part.image_url}" alt="${part.name}" loading="lazy">`
-    : '';
+  // Use real product photo if available, otherwise an inline SVG placeholder
+  const imgSrc = part.image_url || _placeholderImg(slot, r, g, b, meta.icon);
+  const imgTag = `<img class="gallery-product-img${part.image_url ? '' : ' gallery-product-placeholder'}" src="${imgSrc}" alt="${part.name}" loading="lazy">`;
 
   const spec     = _keySpec(slot, part);
   const price    = part.price_php ? `₱${part.price_php.toLocaleString()}` : '';
@@ -135,7 +134,7 @@ function _cardHTML(slot, part, focused) {
   return `<div class="gallery-card${focused_}" data-slot="${slot}"
                style="--gc:${color};--gcr:${r};--gcg:${g};--gcb:${b}">
     <a class="gallery-card-visual" href="${part.buy_url || '#'}" target="_blank"
-       rel="noopener" style="background:${headerBg};" title="View on retailer site">
+       rel="noopener" title="View on retailer site">
       ${imgTag}
       <span class="gallery-card-icon" style="color:${iconClr}">${meta.icon}</span>
       <div class="gallery-favicon-wrap">${favicon}</div>
@@ -168,6 +167,24 @@ function _keySpec(slot, part) {
     case 'receiver':  return s.protocol || '';
     default:          return '';
   }
+}
+
+function _placeholderImg(slot, r, g, b, icon) {
+  const c1 = `rgba(${r},${g},${b},0.07)`;
+  const c2 = `rgba(${r},${g},${b},0.2)`;
+  const stroke = `rgba(${r},${g},${b},0.18)`;
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='240' height='96'>
+    <defs>
+      <linearGradient id='g' x1='0' y1='0' x2='0' y2='1'>
+        <stop offset='0%' stop-color='${c1}'/>
+        <stop offset='100%' stop-color='${c2}'/>
+      </linearGradient>
+    </defs>
+    <rect width='240' height='96' fill='url(%23g)'/>
+    <rect x='1' y='1' width='238' height='94' fill='none' stroke='${stroke}' stroke-width='1' rx='1'/>
+    <text x='120' y='52' font-size='38' text-anchor='middle' dominant-baseline='middle' font-family='Segoe UI Emoji,Apple Color Emoji,sans-serif'>${icon}</text>
+  </svg>`;
+  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
 }
 
 function _expandHex(hex) {
