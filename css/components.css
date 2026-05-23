@@ -699,6 +699,11 @@ dialog.modal-gallery {
   overflow: hidden;
   text-decoration: none;
   transition: filter 0.18s;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--gcr, 59), var(--gcg, 130), var(--gcb, 246), 0.08),
+    rgba(var(--gcr, 59), var(--gcg, 130), var(--gcb, 246), 0.18)
+  );
 }
 .gallery-card-visual:hover .gallery-card-view-label { opacity: 1; }
 .gallery-card-visual:hover .gallery-product-img { filter: brightness(0.88); }

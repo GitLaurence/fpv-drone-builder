@@ -11,7 +11,7 @@ import { init as initGallery } from './gallery.js';
 const TOTAL_SLOTS = 9;
 
 async function main() {
-  const res  = await fetch('./data/parts.json');
+  const res  = await fetch('./data/parts.json', { cache: 'no-cache' });
   const data = await res.json();
   dispatch('INIT', data);
 
