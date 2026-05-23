@@ -94,6 +94,22 @@ const HEADERS = {
   'Accept-Language': 'en-US,en;q=0.9',
 };
 
+// ── Image quality filter ───────────────────────────────
+// Returns false for URLs that look like logos, banners, or store assets
+// rather than actual product photos.
+
+const LOGO_KEYWORDS = [
+  'logo', 'social', 'banner', 'icon', 'flag', 'header', 'footer',
+  'placeholder', 'badge', 'avatar', 'favicon', 'sprite', 'loading',
+  'no-image', 'noimage', 'default', 'blank', 'bg-', '-bg.', 'background',
+];
+
+function isProductImage(url) {
+  if (!url) return false;
+  const u = url.toLowerCase();
+  return !LOGO_KEYWORDS.some(k => u.includes(k));
+}
+
 // ── Load data ──────────────────────────────────────────
 
 const data    = JSON.parse(readFileSync(PARTS_PATH, 'utf8'));
@@ -118,22 +134,6 @@ if (DRY_RUN) {
 if (todo.length === 0) {
   console.log('Nothing to do — all parts already have good images.');
   process.exit(0);
-}
-
-// ── Image quality filter ───────────────────────────────
-// Returns false for URLs that look like logos, banners, or store assets
-// rather than actual product photos.
-
-const LOGO_KEYWORDS = [
-  'logo', 'social', 'banner', 'icon', 'flag', 'header', 'footer',
-  'placeholder', 'badge', 'avatar', 'favicon', 'sprite', 'loading',
-  'no-image', 'noimage', 'default', 'blank', 'bg-', '-bg.', 'background',
-];
-
-function isProductImage(url) {
-  if (!url) return false;
-  const u = url.toLowerCase();
-  return !LOGO_KEYWORDS.some(k => u.includes(k));
 }
 
 // ── HTTP helpers ───────────────────────────────────────
