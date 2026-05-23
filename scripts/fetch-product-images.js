@@ -2,41 +2,40 @@
 /**
  * Fetch product images from each brand's official website using fetch().
  *
- * Strategy per brand (tried in order):
- *   1. Shopify /products.json  — most FPV brands run Shopify; returns structured
- *      JSON with product titles + image URLs, no API key required.
- *   2. HTML search fallback    — fetch /search?q=<name>, extract the first
- *      product image from the response HTML (Shopify CDN pattern, og:image,
- *      or JSON-LD structured data).
+ * Strategy per part (tried in order):
+ *   1. Shopify predictive search  — /search/suggest.json returns direct
+ *      product matches with image URLs; fastest and most accurate.
+ *   2. Shopify /products.json     — full catalog fuzzy match; one HTTP
+ *      call per brand regardless of how many parts they have.
+ *   3. HTML search fallback       — fetch /search?q=<name> and extract
+ *      the first product image from the response HTML.
  *
- * Brand product catalogs are cached in scripts/brand-catalog.json so each
- * brand's site is only hit once per run, even if they have many parts.
- * Per-part results are cached in scripts/image-cache.json so the script is
- * safe to interrupt and resume.
+ * All strategies filter out logo/banner/social images via isProductImage().
+ * Parts whose current image_url looks like a logo are automatically
+ * re-fetched on a normal run (no --force needed).
  *
  * Requirements: Node 18+ (built-in fetch). No npm install needed.
  *
  * Usage:
- *   node scripts/fetch-product-images.js            # fetch all missing images
+ *   node scripts/fetch-product-images.js            # fetch missing + fix logos
  *   node scripts/fetch-product-images.js --dry-run  # show queries, no writes
- *   node scripts/fetch-product-images.js --force    # re-fetch even if cached
+ *   node scripts/fetch-product-images.js --force    # re-fetch everything
  */
 
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
 
-const __dir       = dirname(fileURLToPath(import.meta.url));
-const PARTS_PATH  = resolve(__dir, '../data/parts.json');
-const CACHE_PATH  = resolve(__dir, 'image-cache.json');
+const __dir        = dirname(fileURLToPath(import.meta.url));
+const PARTS_PATH   = resolve(__dir, '../data/parts.json');
+const CACHE_PATH   = resolve(__dir, 'image-cache.json');
 const CATALOG_PATH = resolve(__dir, 'brand-catalog.json');
 
 const DRY_RUN  = process.argv.includes('--dry-run');
 const FORCE    = process.argv.includes('--force');
 const TIMEOUT  = 12000;
-const DELAY_MS = 800;
+const DELAY_MS = 600;
 
-// Brand → official shop domain (overrides the favicon domain where they differ)
 const BRAND_DOMAINS = {
   'AKK':        'www.akktek.com',
   'Aikon':      'aikonfpv.com',
@@ -99,7 +98,12 @@ const data    = JSON.parse(readFileSync(PARTS_PATH, 'utf8'));
 const cache   = existsSync(CACHE_PATH)   ? JSON.parse(readFileSync(CACHE_PATH, 'utf8'))   : {};
 const catalog = existsSync(CATALOG_PATH) ? JSON.parse(readFileSync(CATALOG_PATH, 'utf8')) : {};
 
-const todo = data.parts.filter(p => FORCE || (!p.image_url && cache[p.id] === undefined));
+// Re-fetch if: no image, never tried, or current image looks like a logo
+const todo = data.parts.filter(p =>
+  FORCE ||
+  (!p.image_url && cache[p.id] === undefined) ||
+  (p.image_url && !isProductImage(p.image_url))
+);
 console.log(`Parts to fetch: ${todo.length} of ${data.parts.length}`);
 
 if (DRY_RUN) {
@@ -110,11 +114,27 @@ if (DRY_RUN) {
 }
 
 if (todo.length === 0) {
-  console.log('Nothing to do — all parts already have images.');
+  console.log('Nothing to do — all parts already have good images.');
   process.exit(0);
 }
 
-// ── Helpers ────────────────────────────────────────────
+// ── Image quality filter ───────────────────────────────
+// Returns false for URLs that look like logos, banners, or store assets
+// rather than actual product photos.
+
+const LOGO_KEYWORDS = [
+  'logo', 'social', 'banner', 'icon', 'flag', 'header', 'footer',
+  'placeholder', 'badge', 'avatar', 'favicon', 'sprite', 'loading',
+  'no-image', 'noimage', 'default', 'blank', 'bg-', '-bg.', 'background',
+];
+
+function isProductImage(url) {
+  if (!url) return false;
+  const u = url.toLowerCase();
+  return !LOGO_KEYWORDS.some(k => u.includes(k));
+}
+
+// ── HTTP helpers ───────────────────────────────────────
 
 async function fetchText(url) {
   const ctrl = new AbortController();
@@ -144,7 +164,8 @@ async function fetchJSON(url) {
   }
 }
 
-// Jaccard similarity on word tokens — used to match part name to product title
+// ── Similarity / matching ──────────────────────────────
+
 function similarity(a, b) {
   const tok = s => new Set(s.toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(Boolean));
   const A = tok(a), B = tok(b);
@@ -162,51 +183,77 @@ function bestMatch(products, partName) {
   return bestScore >= 0.35 ? best : null;
 }
 
-// Extract image URL from raw HTML using multiple patterns
+// ── Image extraction from HTML ─────────────────────────
+// Priority: JSON-LD Product schema > Shopify /products/ CDN path >
+//           filtered Shopify /files/ CDN > og:image (last resort)
+
 function extractImageFromHTML(html) {
   if (!html) return null;
 
-  // 1. Shopify CDN image in <img> or <source> tags
-  const shopifyCDN = html.match(/https:\/\/cdn\.shopify\.com\/s\/files\/[^"'\s]+\.(?:jpe?g|png|webp)/i);
-  if (shopifyCDN) return cleanImgUrl(shopifyCDN[0]);
+  // 1. JSON-LD Product schema — structured data is the most reliable signal
+  const jsonld = html.match(/"@type"\s*:\s*"Product"[\s\S]{0,800}?"image"\s*:\s*"([^"]+)"/);
+  if (jsonld?.[1] && isProductImage(jsonld[1])) return jsonld[1];
 
-  // 2. og:image meta tag (both attribute orders)
+  // 2. Shopify CDN /products/ path (product images, not store assets)
+  const shopifyProduct = html.match(/https:\/\/cdn\.shopify\.com\/s\/files\/[^"'\s]+\/products\/[^"'\s]+\.(?:jpe?g|png|webp)/i);
+  if (shopifyProduct) return cleanImgUrl(shopifyProduct[0]);
+
+  // 3. Any Shopify CDN image that passes the logo filter
+  const allShopify = [...html.matchAll(/https:\/\/cdn\.shopify\.com\/s\/files\/[^"'\s]+\.(?:jpe?g|png|webp)/gi)];
+  for (const m of allShopify) {
+    if (isProductImage(m[0])) return cleanImgUrl(m[0]);
+  }
+
+  // 4. og:image — last resort; often a brand logo but worth trying if nothing else worked
   const og = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
           || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
-  if (og?.[1]) return og[1];
-
-  // 3. JSON-LD Product schema
-  const jsonld = html.match(/"@type"\s*:\s*"Product"[\s\S]{0,500}?"image"\s*:\s*"([^"]+)"/);
-  if (jsonld?.[1]) return jsonld[1];
-
-  // 4. Any https image URL near "product" keyword
-  const near = html.match(/product[^"'<>]{0,80}(https?:\/\/[^"'\s]+\.(?:jpe?g|png|webp))/i)
-            || html.match(/(https?:\/\/[^"'\s]+\.(?:jpe?g|png|webp))[^"'<>]{0,80}product/i);
-  if (near?.[1]) return near[1];
+  if (og?.[1] && isProductImage(og[1])) return og[1];
 
   return null;
 }
 
-// Strip Shopify size suffixes like _1024x1024 to get full-size image
 function cleanImgUrl(url) {
   return url.replace(/_\d+x\d+(\.\w+)$/, '$1');
 }
 
-// ── Strategy 1: Shopify products.json ─────────────────
+// ── Strategy 1: Shopify predictive search ─────────────
+// /search/suggest.json returns direct product matches with images —
+// more accurate than fuzzy-matching the full catalog.
+
+async function searchShopifyPredictive(domain, partName) {
+  const url = `https://${domain}/search/suggest.json?q=${encodeURIComponent(partName)}&resources[type]=product&resources[limit]=6`;
+  const json = await fetchJSON(url);
+  const products = json?.resources?.results?.products;
+  if (!products?.length) return null;
+
+  let best = null, bestScore = 0;
+  for (const p of products) {
+    const s = similarity(partName, p.title);
+    if (s > bestScore) { bestScore = s; best = p; }
+  }
+  if (bestScore < 0.25 || !best) return null;
+
+  const img = best.image;
+  return (img && isProductImage(img)) ? img : null;
+}
+
+// ── Strategy 2: Shopify products.json catalog ─────────
 
 async function fetchShopifyCatalog(domain) {
-  if (catalog[domain]) return catalog[domain]; // cached
+  if (catalog[domain]) return catalog[domain];
 
   const products = [];
   let page = 1;
   while (true) {
-    const data = await fetchJSON(`https://${domain}/products.json?limit=250&page=${page}`);
-    if (!data?.products?.length) break;
-    data.products.forEach(p => {
-      const img = p.images?.[0]?.src;
+    const json = await fetchJSON(`https://${domain}/products.json?limit=250&page=${page}`);
+    if (!json?.products?.length) break;
+    json.products.forEach(p => {
+      // Prefer images from /products/ path; fall back to any image that passes the filter
+      const img = p.images?.find(i => i.src?.includes('/products/'))?.src
+               || p.images?.find(i => isProductImage(i.src))?.src;
       if (img) products.push({ title: p.title, image: cleanImgUrl(img) });
     });
-    if (data.products.length < 250) break;
+    if (json.products.length < 250) break;
     page++;
     await delay(300);
   }
@@ -214,12 +261,12 @@ async function fetchShopifyCatalog(domain) {
   if (products.length > 0) {
     catalog[domain] = products;
     writeFileSync(CATALOG_PATH, JSON.stringify(catalog, null, 2));
-    console.log(`    Shopify catalog: ${products.length} products from ${domain}`);
+    console.log(`    catalog: ${products.length} products from ${domain}`);
   }
   return products;
 }
 
-// ── Strategy 2: HTML search fallback ──────────────────
+// ── Strategy 3: HTML search fallback ──────────────────
 
 async function searchHTML(domain, partName) {
   const queries = [
@@ -242,14 +289,19 @@ async function findImage(part) {
   const domain = BRAND_DOMAINS[part.brand];
   if (!domain) return null;
 
-  // Strategy 1: Shopify catalog
-  const shopify = await fetchShopifyCatalog(domain);
-  if (shopify.length > 0) {
-    const match = bestMatch(shopify, part.name);
-    if (match) return match.image;
+  // Strategy 1: Shopify predictive search
+  const predictive = await searchShopifyPredictive(domain, part.name);
+  if (predictive) return predictive;
+  await delay(200);
+
+  // Strategy 2: Full Shopify catalog match
+  const products = await fetchShopifyCatalog(domain);
+  if (products.length > 0) {
+    const match = bestMatch(products, part.name);
+    if (match && isProductImage(match.image)) return match.image;
   }
 
-  // Strategy 2: HTML search
+  // Strategy 3: HTML search
   return await searchHTML(domain, part.name);
 }
 
@@ -265,7 +317,6 @@ function saveCache() {
 
 let found = 0, failed = 0;
 
-// Group by brand so we only fetch Shopify catalogs once per brand
 const byBrand = {};
 todo.forEach(p => (byBrand[p.brand] = [...(byBrand[p.brand] || []), p]));
 const brands = Object.keys(byBrand);
@@ -273,7 +324,7 @@ console.log(`Brands to query: ${brands.join(', ')}\n`);
 
 let idx = 0;
 for (const brand of brands) {
-  const parts = byBrand[brand];
+  const parts  = byBrand[brand];
   const domain = BRAND_DOMAINS[brand];
   console.log(`\n── ${brand} (${domain || 'no domain'}) — ${parts.length} parts`);
 
@@ -283,7 +334,7 @@ for (const brand of brands) {
     continue;
   }
 
-  // Warm up Shopify catalog for this brand (shared across all its parts)
+  // Warm Shopify catalog once per brand (reused by all parts of this brand)
   await fetchShopifyCatalog(domain).catch(() => []);
 
   for (const part of parts) {
@@ -312,10 +363,16 @@ for (const brand of brands) {
   }
 }
 
-// Write image URLs back into parts.json
+// Write image URLs back into parts.json (only set non-null results)
 let updated = 0;
 data.parts.forEach(p => {
-  if (cache[p.id]) { p.image_url = cache[p.id]; updated++; }
+  if (cache[p.id]) {
+    p.image_url = cache[p.id];
+    updated++;
+  } else if (cache[p.id] === null && p.image_url && !isProductImage(p.image_url)) {
+    // Clear logo images that we couldn't replace with a real photo
+    delete p.image_url;
+  }
 });
 writeFileSync(PARTS_PATH, JSON.stringify(data, null, 2));
 
@@ -324,4 +381,4 @@ console.log(`Found:   ${found}`);
 console.log(`Failed:  ${failed}`);
 console.log(`Updated: ${updated} parts in data/parts.json`);
 console.log(`Brand catalogs cached in scripts/brand-catalog.json`);
-console.log(`Re-run to retry any failed parts.`);
+console.log(`Re-run to retry failed parts.`);

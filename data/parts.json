@@ -341,8 +341,7 @@
         "arm_thickness_mm": 5,
         "standoff_height_mm": 25,
         "thingiverse_url": "https://www.thingiverse.com/search?q=flyfishrc+fifty5"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0618/1811/0132/files/Social-logo.jpg"
+      }
     },
     {
       "id": "armattan-rooster-5",
@@ -429,8 +428,7 @@
         "arm_thickness_mm": 5,
         "standoff_height_mm": 30,
         "thingiverse_url": "https://www.thingiverse.com/search?q=lumenier+qav-s"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0698/9525/8342/files/logo-white.webp"
+      }
     },
     {
       "id": "flywoo-explorer-lr-4",
@@ -600,8 +598,7 @@
         "arm_thickness_mm": 4,
         "standoff_height_mm": 30,
         "thingiverse_url": null
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "geprc-cinelog30-hd-3inch",
@@ -643,8 +640,7 @@
         "arm_thickness_mm": 2,
         "standoff_height_mm": 20,
         "thingiverse_url": null
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba-flags.png"
+      }
     },
     {
       "id": "tmotor-f40-pro-iv",
@@ -906,8 +902,7 @@
         "max_voltage_s": 3,
         "shaft_mm": 2,
         "peak_current_a": 12
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba-flags.png"
+      }
     },
     {
       "id": "meps-sz2306-v2",
@@ -1089,8 +1084,7 @@
         "max_voltage_s": 6,
         "shaft_mm": 4,
         "peak_current_a": 38
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0469/7358/3518/files/EMAX_Logo_1200x628_7a321f0b-f1f4-4d2d-9d6e-8bb82fc2b840.jpg"
+      }
     },
     {
       "id": "foxeer-reaper-2306",
@@ -1190,8 +1184,7 @@
         "max_voltage_s": 4,
         "shaft_mm": 3,
         "peak_current_a": 25
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "tmotor-air-2306-1750kv",
@@ -1231,8 +1224,7 @@
         "max_voltage_s": 6,
         "shaft_mm": 4,
         "peak_current_a": 40
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0618/1811/0132/files/Social-logo.jpg"
+      }
     },
     {
       "id": "tmotor-f55a-pro-ii",
@@ -1286,8 +1278,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 30,
         "burst_amp": 60
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "speedybee-45a",
@@ -1413,8 +1404,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 30,
         "burst_amp": 80
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0286/0892/1660/products/globo-logo-center.png"
+      }
     },
     {
       "id": "flywoo-goku-45a",
@@ -1487,8 +1477,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 30,
         "burst_amp": 65
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "matek-f65a-blheli32",
@@ -2233,8 +2222,7 @@
         "format": "Analog",
         "tvl": 1200,
         "voltage_range": "5-40V"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "dji-o3-camera",
@@ -2289,8 +2277,7 @@
         "fov_deg": 165,
         "format": "Analog",
         "resolution": "1200TVL"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "runcam-nano-4",
@@ -2325,8 +2312,7 @@
         "format": "Digital",
         "resolution": "1080p60",
         "video_system": "DJI-FPV"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "hdzero-nano-90",
@@ -2396,8 +2382,7 @@
         "fov_deg": 162,
         "format": "Analog",
         "resolution": "1200TVL"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "runcam-owl-plus-3",
@@ -2542,8 +2527,7 @@
         "voltage_range": "7.4-26.4V",
         "connector": "U.FL",
         "video_system": "Walksnail"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/VTX1-removebg-preview.png?v=1760686109"
+      }
     },
     {
       "id": "hdzero-race-vtx",
@@ -2691,8 +2675,7 @@
         "c_rating": 120,
         "connector": "XT60",
         "voltage_nominal": 14.8
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "tattu-rline-4s-1550",
@@ -2746,8 +2729,7 @@
         "c_rating": 120,
         "connector": "XT30",
         "voltage_nominal": 11.1
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "lumenier-n2o-4s-1500",
@@ -2765,8 +2747,7 @@
         "c_rating": 120,
         "connector": "XT60",
         "voltage_nominal": 14.8
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0698/9525/8342/files/logo-white.webp"
+      }
     },
     {
       "id": "ovonic-4s-1500",
@@ -2857,8 +2838,7 @@
         "c_rating": 100,
         "connector": "XT60",
         "voltage_nominal": 14.8
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "gnb-2s-450mah-80c",
@@ -2949,8 +2929,7 @@
         "c_rating": 120,
         "connector": "XT60",
         "voltage_nominal": 22.2
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "expresslrs-ep2",
@@ -3018,8 +2997,7 @@
         "frequency_mhz": 2400,
         "telemetry": true,
         "range_km": 30
-      },
-      "image_url": "http://radiomasterrc.com/cdn/shop/files/RadioMaster_Logo_SVG_M-B.png?v=1750413682"
+      }
     },
     {
       "id": "flysky-fsa8s-v2",
@@ -3036,8 +3014,7 @@
         "frequency_mhz": 2400,
         "telemetry": true,
         "range_km": 1
-      },
-      "image_url": "http://images.squarespace-cdn.com/content/v1/5bc852d6b9144934c40d499c/950a678b-ff06-4cad-9b84-f5decef1fe0a/%E5%AF%8C%E6%96%AF%E6%96%B0LOGO%281%29.jpg?format=1500w"
+      }
     },
     {
       "id": "betafpv-elrs-lite",
@@ -3316,8 +3293,7 @@
         "voltage_range": "7.4-26.4V",
         "connector": "U.FL",
         "video_system": "DJI-FPV"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "radiomaster-rp4td",
@@ -3517,8 +3493,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 30,
         "burst_amp": 75
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "holybro-kotleta20",
@@ -3536,8 +3511,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 20,
         "burst_amp": 25
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0286/0892/1660/products/globo-logo-center.png"
+      }
     },
     {
       "id": "jhemcu-ghf420aio-35a",
@@ -3743,8 +3717,7 @@
         "resolution": "1080p60",
         "voltage_range": "5-17V",
         "video_system": "DJI-FPV"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "hdzero-freestyle-vtx",
@@ -3818,8 +3791,7 @@
         "c_rating": 120,
         "connector": "XT60",
         "voltage_nominal": 22.2
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "gnb-4s-1800mah",
@@ -3992,8 +3964,7 @@
         "arm_thickness_mm": 2,
         "standoff_height_mm": 25,
         "thingiverse_url": "https://www.thingiverse.com/search?q=shendrones+squirt+v2"
-      },
-      "image_url": "http://images.squarespace-cdn.com/content/v1/54e3e312e4b0af154d15d105/1431138080845-9G05JADRN757B1E0N62K/sd_logo.jpg?format=1500w"
+      }
     },
     {
       "id": "diatone-roma-l3-v2",
@@ -4014,8 +3985,7 @@
         "arm_thickness_mm": 3,
         "standoff_height_mm": 22,
         "thingiverse_url": "https://www.thingiverse.com/search?q=diatone+roma+l3"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "tmotor-pacer-v2-2306",
@@ -4404,8 +4374,7 @@
         "format": "Digital",
         "resolution": "1080p60",
         "video_system": "Walksnail"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/WalksnailAvatarHDMini1sLiteCamera.png?v=1725963386"
+      }
     },
     {
       "id": "runcam-racer-nano-4",
@@ -4459,8 +4428,7 @@
         "bands": "A/B/E/F/R",
         "voltage_range": "5-26V",
         "connector": "U.FL"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba-flags.png"
+      }
     },
     {
       "id": "hglrc-zeus-nano",
@@ -4570,8 +4538,7 @@
         "c_rating": 80,
         "connector": "PH2.0",
         "voltage_nominal": 7.4
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "tbs-nano-rx-se",
@@ -4811,8 +4778,7 @@
         "arm_thickness_mm": 5,
         "standoff_height_mm": 30,
         "thingiverse_url": "https://www.thingiverse.com/search?q=diatone+roma+f7"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "tmotor-f22-2207-1950kv",
@@ -4991,8 +4957,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 30,
         "burst_amp": 50
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "aikon-ak32-pro-45a",
@@ -5065,8 +5030,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 20,
         "burst_amp": 28
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0194/1736/6592/t/1/assets/ba-flags.png"
+      }
     },
     {
       "id": "diatone-mamba-f405-mk3",
@@ -5089,8 +5053,7 @@
         "5v_pad_count": 2,
         "curr_sensor": false,
         "diagram_url": "https://www.diatone.us/products/mamba-f405-mk3-flight-controller"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "hglrc-zeus-f745-fc",
@@ -5372,8 +5335,7 @@
         "format": "Digital",
         "resolution": "4K30",
         "voltage_range": "5V"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "walksnail-avatar-hd-vtx",
@@ -5467,8 +5429,7 @@
         "voltage_range": "7.4-26.4V",
         "connector": "U.FL",
         "video_system": "Walksnail"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/WalksnailAvatarHDVTXV2Module.png?v=1725963018"
+      }
     },
     {
       "id": "rush-tiny-tank",
@@ -5524,8 +5485,7 @@
         "c_rating": 100,
         "connector": "XT60",
         "voltage_nominal": 22.2
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "tattu-rline-v4-6s-1500",
@@ -5616,8 +5576,7 @@
         "c_rating": 100,
         "connector": "XT30",
         "voltage_nominal": 14.8
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "radiomaster-rp3-900mhz",
@@ -6008,8 +5967,7 @@
         "protocol": "DSHOT600",
         "form_factor_mm": 20,
         "burst_amp": 80
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0286/0892/1660/products/globo-logo-center.png"
+      }
     },
     {
       "id": "matek-f40a-4in1",
@@ -6156,8 +6114,7 @@
         "5v_pad_count": 2,
         "curr_sensor": false,
         "diagram_url": "https://www.diatone.us/products/mamba-f405-mini-mk2-flight-controller"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "matek-h743-mini",
@@ -6324,8 +6281,7 @@
         "resolution": "1080p60",
         "voltage_range": "5-17V",
         "video_system": "DJI-FPV"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "runcam-swift-mini-3",
@@ -6380,8 +6336,7 @@
         "format": "Analog",
         "tvl": 1200,
         "voltage_range": "5-40V"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "tbs-unify-pro32-hv",
@@ -6545,8 +6500,7 @@
         "c_rating": 120,
         "connector": "XT60",
         "voltage_nominal": 22.2
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0698/9525/8342/files/logo-white.webp"
+      }
     },
     {
       "id": "cnhl-ministar-4s-1500",
@@ -6564,8 +6518,7 @@
         "c_rating": 120,
         "connector": "XT60",
         "voltage_nominal": 14.8
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "jumper-r1-nano-elrs",
@@ -6734,8 +6687,7 @@
         "arm_thickness_mm": 5,
         "standoff_height_mm": 30,
         "thingiverse_url": "https://www.thingiverse.com/search?q=diatone+roma+x5"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0027/2708/4144/files/diatone_logo_3679e4c1-053c-40e4-9e01-9f90192ab18b.jpg"
+      }
     },
     {
       "id": "iflight-xl5-v4",
@@ -7118,8 +7070,7 @@
         "format": "Analog",
         "tvl": 1200,
         "voltage_range": "5-40V"
-      },
-      "image_url": "https://cdn.shopify.com/s/files/1/0036/3921/4169/files/app-bss-banner-popup_ffbf79f4-93ee-4c78-901c-a344603ad040_20260429-135923.png"
+      }
     },
     {
       "id": "dji-o4-air-unit-cam",
@@ -7284,8 +7235,7 @@
         "c_rating": 120,
         "connector": "XT60",
         "voltage_nominal": 11.1
-      },
-      "image_url": "https://chinahobbyline.com/cdn/shop/files/CNHL_Logo_8188dd42-f957-4fb4-9322-c8a5a92fe2d0_1200x697.png?v=1648209891"
+      }
     },
     {
       "id": "ovonic-4s-850mah-100c",
