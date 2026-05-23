@@ -23,15 +23,15 @@ No frameworks. No build step. No install required.
 
 ## Features
 
-- **283 real parts** across 9 categories (frame, motor, ESC, FC, propeller, FPV camera, VTX, battery, receiver)
-- **Live SVG blueprint** — top-down drone diagram updates in real time as you select parts; each component takes the part's actual color, shows the brand favicon + key spec
-- **Parts gallery modal** — click any component in the diagram or the Gallery button to see all selected parts in a visual card grid with specs and retailer links
+- **369 real parts** across 9 categories (frame, motor, ESC, FC, propeller, FPV camera, VTX, battery, receiver)
+- **Live SVG blueprint** — top-down drone diagram updates in real time as you select parts; each component takes the part's actual color and shows the brand name, key spec, and a gallery shortcut icon
+- **Parts gallery modal** — click the Gallery button or the camera icon on any blueprint component to see all selected parts as a visual card grid with product photos, specs, and retailer links
 - **Compatibility checker** — 9 rules covering motor mount sizing, voltage limits, prop clearance, ESC current, digital video system pairing (DJI O3, Walksnail, HDZero) and cross-system mismatches; violations shown inline and highlighted amber on the diagram
-- **Part catalog** — search, filter by brand / in-stock, sort by price/weight/name, view full specs, compare up to 3 parts side by side
+- **Part catalog** — search, filter by brand / in-stock, sort by price/weight/name, view full specs, compare up to 4 parts side by side
 - **5 preset builds** — 5" freestyle, 5" race, 3" toothpick, long-range 5", micro 3.5"
 - **Saved builds** — multiple named builds in `localStorage`, load/delete anytime
 - **Share link** — full build state encoded in URL hash, shareable and bookmark-able
-- **Build stats modal** — total weight, estimated thrust-to-weight ratio, total price (PHP)
+- **Build stats** — total weight, estimated thrust-to-weight ratio, total price (PHP)
 
 ---
 
@@ -84,7 +84,7 @@ index.html
     ├── builder.js         ← slot panel, preset loader, active-slot management
     ├── catalog.js         ← part cards, search/filter/sort, detail view, brand logos
     ├── blueprint.js       ← SVG diagram — draws and updates all 9 components
-    ├── gallery.js         ← parts gallery modal (card grid with specs + retailer links)
+    ├── gallery.js         ← parts gallery modal (card grid with product photos + specs)
     ├── compat.js          ← compatibility rule evaluator
     ├── summary.js         ← weight / price / TWR calc + violation badge count
     ├── compare.js         ← side-by-side part comparison modal
@@ -139,7 +139,7 @@ Everything lives in `data/parts.json`. No database, no server.
   "weight_g": 68,
   "color": "#1a1a1a",
   "buy_url": "https://iflight.com/...",
-  "image_url": "https://...",
+  "image_url": "https://cdn.shopify.com/...",
   "in_stock": true,
   "specs": {
     "size_mm": 225,
@@ -151,7 +151,7 @@ Everything lives in `data/parts.json`. No database, no server.
 }
 ```
 
-`image_url` is optional — the gallery shows a color-tinted header when absent. Run `scripts/fetch-product-images.js` to auto-populate images for all parts (see [Scripts](#scripts)).
+`image_url` is populated by the GitHub Actions workflow (see [Scripts](#scripts)). The gallery shows a color-matched SVG illustration when the field is absent.
 
 ### Spec fields by category
 
@@ -189,6 +189,7 @@ Two rule types are supported:
 ```
 fpv-drone-builder/
 ├── index.html
+├── package.json
 ├── css/
 │   ├── reset.css
 │   ├── layout.css
@@ -212,8 +213,11 @@ fpv-drone-builder/
 │   └── export.js
 ├── data/
 │   └── parts.json
-└── scripts/
-    └── fetch-product-images.js
+├── scripts/
+│   └── fetch-product-images.js
+└── .github/
+    └── workflows/
+        └── fetch-images.yml
 ```
 
 ---
@@ -225,26 +229,26 @@ The SVG diagram in `js/blueprint.js` is fully dynamic — no static SVG file. Th
 **Per-part color** is applied through CSS custom properties set on each component's `<g>` element:
 
 ```js
-el.style.setProperty('--pc', part.color);         // stroke / accent
-el.style.setProperty('--pf', hexAlpha(color, 0.15)); // fill
+el.style.setProperty('--pc', part.color);                 // stroke / accent
+el.style.setProperty('--pf', hexAlpha(part.color, 0.18)); // fill
 ```
 
-CSS uses `var(--pc)` and `var(--pf)` for all strokes and fills. Violation state overrides both via a hard-coded amber rule in `.bp-group.bp-violation`.
+CSS uses `var(--pc)` and `var(--pf)` for all strokes and fills. Violation state overrides both via `.bp-group.bp-violation`.
 
 **Component states:**
 
 | Class | Appearance |
 |---|---|
-| `.bp-empty` | Light gray outlines on white |
-| `.bp-filled` | Part's color via `--pc` / `--pf`, subtle drop shadow |
+| `.bp-empty` | Light gray outlines |
+| `.bp-filled` | Part's color via `--pc` / `--pf`, drop shadow |
 | `.bp-active` | Brighter stroke, glow filter, bolder labels |
-| `.bp-violation` | Amber override, all `--pc` / `--pf` ignored |
+| `.bp-violation` | Amber override — ignores `--pc` / `--pf` |
 
 **Dynamic features:**
 - Propeller blade count and sweep radius scale from `specs.diameter_inch` and `specs.blade_count`
 - Battery cell dividers match `specs.cell_count_s`
 - Brand favicon loads from Google's favicon service per brand domain
-- Gallery icon pill appears on each component when a part is selected
+- Camera icon pill appears on each filled component — click it to open the gallery focused on that slot
 
 ---
 
@@ -252,23 +256,20 @@ CSS uses `var(--pc)` and `var(--pf)` for all strokes and fills. Violation state 
 
 The gallery modal (`js/gallery.js`) shows all 9 build slots as cards. Each filled card displays:
 
-- Colored header area (tinted from the part's color)
-- Product photo (`image_url`) if available, otherwise shows the category emoji
-- Brand favicon (top-right)
-- "View product ↗" overlay on hover (links to retailer)
-- Part name, brand, key spec, price, weight
+- Product photo (`image_url`) filling the card header, or a color-matched SVG illustration if no photo is available
+- Brand favicon (top-right corner)
+- "View product ↗" overlay on hover — links directly to the retailer
+- Part name, brand, key spec, price, and weight
 
-Open the gallery by:
-- Clicking the **Gallery** button in the blueprint HUD (shows count badge of selected parts)
-- Clicking the **📷 icon** that appears on any selected component in the blueprint
+**Open the gallery by:**
+- Clicking the **Gallery** button in the blueprint toolbar (shows a count badge of selected parts)
+- Clicking the **📷 icon** on any selected component in the blueprint diagram
 
 ---
 
 ## Compatibility Engine
 
-`js/compat.js` evaluates rules from `data/parts.json` against the current build on every change. It only checks slots where both parts are selected.
-
-Active rules:
+`js/compat.js` evaluates rules from `data/parts.json` against the current build on every change. Rules are only evaluated when both referenced slots have a part selected.
 
 | Rule | Type | What it checks |
 |---|---|---|
@@ -280,7 +281,7 @@ Active rules:
 | `fc-esc-stack-size` | spec_match | FC and ESC stack mounting pattern |
 | `prop-motor-shaft` | spec_match | Prop shaft hole matches motor shaft |
 | `camera-vtx-format` | spec_match | Camera and VTX both analog or both digital |
-| `camera-vtx-digital-system` | spec_match | Digital camera and VTX use the same ecosystem (DJI O3, Walksnail, HDZero) |
+| `camera-vtx-digital-system` | spec_match | Digital camera and VTX use the same ecosystem |
 
 ---
 
@@ -288,17 +289,24 @@ Active rules:
 
 ### `scripts/fetch-product-images.js`
 
-Populates `image_url` for all 283 parts by querying each brand's official website directly. No API keys. No npm install. Requires Node 18+.
+Populates `image_url` for all 369 parts by querying brand official sites and major FPV retailers. No API keys. No npm install. Requires Node 18+.
 
-**Strategy per brand:**
-1. **Shopify `/products.json`** — most FPV brands run Shopify; fetches the full product catalog as structured JSON, then fuzzy-matches each part name. One HTTP call per brand regardless of how many parts they have.
-2. **HTML search fallback** — if the brand isn't on Shopify, fetches `/search?q=<name>` and extracts the first product image from the HTML (`og:image`, Shopify CDN pattern, or JSON-LD).
+**Strategy per part (tried in order):**
+1. **Brand Shopify predictive search** — `/search/suggest.json` on the brand's own site; fastest and most accurate for Shopify brands (iFlight, BetaFPV, GEPRC, Holybro…)
+2. **Brand Shopify catalog match** — `/products.json` full catalog with Jaccard fuzzy matching
+3. **FPV retailer search** — searches GetFPV and RaceDayQuads, which stock virtually every brand including non-Shopify ones (Gemfan, HQProp, RunCam, Foxeer, Matek, T-Motor, CNHL…)
+4. **HTML search fallback** — fetches `/search?q=<name>` and extracts a product image from JSON-LD schema or Shopify CDN URLs
+
+All strategies filter out logo, banner, and social images via URL keyword matching. Parts whose `image_url` looks like a logo are automatically re-fetched on the next run.
 
 ```bash
-# Node 18+ required — no install needed
-node scripts/fetch-product-images.js            # fetch all missing images
+node scripts/fetch-product-images.js            # fetch missing + fix logos
 node scripts/fetch-product-images.js --dry-run  # list brands + part counts, no fetches
-node scripts/fetch-product-images.js --force    # re-fetch even if already cached
+node scripts/fetch-product-images.js --force    # re-fetch everything
 ```
 
-Brand catalogs are cached to `scripts/brand-catalog.json` and per-part results to `scripts/image-cache.json` (both gitignored). Safe to interrupt and resume. Updates `data/parts.json` in place when complete.
+### GitHub Actions workflow
+
+`.github/workflows/fetch-images.yml` runs the script in a GitHub Actions environment (full internet access) and commits the updated `data/parts.json` back to the repo.
+
+**Trigger:** Actions tab → **Fetch Product Images** → **Run workflow**. Check "force" to re-fetch all parts regardless of cache.
