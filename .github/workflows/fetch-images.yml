@@ -1,0 +1,39 @@
+name: Fetch Product Images
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Re-fetch images even if already cached
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch product images from brand sites
+        run: |
+          if [ "${{ inputs.force }}" = "true" ]; then
+            node scripts/fetch-product-images.js --force
+          else
+            node scripts/fetch-product-images.js
+          fi
+
+      - name: Commit updated image URLs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/parts.json
+          git diff --staged --quiet \
+            && echo "No changes to commit." \
+            || { git commit -m "Update product image URLs from brand sites" && git push; }
