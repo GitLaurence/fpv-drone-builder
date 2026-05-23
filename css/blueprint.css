@@ -373,6 +373,29 @@
 .bp-group:hover .bp-shape,
 .bp-group:hover .bp-plate { opacity: 0.82; }
 
+/* ── Blueprint gallery pill + icon in SVG ────────────── */
+.bp-gallery-pill {
+  fill: rgba(255, 255, 255, 0.88);
+  stroke: #94a3b8;
+  stroke-width: 0.8;
+  transition: fill 0.2s, stroke 0.2s;
+}
+.bp-group.bp-filled .bp-gallery-pill,
+.bp-group.bp-active .bp-gallery-pill {
+  fill: var(--pf, rgba(59, 130, 246, 0.15));
+  stroke: var(--pc, #3b82f6);
+  stroke-width: 1;
+}
+.bp-group.bp-violation .bp-gallery-pill {
+  fill: rgba(245, 158, 11, 0.15);
+  stroke: #f59e0b;
+}
+.bp-gallery-icon {
+  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+  user-select: none;
+  pointer-events: auto !important;
+}
+
 /* ── Blueprint HUD overlay ───────────────────────────── */
 .blueprint-hud {
   position: absolute;
@@ -381,6 +404,10 @@
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 .blueprint-hint {
   font-size: 0.74rem;

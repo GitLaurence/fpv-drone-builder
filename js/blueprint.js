@@ -157,6 +157,7 @@ function _drawProps() {
     x: MOTOR_POS[1].x + PROP_R + 6, y: MOTOR_POS[1].y + 19 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'propeller', MOTOR_POS[1].x + PROP_R + 6 + 14, MOTOR_POS[1].y + 30);
 
   _svg.appendChild(g);
 }
@@ -235,6 +236,7 @@ function _drawFrame() {
     x: CX, y: CY - PLATE_HW - 1 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'frame', CX, CY - PLATE_HW + 12);
 
   _svg.appendChild(g);
 }
@@ -281,6 +283,7 @@ function _drawBattery() {
   const specT = _txt('', { class: 'bp-part-spec', 'text-anchor': 'middle', x: CX, y: by + H + 22 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'battery', CX, by + H + 35);
 
   _svg.appendChild(g);
 }
@@ -323,6 +326,7 @@ function _drawESC() {
     x: CX - S / 2 - 4, y: CY - S / 2 + 31 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'esc', CX - S / 2 - 4, CY - S / 2 + 44);
 
   _svg.appendChild(g);
 }
@@ -368,6 +372,7 @@ function _drawFC() {
     x: CX + S / 2 + 4, y: CY + S / 2 + 17 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'fc', CX + S / 2 + 4, CY + S / 2 + 30);
 
   _svg.appendChild(g);
 }
@@ -415,6 +420,7 @@ function _drawCamera() {
   const specT = _txt('', { class: 'bp-part-spec', 'text-anchor': 'middle', x: CX, y: 32 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'camera', CX + 50, 58);
 
   _svg.appendChild(g);
 }
@@ -450,6 +456,7 @@ function _drawVTX() {
   const specT = _txt('', { class: 'bp-part-spec', 'text-anchor': 'middle', x: CX, y: VTX_Y + 54 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'vtx', CX + 45, VTX_Y + 10);
 
   _svg.appendChild(g);
 }
@@ -482,6 +489,7 @@ function _drawReceiver() {
   const specT = _txt('', { class: 'bp-part-spec', 'text-anchor': 'middle', x: RX + 13, y: RY + 50 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'receiver', RX + 13, RY + 63);
 
   _svg.appendChild(g);
 }
@@ -541,6 +549,7 @@ function _drawMotors() {
     x: MOTOR_POS[0].x - MOTOR_R - 6, y: MOTOR_POS[0].y + 23 });
   g.appendChild(nameT);
   g.appendChild(specT);
+  _galleryIcon(g, 'motor', MOTOR_POS[0].x - MOTOR_R - 6, MOTOR_POS[0].y + 36);
 
   _svg.appendChild(g);
 }
@@ -582,10 +591,12 @@ function _refresh() {
 }
 
 function _updatePartInfo(slot, el, part, state) {
-  const nameEl = el.querySelector('.bp-part-name');
-  const specEl = el.querySelector('.bp-part-spec');
-  const imgEl  = el.querySelector('.bp-brand-img');
-  const filled = !!part && state !== 'empty';
+  const nameEl    = el.querySelector('.bp-part-name');
+  const specEl    = el.querySelector('.bp-part-spec');
+  const imgEl     = el.querySelector('.bp-brand-img');
+  const galleryEl = el.querySelector('.bp-gallery-icon');
+  const pillEl    = el.querySelector('.bp-gallery-pill');
+  const filled    = !!part && state !== 'empty';
 
   if (nameEl) nameEl.textContent = filled ? _truncate(part.name, 18) : '';
   if (specEl) specEl.textContent = filled ? _partSpec(slot, part) : '';
@@ -599,6 +610,9 @@ function _updatePartInfo(slot, el, part, state) {
       imgEl.setAttribute('display', 'none');
     }
   }
+
+  if (galleryEl) galleryEl.setAttribute('display', filled ? '' : 'none');
+  if (pillEl)    pillEl.setAttribute('display', filled ? '' : 'none');
 }
 
 function _updatePropBlades(el, part) {
@@ -678,6 +692,37 @@ function _hexAlpha(hex, a) {
   const g = parseInt(full.slice(2, 4), 16) || 0;
   const b = parseInt(full.slice(4, 6), 16) || 0;
   return `rgba(${r},${g},${b},${a})`;
+}
+
+// ── Gallery icon helper ───────────────────────────────
+
+function _galleryIcon(parent, slot, x, y) {
+  // Camera icon background pill
+  const pill = _el('rect', {
+    x: x - 14, y: y - 9, width: 28, height: 14, rx: 7,
+    class: 'bp-gallery-pill',
+    display: 'none',
+  });
+  // Camera emoji label
+  const icon = _txt('📷', {
+    x, y: y + 3.5,
+    class: 'bp-gallery-icon',
+    'text-anchor': 'middle',
+    'font-size': 8,
+    display: 'none',
+  });
+  icon.style.cursor = 'pointer';
+  pill.style.cursor = 'pointer';
+
+  const _open = e => {
+    e.stopPropagation();
+    document.dispatchEvent(new CustomEvent('gallery:open', { detail: { slot } }));
+  };
+  icon.addEventListener('click', _open);
+  pill.addEventListener('click', _open);
+
+  parent.appendChild(pill);
+  parent.appendChild(icon);
 }
 
 // ── SVG helpers ──────────────────────────────────────

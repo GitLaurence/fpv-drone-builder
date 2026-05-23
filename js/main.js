@@ -6,6 +6,7 @@ import { init as initBlueprint } from './blueprint.js';
 import { init as initCompare } from './compare.js';
 import { init as initSaves } from './saves.js';
 import { applyFromHash, copyShareLink } from './share.js';
+import { init as initGallery } from './gallery.js';
 
 const TOTAL_SLOTS = 9;
 
@@ -17,6 +18,7 @@ async function main() {
   initBuilder();
   initCatalog();
   initBlueprint();
+  initGallery();
   initCompare(() => {});
   initSaves();
   initStepper();
