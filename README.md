@@ -288,15 +288,17 @@ Active rules:
 
 ### `scripts/fetch-product-images.js`
 
-Populates `image_url` for all 283 parts by searching Bing Images (Google Images as fallback) via a headless Playwright browser. Requires network access — run locally, not in a sandboxed CI environment.
+Populates `image_url` for all 283 parts by querying each brand's official website directly. No API keys. No npm install. Requires Node 18+.
+
+**Strategy per brand:**
+1. **Shopify `/products.json`** — most FPV brands run Shopify; fetches the full product catalog as structured JSON, then fuzzy-matches each part name. One HTTP call per brand regardless of how many parts they have.
+2. **HTML search fallback** — if the brand isn't on Shopify, fetches `/search?q=<name>` and extracts the first product image from the HTML (`og:image`, Shopify CDN pattern, or JSON-LD).
 
 ```bash
-npm install playwright
-npx playwright install chromium
-
-node scripts/fetch-product-images.js            # fetch all missing images (~6 min)
-node scripts/fetch-product-images.js --dry-run  # show queries without fetching
+# Node 18+ required — no install needed
+node scripts/fetch-product-images.js            # fetch all missing images
+node scripts/fetch-product-images.js --dry-run  # list brands + part counts, no fetches
 node scripts/fetch-product-images.js --force    # re-fetch even if already cached
 ```
 
-Progress is saved to `scripts/image-cache.json` after each part — safe to interrupt and resume. Updates `data/parts.json` in place when complete.
+Brand catalogs are cached to `scripts/brand-catalog.json` and per-part results to `scripts/image-cache.json` (both gitignored). Safe to interrupt and resume. Updates `data/parts.json` in place when complete.
