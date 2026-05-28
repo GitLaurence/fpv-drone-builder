@@ -22554,6 +22554,782 @@
         "telemetry": true,
         "range_km": 30
       }
+    },
+    {
+      "id": "holybro-m9n-gps",
+      "category": "gps",
+      "name": "M9N GPS+Compass",
+      "brand": "HolyBro",
+      "price_php": 1400,
+      "weight_g": 16,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/m9n-gps",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M9N",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "GH 6-pin"
+      }
+    },
+    {
+      "id": "matek-m10l-4076",
+      "category": "gps",
+      "name": "M10-L-4076 GPS",
+      "brand": "Matek",
+      "price_php": 1792,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=m10-l-4076",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 18,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "matek-m10q-5883",
+      "category": "gps",
+      "name": "M10Q-5883 GPS+Compass",
+      "brand": "Matek",
+      "price_php": 1680,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=m10q-5883",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 18,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "matek-m8q-can",
+      "category": "gps",
+      "name": "M8Q-CAN GPS+Compass",
+      "brand": "Matek",
+      "price_php": 2240,
+      "weight_g": 14,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=m8q-can",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS",
+        "chipset": "u-blox M8Q",
+        "update_rate_hz": 10,
+        "fix_time_s": 30,
+        "compass": true,
+        "connector": "CAN/JST-GH"
+      }
+    },
+    {
+      "id": "holybro-m10-gps",
+      "category": "gps",
+      "name": "M10 Standard GPS+Compass",
+      "brand": "HolyBro",
+      "price_php": 2240,
+      "weight_g": 18,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/m10-gps",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 18,
+        "compass": true,
+        "connector": "GH 8-pin"
+      }
+    },
+    {
+      "id": "holybro-micro-m8",
+      "category": "gps",
+      "name": "Micro M8 GPS",
+      "brand": "HolyBro",
+      "price_php": 1120,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/micro-m8-gps",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS",
+        "chipset": "u-blox M8",
+        "update_rate_hz": 10,
+        "fix_time_s": 30,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "flywoo-gm10-pro-v2",
+      "category": "gps",
+      "name": "GM10 Pro V2 GPS+Compass",
+      "brand": "Flywoo",
+      "price_php": 1232,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/flywoo-gm10-pro-v2",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "flywoo-gm10-nano-v3",
+      "category": "gps",
+      "name": "GM10 Nano V3 GPS",
+      "brand": "Flywoo",
+      "price_php": 896,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/gm10-nano-v3",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 18,
+        "fix_time_s": 25,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "geprc-m10q-gps",
+      "category": "gps",
+      "name": "GEP-M10Q GPS+Compass",
+      "brand": "GEPRC",
+      "price_php": 1568,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/product/geprc-gep-m10q-gps/",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "geprc-m10-nano",
+      "category": "gps",
+      "name": "GEP-M10 Nano GPS",
+      "brand": "GEPRC",
+      "price_php": 1120,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/product/geprc-gep-m10-nano-gps/",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 18,
+        "fix_time_s": 25,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "speedybee-m10-ultra",
+      "category": "gps",
+      "name": "M10 Ultra GPS+Compass",
+      "brand": "SpeedyBee",
+      "price_php": 1456,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/speedybee-m10-ultra-gps/",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "beitian-bn-180",
+      "category": "gps",
+      "name": "BN-180 GPS Module",
+      "brand": "Beitian",
+      "price_php": 672,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/beitian-bn-180-gps-module.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS",
+        "chipset": "u-blox M8030-KT",
+        "update_rate_hz": 10,
+        "fix_time_s": 35,
+        "compass": false,
+        "connector": "UART"
+      }
+    },
+    {
+      "id": "beitian-bn-357",
+      "category": "gps",
+      "name": "BN-357 GPS Module",
+      "brand": "Beitian",
+      "price_php": 784,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/beitian-bn-357-gps.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS",
+        "chipset": "u-blox M8",
+        "update_rate_hz": 10,
+        "fix_time_s": 35,
+        "compass": false,
+        "connector": "UART"
+      }
+    },
+    {
+      "id": "betafpv-gps-nano",
+      "category": "gps",
+      "name": "GPS Nano Module",
+      "brand": "BetaFPV",
+      "price_php": 896,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/gps-nano-module",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS+BeiDou",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 18,
+        "fix_time_s": 25,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "hglrc-m80-pro-gps",
+      "category": "gps",
+      "name": "M80 Pro GPS+Compass",
+      "brand": "HGLRC",
+      "price_php": 1344,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/products/m80-pro-gps",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "cuav-neo-v2-pro",
+      "category": "gps",
+      "name": "NEO v2 Pro GPS+Compass",
+      "brand": "CUAV",
+      "price_php": 2800,
+      "weight_g": 33,
+      "in_stock": true,
+      "buy_url": "https://store.cuav.net/shop/neo-v2-pro/",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M9N",
+        "update_rate_hz": 25,
+        "fix_time_s": 18,
+        "compass": true,
+        "connector": "GH 6-pin"
+      }
+    },
+    {
+      "id": "radiomaster-ag400-gps",
+      "category": "gps",
+      "name": "AG400 GPS Module",
+      "brand": "RadioMaster",
+      "price_php": 1232,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.radiomasterrc.com/products/ag400-gps-module",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "iflight-m10-mini-gps",
+      "category": "gps",
+      "name": "M10 Mini GPS+Compass",
+      "brand": "iFlight",
+      "price_php": 1400,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://iflight.com/products/iflight-m10-mini-gps",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "foxeer-m10q-gps",
+      "category": "gps",
+      "name": "M10Q GPS+Compass",
+      "brand": "Foxeer",
+      "price_php": 1568,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/foxeer-m10q-gps-compass-module-g-428",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "tbs-micro-m10",
+      "category": "gps",
+      "name": "Micro M10 GPS+Compass",
+      "brand": "TBS",
+      "price_php": 2800,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/products/prod:tbs_micro_m10",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 18,
+        "compass": true,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "rushfpv-cherry-5-8",
+      "category": "antenna",
+      "name": "Cherry 5.8GHz Antenna",
+      "brand": "RushFPV",
+      "price_php": 672,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.rushfpv.com/collections/antennas",
+      "color": "#ff0000",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 3.0,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "rushfpv-cherry-v2-5-8",
+      "category": "antenna",
+      "name": "Cherry V2 5.8GHz Antenna",
+      "brand": "RushFPV",
+      "price_php": 784,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.rushfpv.com/collections/antennas",
+      "color": "#ff0000",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 3.5,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "tbs-triumph-rpsma",
+      "category": "antenna",
+      "name": "Triumph RP-SMA 5.8GHz",
+      "brand": "TBS",
+      "price_php": 672,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/products/prod:tbs_triumph_antenna",
+      "color": "#ff0000",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "tbs-diamond-5-8",
+      "category": "antenna",
+      "name": "Diamond 5.8GHz Antenna",
+      "brand": "TBS",
+      "price_php": 560,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/products/prod:tbs_diamond_antenna",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.1,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "immersionrc-spironet-5-8",
+      "category": "antenna",
+      "name": "SpiroNET II 5.8GHz",
+      "brand": "ImmersionRC",
+      "price_php": 1120,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.immersionrc.com/fpv-products/spironet-5-8ghz-antenna/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.3,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "immersionrc-duo5800-v5",
+      "category": "antenna",
+      "name": "Duo5800 v5 5.8GHz Patch",
+      "brand": "ImmersionRC",
+      "price_php": 1680,
+      "weight_g": 30,
+      "in_stock": true,
+      "buy_url": "https://www.immersionrc.com/fpv-products/duo5800-v5/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 8.2,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "directional"
+      }
+    },
+    {
+      "id": "foxeer-echo-5-8",
+      "category": "antenna",
+      "name": "Echo 5.8GHz Antenna",
+      "brand": "Foxeer",
+      "price_php": 392,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/fpv-antennas-c-36",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.8,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "foxeer-echo-2-5-8",
+      "category": "antenna",
+      "name": "Echo 2 5.8GHz Antenna",
+      "brand": "Foxeer",
+      "price_php": 448,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/fpv-antennas-c-36",
+      "color": "#ff6600",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "foxeer-slice-5-8",
+      "category": "antenna",
+      "name": "Slice 5.8GHz Antenna",
+      "brand": "Foxeer",
+      "price_php": 448,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/fpv-antennas-c-36",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.8,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "foxeer-lollipop-4plus-5-8",
+      "category": "antenna",
+      "name": "Lollipop 4 Plus 5.8GHz",
+      "brand": "Foxeer",
+      "price_php": 560,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/fpv-antennas-c-36",
+      "color": "#ff0000",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "truerc-x2-air-5-8",
+      "category": "antenna",
+      "name": "X2 Air 5.8GHz",
+      "brand": "TrueRC",
+      "price_php": 1008,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://truerc.ca/product/x2-air-5-8ghz/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.5,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "truerc-s1-5-8",
+      "category": "antenna",
+      "name": "S1 Stubby 5.8GHz",
+      "brand": "TrueRC",
+      "price_php": 560,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://truerc.ca/product-category/antennas/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.1,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "matek-ant-5g8-sma",
+      "category": "antenna",
+      "name": "ANT-5G8-SMA 5.8GHz",
+      "brand": "Matek",
+      "price_php": 392,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=ant-5g8-sma",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "linear",
+        "connector": "SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "betafpv-ant-5-8",
+      "category": "antenna",
+      "name": "5.8GHz Omni Antenna",
+      "brand": "BetaFPV",
+      "price_php": 280,
+      "weight_g": 3,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/collections/fpv-accessories",
+      "color": "#ff6600",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.5,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "akk-fp01-5-8",
+      "category": "antenna",
+      "name": "FP-01 5.8GHz Antenna",
+      "brand": "AKK",
+      "price_php": 336,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.akktek.com/fpv-antennas",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "realacc-circular-5-8",
+      "category": "antenna",
+      "name": "Circular Polarized 5.8GHz",
+      "brand": "Realacc",
+      "price_php": 336,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/realacc-5-8ghz-circular-polarized-antenna.html",
+      "color": "#ff6600",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.5,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "hglrc-ant-5-8",
+      "category": "antenna",
+      "name": "5.8GHz Omni Antenna",
+      "brand": "HGLRC",
+      "price_php": 280,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/collections/fpv-antennas",
+      "color": "#ff6600",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "skew-planar-wheel-5-8",
+      "category": "antenna",
+      "name": "Skew Planar Wheel 5.8GHz",
+      "brand": "RMRC",
+      "price_php": 448,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.readymaderc.com/products/details/5-8ghz-skew-planar-wheel-antenna",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.5,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "geprc-ant-5-8",
+      "category": "antenna",
+      "name": "5.8GHz Stubby Antenna",
+      "brand": "GEPRC",
+      "price_php": 280,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/product-category/accessories/antenna/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.8,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "dji-o3-antenna-5-8",
+      "category": "antenna",
+      "name": "O3 Air Unit 5.8GHz Antenna",
+      "brand": "DJI",
+      "price_php": 672,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://store.dji.com/product/dji-o3-air-unit",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "MMCX",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "menacerc-falcon-5-8",
+      "category": "antenna",
+      "name": "Falcon 5.8GHz Antenna",
+      "brand": "MenaceRC",
+      "price_php": 840,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/menacerc-falcon-5-8ghz-antenna.html",
+      "color": "#ff6600",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 3.5,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "ethix-sl5-5-8",
+      "category": "antenna",
+      "name": "SL5 5.8GHz Antenna",
+      "brand": "Ethix",
+      "price_php": 448,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.pyrodrone.com/collections/antennas",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
     }
   ],
   "compatibility_rules": [
