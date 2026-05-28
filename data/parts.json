@@ -62,6 +62,20 @@
       "icon": "📻",
       "required": false,
       "slot_count": 1
+    },
+    {
+      "id": "gps",
+      "label": "GPS Module",
+      "icon": "🛰️",
+      "required": false,
+      "slot_count": 1
+    },
+    {
+      "id": "antenna",
+      "label": "VTX Antenna",
+      "icon": "📶",
+      "required": false,
+      "slot_count": 1
     }
   ],
   "parts": [
@@ -20844,6 +20858,1696 @@
       "in_stock": true,
       "buy_url": "https://www.getfpv.com",
       "color": "#1a001a",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 30
+      }
+    },
+    {
+      "id": "matek-m8q-5883",
+      "category": "gps",
+      "name": "M8Q-5883 GPS+Compass",
+      "brand": "Matek",
+      "price_php": 1400,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=m8q-5883",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS",
+        "chipset": "u-blox M8",
+        "update_rate_hz": 10,
+        "fix_time_s": 30,
+        "compass": true,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "holybro-m10-l",
+      "category": "gps",
+      "name": "M10-L GPS",
+      "brand": "HolyBro",
+      "price_php": 1960,
+      "weight_g": 11,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/m10-l-gps",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "GH 6-pin"
+      }
+    },
+    {
+      "id": "speedybee-gps-v1",
+      "category": "gps",
+      "name": "GPS V1",
+      "brand": "SpeedyBee",
+      "price_php": 1120,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/speedybee-gps/",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS+BeiDou",
+        "chipset": "u-blox M9",
+        "update_rate_hz": 18,
+        "fix_time_s": 25,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "beitian-bn-220",
+      "category": "gps",
+      "name": "BN-220 Dual GPS",
+      "brand": "Beitian",
+      "price_php": 560,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/beitian-bn-220-gps-glonass-dual-module.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS",
+        "chipset": "u-blox M8030",
+        "update_rate_hz": 10,
+        "fix_time_s": 35,
+        "compass": false,
+        "connector": "UART 4-pin"
+      }
+    },
+    {
+      "id": "matek-m10-mini",
+      "category": "gps",
+      "name": "M10 Mini GPS",
+      "brand": "Matek",
+      "price_php": 1680,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=m10-mini",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "geprc-m10-wb",
+      "category": "gps",
+      "name": "M10 WB GPS",
+      "brand": "GEPRC",
+      "price_php": 1400,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/product/geprc-m10-wb-gps/",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS+BeiDou+Galileo",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 25,
+        "fix_time_s": 20,
+        "compass": true,
+        "connector": "JST-SH 6-pin"
+      }
+    },
+    {
+      "id": "tbs-m8-2-gps",
+      "category": "gps",
+      "name": "M8.2 GPS",
+      "brand": "TBS",
+      "price_php": 2240,
+      "weight_g": 14,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/products/prod:tbs_m8.2",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS+BeiDou",
+        "chipset": "u-blox M8",
+        "update_rate_hz": 10,
+        "fix_time_s": 30,
+        "compass": true,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "flywoo-gm10-mini-v2",
+      "category": "gps",
+      "name": "GM10 Mini V2 GPS",
+      "brand": "Flywoo",
+      "price_php": 1008,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/flywoo-gm10-mini-v2",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS+BeiDou",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 18,
+        "fix_time_s": 25,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "beitian-bn-880",
+      "category": "gps",
+      "name": "BN-880 GPS+Compass",
+      "brand": "Beitian",
+      "price_php": 840,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/beitian-bn-880-gps-compass-module.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS",
+        "chipset": "u-blox M8030",
+        "update_rate_hz": 10,
+        "fix_time_s": 35,
+        "compass": true,
+        "connector": "UART + I2C"
+      }
+    },
+    {
+      "id": "matek-sam-m10q",
+      "category": "gps",
+      "name": "SAM-M10Q GPS",
+      "brand": "Matek",
+      "price_php": 1568,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=sam-m10q",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+BeiDou+GLONASS+Galileo",
+        "chipset": "u-blox SAM-M10Q",
+        "update_rate_hz": 25,
+        "fix_time_s": 18,
+        "compass": false,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "truerc-x-air-5-8",
+      "category": "antenna",
+      "name": "X-Air 5.8GHz Duo",
+      "brand": "TrueRC",
+      "price_php": 1960,
+      "weight_g": 30,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/truerc-x-air-5-8ghz-duo-fpv-antenna-set.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 8.7,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "directional"
+      }
+    },
+    {
+      "id": "foxeer-lollipop-4-5-8",
+      "category": "antenna",
+      "name": "Lollipop 4 5.8GHz",
+      "brand": "Foxeer",
+      "price_php": 448,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/foxeer-lollipop-4-stubby-5-8ghz-fpv-omni-antenna-g-388",
+      "color": "#ff0000",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "pagoda-2-5-8",
+      "category": "antenna",
+      "name": "Pagoda 2 5.8GHz",
+      "brand": "RMRC",
+      "price_php": 448,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/pagoda-2-5-8ghz-fpv-antenna.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.5,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "axii-2-5-8-long",
+      "category": "antenna",
+      "name": "Axii 2 Long Range 5.8GHz",
+      "brand": "TrueRC",
+      "price_php": 1680,
+      "weight_g": 18,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/truerc-axii-2-long-range-5-8ghz-fpv-antenna.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 4.0,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "tbs-triumph-pro-5-8",
+      "category": "antenna",
+      "name": "Triumph Pro 5.8GHz",
+      "brand": "TBS",
+      "price_php": 840,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/products/prod:triumph_pro",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "foxeer-lollipop-3-5-8",
+      "category": "antenna",
+      "name": "Lollipop 3 5.8GHz",
+      "brand": "Foxeer",
+      "price_php": 448,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/foxeer-lollipop-3-stubby-5-8ghz-fpv-omni-antenna-g-293",
+      "color": "#00ff00",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.8,
+        "polarization": "RHCP",
+        "connector": "SMA/RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "rush-cherry-5-8",
+      "category": "antenna",
+      "name": "Cherry 5.8GHz",
+      "brand": "Rush",
+      "price_php": 560,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/rush-cherry-5-8ghz-fpv-antenna.html",
+      "color": "#cc0000",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.8,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "truerc-singularity-5-8",
+      "category": "antenna",
+      "name": "Singularity 5.8GHz",
+      "brand": "TrueRC",
+      "price_php": 1008,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/truerc-singularity-5-8ghz-fpv-antenna.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.1,
+        "polarization": "RHCP",
+        "connector": "RP-SMA",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "walksnail-rf-5-8",
+      "category": "antenna",
+      "name": "Avatar 5.8GHz RF Antenna",
+      "brand": "Walksnail",
+      "price_php": 840,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.walksnail.com/products/avatar-vtx-antenna",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "MMCX",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "matek-ant-5g8-m",
+      "category": "antenna",
+      "name": "ANT-5G8-M 5.8GHz",
+      "brand": "Matek",
+      "price_php": 392,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=ant-5g8-m",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.5,
+        "polarization": "linear",
+        "connector": "U.FL/IPEX",
+        "type": "omni"
+      }
+    },
+    {
+      "id": "tbs-source-one-5-hd",
+      "category": "frame",
+      "name": "Source One V5 HD 5\"",
+      "brand": "TBS",
+      "price_php": 2240,
+      "weight_g": 76,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com/products/tbs-source-one-v5-frame-kit",
+      "color": "#0d0d0d",
+      "specs": {
+        "size_mm": 220,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=tbs+source+one+v5+hd"
+      }
+    },
+    {
+      "id": "flywoo-goblin-race-5",
+      "category": "frame",
+      "name": "Goblin Race 5\" Frame",
+      "brand": "Flywoo",
+      "price_php": 2100,
+      "weight_g": 65,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/goblin-race-frame",
+      "color": "#0f0f0f",
+      "specs": {
+        "size_mm": 215,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 28,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=flywoo+goblin+race+5"
+      }
+    },
+    {
+      "id": "holybro-kopis-4",
+      "category": "frame",
+      "name": "Kopis 4 5\" Frame",
+      "brand": "HolyBro",
+      "price_php": 3080,
+      "weight_g": 82,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/kopis-4",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 225,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=holybro+kopis+4"
+      }
+    },
+    {
+      "id": "axis-flying-tdr5-hd",
+      "category": "frame",
+      "name": "TDR5 HD 5\" Frame",
+      "brand": "Axis Flying",
+      "price_php": 2800,
+      "weight_g": 78,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 218,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=axis+flying+tdr5+hd"
+      }
+    },
+    {
+      "id": "emax-hawk-5-frame",
+      "category": "frame",
+      "name": "Hawk 5 Frame",
+      "brand": "Emax",
+      "price_php": 1680,
+      "weight_g": 73,
+      "in_stock": true,
+      "buy_url": "https://emaxmodel.com/products/emax-hawk-5-frame",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 215,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 28,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=emax+hawk+5"
+      }
+    },
+    {
+      "id": "geprc-mark4-hd5-v2",
+      "category": "frame",
+      "name": "Mark4 HD5 V2 5\" Frame",
+      "brand": "GEPRC",
+      "price_php": 3780,
+      "weight_g": 86,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/product/geprc-mark4-hd5-v2-frame-kit/",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 226,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=geprc+mark4+hd5+v2"
+      }
+    },
+    {
+      "id": "iflight-evoque-f7-v2",
+      "category": "frame",
+      "name": "Evoque F7 V2 7\" Frame",
+      "brand": "iFlight",
+      "price_php": 5040,
+      "weight_g": 200,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/Evoque-F7-V2-Frame-Kit-Pro2188",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 305,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 7,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=iflight+evoque+f7+v2"
+      }
+    },
+    {
+      "id": "flywoo-hexplorer-lr5-hd",
+      "category": "frame",
+      "name": "HExplorer LR5 HD 5\" Frame",
+      "brand": "Flywoo",
+      "price_php": 2800,
+      "weight_g": 95,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/hexplorer-lr5-hd",
+      "color": "#0f0f0f",
+      "specs": {
+        "size_mm": 220,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=flywoo+hexplorer+lr5"
+      }
+    },
+    {
+      "id": "tmotor-velox-v5-2306-2450kv",
+      "category": "motor",
+      "name": "VELOX V5 2306 2450KV",
+      "brand": "T-Motor",
+      "price_php": 1848,
+      "weight_g": 29,
+      "in_stock": true,
+      "buy_url": "https://store.tmotor.com/product/velox-v5-fpv-motor.html",
+      "color": "#c0a030",
+      "specs": {
+        "kv": 2450,
+        "stator_size": "2306",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 42
+      }
+    },
+    {
+      "id": "sunnysky-x2216-2400kv",
+      "category": "motor",
+      "name": "X2216 2400KV",
+      "brand": "SunnySky",
+      "price_php": 1064,
+      "weight_g": 38,
+      "in_stock": true,
+      "buy_url": "https://sunnyskyusa.com/products/x2216-brushless-motors",
+      "color": "#c0c0c0",
+      "specs": {
+        "kv": 2400,
+        "stator_size": "2216",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 3,
+        "max_voltage_s": 4,
+        "shaft_mm": 3,
+        "peak_current_a": 28
+      }
+    },
+    {
+      "id": "brotherhobby-avenger-v7-2207-2550kv",
+      "category": "motor",
+      "name": "Avenger V7 2207 2550KV",
+      "brand": "BrotherHobby",
+      "price_php": 1288,
+      "weight_g": 29.5,
+      "in_stock": true,
+      "buy_url": "https://brotherhobby.com/product/avenger-v7/",
+      "color": "#d4a020",
+      "specs": {
+        "kv": 2550,
+        "stator_size": "2207",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 38
+      }
+    },
+    {
+      "id": "flywoo-nin-v6-2207-1750kv",
+      "category": "motor",
+      "name": "NIN V6 2207 1750KV",
+      "brand": "Flywoo",
+      "price_php": 1232,
+      "weight_g": 30,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/nin-v6-2207-motor",
+      "color": "#ff6600",
+      "specs": {
+        "kv": 1750,
+        "stator_size": "2207",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 40
+      }
+    },
+    {
+      "id": "aokfly-xt2306-2450kv",
+      "category": "motor",
+      "name": "XT2306 2450KV",
+      "brand": "AoKFly",
+      "price_php": 952,
+      "weight_g": 28,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 2450,
+        "stator_size": "2306",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 38
+      }
+    },
+    {
+      "id": "dys-fire-2600-2306",
+      "category": "motor",
+      "name": "Fire 2600KV 2306",
+      "brand": "DYS",
+      "price_php": 784,
+      "weight_g": 30,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/dys-fire-2306-motor.html",
+      "color": "#cc2200",
+      "specs": {
+        "kv": 2600,
+        "stator_size": "2306",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 3,
+        "max_voltage_s": 4,
+        "shaft_mm": 5,
+        "peak_current_a": 35
+      }
+    },
+    {
+      "id": "cobra-champion-2207-2450kv",
+      "category": "motor",
+      "name": "Champion 2207 2450KV",
+      "brand": "Cobra",
+      "price_php": 1064,
+      "weight_g": 33,
+      "in_stock": true,
+      "buy_url": "https://www.cobramotorsusa.com/motors/champion-2207-2450kv",
+      "color": "#b8860b",
+      "specs": {
+        "kv": 2450,
+        "stator_size": "2207",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 40
+      }
+    },
+    {
+      "id": "emax-eco-iii-2207-2400kv",
+      "category": "motor",
+      "name": "ECO III 2207 2400KV",
+      "brand": "Emax",
+      "price_php": 952,
+      "weight_g": 29.5,
+      "in_stock": true,
+      "buy_url": "https://emaxmodel.com/products/emax-eco-iii-2207-motor",
+      "color": "#cc0000",
+      "specs": {
+        "kv": 2400,
+        "stator_size": "2207",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 38
+      }
+    },
+    {
+      "id": "rcin-power-gc2806-1300kv",
+      "category": "motor",
+      "name": "GC2806 1300KV",
+      "brand": "RCINPower",
+      "price_php": 1344,
+      "weight_g": 43,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 1300,
+        "stator_size": "2806",
+        "motor_mount_mm": 19,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 45
+      }
+    },
+    {
+      "id": "speedybee-master-5-2207-1700kv",
+      "category": "motor",
+      "name": "Master 5 2207 1700KV",
+      "brand": "SpeedyBee",
+      "price_php": 1232,
+      "weight_g": 30,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/speedybee-master-5-2207-1700kv-motor/",
+      "color": "#003366",
+      "specs": {
+        "kv": 1700,
+        "stator_size": "2207",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 38
+      }
+    },
+    {
+      "id": "flywoo-sukka-am45-4in1",
+      "category": "esc",
+      "name": "Sukka AM45 4-in-1 45A",
+      "brand": "Flywoo",
+      "price_php": 2800,
+      "weight_g": 25,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/sukka-am45-4in1-esc",
+      "color": "#0f0f0f",
+      "specs": {
+        "continuous_a": 45,
+        "peak_a": 55,
+        "input_voltage_s": 6,
+        "form_factor_mm": 30,
+        "protocol": "DSHOT600",
+        "firmware": "AM32",
+        "bec": false
+      }
+    },
+    {
+      "id": "diatone-mamba-f35-mini-aio",
+      "category": "esc",
+      "name": "Mamba F35 Mini 35A 4-in-1",
+      "brand": "Diatone",
+      "price_php": 1680,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.diatone.us/products/mamba-f35-mini-esc",
+      "color": "#ff6600",
+      "specs": {
+        "continuous_a": 35,
+        "peak_a": 45,
+        "input_voltage_s": 4,
+        "form_factor_mm": 20,
+        "protocol": "DSHOT600",
+        "firmware": "BLHeli_S",
+        "bec": false
+      }
+    },
+    {
+      "id": "hglrc-zeus-f740-45a-4in1",
+      "category": "esc",
+      "name": "Zeus F740 45A 4-in-1",
+      "brand": "HGLRC",
+      "price_php": 2520,
+      "weight_g": 22,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/products/zeus-f740-4in1-esc",
+      "color": "#cc0000",
+      "specs": {
+        "continuous_a": 45,
+        "peak_a": 55,
+        "input_voltage_s": 6,
+        "form_factor_mm": 30,
+        "protocol": "DSHOT600",
+        "firmware": "BLHeli_32",
+        "bec": false
+      }
+    },
+    {
+      "id": "matek-f65a-4in1-v2",
+      "category": "esc",
+      "name": "F65A 4-in-1 V2",
+      "brand": "Matek",
+      "price_php": 2940,
+      "weight_g": 28,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=esc-f65a",
+      "color": "#003300",
+      "specs": {
+        "continuous_a": 65,
+        "peak_a": 80,
+        "input_voltage_s": 6,
+        "form_factor_mm": 30,
+        "protocol": "DSHOT600",
+        "firmware": "AM32",
+        "bec": false
+      }
+    },
+    {
+      "id": "aikon-ak32-35a-mini-4in1-v2",
+      "category": "esc",
+      "name": "AK32 Mini 35A 4-in-1 V2",
+      "brand": "Aikon",
+      "price_php": 1680,
+      "weight_g": 14,
+      "in_stock": true,
+      "buy_url": "https://www.aikon-electronics.com/products/ak32-mini-4in1",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 35,
+        "peak_a": 45,
+        "input_voltage_s": 4,
+        "form_factor_mm": 20,
+        "protocol": "DSHOT600",
+        "firmware": "BLHeli_32",
+        "bec": false
+      }
+    },
+    {
+      "id": "holybro-kotleta20-v2",
+      "category": "esc",
+      "name": "Kotleta20 V2 20A 4-in-1",
+      "brand": "HolyBro",
+      "price_php": 1400,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/kotleta20-v2-esc",
+      "color": "#111111",
+      "specs": {
+        "continuous_a": 20,
+        "peak_a": 30,
+        "input_voltage_s": 4,
+        "form_factor_mm": 20,
+        "protocol": "DSHOT600",
+        "firmware": "BLHeli_S",
+        "bec": false
+      }
+    },
+    {
+      "id": "speedybee-f405-v4-fc",
+      "category": "fc",
+      "name": "F405 V4 Flight Controller",
+      "brand": "SpeedyBee",
+      "price_php": 2800,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/speedybee-f405-v4-flight-controller/",
+      "color": "#003300",
+      "specs": {
+        "mcu": "STM32F405",
+        "gyro": "ICM-42688-P",
+        "osd": true,
+        "blackbox": true,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "usb": "USB-C",
+        "uarts": 6
+      }
+    },
+    {
+      "id": "matek-f722-se-v2",
+      "category": "fc",
+      "name": "F722-SE V2 Flight Controller",
+      "brand": "Matek",
+      "price_php": 3080,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=f722-se-v2",
+      "color": "#003300",
+      "specs": {
+        "mcu": "STM32F722",
+        "gyro": "ICM-42688-P",
+        "osd": true,
+        "blackbox": true,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "usb": "USB-C",
+        "uarts": 5
+      }
+    },
+    {
+      "id": "holybro-kakute-h743",
+      "category": "fc",
+      "name": "Kakute H7 V2 Flight Controller",
+      "brand": "HolyBro",
+      "price_php": 3360,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/kakute-h7-v2",
+      "color": "#111111",
+      "specs": {
+        "mcu": "STM32H743",
+        "gyro": "ICM-42688-P",
+        "osd": true,
+        "blackbox": true,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "usb": "USB-C",
+        "uarts": 7
+      }
+    },
+    {
+      "id": "flywoo-goku-f745-nano",
+      "category": "fc",
+      "name": "Goku F745 Nano FC",
+      "brand": "Flywoo",
+      "price_php": 2520,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/goku-f745-nano-fc",
+      "color": "#0f0f0f",
+      "specs": {
+        "mcu": "STM32H745",
+        "gyro": "ICM-42688-P",
+        "osd": true,
+        "blackbox": true,
+        "stack_mount_mm": 20,
+        "barometer": true,
+        "usb": "USB-C",
+        "uarts": 5
+      }
+    },
+    {
+      "id": "geprc-taker-f745-fc",
+      "category": "fc",
+      "name": "TAKER F745 Flight Controller",
+      "brand": "GEPRC",
+      "price_php": 2800,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/product/geprc-taker-f745-flight-controller/",
+      "color": "#2a2a1a",
+      "specs": {
+        "mcu": "STM32H745",
+        "gyro": "ICM-42688-P",
+        "osd": true,
+        "blackbox": true,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "usb": "USB-C",
+        "uarts": 6
+      }
+    },
+    {
+      "id": "diatone-mamba-f745-v2",
+      "category": "fc",
+      "name": "Mamba F745 V2 Flight Controller",
+      "brand": "Diatone",
+      "price_php": 2940,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.diatone.us/products/mamba-f745-v2-flight-controller",
+      "color": "#ff6600",
+      "specs": {
+        "mcu": "STM32H745",
+        "gyro": "ICM-42688-P",
+        "osd": true,
+        "blackbox": true,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "usb": "USB-C",
+        "uarts": 6
+      }
+    },
+    {
+      "id": "gemfan-51466-3blade",
+      "category": "propeller",
+      "name": "51466 3-Blade",
+      "brand": "Gemfan",
+      "price_php": 280,
+      "weight_g": 4.5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/gemfan-51466-3-blade-propeller-set-of-4.html",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 5.1,
+        "pitch_inch": 4.6,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "hqprop-5x4.3x3-v2s",
+      "category": "propeller",
+      "name": "5x4.3x3 V2S 3-Blade",
+      "brand": "HQProp",
+      "price_php": 224,
+      "weight_g": 4.8,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/hqprop-5x4-3x3-v2s-prop-set-of-4.html",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 5.0,
+        "pitch_inch": 4.3,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "nazgul-5140-bicolor-3b",
+      "category": "propeller",
+      "name": "Nazgul 5140 Bicolor 3-Blade",
+      "brand": "iFlight",
+      "price_php": 280,
+      "weight_g": 4.2,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/Nazgul-Bicolor-5140-propeller-set-of-8-Pro1652",
+      "color": "#ff0000",
+      "specs": {
+        "diameter_inch": 5.1,
+        "pitch_inch": 4.0,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "dal-q5045c-cyclone-4blade",
+      "category": "propeller",
+      "name": "Cyclone Q5045C 4-Blade",
+      "brand": "DAL",
+      "price_php": 336,
+      "weight_g": 6.0,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/dal-q5045c-prop-set-of-4.html",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 5.0,
+        "pitch_inch": 4.5,
+        "blade_count": 4,
+        "shaft_mm": 5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "gemfan-4023-4blade",
+      "category": "propeller",
+      "name": "4023 4-Blade",
+      "brand": "Gemfan",
+      "price_php": 224,
+      "weight_g": 3.2,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/gemfan-4023-4-blade-propeller-set-of-4.html",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 4.0,
+        "pitch_inch": 2.3,
+        "blade_count": 4,
+        "shaft_mm": 5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "hqprop-4x4x3-v3",
+      "category": "propeller",
+      "name": "4x4x3 V3 3-Blade",
+      "brand": "HQProp",
+      "price_php": 196,
+      "weight_g": 4.0,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/hqprop-4-4x4x3-v3-prop-set-of-4.html",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 4.0,
+        "pitch_inch": 4.0,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "gemfan-7040-3blade",
+      "category": "propeller",
+      "name": "7040 3-Blade",
+      "brand": "Gemfan",
+      "price_php": 448,
+      "weight_g": 9.5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/gemfan-7040-3-blade-propeller-set-of-4.html",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 7.0,
+        "pitch_inch": 4.0,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "foxeer-razer-v4-nano",
+      "category": "camera",
+      "name": "Razer V4 Nano",
+      "brand": "Foxeer",
+      "price_php": 1568,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/foxeer-razer-v4-nano-fpv-camera-g-562",
+      "color": "#1a1a1a",
+      "specs": {
+        "resolution": "1200TVL",
+        "sensor": "CMOS 1/3\"",
+        "fov_deg": 165,
+        "latency_ms": 4,
+        "weight_g": 4,
+        "lens": "2.1mm",
+        "format": "analog",
+        "voltage": "5-40V"
+      }
+    },
+    {
+      "id": "runcam-thumb-4k",
+      "category": "camera",
+      "name": "Thumb 4K Action Camera",
+      "brand": "RunCam",
+      "price_php": 4480,
+      "weight_g": 16,
+      "in_stock": true,
+      "buy_url": "https://www.runcam.com/product/runcam-thumb/",
+      "color": "#1a1a1a",
+      "specs": {
+        "resolution": "4K/60fps",
+        "sensor": "CMOS 1/2.7\"",
+        "fov_deg": 150,
+        "latency_ms": 0,
+        "weight_g": 16,
+        "lens": "2.7mm",
+        "format": "analog",
+        "voltage": "5V"
+      }
+    },
+    {
+      "id": "caddx-walnut-nano",
+      "category": "camera",
+      "name": "Walnut Nano FPV Camera",
+      "brand": "Caddx",
+      "price_php": 1232,
+      "weight_g": 3.7,
+      "in_stock": true,
+      "buy_url": "https://caddxfpv.com/products/walnut-nano",
+      "color": "#1a1a1a",
+      "specs": {
+        "resolution": "1200TVL",
+        "sensor": "CMOS 1/4\"",
+        "fov_deg": 155,
+        "latency_ms": 5,
+        "weight_g": 3.7,
+        "lens": "2.1mm",
+        "format": "analog",
+        "voltage": "5-36V"
+      }
+    },
+    {
+      "id": "walksnail-avatar-v3-micro",
+      "category": "camera",
+      "name": "Avatar HD V3 Micro Camera",
+      "brand": "Walksnail",
+      "price_php": 4200,
+      "weight_g": 5.8,
+      "in_stock": true,
+      "buy_url": "https://www.walksnail.com/products/avatar-hd-v3-mini-camera",
+      "color": "#1a1a1a",
+      "specs": {
+        "resolution": "1080p/60fps",
+        "sensor": "CMOS 1/2\"",
+        "fov_deg": 155,
+        "latency_ms": 22,
+        "weight_g": 5.8,
+        "lens": "2.1mm",
+        "format": "digital",
+        "video_system": "Walksnail Avatar",
+        "voltage": "5V"
+      }
+    },
+    {
+      "id": "foxeer-toothless-3-full",
+      "category": "camera",
+      "name": "Toothless 3 Full Size",
+      "brand": "Foxeer",
+      "price_php": 1680,
+      "weight_g": 23,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/foxeer-toothless-3-full-fpv-camera-g-562",
+      "color": "#1a1a1a",
+      "specs": {
+        "resolution": "1200TVL",
+        "sensor": "Starlight CMOS 1/2\"",
+        "fov_deg": 155,
+        "latency_ms": 4,
+        "weight_g": 23,
+        "lens": "2.8mm",
+        "format": "analog",
+        "voltage": "5-40V"
+      }
+    },
+    {
+      "id": "insta360-smo-4k",
+      "category": "camera",
+      "name": "SMO 4K Action Camera",
+      "brand": "Insta360",
+      "price_php": 11200,
+      "weight_g": 39,
+      "in_stock": true,
+      "buy_url": "https://www.insta360.com/product/insta360-smo4k",
+      "color": "#1a1a1a",
+      "specs": {
+        "resolution": "4K/60fps",
+        "sensor": "CMOS 1/2.3\"",
+        "fov_deg": 115,
+        "latency_ms": 0,
+        "weight_g": 39,
+        "lens": "wide",
+        "format": "analog",
+        "voltage": "5V"
+      }
+    },
+    {
+      "id": "flywoo-terminator-vtx-400",
+      "category": "vtx",
+      "name": "Terminator VTX 400mW",
+      "brand": "Flywoo",
+      "price_php": 1120,
+      "weight_g": 4.5,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/terminator-vtx",
+      "color": "#0f0f0f",
+      "specs": {
+        "output_mw": 400,
+        "bands": [
+          "A",
+          "B",
+          "E",
+          "F",
+          "R"
+        ],
+        "channels": 48,
+        "protocol": "analog",
+        "connector": "SMA",
+        "input_voltage": "5-36V",
+        "osd": true
+      }
+    },
+    {
+      "id": "aomway-commander-vtx2",
+      "category": "vtx",
+      "name": "Commander VTX2 800mW",
+      "brand": "Aomway",
+      "price_php": 1680,
+      "weight_g": 11,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/aomway-commander-vtx2.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "output_mw": 800,
+        "bands": [
+          "A",
+          "B",
+          "E",
+          "F",
+          "R"
+        ],
+        "channels": 48,
+        "protocol": "analog",
+        "connector": "SMA",
+        "input_voltage": "7-24V",
+        "osd": true
+      }
+    },
+    {
+      "id": "hglrc-fm600-vtx",
+      "category": "vtx",
+      "name": "FM600 600mW VTX",
+      "brand": "HGLRC",
+      "price_php": 1008,
+      "weight_g": 3.5,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/products/hglrc-fm600-vtx",
+      "color": "#cc0000",
+      "specs": {
+        "output_mw": 600,
+        "bands": [
+          "A",
+          "B",
+          "E",
+          "F",
+          "R"
+        ],
+        "channels": 48,
+        "protocol": "analog",
+        "connector": "RP-SMA",
+        "input_voltage": "5-36V",
+        "osd": true
+      }
+    },
+    {
+      "id": "neutron-r-1w-vtx",
+      "category": "vtx",
+      "name": "Neutron R 1W VTX",
+      "brand": "HGLRC",
+      "price_php": 1568,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/products/hglrc-neutron-r-vtx",
+      "color": "#cc0000",
+      "specs": {
+        "output_mw": 1000,
+        "bands": [
+          "A",
+          "B",
+          "E",
+          "F",
+          "R"
+        ],
+        "channels": 48,
+        "protocol": "analog",
+        "connector": "SMA",
+        "input_voltage": "5-36V",
+        "osd": true
+      }
+    },
+    {
+      "id": "foxeer-reaper-extreme-vtx",
+      "category": "vtx",
+      "name": "Reaper Extreme 2.5W VTX",
+      "brand": "Foxeer",
+      "price_php": 2240,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/foxeer-reaper-extreme-2-5w-vtx-g-388",
+      "color": "#1a1a1a",
+      "specs": {
+        "output_mw": 2500,
+        "bands": [
+          "A",
+          "B",
+          "E",
+          "F",
+          "R"
+        ],
+        "channels": 48,
+        "protocol": "analog",
+        "connector": "SMA",
+        "input_voltage": "5-36V",
+        "osd": true
+      }
+    },
+    {
+      "id": "matek-vtx-hv-v9",
+      "category": "vtx",
+      "name": "VTX-HV-V9 1W VTX",
+      "brand": "Matek",
+      "price_php": 1680,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=vtx-hv",
+      "color": "#003300",
+      "specs": {
+        "output_mw": 1000,
+        "bands": [
+          "A",
+          "B",
+          "E",
+          "F",
+          "R"
+        ],
+        "channels": 48,
+        "protocol": "analog",
+        "connector": "SMA",
+        "input_voltage": "5-30V",
+        "osd": true
+      }
+    },
+    {
+      "id": "eachine-tx805-vtx",
+      "category": "vtx",
+      "name": "TX805 800mW VTX",
+      "brand": "Eachine",
+      "price_php": 840,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/eachine-tx805-5-8ghz-800mw-vtx.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "output_mw": 800,
+        "bands": [
+          "A",
+          "B",
+          "E",
+          "F",
+          "R"
+        ],
+        "channels": 48,
+        "protocol": "analog",
+        "connector": "SMA",
+        "input_voltage": "7-24V",
+        "osd": true
+      }
+    },
+    {
+      "id": "gens-ace-6s-1300mah-100c",
+      "category": "battery",
+      "name": "BASHING 6S 1300mAh 100C",
+      "brand": "Gens Ace",
+      "price_php": 3920,
+      "weight_g": 185,
+      "in_stock": true,
+      "buy_url": "https://www.genstattu.com/gens-ace-1300mah-22-2v-100c-6s1p-lipo-battery.html",
+      "color": "#0033cc",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 100,
+        "voltage_nominal_v": 22.2,
+        "voltage_full_v": 25.2,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "gaoneng-6s-1300mah-120c",
+      "category": "battery",
+      "name": "GNB 6S 1300mAh 120C",
+      "brand": "Gaoneng",
+      "price_php": 2800,
+      "weight_g": 176,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/gnb-6s-1300mah-120c-lipo-battery-xt60.html",
+      "color": "#cc0000",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 120,
+        "voltage_nominal_v": 22.2,
+        "voltage_full_v": 25.2,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "bonka-6s-1300mah-100c",
+      "category": "battery",
+      "name": "6S 1300mAh 100C",
+      "brand": "Bonka",
+      "price_php": 2520,
+      "weight_g": 178,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/bonka-6s-1300mah-100c-lipo.html",
+      "color": "#0000cc",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 100,
+        "voltage_nominal_v": 22.2,
+        "voltage_full_v": 25.2,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "tattu-rline-v5-6s-1500mah",
+      "category": "battery",
+      "name": "R-Line V5.0 6S 1500mAh",
+      "brand": "Tattu",
+      "price_php": 5600,
+      "weight_g": 215,
+      "in_stock": true,
+      "buy_url": "https://www.genstattu.com/tattu-r-line-version-5-0-1500mah-22-2v-150c-6s1p-lipo-battery.html",
+      "color": "#cc0000",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1500,
+        "c_rating": 150,
+        "voltage_nominal_v": 22.2,
+        "voltage_full_v": 25.2,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "smc-racing-6s-1350mah-120c",
+      "category": "battery",
+      "name": "Racing 6S 1350mAh 120C",
+      "brand": "SMC",
+      "price_php": 3360,
+      "weight_g": 192,
+      "in_stock": true,
+      "buy_url": "https://www.smcbattery.com/fpv-racing/6s-1350mah-120c",
+      "color": "#cc0000",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1350,
+        "c_rating": 120,
+        "voltage_nominal_v": 22.2,
+        "voltage_full_v": 25.2,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "lumenier-6s-1300mah-95c",
+      "category": "battery",
+      "name": "6S 1300mAh 95C",
+      "brand": "Lumenier",
+      "price_php": 3080,
+      "weight_g": 178,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/lumenier-1300mah-6s-95c-lipo-battery-xt60.html",
+      "color": "#ff6600",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 95,
+        "voltage_nominal_v": 22.2,
+        "voltage_full_v": 25.2,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "grepow-6s-1300mah-120c",
+      "category": "battery",
+      "name": "6S 1300mAh 120C",
+      "brand": "Grepow",
+      "price_php": 3360,
+      "weight_g": 185,
+      "in_stock": true,
+      "buy_url": "https://www.grepow.com/products/fpv-racing-drone-battery-6s-1300mah",
+      "color": "#00cc00",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 120,
+        "voltage_nominal_v": 22.2,
+        "voltage_full_v": 25.2,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "alpha-4s-1500mah-100c",
+      "category": "battery",
+      "name": "Alpha 4S 1500mAh 100C",
+      "brand": "Alpha Power",
+      "price_php": 2240,
+      "weight_g": 135,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/alpha-4s-1500mah-100c-lipo-battery.html",
+      "color": "#cc6600",
+      "specs": {
+        "cell_count_s": 4,
+        "capacity_mah": 1500,
+        "c_rating": 100,
+        "voltage_nominal_v": 14.8,
+        "voltage_full_v": 16.8,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "frsky-r9-mx-rx",
+      "category": "receiver",
+      "name": "R9 MX 900MHz Receiver",
+      "brand": "FrSky",
+      "price_php": 1400,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.frsky-rc.com/product/r9-mx/",
+      "color": "#cc0000",
+      "specs": {
+        "protocol": "FrSky 900MHz",
+        "frequency_mhz": 900,
+        "telemetry": true,
+        "range_km": 30
+      }
+    },
+    {
+      "id": "tbs-crossfire-nano-pro",
+      "category": "receiver",
+      "name": "Crossfire Nano Pro RX",
+      "brand": "TBS",
+      "price_php": 2240,
+      "weight_g": 2,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/products/prod:crossfire_nano_pro",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "CRSF",
+        "frequency_mhz": 900,
+        "telemetry": true,
+        "range_km": 50
+      }
+    },
+    {
+      "id": "betafpv-elrs-lite-rx",
+      "category": "receiver",
+      "name": "ELRS Lite 2.4GHz Receiver",
+      "brand": "BetaFPV",
+      "price_php": 560,
+      "weight_g": 0.9,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/elrs-lite-receiver",
+      "color": "#001a1a",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 20
+      }
+    },
+    {
+      "id": "matek-elrs-r24-tiny",
+      "category": "receiver",
+      "name": "ELRS-R24-TINY 2.4GHz",
+      "brand": "Matek",
+      "price_php": 784,
+      "weight_g": 0.7,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=elrs-r24-tiny",
+      "color": "#003300",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 25
+      }
+    },
+    {
+      "id": "hglrc-hermes-elrs-rx",
+      "category": "receiver",
+      "name": "Hermes ELRS 2.4GHz Receiver",
+      "brand": "HGLRC",
+      "price_php": 672,
+      "weight_g": 1.2,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/products/hglrc-hermes-elrs-receiver",
+      "color": "#cc0000",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 25
+      }
+    },
+    {
+      "id": "iflight-elrs-ep2-900",
+      "category": "receiver",
+      "name": "ELRS EP2 900MHz Receiver",
+      "brand": "iFlight",
+      "price_php": 1008,
+      "weight_g": 2,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/ELRS-EP2-Receiver-Pro2051",
+      "color": "#1a001a",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 900,
+        "telemetry": true,
+        "range_km": 50
+      }
+    },
+    {
+      "id": "radiomaster-rp4td-nano",
+      "category": "receiver",
+      "name": "RP4TD Nano ELRS 2.4GHz",
+      "brand": "RadioMaster",
+      "price_php": 1120,
+      "weight_g": 1.5,
+      "in_stock": true,
+      "buy_url": "https://www.radiomasterrc.com/products/rp4td-nano-elrs-diversity-receiver",
+      "color": "#1a1a1a",
       "specs": {
         "protocol": "ELRS",
         "frequency_mhz": 2400,
