@@ -3,77 +3,77 @@
     {
       "id": "frame",
       "label": "Frame",
-      "icon": "🛸",
+      "icon": "\ud83d\udef8",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "motor",
-      "label": "Motors (×4)",
-      "icon": "⚙️",
+      "label": "Motors (\u00d74)",
+      "icon": "\u2699\ufe0f",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "esc",
       "label": "ESC",
-      "icon": "⚡",
+      "icon": "\u26a1",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "fc",
       "label": "Flight Controller",
-      "icon": "💻",
+      "icon": "\ud83d\udcbb",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "propeller",
       "label": "Propellers",
-      "icon": "🌀",
+      "icon": "\ud83c\udf00",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "camera",
       "label": "FPV Camera",
-      "icon": "📷",
+      "icon": "\ud83d\udcf7",
       "required": false,
       "slot_count": 1
     },
     {
       "id": "vtx",
       "label": "Video Transmitter",
-      "icon": "📡",
+      "icon": "\ud83d\udce1",
       "required": false,
       "slot_count": 1
     },
     {
       "id": "battery",
       "label": "Battery",
-      "icon": "🔋",
+      "icon": "\ud83d\udd0b",
       "required": true,
       "slot_count": 1
     },
     {
       "id": "receiver",
       "label": "RC Receiver",
-      "icon": "📻",
+      "icon": "\ud83d\udcfb",
       "required": false,
       "slot_count": 1
     },
     {
       "id": "gps",
       "label": "GPS Module",
-      "icon": "🛰️",
+      "icon": "\ud83d\udef0\ufe0f",
       "required": false,
       "slot_count": 1
     },
     {
       "id": "antenna",
       "label": "VTX Antenna",
-      "icon": "📶",
+      "icon": "\ud83d\udcf6",
       "required": false,
       "slot_count": 1
     }
@@ -1404,7 +1404,7 @@
     {
       "id": "tmotor-mini-f45a",
       "category": "esc",
-      "name": "Mini F45A 4-in-1 20×20",
+      "name": "Mini F45A 4-in-1 20\u00d720",
       "brand": "T-Motor",
       "price_php": 1959,
       "weight_g": 9,
@@ -1839,7 +1839,7 @@
     {
       "id": "hqprop-dp-5x4.5x3",
       "category": "propeller",
-      "name": "DP 5×4.5×3",
+      "name": "DP 5\u00d74.5\u00d73",
       "brand": "HQProp",
       "price_php": 223,
       "weight_g": 5,
@@ -1884,7 +1884,7 @@
     {
       "id": "hqprop-5x4.3x3",
       "category": "propeller",
-      "name": "5×4.3×3V1S",
+      "name": "5\u00d74.3\u00d73V1S",
       "brand": "HQProp",
       "price_php": 195,
       "weight_g": 5,
@@ -1928,7 +1928,7 @@
     {
       "id": "hqprop-2.5x2.5x4",
       "category": "propeller",
-      "name": "2.5×2.5×4",
+      "name": "2.5\u00d72.5\u00d74",
       "brand": "HQProp",
       "price_php": 139,
       "weight_g": 1.5,
@@ -2059,7 +2059,7 @@
     {
       "id": "hqprop-4x4x4",
       "category": "propeller",
-      "name": "4×4×4 Quad-Blade",
+      "name": "4\u00d74\u00d74 Quad-Blade",
       "brand": "HQProp",
       "price_php": 167,
       "weight_g": 3.5,
@@ -3668,7 +3668,7 @@
     {
       "id": "hqprop-3.5x2.9x3",
       "category": "propeller",
-      "name": "3.5×2.9×3 Tri-Blade",
+      "name": "3.5\u00d72.9\u00d73 Tri-Blade",
       "brand": "HQProp",
       "price_php": 167,
       "weight_g": 2,
@@ -4175,7 +4175,7 @@
     {
       "id": "flywoo-goku-hex-35a",
       "category": "esc",
-      "name": "GOKU HEX 35A 20×20 4-in-1",
+      "name": "GOKU HEX 35A 20\u00d720 4-in-1",
       "brand": "Flywoo",
       "price_php": 1959,
       "weight_g": 12,
@@ -4229,7 +4229,7 @@
     {
       "id": "flywoo-goku-f7-mini",
       "category": "fc",
-      "name": "GOKU F7 Mini 20×20",
+      "name": "GOKU F7 Mini 20\u00d720",
       "brand": "Flywoo",
       "price_php": 2239,
       "weight_g": 6,
@@ -4321,7 +4321,7 @@
     {
       "id": "hqprop-5x4x4-v3",
       "category": "propeller",
-      "name": "5×4×4 V3 Quad-Blade",
+      "name": "5\u00d74\u00d74 V3 Quad-Blade",
       "brand": "HQProp",
       "price_php": 223,
       "weight_g": 6,
@@ -5053,7 +5053,7 @@
     {
       "id": "hglrc-zeus-45a",
       "category": "esc",
-      "name": "Zeus 45A 4-in-1 30×30",
+      "name": "Zeus 45A 4-in-1 30\u00d730",
       "brand": "HGLRC",
       "price_php": 2519,
       "weight_g": 21,
@@ -5090,7 +5090,7 @@
     {
       "id": "betafpv-f4-aio-20a-esc",
       "category": "esc",
-      "name": "F4 AIO 20A 4-in-1 20×20",
+      "name": "F4 AIO 20A 4-in-1 20\u00d720",
       "brand": "BetaFPV",
       "price_php": 1679,
       "weight_g": 8,
@@ -5180,7 +5180,7 @@
     {
       "id": "flywoo-goku-f745-mini",
       "category": "fc",
-      "name": "GOKU F745 Mini 20×20",
+      "name": "GOKU F745 Mini 20\u00d720",
       "brand": "Flywoo",
       "price_php": 2799,
       "weight_g": 8,
@@ -5227,7 +5227,7 @@
     {
       "id": "hqprop-7x3.5x3",
       "category": "propeller",
-      "name": "7×3.5×3 Tri-Blade 7\"",
+      "name": "7\u00d73.5\u00d73 Tri-Blade 7\"",
       "brand": "HQProp",
       "price_php": 307,
       "weight_g": 12,
@@ -5292,7 +5292,7 @@
     {
       "id": "hqprop-5.1x4.1x3-pc",
       "category": "propeller",
-      "name": "5.1×4.1×3 PC Tri-Blade",
+      "name": "5.1\u00d74.1\u00d73 PC Tri-Blade",
       "brand": "HQProp",
       "price_php": 251,
       "weight_g": 5.5,
@@ -6015,7 +6015,7 @@
     {
       "id": "iflight-blitz-mini-35a",
       "category": "esc",
-      "name": "BLITZ Mini 35A 4-in-1 20×20",
+      "name": "BLITZ Mini 35A 4-in-1 20\u00d720",
       "brand": "iFlight",
       "price_php": 1791,
       "weight_g": 10,
@@ -6033,7 +6033,7 @@
     {
       "id": "holybro-tekko32-mini-65a",
       "category": "esc",
-      "name": "Tekko32 F4 Mini 65A 4-in-1 20×20",
+      "name": "Tekko32 F4 Mini 65A 4-in-1 20\u00d720",
       "brand": "Holybro",
       "price_php": 2912,
       "weight_g": 16,
@@ -6052,7 +6052,7 @@
     {
       "id": "matek-f40a-4in1",
       "category": "esc",
-      "name": "F40A BLHeli_32 4-in-1 20×20",
+      "name": "F40A BLHeli_32 4-in-1 20\u00d720",
       "brand": "Matek",
       "price_php": 2072,
       "weight_g": 14,
@@ -6070,7 +6070,7 @@
     {
       "id": "speedybee-bls-65a",
       "category": "esc",
-      "name": "BLS 65A 4-in-1 30×30",
+      "name": "BLS 65A 4-in-1 30\u00d730",
       "brand": "SpeedyBee",
       "price_php": 2519,
       "weight_g": 27,
@@ -6088,7 +6088,7 @@
     {
       "id": "geprc-taker-45a",
       "category": "esc",
-      "name": "Taker 45A 4-in-1 30×30",
+      "name": "Taker 45A 4-in-1 30\u00d730",
       "brand": "GEPRC",
       "price_php": 2128,
       "weight_g": 20,
@@ -6106,7 +6106,7 @@
     {
       "id": "speedybee-f405-mini-v4",
       "category": "fc",
-      "name": "F405 Mini V4 20×20",
+      "name": "F405 Mini V4 20\u00d720",
       "brand": "SpeedyBee",
       "price_php": 2128,
       "weight_g": 7,
@@ -6153,7 +6153,7 @@
     {
       "id": "iflight-blitz-f7-mini",
       "category": "fc",
-      "name": "BLITZ F7 Mini 20×20",
+      "name": "BLITZ F7 Mini 20\u00d720",
       "brand": "iFlight",
       "price_php": 2408,
       "weight_g": 7,
@@ -6177,7 +6177,7 @@
     {
       "id": "diatone-mamba-f405-mini",
       "category": "fc",
-      "name": "Mamba F405 Mini MK2 20×20",
+      "name": "Mamba F405 Mini MK2 20\u00d720",
       "brand": "Diatone",
       "price_php": 2128,
       "weight_g": 7,
@@ -6200,7 +6200,7 @@
     {
       "id": "matek-h743-mini",
       "category": "fc",
-      "name": "H743-Mini 20×20",
+      "name": "H743-Mini 20\u00d720",
       "brand": "Matek",
       "price_php": 4312,
       "weight_g": 6,
@@ -6224,7 +6224,7 @@
     {
       "id": "hqprop-5.1x4.5x3-pc",
       "category": "propeller",
-      "name": "5.1×4.5×3 PC Tri-Blade",
+      "name": "5.1\u00d74.5\u00d73 PC Tri-Blade",
       "brand": "HQProp",
       "price_php": 251,
       "weight_g": 5.8,
@@ -6289,7 +6289,7 @@
     {
       "id": "hqprop-4x4.5x3",
       "category": "propeller",
-      "name": "4×4.5×3 Tri-Blade 4\"",
+      "name": "4\u00d74.5\u00d73 Tri-Blade 4\"",
       "brand": "HQProp",
       "price_php": 167,
       "weight_g": 3.5,
@@ -7000,7 +7000,7 @@
     {
       "id": "hglrc-zeus-mini-35a",
       "category": "esc",
-      "name": "Zeus Mini 35A 4-in-1 20×20",
+      "name": "Zeus Mini 35A 4-in-1 20\u00d720",
       "brand": "HGLRC",
       "price_php": 1847,
       "weight_g": 11,
@@ -7687,7 +7687,7 @@
     {
       "id": "betafpv-f4-35a-4in1",
       "category": "esc",
-      "name": "F4 35A 4-in-1 20×20",
+      "name": "F4 35A 4-in-1 20\u00d720",
       "brand": "BetaFPV",
       "price_php": 1680,
       "weight_g": 9,
@@ -7705,7 +7705,7 @@
     {
       "id": "tmotor-f60a-am32-4in1",
       "category": "esc",
-      "name": "F60A AM32 4-in-1 30×30",
+      "name": "F60A AM32 4-in-1 30\u00d730",
       "brand": "T-Motor",
       "price_php": 4199,
       "weight_g": 22,
@@ -7741,7 +7741,7 @@
     {
       "id": "flywoo-goku-hd-35a-20x20",
       "category": "esc",
-      "name": "GOKU HD 35A 4-in-1 20×20",
+      "name": "GOKU HD 35A 4-in-1 20\u00d720",
       "brand": "Flywoo",
       "price_php": 1959,
       "weight_g": 10,
@@ -7759,7 +7759,7 @@
     {
       "id": "tmotor-f80a-pro-4in1",
       "category": "esc",
-      "name": "F80A Pro 4-in-1 30×30 7\"",
+      "name": "F80A Pro 4-in-1 30\u00d730 7\"",
       "brand": "T-Motor",
       "price_php": 5599,
       "weight_g": 36,
@@ -7800,7 +7800,7 @@
     {
       "id": "holybro-kakute-f7-mini-v3",
       "category": "fc",
-      "name": "Kakute F7 Mini V3 20×20",
+      "name": "Kakute F7 Mini V3 20\u00d720",
       "brand": "Holybro",
       "price_php": 2799,
       "weight_g": 7,
@@ -7823,7 +7823,7 @@
     {
       "id": "flywoo-goku-f745-pro",
       "category": "fc",
-      "name": "GOKU F745 Pro 30×30",
+      "name": "GOKU F745 Pro 30\u00d730",
       "brand": "Flywoo",
       "price_php": 2800,
       "weight_g": 9,
@@ -7846,7 +7846,7 @@
     {
       "id": "geprc-taker-g4-f7-mini",
       "category": "fc",
-      "name": "Taker G4 F7 Mini 20×20",
+      "name": "Taker G4 F7 Mini 20\u00d720",
       "brand": "GEPRC",
       "price_php": 2520,
       "weight_g": 7,
@@ -7891,7 +7891,7 @@
     {
       "id": "hqprop-5x4.7x3-pc",
       "category": "propeller",
-      "name": "5×4.7×3 PC Tri-Blade",
+      "name": "5\u00d74.7\u00d73 PC Tri-Blade",
       "brand": "HQProp",
       "price_php": 251,
       "weight_g": 6,
@@ -7955,7 +7955,7 @@
     {
       "id": "hqprop-5x3x4-v2s",
       "category": "propeller",
-      "name": "5×3×4 V2S Quad-Blade",
+      "name": "5\u00d73\u00d74 V2S Quad-Blade",
       "brand": "HQProp",
       "price_php": 223,
       "weight_g": 5.8,
@@ -8487,7 +8487,7 @@
     {
       "id": "geprc-taker-g4-35a-mini",
       "category": "esc",
-      "name": "Taker G4 35A 4-in-1 20×20",
+      "name": "Taker G4 35A 4-in-1 20\u00d720",
       "brand": "GEPRC",
       "price_php": 1847,
       "weight_g": 12,
@@ -8505,7 +8505,7 @@
     {
       "id": "flywoo-goku-f411-aio",
       "category": "fc",
-      "name": "GOKU F411 AIO 20×20",
+      "name": "GOKU F411 AIO 20\u00d720",
       "brand": "Flywoo",
       "price_php": 1960,
       "weight_g": 6,
@@ -8551,7 +8551,7 @@
     {
       "id": "hqprop-3x3x4-quad",
       "category": "propeller",
-      "name": "3×3×4 Quad-Blade 3\"",
+      "name": "3\u00d73\u00d74 Quad-Blade 3\"",
       "brand": "HQProp",
       "price_php": 139,
       "weight_g": 2,
@@ -8594,7 +8594,7 @@
     {
       "id": "hqprop-dp-4x4.3x3",
       "category": "propeller",
-      "name": "DP 4×4.3×3 Tri-Blade 4\"",
+      "name": "DP 4\u00d74.3\u00d73 Tri-Blade 4\"",
       "brand": "HQProp",
       "price_php": 195,
       "weight_g": 3.5,
@@ -10009,7 +10009,7 @@
     {
       "id": "diatone-mamba-f35-esc",
       "category": "esc",
-      "name": "Mamba F35 35A 4-in-1 20×20",
+      "name": "Mamba F35 35A 4-in-1 20\u00d720",
       "brand": "Diatone",
       "price_php": 1959,
       "weight_g": 11,
@@ -10027,7 +10027,7 @@
     {
       "id": "hglrc-zeus-80a-4in1",
       "category": "esc",
-      "name": "Zeus 80A 4-in-1 35×35",
+      "name": "Zeus 80A 4-in-1 35\u00d735",
       "brand": "HGLRC",
       "price_php": 3079,
       "weight_g": 22,
@@ -10045,7 +10045,7 @@
     {
       "id": "iflight-blitz-e45s",
       "category": "esc",
-      "name": "BLITZ E45S 45A 4-in-1 30×30",
+      "name": "BLITZ E45S 45A 4-in-1 30\u00d730",
       "brand": "iFlight",
       "price_php": 2519,
       "weight_g": 17,
@@ -10063,7 +10063,7 @@
     {
       "id": "matek-faze65a-hv",
       "category": "esc",
-      "name": "FAZE65A-HV 65A 4-in-1 30×30",
+      "name": "FAZE65A-HV 65A 4-in-1 30\u00d730",
       "brand": "Matek",
       "price_php": 2799,
       "weight_g": 18,
@@ -10081,7 +10081,7 @@
     {
       "id": "tmotor-f55a-pro-iii-am32",
       "category": "esc",
-      "name": "F55A Pro III AM32 4-in-1 30×30",
+      "name": "F55A Pro III AM32 4-in-1 30\u00d730",
       "brand": "T-Motor",
       "price_php": 4479,
       "weight_g": 26,
@@ -10099,7 +10099,7 @@
     {
       "id": "speedybee-bls-45a-30x30",
       "category": "esc",
-      "name": "BLS 45A 4-in-1 30×30",
+      "name": "BLS 45A 4-in-1 30\u00d730",
       "brand": "SpeedyBee",
       "price_php": 2239,
       "weight_g": 14,
@@ -10117,7 +10117,7 @@
     {
       "id": "flywoo-goku-hd-45a-20x20",
       "category": "esc",
-      "name": "GOKU HD 45A 4-in-1 20×20",
+      "name": "GOKU HD 45A 4-in-1 20\u00d720",
       "brand": "Flywoo",
       "price_php": 2127,
       "weight_g": 13,
@@ -10135,7 +10135,7 @@
     {
       "id": "geprc-taker-g4-65a",
       "category": "esc",
-      "name": "Taker G4 65A 4-in-1 30×30",
+      "name": "Taker G4 65A 4-in-1 30\u00d730",
       "brand": "GEPRC",
       "price_php": 3079,
       "weight_g": 20,
@@ -10153,7 +10153,7 @@
     {
       "id": "holybro-kotleta-35a",
       "category": "esc",
-      "name": "Kotleta30 35A 4-in-1 20×20",
+      "name": "Kotleta30 35A 4-in-1 20\u00d720",
       "brand": "Holybro",
       "price_php": 2239,
       "weight_g": 12,
@@ -10171,7 +10171,7 @@
     {
       "id": "betafpv-f4-v4-45a-4in1",
       "category": "esc",
-      "name": "F4 V4 45A 4-in-1 20×20",
+      "name": "F4 V4 45A 4-in-1 20\u00d720",
       "brand": "BetaFPV",
       "price_php": 1959,
       "weight_g": 13,
@@ -10189,7 +10189,7 @@
     {
       "id": "hglrc-zeus-h743-fc",
       "category": "fc",
-      "name": "Zeus H743 30×30 FC",
+      "name": "Zeus H743 30\u00d730 FC",
       "brand": "HGLRC",
       "price_php": 3359,
       "weight_g": 12,
@@ -10212,7 +10212,7 @@
     {
       "id": "flywoo-goku-h745-pro",
       "category": "fc",
-      "name": "GOKU H745 Pro 30×30",
+      "name": "GOKU H745 Pro 30\u00d730",
       "brand": "Flywoo",
       "price_php": 3079,
       "weight_g": 11,
@@ -10235,7 +10235,7 @@
     {
       "id": "diatone-mamba-f405-mk4",
       "category": "fc",
-      "name": "Mamba F405 MK4 30×30",
+      "name": "Mamba F405 MK4 30\u00d730",
       "brand": "Diatone",
       "price_php": 2799,
       "weight_g": 10,
@@ -10258,7 +10258,7 @@
     {
       "id": "holybro-kakute-g4",
       "category": "fc",
-      "name": "Kakute G4 30×30",
+      "name": "Kakute G4 30\u00d730",
       "brand": "Holybro",
       "price_php": 3639,
       "weight_g": 11,
@@ -10281,7 +10281,7 @@
     {
       "id": "iflight-blitz-f7-v2",
       "category": "fc",
-      "name": "BLITZ F7 V2 30×30",
+      "name": "BLITZ F7 V2 30\u00d730",
       "brand": "iFlight",
       "price_php": 3359,
       "weight_g": 11,
@@ -10304,7 +10304,7 @@
     {
       "id": "speedybee-f405-v4-mini",
       "category": "fc",
-      "name": "F405 V4 Mini 20×20",
+      "name": "F405 V4 Mini 20\u00d720",
       "brand": "SpeedyBee",
       "price_php": 2519,
       "weight_g": 8,
@@ -10327,7 +10327,7 @@
     {
       "id": "matek-h743-wlite",
       "category": "fc",
-      "name": "H743-WLITE 30×30",
+      "name": "H743-WLITE 30\u00d730",
       "brand": "Matek",
       "price_php": 4199,
       "weight_g": 12,
@@ -10350,7 +10350,7 @@
     {
       "id": "geprc-taker-g4-h7-mini",
       "category": "fc",
-      "name": "Taker G4 H7 Mini 20×20",
+      "name": "Taker G4 H7 Mini 20\u00d720",
       "brand": "GEPRC",
       "price_php": 2799,
       "weight_g": 9,
@@ -10373,7 +10373,7 @@
     {
       "id": "flywoo-goku-f411-pro",
       "category": "fc",
-      "name": "GOKU F411 Pro 20×20",
+      "name": "GOKU F411 Pro 20\u00d720",
       "brand": "Flywoo",
       "price_php": 2239,
       "weight_g": 8,
@@ -10396,7 +10396,7 @@
     {
       "id": "betafpv-f7-aio-35a",
       "category": "fc",
-      "name": "F7 AIO 35A 20×20",
+      "name": "F7 AIO 35A 20\u00d720",
       "brand": "BetaFPV",
       "price_php": 2799,
       "weight_g": 12,
@@ -10419,7 +10419,7 @@
     {
       "id": "hqprop-5.1x4.6x3-v2",
       "category": "propeller",
-      "name": "5.1×4.6×3 V2 Tri-Blade",
+      "name": "5.1\u00d74.6\u00d73 V2 Tri-Blade",
       "brand": "HQProp",
       "price_php": 223,
       "weight_g": 5,
@@ -10509,7 +10509,7 @@
     {
       "id": "hqprop-3.5x3x4-quad-35",
       "category": "propeller",
-      "name": "3.5×3×4 Quad-Blade 3.5\"",
+      "name": "3.5\u00d73\u00d74 Quad-Blade 3.5\"",
       "brand": "HQProp",
       "price_php": 167,
       "weight_g": 3,
@@ -10553,7 +10553,7 @@
     {
       "id": "hqprop-5x4.5x3-v1s",
       "category": "propeller",
-      "name": "5×4.5×3 V1S Tri-Blade",
+      "name": "5\u00d74.5\u00d73 V1S Tri-Blade",
       "brand": "HQProp",
       "price_php": 195,
       "weight_g": 5,
@@ -11761,7 +11761,7 @@
     {
       "id": "speedybee-bls-60a-30x30",
       "category": "esc",
-      "name": "BLS 60A 4-in-1 30×30",
+      "name": "BLS 60A 4-in-1 30\u00d730",
       "brand": "SpeedyBee",
       "price_php": 2800,
       "weight_g": 30,
@@ -11779,7 +11779,7 @@
     {
       "id": "holybro-tekko32-45a-mini",
       "category": "esc",
-      "name": "Tekko32 F4 45A Mini 4-in-1 20×20",
+      "name": "Tekko32 F4 45A Mini 4-in-1 20\u00d720",
       "brand": "Holybro",
       "price_php": 2800,
       "weight_g": 18,
@@ -11797,7 +11797,7 @@
     {
       "id": "geprc-taker-g4-80a-30x30",
       "category": "esc",
-      "name": "Taker G4 80A 4-in-1 30×30",
+      "name": "Taker G4 80A 4-in-1 30\u00d730",
       "brand": "GEPRC",
       "price_php": 3360,
       "weight_g": 32,
@@ -11815,7 +11815,7 @@
     {
       "id": "iflight-blitz-pro-60a",
       "category": "esc",
-      "name": "BLITZ Pro 60A 4-in-1 30×30",
+      "name": "BLITZ Pro 60A 4-in-1 30\u00d730",
       "brand": "iFlight",
       "price_php": 3080,
       "weight_g": 29,
@@ -11851,7 +11851,7 @@
     {
       "id": "jhemcu-ghf420-40a-20x20",
       "category": "esc",
-      "name": "GHF420AIO 40A 4-in-1 20×20",
+      "name": "GHF420AIO 40A 4-in-1 20\u00d720",
       "brand": "JHEMCU",
       "price_php": 1680,
       "weight_g": 16,
@@ -11869,7 +11869,7 @@
     {
       "id": "flywoo-goku-g65a-35x35",
       "category": "esc",
-      "name": "GOKU G65A 4-in-1 35×35",
+      "name": "GOKU G65A 4-in-1 35\u00d735",
       "brand": "Flywoo",
       "price_php": 3080,
       "weight_g": 36,
@@ -11887,7 +11887,7 @@
     {
       "id": "matek-f60a-hv-4in1",
       "category": "esc",
-      "name": "F60A-HV BLHeli_32 4-in-1 30×30",
+      "name": "F60A-HV BLHeli_32 4-in-1 30\u00d730",
       "brand": "Matek",
       "price_php": 3080,
       "weight_g": 28,
@@ -11905,7 +11905,7 @@
     {
       "id": "speedybee-f7-v5",
       "category": "fc",
-      "name": "F7 V5 30×30",
+      "name": "F7 V5 30\u00d730",
       "brand": "SpeedyBee",
       "price_php": 3080,
       "weight_g": 10,
@@ -11928,7 +11928,7 @@
     {
       "id": "holybro-kakute-h7-v3",
       "category": "fc",
-      "name": "Kakute H7 V3 30×30",
+      "name": "Kakute H7 V3 30\u00d730",
       "brand": "Holybro",
       "price_php": 3360,
       "weight_g": 11,
@@ -11951,7 +11951,7 @@
     {
       "id": "matek-h743-wing-v3",
       "category": "fc",
-      "name": "H743-WING V3 30×30",
+      "name": "H743-WING V3 30\u00d730",
       "brand": "Matek",
       "price_php": 3640,
       "weight_g": 14,
@@ -11974,7 +11974,7 @@
     {
       "id": "geprc-taker-g4-h7-30x30",
       "category": "fc",
-      "name": "Taker G4 H7 FC 30×30",
+      "name": "Taker G4 H7 FC 30\u00d730",
       "brand": "GEPRC",
       "price_php": 3080,
       "weight_g": 11,
@@ -11997,7 +11997,7 @@
     {
       "id": "iflight-blitz-f7-pro",
       "category": "fc",
-      "name": "BLITZ F7 Pro 30×30",
+      "name": "BLITZ F7 Pro 30\u00d730",
       "brand": "iFlight",
       "price_php": 3360,
       "weight_g": 11,
@@ -12020,7 +12020,7 @@
     {
       "id": "diatone-mamba-f745-mini",
       "category": "fc",
-      "name": "Mamba F745 Mini 20×20",
+      "name": "Mamba F745 Mini 20\u00d720",
       "brand": "Diatone",
       "price_php": 2240,
       "weight_g": 8,
@@ -12043,7 +12043,7 @@
     {
       "id": "happymodel-diamond-f4-aio",
       "category": "fc",
-      "name": "Diamond F4 AIO 20×20",
+      "name": "Diamond F4 AIO 20\u00d720",
       "brand": "HappyModel",
       "price_php": 1960,
       "weight_g": 7,
@@ -12066,7 +12066,7 @@
     {
       "id": "hglrc-zeus-f405-mini-20x20",
       "category": "fc",
-      "name": "Zeus F405 Mini 20×20",
+      "name": "Zeus F405 Mini 20\u00d720",
       "brand": "HGLRC",
       "price_php": 2520,
       "weight_g": 8,
@@ -12112,7 +12112,7 @@
     {
       "id": "hqprop-dp-5x4.8x3",
       "category": "propeller",
-      "name": "DP 5×4.8×3 Tri-Blade 5\"",
+      "name": "DP 5\u00d74.8\u00d73 Tri-Blade 5\"",
       "brand": "HQProp",
       "price_php": 280,
       "weight_g": 6,
@@ -12176,7 +12176,7 @@
     {
       "id": "hqprop-3x3x3-triblade",
       "category": "propeller",
-      "name": "3×3×3 Tri-Blade 3\"",
+      "name": "3\u00d73\u00d73 Tri-Blade 3\"",
       "brand": "HQProp",
       "price_php": 224,
       "weight_g": 3,
@@ -12220,7 +12220,7 @@
     {
       "id": "hqprop-4x4x4-v2-quad",
       "category": "propeller",
-      "name": "4×4×4 V2 Quad-Blade 4\"",
+      "name": "4\u00d74\u00d74 V2 Quad-Blade 4\"",
       "brand": "HQProp",
       "price_php": 280,
       "weight_g": 6,
@@ -14723,7 +14723,7 @@
     {
       "id": "aikon-ak32-pro-55a",
       "category": "esc",
-      "name": "AK32 Pro 55A 4-in-1 30×30",
+      "name": "AK32 Pro 55A 4-in-1 30\u00d730",
       "brand": "Aikon",
       "price_php": 3080,
       "weight_g": 26,
@@ -14759,7 +14759,7 @@
     {
       "id": "flywoo-goku-100a-4in1",
       "category": "esc",
-      "name": "GOKU 100A 4-in-1 35×35",
+      "name": "GOKU 100A 4-in-1 35\u00d735",
       "brand": "Flywoo",
       "price_php": 3640,
       "weight_g": 30,
@@ -14777,7 +14777,7 @@
     {
       "id": "hglrc-zeus-pro-80a",
       "category": "esc",
-      "name": "Zeus Pro 80A 4-in-1 30×30",
+      "name": "Zeus Pro 80A 4-in-1 30\u00d730",
       "brand": "HGLRC",
       "price_php": 3920,
       "weight_g": 28,
@@ -14795,7 +14795,7 @@
     {
       "id": "betafpv-f4-50a-4in1",
       "category": "esc",
-      "name": "F4 50A 4-in-1 30×30",
+      "name": "F4 50A 4-in-1 30\u00d730",
       "brand": "BetaFPV",
       "price_php": 2800,
       "weight_g": 24,
@@ -14813,7 +14813,7 @@
     {
       "id": "diatone-mamba-f80-esc",
       "category": "esc",
-      "name": "Mamba F80 80A 4-in-1 30×30",
+      "name": "Mamba F80 80A 4-in-1 30\u00d730",
       "brand": "Diatone",
       "price_php": 3360,
       "weight_g": 26,
@@ -14831,7 +14831,7 @@
     {
       "id": "matek-f75a-hv-4in1",
       "category": "esc",
-      "name": "F75A-HV BLHeli_32 4-in-1 30×30",
+      "name": "F75A-HV BLHeli_32 4-in-1 30\u00d730",
       "brand": "Matek",
       "price_php": 2800,
       "weight_g": 22,
@@ -14849,7 +14849,7 @@
     {
       "id": "speedybee-bls-90a-35x35",
       "category": "esc",
-      "name": "BLS 90A 4-in-1 35×35",
+      "name": "BLS 90A 4-in-1 35\u00d735",
       "brand": "SpeedyBee",
       "price_php": 3640,
       "weight_g": 32,
@@ -14890,7 +14890,7 @@
     {
       "id": "matek-f765-se",
       "category": "fc",
-      "name": "F765-SE 30×30",
+      "name": "F765-SE 30\u00d730",
       "brand": "Matek",
       "price_php": 3360,
       "weight_g": 12,
@@ -14913,7 +14913,7 @@
     {
       "id": "holybro-kakute-h7-evo",
       "category": "fc",
-      "name": "Kakute H7 EVO 30×30",
+      "name": "Kakute H7 EVO 30\u00d730",
       "brand": "Holybro",
       "price_php": 3640,
       "weight_g": 12,
@@ -14936,7 +14936,7 @@
     {
       "id": "iflight-blitz-h7-nano",
       "category": "fc",
-      "name": "BLITZ H7 Nano 20×20",
+      "name": "BLITZ H7 Nano 20\u00d720",
       "brand": "iFlight",
       "price_php": 2800,
       "weight_g": 8,
@@ -14959,7 +14959,7 @@
     {
       "id": "hglrc-zeus-h7-mini",
       "category": "fc",
-      "name": "Zeus H7 Mini 20×20",
+      "name": "Zeus H7 Mini 20\u00d720",
       "brand": "HGLRC",
       "price_php": 2520,
       "weight_g": 8,
@@ -14982,7 +14982,7 @@
     {
       "id": "betafpv-f7-v5-aio",
       "category": "fc",
-      "name": "F7 V5 AIO 20×20",
+      "name": "F7 V5 AIO 20\u00d720",
       "brand": "BetaFPV",
       "price_php": 2240,
       "weight_g": 8,
@@ -15005,7 +15005,7 @@
     {
       "id": "flywoo-goku-h743-mini",
       "category": "fc",
-      "name": "GOKU H743 Mini 20×20",
+      "name": "GOKU H743 Mini 20\u00d720",
       "brand": "Flywoo",
       "price_php": 3080,
       "weight_g": 9,
@@ -15028,7 +15028,7 @@
     {
       "id": "diatone-mamba-f722-pro",
       "category": "fc",
-      "name": "Mamba F722 Pro 30×30",
+      "name": "Mamba F722 Pro 30\u00d730",
       "brand": "Diatone",
       "price_php": 2800,
       "weight_g": 11,
@@ -15074,7 +15074,7 @@
     {
       "id": "hqprop-5x4.5x3-gf",
       "category": "propeller",
-      "name": "5×4.5×3 Glass Fiber Tri-Blade",
+      "name": "5\u00d74.5\u00d73 Glass Fiber Tri-Blade",
       "brand": "HQProp",
       "price_php": 336,
       "weight_g": 5,
@@ -15117,7 +15117,7 @@
     {
       "id": "hqprop-6x4.5x3-pc",
       "category": "propeller",
-      "name": "6×4.5×3 PC Tri-Blade 6\"",
+      "name": "6\u00d74.5\u00d73 PC Tri-Blade 6\"",
       "brand": "HQProp",
       "price_php": 392,
       "weight_g": 7,
@@ -15204,7 +15204,7 @@
     {
       "id": "hqprop-4x2.5x4-micro",
       "category": "propeller",
-      "name": "4×2.5×4 4-Blade Micro 4\"",
+      "name": "4\u00d72.5\u00d74 4-Blade Micro 4\"",
       "brand": "HQProp",
       "price_php": 280,
       "weight_g": 4,
@@ -19936,7 +19936,7 @@
     {
       "id": "hqprop-5x4.5x4-quad",
       "category": "propeller",
-      "name": "5×4.5×4 Quad",
+      "name": "5\u00d74.5\u00d74 Quad",
       "brand": "HQProp",
       "price_php": 224,
       "weight_g": 6,
@@ -20174,7 +20174,7 @@
     {
       "id": "hqprop-10x4.5x3",
       "category": "propeller",
-      "name": "10×4.5×3 LR Tri",
+      "name": "10\u00d74.5\u00d73 LR Tri",
       "brand": "HQProp",
       "price_php": 392,
       "weight_g": 25,
@@ -24333,7 +24333,7 @@
     {
       "id": "hqprop-5x5-5x3-pc",
       "category": "propeller",
-      "name": "5×5.5×3 PC",
+      "name": "5\u00d75.5\u00d73 PC",
       "brand": "HQProp",
       "price_php": 252,
       "weight_g": 5,
@@ -26807,7 +26807,7 @@
     {
       "id": "flywoo-goku-g80a-35x35",
       "category": "esc",
-      "name": "GOKU G80A 35×35 4-in-1",
+      "name": "GOKU G80A 35\u00d735 4-in-1",
       "brand": "Flywoo",
       "price_php": 3920,
       "weight_g": 28,
@@ -28087,7 +28087,7 @@
     {
       "id": "hqprop-5x4.5x3-v3",
       "category": "propeller",
-      "name": "5×4.5×3 V3",
+      "name": "5\u00d74.5\u00d73 V3",
       "brand": "HQProp",
       "price_php": 252,
       "weight_g": 5,
@@ -32329,7 +32329,7 @@
     {
       "id": "hqprop-t5x4p5x3-pc",
       "category": "propeller",
-      "name": "T5×4.5×3 PC",
+      "name": "T5\u00d74.5\u00d73 PC",
       "brand": "HQProp",
       "price_php": 224,
       "weight_g": 5,
@@ -32395,7 +32395,7 @@
     {
       "id": "hqprop-4x4p5x3-pc",
       "category": "propeller",
-      "name": "4×4.5×3 PC",
+      "name": "4\u00d74.5\u00d73 PC",
       "brand": "HQProp",
       "price_php": 168,
       "weight_g": 3,
@@ -32523,7 +32523,7 @@
     {
       "id": "hqprop-7x3p5x3-v1s",
       "category": "propeller",
-      "name": "7×3.5×3 V1S",
+      "name": "7\u00d73.5\u00d73 V1S",
       "brand": "HQProp",
       "price_php": 336,
       "weight_g": 11,
@@ -33604,6 +33604,1722 @@
         "connector": "U.FL",
         "type": "omni"
       }
+    },
+    {
+      "id": "geprc-mark5",
+      "category": "frame",
+      "name": "Mark5 HD Freestyle",
+      "brand": "GEPRC",
+      "price_php": 3920,
+      "weight_g": 94,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/product/geprc-mark5-hd-frame/",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 228,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 30
+      }
+    },
+    {
+      "id": "geprc-zx5",
+      "category": "frame",
+      "name": "ZX5 V3 Freestyle",
+      "brand": "GEPRC",
+      "price_php": 2800,
+      "weight_g": 88,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 220,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30
+      }
+    },
+    {
+      "id": "iflight-cidora-sl5e",
+      "category": "frame",
+      "name": "Cidora SL5-E V1.2",
+      "brand": "iFlight",
+      "price_php": 3360,
+      "weight_g": 86,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 218,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30
+      }
+    },
+    {
+      "id": "flywoo-explorer-lr4",
+      "category": "frame",
+      "name": "Explorer LR4 V2",
+      "brand": "Flywoo",
+      "price_php": 2520,
+      "weight_g": 62,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/",
+      "color": "#0d0d0d",
+      "specs": {
+        "size_mm": 195,
+        "motor_mount_mm": 16,
+        "prop_clearance_inch": 4,
+        "stack_mount_mm": 20,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 3,
+        "standoff_height_mm": 22
+      }
+    },
+    {
+      "id": "armattan-rooster-v3",
+      "category": "frame",
+      "name": "Rooster 5\" V3",
+      "brand": "Armattan",
+      "price_php": 4200,
+      "weight_g": 96,
+      "in_stock": true,
+      "buy_url": "https://www.armattanquads.com/",
+      "color": "#151515",
+      "specs": {
+        "size_mm": 218,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 32
+      }
+    },
+    {
+      "id": "geprc-cinelog25",
+      "category": "frame",
+      "name": "Cinelog25 V2 Cinewhoop",
+      "brand": "GEPRC",
+      "price_php": 2016,
+      "weight_g": 52,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 105,
+        "motor_mount_mm": 9,
+        "prop_clearance_inch": 2.5,
+        "stack_mount_mm": 20,
+        "material": "TPU/carbon fiber",
+        "arm_thickness_mm": 2,
+        "standoff_height_mm": 20
+      }
+    },
+    {
+      "id": "axisflying-crux3",
+      "category": "frame",
+      "name": "Crux3 3\" Freestyle",
+      "brand": "AxisFlying",
+      "price_php": 1680,
+      "weight_g": 30,
+      "in_stock": true,
+      "buy_url": "https://www.axisflying.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 144,
+        "motor_mount_mm": 12,
+        "prop_clearance_inch": 3,
+        "stack_mount_mm": 20,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 3,
+        "standoff_height_mm": 20
+      }
+    },
+    {
+      "id": "catalyst-sergeant-v2",
+      "category": "frame",
+      "name": "Sergeant V2 5\"",
+      "brand": "Catalyst Machineworks",
+      "price_php": 4480,
+      "weight_g": 102,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#0a0a0a",
+      "specs": {
+        "size_mm": 219,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 30
+      }
+    },
+    {
+      "id": "xilo-phreakstyle-v3",
+      "category": "frame",
+      "name": "Phreakstyle V3 5\"",
+      "brand": "XILO",
+      "price_php": 2240,
+      "weight_g": 79,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 221,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 28
+      }
+    },
+    {
+      "id": "flywoo-nomad-5-hd",
+      "category": "frame",
+      "name": "Nomad HD 5\" Freestyle",
+      "brand": "Flywoo",
+      "price_php": 2240,
+      "weight_g": 83,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 220,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30
+      }
+    },
+    {
+      "id": "geprc-mark5d",
+      "category": "frame",
+      "name": "Mark5D O3 Air Unit",
+      "brand": "GEPRC",
+      "price_php": 4200,
+      "weight_g": 108,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 228,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 6,
+        "standoff_height_mm": 34
+      }
+    },
+    {
+      "id": "hyperlite-floss-v3",
+      "category": "frame",
+      "name": "Floss 3.0 5\"",
+      "brand": "HyperLite",
+      "price_php": 3080,
+      "weight_g": 76,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#111111",
+      "specs": {
+        "size_mm": 218,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 28
+      }
+    },
+    {
+      "id": "rotor-riot-acrobrat-v2",
+      "category": "frame",
+      "name": "AcroBrat V2 4\"",
+      "brand": "Rotor Riot",
+      "price_php": 2520,
+      "weight_g": 58,
+      "in_stock": true,
+      "buy_url": "https://rotorriot.com/",
+      "color": "#0d0d0d",
+      "specs": {
+        "size_mm": 175,
+        "motor_mount_mm": 16,
+        "prop_clearance_inch": 4,
+        "stack_mount_mm": 20,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 24
+      }
+    },
+    {
+      "id": "tmotor-velox-v2-2306",
+      "category": "motor",
+      "name": "Velox V2 2306 2450KV",
+      "brand": "T-Motor",
+      "price_php": 1960,
+      "weight_g": 30,
+      "in_stock": true,
+      "buy_url": "https://store.tmotor.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 2450,
+        "stator_size": "2306",
+        "max_thrust_g": 1300,
+        "weight_g": 30,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "geprc-gr2307-1850kv",
+      "category": "motor",
+      "name": "GR2307 1850KV",
+      "brand": "GEPRC",
+      "price_php": 1568,
+      "weight_g": 33,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 1850,
+        "stator_size": "2307",
+        "max_thrust_g": 1450,
+        "weight_g": 33,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "hobbywing-xrotor2207-2450kv",
+      "category": "motor",
+      "name": "XRotor 2207 2450KV",
+      "brand": "Hobbywing",
+      "price_php": 2016,
+      "weight_g": 31,
+      "in_stock": true,
+      "buy_url": "https://www.hobbywing.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 2450,
+        "stator_size": "2207",
+        "max_thrust_g": 1320,
+        "weight_g": 31,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "tmotor-f60-pro-iv-2207",
+      "category": "motor",
+      "name": "F60 PRO IV 2207 1750KV",
+      "brand": "T-Motor",
+      "price_php": 1960,
+      "weight_g": 34,
+      "in_stock": true,
+      "buy_url": "https://store.tmotor.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 1750,
+        "stator_size": "2207",
+        "max_thrust_g": 1680,
+        "weight_g": 34,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "brotherhobby-d2-2004-2550kv",
+      "category": "motor",
+      "name": "D2 2004 2550KV",
+      "brand": "BrotherHobby",
+      "price_php": 1120,
+      "weight_g": 17,
+      "in_stock": true,
+      "buy_url": "https://www.brotherhobby.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 2550,
+        "stator_size": "2004",
+        "max_thrust_g": 640,
+        "weight_g": 17,
+        "shaft_mm": 2
+      }
+    },
+    {
+      "id": "meps-bs2206s-2300kv",
+      "category": "motor",
+      "name": "BS2206S 2300KV",
+      "brand": "MEPS",
+      "price_php": 1120,
+      "weight_g": 28,
+      "in_stock": true,
+      "buy_url": "https://www.mepsmodel.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 2300,
+        "stator_size": "2206",
+        "max_thrust_g": 1100,
+        "weight_g": 28,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "tmotor-mn4014-400kv",
+      "category": "motor",
+      "name": "MN4014 400KV",
+      "brand": "T-Motor",
+      "price_php": 4480,
+      "weight_g": 118,
+      "in_stock": true,
+      "buy_url": "https://store.tmotor.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 400,
+        "stator_size": "4014",
+        "max_thrust_g": 3200,
+        "weight_g": 118,
+        "shaft_mm": 4
+      }
+    },
+    {
+      "id": "emax-eco-ii-2807-1300kv",
+      "category": "motor",
+      "name": "ECO II 2807 1300KV",
+      "brand": "Emax",
+      "price_php": 1232,
+      "weight_g": 38,
+      "in_stock": true,
+      "buy_url": "https://emax.cc/",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 1300,
+        "stator_size": "2807",
+        "max_thrust_g": 1800,
+        "weight_g": 38,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "rcin-zing-2208-1950kv",
+      "category": "motor",
+      "name": "Zing 2208 1950KV",
+      "brand": "RCINPower",
+      "price_php": 1344,
+      "weight_g": 34,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 1950,
+        "stator_size": "2208",
+        "max_thrust_g": 1450,
+        "weight_g": 34,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "cobra-cp2207-2450kv",
+      "category": "motor",
+      "name": "Champion CP2207 2450KV",
+      "brand": "COBRA",
+      "price_php": 1680,
+      "weight_g": 31,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "kv": 2450,
+        "stator_size": "2207",
+        "max_thrust_g": 1300,
+        "weight_g": 31,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "dys-fire-2306-2300kv",
+      "category": "motor",
+      "name": "Fire 2306 2300KV",
+      "brand": "DYS",
+      "price_php": 896,
+      "weight_g": 28,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#ff4400",
+      "specs": {
+        "kv": 2300,
+        "stator_size": "2306",
+        "max_thrust_g": 1180,
+        "weight_g": 28,
+        "shaft_mm": 3
+      }
+    },
+    {
+      "id": "tmotor-alpha-60a-4in1",
+      "category": "esc",
+      "name": "Alpha 60A 4-in-1",
+      "brand": "T-Motor",
+      "price_php": 5040,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://store.tmotor.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 60,
+        "burst_a": 75,
+        "cells": "4-6S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "geprc-45a-4in1",
+      "category": "esc",
+      "name": "GEP-F745-45A 4-in-1",
+      "brand": "GEPRC",
+      "price_php": 2800,
+      "weight_g": 22,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 45,
+        "burst_a": 55,
+        "cells": "3-6S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "holybro-tekko32-f3-45a",
+      "category": "esc",
+      "name": "Tekko32 F3 45A 4-in-1",
+      "brand": "HolyBro",
+      "price_php": 3640,
+      "weight_g": 24,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 45,
+        "burst_a": 55,
+        "cells": "3-6S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "fettectek-f4all-g3",
+      "category": "esc",
+      "name": "F4All G3 45A 4-in-1",
+      "brand": "FettecTek",
+      "price_php": 2520,
+      "weight_g": 20,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 45,
+        "burst_a": 50,
+        "cells": "3-5S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "dys-aria-45a-4in1",
+      "category": "esc",
+      "name": "Aria 45A 4-in-1",
+      "brand": "DYS",
+      "price_php": 2240,
+      "weight_g": 22,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 45,
+        "burst_a": 55,
+        "cells": "3-6S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "hglrc-50a-4in1",
+      "category": "esc",
+      "name": "XRotor 50A 4-in-1",
+      "brand": "HGLRC",
+      "price_php": 2800,
+      "weight_g": 25,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 50,
+        "burst_a": 60,
+        "cells": "3-6S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "racerstar-35a-4in1",
+      "category": "esc",
+      "name": "BLHeli32 35A 4-in-1",
+      "brand": "Racerstar",
+      "price_php": 1680,
+      "weight_g": 18,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 35,
+        "burst_a": 40,
+        "cells": "3-4S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "jhemcu-40a-4in1",
+      "category": "esc",
+      "name": "GHF420 40A 4-in-1",
+      "brand": "JHEMCU",
+      "price_php": 1960,
+      "weight_g": 19,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "continuous_a": 40,
+        "burst_a": 50,
+        "cells": "3-6S",
+        "protocol": "DSHOT600"
+      }
+    },
+    {
+      "id": "matek-h743-slim-v2",
+      "category": "fc",
+      "name": "H743-Slim V2",
+      "brand": "Matek",
+      "price_php": 4200,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=h743-slim",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32H743",
+        "gyro": "MPU6000",
+        "uart_count": 7,
+        "osd": "MAX7456"
+      }
+    },
+    {
+      "id": "speedybee-f405-mini",
+      "category": "fc",
+      "name": "F405 Mini V2",
+      "brand": "SpeedyBee",
+      "price_php": 2240,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F405",
+        "gyro": "ICM42688P",
+        "uart_count": 5,
+        "osd": "AT7456E"
+      }
+    },
+    {
+      "id": "betafpv-f4-1s-12a-aio",
+      "category": "fc",
+      "name": "F4 1S 12A AIO",
+      "brand": "BetaFPV",
+      "price_php": 1680,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F411",
+        "gyro": "MPU6000",
+        "uart_count": 2,
+        "osd": "AT7456E"
+      }
+    },
+    {
+      "id": "geprc-f745-bt-fc",
+      "category": "fc",
+      "name": "GEP-F745-BT FC",
+      "brand": "GEPRC",
+      "price_php": 3360,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F745",
+        "gyro": "ICM42688P",
+        "uart_count": 7,
+        "osd": "AT7456E"
+      }
+    },
+    {
+      "id": "holybro-durandal-h7",
+      "category": "fc",
+      "name": "Durandal H7",
+      "brand": "HolyBro",
+      "price_php": 5600,
+      "weight_g": 38,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32H743",
+        "gyro": "ICM20689",
+        "uart_count": 8,
+        "osd": "None"
+      }
+    },
+    {
+      "id": "speedybee-f7-mini",
+      "category": "fc",
+      "name": "F7 Mini V2",
+      "brand": "SpeedyBee",
+      "price_php": 3360,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F7",
+        "gyro": "ICM42688P",
+        "uart_count": 6,
+        "osd": "AT7456E"
+      }
+    },
+    {
+      "id": "geprc-f722-mini-fc",
+      "category": "fc",
+      "name": "GEP-F722 Mini FC",
+      "brand": "GEPRC",
+      "price_php": 2800,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F722",
+        "gyro": "ICM42688P",
+        "uart_count": 6,
+        "osd": "AT7456E"
+      }
+    },
+    {
+      "id": "holybro-kakute-f7-v2",
+      "category": "fc",
+      "name": "Kakute F7 V2",
+      "brand": "HolyBro",
+      "price_php": 3640,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F745",
+        "gyro": "ICM20689",
+        "uart_count": 6,
+        "osd": "MAX7456"
+      }
+    },
+    {
+      "id": "matek-f722-mini-se",
+      "category": "fc",
+      "name": "F722-Mini SE",
+      "brand": "Matek",
+      "price_php": 3080,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=f722-mini-se",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F722",
+        "gyro": "MPU6000",
+        "uart_count": 5,
+        "osd": "MAX7456"
+      }
+    },
+    {
+      "id": "hglrc-zeus-f7",
+      "category": "fc",
+      "name": "Zeus F7 V2",
+      "brand": "HGLRC",
+      "price_php": 3920,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "processor": "STM32F745",
+        "gyro": "ICM42688P",
+        "uart_count": 7,
+        "osd": "AT7456E"
+      }
+    },
+    {
+      "id": "gemfan-flash-5152-3b",
+      "category": "propeller",
+      "name": "Flash 5152 3-blade",
+      "brand": "Gemfan",
+      "price_php": 279,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#222222",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch_inch": 5.2,
+        "blades": 3,
+        "material": "PC"
+      }
+    },
+    {
+      "id": "ethix-s5-light-5146",
+      "category": "propeller",
+      "name": "S5 Light 5146",
+      "brand": "Ethix",
+      "price_php": 335,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch_inch": 4.6,
+        "blades": 3,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "dal-indestructible-5045-3b",
+      "category": "propeller",
+      "name": "Indestructible 5045 3-blade",
+      "brand": "DAL",
+      "price_php": 251,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch_inch": 4.5,
+        "blades": 3,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "gemfan-4024-3blade-4in",
+      "category": "propeller",
+      "name": "4024 3-blade 4\"",
+      "brand": "Gemfan",
+      "price_php": 195,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#222222",
+      "specs": {
+        "diameter_inch": 4,
+        "pitch_inch": 2.4,
+        "blades": 3,
+        "material": "PC"
+      }
+    },
+    {
+      "id": "hqprop-3018-3b",
+      "category": "propeller",
+      "name": "3018 3-blade 3\"",
+      "brand": "HQProp",
+      "price_php": 167,
+      "weight_g": 3,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#222222",
+      "specs": {
+        "diameter_inch": 3,
+        "pitch_inch": 1.8,
+        "blades": 3,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "emax-avan-5-2blade",
+      "category": "propeller",
+      "name": "AVAN 5 2-blade",
+      "brand": "EMAX",
+      "price_php": 223,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://emax.cc/",
+      "color": "#1a1a1a",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch_inch": 4.3,
+        "blades": 2,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "gemfan-6042-2blade",
+      "category": "propeller",
+      "name": "6042 2-blade 6\"",
+      "brand": "Gemfan",
+      "price_php": 335,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#222222",
+      "specs": {
+        "diameter_inch": 6,
+        "pitch_inch": 4.2,
+        "blades": 2,
+        "material": "PC"
+      }
+    },
+    {
+      "id": "hqprop-5040-3blade",
+      "category": "propeller",
+      "name": "5040 3-blade",
+      "brand": "HQProp",
+      "price_php": 195,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#222222",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch_inch": 4.0,
+        "blades": 3,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "dal-5052-2blade",
+      "category": "propeller",
+      "name": "5052 2-blade",
+      "brand": "DAL",
+      "price_php": 167,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#000000",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch_inch": 5.2,
+        "blades": 2,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "gemfan-5149-3blade",
+      "category": "propeller",
+      "name": "5149 3-blade V2",
+      "brand": "Gemfan",
+      "price_php": 223,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch_inch": 4.9,
+        "blades": 3,
+        "material": "PC"
+      }
+    },
+    {
+      "id": "runcam-phoenix-micro",
+      "category": "camera",
+      "name": "Phoenix Micro",
+      "brand": "RunCam",
+      "price_php": 1568,
+      "weight_g": 13,
+      "in_stock": true,
+      "buy_url": "https://www.runcam.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "sensor": "1/3\" CMOS",
+        "resolution": "1000TVL",
+        "fov_deg": 155,
+        "voltage_range": "5-36V"
+      }
+    },
+    {
+      "id": "caddx-vista-camera",
+      "category": "camera",
+      "name": "Vista Digital Camera",
+      "brand": "Caddx",
+      "price_php": 2800,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://caddxfpv.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "sensor": "1/3\" CMOS",
+        "resolution": "1080p",
+        "fov_deg": 150,
+        "voltage_range": "7.4-26V"
+      }
+    },
+    {
+      "id": "foxeer-digisight-2-nano",
+      "category": "camera",
+      "name": "Digisight 2 Nano",
+      "brand": "Foxeer",
+      "price_php": 2240,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "sensor": "1/3\" CMOS",
+        "resolution": "1080p",
+        "fov_deg": 150,
+        "voltage_range": "5-40V"
+      }
+    },
+    {
+      "id": "foxeer-razer-mini-v2",
+      "category": "camera",
+      "name": "Razer Mini V2",
+      "brand": "Foxeer",
+      "price_php": 1400,
+      "weight_g": 14,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "sensor": "1/3\" CMOS",
+        "resolution": "1200TVL",
+        "fov_deg": 155,
+        "voltage_range": "5-40V"
+      }
+    },
+    {
+      "id": "runcam-split-4",
+      "category": "camera",
+      "name": "Split 4 HD",
+      "brand": "RunCam",
+      "price_php": 3360,
+      "weight_g": 26,
+      "in_stock": true,
+      "buy_url": "https://www.runcam.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "sensor": "1/3\" CMOS",
+        "resolution": "4K",
+        "fov_deg": 165,
+        "voltage_range": "5-36V"
+      }
+    },
+    {
+      "id": "foxeer-box-2-mini",
+      "category": "camera",
+      "name": "Box 2 Mini 4K",
+      "brand": "Foxeer",
+      "price_php": 4480,
+      "weight_g": 38,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "sensor": "1/2.3\" CMOS",
+        "resolution": "4K@30fps",
+        "fov_deg": 170,
+        "voltage_range": "7.4-8.4V"
+      }
+    },
+    {
+      "id": "hglrc-thor-350mw",
+      "category": "vtx",
+      "name": "Thor 350mW VTX",
+      "brand": "HGLRC",
+      "price_php": 1792,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 350,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "rush-tiny-tank-solo",
+      "category": "vtx",
+      "name": "Tiny Tank Solo 400mW",
+      "brand": "RushFPV",
+      "price_php": 1568,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://rushfpv.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 400,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "akk-x2-ultimate-1200mw",
+      "category": "vtx",
+      "name": "X2 Ultimate 1200mW",
+      "brand": "AKK",
+      "price_php": 1400,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 1200,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "foxeer-echo-400mw",
+      "category": "vtx",
+      "name": "Echo 400mW",
+      "brand": "Foxeer",
+      "price_php": 1680,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 400,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "tbs-unify-pro32-evo",
+      "category": "vtx",
+      "name": "Unify Pro32 EVO 800mW",
+      "brand": "TBS",
+      "price_php": 3360,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 800,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "hglrc-phantom-800mw",
+      "category": "vtx",
+      "name": "Phantom 800mW VTX",
+      "brand": "HGLRC",
+      "price_php": 2520,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 800,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "skystars-vt5804-800mw",
+      "category": "vtx",
+      "name": "VT5804 800mW",
+      "brand": "Skystars",
+      "price_php": 1960,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.skystars-rc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 800,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "aikon-atlatl-hv-v2",
+      "category": "vtx",
+      "name": "ATLATL HV V2 1000mW",
+      "brand": "Aikon",
+      "price_php": 2240,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "power_mw": 1000,
+        "channels": 48,
+        "protocol": "SmartAudio",
+        "band": "5.8GHz"
+      }
+    },
+    {
+      "id": "cnhl-6s-1100mah-120c",
+      "category": "battery",
+      "name": "1100mAh 6S 120C",
+      "brand": "CNHL",
+      "price_php": 1568,
+      "weight_g": 210,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#000000",
+      "specs": {
+        "cell_count": 6,
+        "capacity_mah": 1100,
+        "c_rating": 120,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "gnb-4s-1300mah-100c",
+      "category": "battery",
+      "name": "1300mAh 4S 100C",
+      "brand": "GNB",
+      "price_php": 1120,
+      "weight_g": 168,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#ff6600",
+      "specs": {
+        "cell_count": 4,
+        "capacity_mah": 1300,
+        "c_rating": 100,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "gens-ace-soaring-3s-2200mah",
+      "category": "battery",
+      "name": "Soaring 3S 2200mAh 30C",
+      "brand": "Gens Ace",
+      "price_php": 1680,
+      "weight_g": 176,
+      "in_stock": true,
+      "buy_url": "https://www.gensace.de/",
+      "color": "#0000cc",
+      "specs": {
+        "cell_count": 3,
+        "capacity_mah": 2200,
+        "c_rating": 30,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "smc-true-spec-6s-1050mah",
+      "category": "battery",
+      "name": "True Spec Extreme 6S 1050mAh 130C",
+      "brand": "SMC",
+      "price_php": 1792,
+      "weight_g": 200,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#ff0000",
+      "specs": {
+        "cell_count": 6,
+        "capacity_mah": 1050,
+        "c_rating": 130,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "dogcom-4s-1500mah-130c",
+      "category": "battery",
+      "name": "1500mAh 4S 130C",
+      "brand": "Dogcom",
+      "price_php": 1288,
+      "weight_g": 185,
+      "in_stock": true,
+      "buy_url": "https://dogcomfpv.com/",
+      "color": "#ff6600",
+      "specs": {
+        "cell_count": 4,
+        "capacity_mah": 1500,
+        "c_rating": 130,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "hrb-4s-1800mah-75c",
+      "category": "battery",
+      "name": "1800mAh 4S 75C",
+      "brand": "HRB",
+      "price_php": 1120,
+      "weight_g": 214,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#cc0000",
+      "specs": {
+        "cell_count": 4,
+        "capacity_mah": 1800,
+        "c_rating": 75,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "gaoneng-4s-1500mah-100c",
+      "category": "battery",
+      "name": "1500mAh 4S 100C",
+      "brand": "Gaoneng",
+      "price_php": 1120,
+      "weight_g": 182,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#ff0000",
+      "specs": {
+        "cell_count": 4,
+        "capacity_mah": 1500,
+        "c_rating": 100,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "alpha-power-4s-1800mah-100c",
+      "category": "battery",
+      "name": "1800mAh 4S 100C",
+      "brand": "Alpha Power",
+      "price_php": 1288,
+      "weight_g": 212,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#ff6600",
+      "specs": {
+        "cell_count": 4,
+        "capacity_mah": 1800,
+        "c_rating": 100,
+        "connector": "XT60"
+      }
+    },
+    {
+      "id": "jumper-aion-nano",
+      "category": "receiver",
+      "name": "AION Nano ELRS 2.4GHz",
+      "brand": "Jumper",
+      "price_php": 560,
+      "weight_g": 1.2,
+      "in_stock": true,
+      "buy_url": "https://www.jumper-rc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "channels": 16,
+        "frequency_mhz": 2400,
+        "telemetry": true
+      }
+    },
+    {
+      "id": "radiomaster-r81-elrs",
+      "category": "receiver",
+      "name": "R81 ELRS 2.4GHz",
+      "brand": "RadioMaster",
+      "price_php": 448,
+      "weight_g": 1.0,
+      "in_stock": true,
+      "buy_url": "https://www.radiomaster.cc/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "channels": 8,
+        "frequency_mhz": 2400,
+        "telemetry": true
+      }
+    },
+    {
+      "id": "frsky-s6r",
+      "category": "receiver",
+      "name": "S6R 6-Channel SBUS",
+      "brand": "FrSky",
+      "price_php": 1400,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.frsky-rc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "ACCST D16",
+        "channels": 6,
+        "frequency_mhz": 2400,
+        "telemetry": true
+      }
+    },
+    {
+      "id": "tbs-crossfire-nano-se",
+      "category": "receiver",
+      "name": "Crossfire Nano SE",
+      "brand": "TBS",
+      "price_php": 1680,
+      "weight_g": 1.7,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "CRSF",
+        "channels": 12,
+        "frequency_mhz": 900,
+        "telemetry": true
+      }
+    },
+    {
+      "id": "betafpv-superp-14ch",
+      "category": "receiver",
+      "name": "SuperP 14CH ELRS 2.4GHz",
+      "brand": "BetaFPV",
+      "price_php": 1008,
+      "weight_g": 1.0,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "channels": 14,
+        "frequency_mhz": 2400,
+        "telemetry": true
+      }
+    },
+    {
+      "id": "spektrum-spmar6110e",
+      "category": "receiver",
+      "name": "AR6110E DSM2/DSMX",
+      "brand": "Spektrum",
+      "price_php": 1288,
+      "weight_g": 3,
+      "in_stock": true,
+      "buy_url": "https://www.spektrumrc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "DSMX",
+        "channels": 6,
+        "frequency_mhz": 2400,
+        "telemetry": false
+      }
+    },
+    {
+      "id": "happymodel-ep1-dual-elrs",
+      "category": "receiver",
+      "name": "EP1 Dual ELRS 2.4GHz",
+      "brand": "HappyModel",
+      "price_php": 616,
+      "weight_g": 1.5,
+      "in_stock": true,
+      "buy_url": "https://www.happymodel.cn/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "channels": 16,
+        "frequency_mhz": 2400,
+        "telemetry": true
+      }
+    },
+    {
+      "id": "iflight-commando8-elrs",
+      "category": "receiver",
+      "name": "Commando8 8CH ELRS",
+      "brand": "iFlight",
+      "price_php": 840,
+      "weight_g": 1.0,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "channels": 8,
+        "frequency_mhz": 2400,
+        "telemetry": true
+      }
+    },
+    {
+      "id": "holybro-m8n-micro-gps",
+      "category": "gps",
+      "name": "M8N Micro GPS+Compass",
+      "brand": "HolyBro",
+      "price_php": 1344,
+      "weight_g": 16,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M8N",
+        "satellites": "GPS/GLONASS",
+        "accuracy_m": 2.5,
+        "frequency": "10Hz"
+      }
+    },
+    {
+      "id": "beitian-bn-880-gps",
+      "category": "gps",
+      "name": "BN-880 GPS+Compass",
+      "brand": "Beitian",
+      "price_php": 840,
+      "weight_g": 24,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M8N",
+        "satellites": "GPS/GLONASS",
+        "accuracy_m": 2.5,
+        "frequency": "10Hz"
+      }
+    },
+    {
+      "id": "flywoo-gm10-mini-gps",
+      "category": "gps",
+      "name": "GM10 Mini V2 GPS",
+      "brand": "Flywoo",
+      "price_php": 1120,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M10",
+        "satellites": "GPS/GLONASS/BeiDou",
+        "accuracy_m": 1.5,
+        "frequency": "18Hz"
+      }
+    },
+    {
+      "id": "geprc-mini-m10-v2-gps",
+      "category": "gps",
+      "name": "Mini M10 V2 GPS",
+      "brand": "GEPRC",
+      "price_php": 1680,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M10",
+        "satellites": "GPS/GLONASS/BeiDou",
+        "accuracy_m": 1.5,
+        "frequency": "18Hz"
+      }
+    },
+    {
+      "id": "matek-m10-l-4-10",
+      "category": "gps",
+      "name": "M10-L-4.10 GPS",
+      "brand": "Matek",
+      "price_php": 2240,
+      "weight_g": 16,
+      "in_stock": true,
+      "buy_url": "https://www.mateksys.com/?portfolio=m10-l-4-10",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M10",
+        "satellites": "GPS/GLONASS/BeiDou",
+        "accuracy_m": 1.5,
+        "frequency": "18Hz"
+      }
+    },
+    {
+      "id": "beitian-bn-220t",
+      "category": "gps",
+      "name": "BN-220T Dual GPS",
+      "brand": "Beitian",
+      "price_php": 560,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M8N",
+        "satellites": "GPS/GLONASS",
+        "accuracy_m": 2.5,
+        "frequency": "10Hz"
+      }
+    },
+    {
+      "id": "speedybee-gps-m10-v2",
+      "category": "gps",
+      "name": "GPS M10 V2",
+      "brand": "SpeedyBee",
+      "price_php": 1344,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M10",
+        "satellites": "GPS/GLONASS/BeiDou",
+        "accuracy_m": 1.5,
+        "frequency": "18Hz"
+      }
+    },
+    {
+      "id": "iflight-gps-m8n",
+      "category": "gps",
+      "name": "M8N GPS Module",
+      "brand": "iFlight",
+      "price_php": 1120,
+      "weight_g": 20,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "chip": "u-blox M8N",
+        "satellites": "GPS/GLONASS",
+        "accuracy_m": 2.5,
+        "frequency": "10Hz"
+      }
+    },
+    {
+      "id": "lumenier-axii-2-short-5-8",
+      "category": "antenna",
+      "name": "AXII 2 Short 5.8GHz",
+      "brand": "Lumenier",
+      "price_php": 1120,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 1.6,
+        "polarization": "LHCP/RHCP",
+        "connector": "SMA"
+      }
+    },
+    {
+      "id": "foxeer-micro-lollipop-4-5-8",
+      "category": "antenna",
+      "name": "Micro Lollipop 4 5.8GHz",
+      "brand": "Foxeer",
+      "price_php": 392,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 2.0,
+        "polarization": "LHCP/RHCP",
+        "connector": "MMCX"
+      }
+    },
+    {
+      "id": "rushfpv-cherry-5-8",
+      "category": "antenna",
+      "name": "Cherry 5.8GHz RHCP",
+      "brand": "RushFPV",
+      "price_php": 616,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://rushfpv.com/",
+      "color": "#ff0000",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA"
+      }
+    },
+    {
+      "id": "aomway-cloverleaf-5-8",
+      "category": "antenna",
+      "name": "Clover Leaf 5.8GHz Quad",
+      "brand": "Aomway",
+      "price_php": 504,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA"
+      }
+    },
+    {
+      "id": "rmrc-circular-5-8",
+      "category": "antenna",
+      "name": "Circular Polarized 5.8GHz",
+      "brand": "RMRC",
+      "price_php": 560,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA"
+      }
+    },
+    {
+      "id": "immersionrc-spironnet-v2-5-8",
+      "category": "antenna",
+      "name": "SpiroNET V2 5.8GHz",
+      "brand": "ImmersionRC",
+      "price_php": 1120,
+      "weight_g": 14,
+      "in_stock": true,
+      "buy_url": "https://www.immersionrc.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA"
+      }
+    },
+    {
+      "id": "foxeer-lollipop-3-stubby-5-8",
+      "category": "antenna",
+      "name": "Lollipop 3 Stubby 5.8GHz",
+      "brand": "Foxeer",
+      "price_php": 392,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/",
+      "color": "#ff0000",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 2.0,
+        "polarization": "LHCP/RHCP",
+        "connector": "SMA"
+      }
+    },
+    {
+      "id": "tbs-triumph-stubby-5-8",
+      "category": "antenna",
+      "name": "Triumph Stubby 5.8GHz",
+      "brand": "TBS",
+      "price_php": 784,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.team-blacksheep.com/",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA"
+      }
     }
   ],
   "compatibility_rules": [
@@ -33624,7 +35340,7 @@
       "operator": ">=",
       "slot_b": "battery",
       "spec_b": "cell_count_s",
-      "message": "Motor max voltage ({a}S) is less than battery ({b}S) — risk of motor damage"
+      "message": "Motor max voltage ({a}S) is less than battery ({b}S) \u2014 risk of motor damage"
     },
     {
       "id": "esc-battery-voltage",
@@ -33680,7 +35396,7 @@
       "spec_a": "format",
       "slot_b": "vtx",
       "spec_b": "protocol",
-      "message": "Camera ({a}) is not compatible with {b} VTX — digital and analog video systems cannot be mixed"
+      "message": "Camera ({a}) is not compatible with {b} VTX \u2014 digital and analog video systems cannot be mixed"
     },
     {
       "id": "camera-vtx-digital-system",
@@ -33689,7 +35405,7 @@
       "spec_a": "video_system",
       "slot_b": "vtx",
       "spec_b": "video_system",
-      "message": "Camera ({a}) is not compatible with {b} VTX — different digital video systems"
+      "message": "Camera ({a}) is not compatible with {b} VTX \u2014 different digital video systems"
     }
   ],
   "presets": {
