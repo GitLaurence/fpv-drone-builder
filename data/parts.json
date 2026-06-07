@@ -45902,6 +45902,145 @@
         "connector": "RP-SMA",
         "type": "omni"
       }
+    },
+    {
+      "id": "hobbywing-xrotor-g2-65a",
+      "category": "esc",
+      "name": "XRotor G2 Micro 65A 4-in-1",
+      "brand": "Hobbywing",
+      "price_php": 5534,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/hobbywing-xrotor-g2-micro-65a-6s-am32-4-in-1-esc-30x30.html",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 65,
+        "input_voltage_s": 6,
+        "protocol": "AM32",
+        "form_factor_mm": 30,
+        "burst_amp": 80
+      }
+    },
+    {
+      "id": "radiomaster-ers-gps",
+      "category": "gps",
+      "name": "ERS-GPS Telemetry Sensor",
+      "brand": "RadioMaster",
+      "price_php": 1844,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/radiomaster-ers-gps-telemetry-sensor-elrs-er.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS",
+        "chipset": "u-blox",
+        "update_rate_hz": 10,
+        "fix_time_s": 30,
+        "compass": false,
+        "connector": "CRSF"
+      }
+    },
+    {
+      "id": "walksnail-ascent-lite-vtx",
+      "category": "vtx",
+      "name": "Ascent Lite VTX Kit",
+      "brand": "Walksnail",
+      "price_php": 2213,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/walksnail-ascent-lite-vtx-kit.html",
+      "color": "#221100",
+      "specs": {
+        "power_mw_max": 100,
+        "protocol": "Digital HD",
+        "bands": "5.8GHz",
+        "voltage_range": "3-12.6V",
+        "connector": "integrated"
+      }
+    },
+    {
+      "id": "flywoo-goku-gn745-v3-45a",
+      "category": "fc",
+      "name": "GOKU GN745 V3 45A AIO",
+      "brand": "Flywoo",
+      "price_php": 5534,
+      "weight_g": 9.7,
+      "in_stock": true,
+      "buy_url": "https://flywoo.net/products/goku-gn745-45a-aio-bl_32-mpu6000-v3",
+      "color": "#1a1a1a",
+      "specs": {
+        "gyro": "MPU6000",
+        "firmware": "Betaflight",
+        "form_factor_mm": 25.5,
+        "stack_mount_mm": 25.5,
+        "barometer": true,
+        "blackbox": true,
+        "uart_count": 7,
+        "5v_pad_count": 2,
+        "curr_sensor": true,
+        "diagram_url": "https://flywoo.net/products/goku-gn745-45a-aio-bl_32-mpu6000-v3"
+      }
+    },
+    {
+      "id": "betafpv-0802-2026-freestyle",
+      "category": "motor",
+      "name": "0802 (2026) Freestyle 22000KV",
+      "brand": "BetaFPV",
+      "price_php": 922,
+      "weight_g": 1.8,
+      "in_stock": true,
+      "buy_url": "https://betafpv.com/products/0802-brushless-motors-2026",
+      "color": "#1a1a2e",
+      "specs": {
+        "kv": 22000,
+        "stator_size": "0802",
+        "motor_mount_mm": 9,
+        "min_voltage_s": 1,
+        "max_voltage_s": 1,
+        "shaft_mm": 0.8,
+        "peak_current_a": 5
+      }
+    },
+    {
+      "id": "runcam-night-eagle-3-v2",
+      "category": "camera",
+      "name": "Night Eagle 3 V2",
+      "brand": "RunCam",
+      "price_php": 4920,
+      "weight_g": 8.5,
+      "in_stock": true,
+      "buy_url": "https://shop.runcam.com/runcam-night-eagle-3-v2/",
+      "color": "#111",
+      "specs": {
+        "sensor": "1/2.8\" Starlight CMOS",
+        "fov_deg": 125,
+        "format": "Analog",
+        "tvl": 1500,
+        "voltage_range": "5-24V"
+      }
+    },
+    {
+      "id": "gemfan-yuki-5129",
+      "category": "propeller",
+      "name": "Yuki 5129 3-Blade",
+      "brand": "Gemfan",
+      "price_php": 245,
+      "weight_g": 4.5,
+      "in_stock": true,
+      "buy_url": "https://pyrodrone.com/products/gemfan-yuki-5129-3-blade-prop",
+      "color": "#111",
+      "specs": {
+        "diameter_inch": 5.1,
+        "pitch": 2.9,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "color_options": [
+          "purple",
+          "yellow",
+          "pink",
+          "clear gray"
+        ]
+      }
     }
   ],
   "compatibility_rules": [
