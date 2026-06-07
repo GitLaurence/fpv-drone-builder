@@ -46041,6 +46041,174 @@
           "clear gray"
         ]
       }
+    },
+    {
+      "id": "axisflying-manta5-true-x",
+      "category": "frame",
+      "name": "Manta5 5\" True X Frame Kit",
+      "brand": "Axisflying",
+      "price_php": 4237,
+      "weight_g": 84,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/axisflying-manta5-5-freestyle-true-x-frame-kit.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 227,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber + CNC aluminum",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=axisflying+manta5"
+      }
+    },
+    {
+      "id": "tmotor-f60-pro-v-2550",
+      "category": "motor",
+      "name": "F60 PRO V 2207.5 2550KV",
+      "brand": "T-Motor",
+      "price_php": 1968,
+      "weight_g": 32.5,
+      "in_stock": true,
+      "buy_url": "https://pyrodrone.com/products/t-motor-f60-pro-v-2550kv-fpv-drone-motor-grey",
+      "color": "#2b2b2b",
+      "specs": {
+        "kv": 2550,
+        "stator_size": "2207.5",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 4,
+        "peak_current_a": 38
+      }
+    },
+    {
+      "id": "diatone-mamba-f55-bls",
+      "category": "esc",
+      "name": "Mamba F55_BLS DSHOT600 4-in-1 50A",
+      "brand": "Diatone",
+      "price_php": 3569,
+      "weight_g": 11.2,
+      "in_stock": true,
+      "buy_url": "https://www.diatone.us/products/mamba-f55_bls-dshot600-4in1-esc-40a-6s-2",
+      "color": "#101820",
+      "specs": {
+        "amp_rating": 50,
+        "input_voltage_s": 6,
+        "protocol": "BLHeli_S / DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 60
+      }
+    },
+    {
+      "id": "foxeer-razer-mini-v3",
+      "category": "camera",
+      "name": "Razer Mini V3",
+      "brand": "Foxeer",
+      "price_php": 1408,
+      "weight_g": 6.5,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/foxeer-razer-mini-v3-fpv-camera-g-593",
+      "color": "#161616",
+      "specs": {
+        "sensor": "1/3\" CMOS",
+        "fov_deg": 165,
+        "format": "Analog",
+        "tvl": 1200,
+        "voltage_range": "5-40V"
+      }
+    },
+    {
+      "id": "dji-o4-air-unit-pro-2026",
+      "category": "vtx",
+      "name": "O4 Air Unit Pro",
+      "brand": "DJI",
+      "price_php": 14084,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/dji-o4-air-unit-pro.html",
+      "color": "#1f1f1f",
+      "specs": {
+        "power_mw_max": 700,
+        "protocol": "DJI O4",
+        "bands": "5.8GHz / 2.4GHz",
+        "voltage_range": "6-28V",
+        "connector": "proprietary",
+        "video_system": "DJI-O4"
+      }
+    },
+    {
+      "id": "tattu-rline-v6-6s-1600mah",
+      "category": "battery",
+      "name": "R-Line V6 6S 1600mAh 160C",
+      "brand": "Tattu",
+      "price_php": 2767,
+      "weight_g": 232,
+      "in_stock": true,
+      "buy_url": "https://genstattu.com/tattu-r-line-version-6-0-1600mah-160c-6s-22-2v-st-lipo-battery-pack-with-xt60-plug/",
+      "color": "#004400",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1600,
+        "c_rating": 160,
+        "connector": "XT60",
+        "voltage_nominal": 22.2
+      }
+    },
+    {
+      "id": "radiomaster-rp4td-m",
+      "category": "receiver",
+      "name": "RP4TD-M Mini True Diversity Receiver",
+      "brand": "RadioMaster",
+      "price_php": 1998,
+      "weight_g": 1,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/radiomaster-rp4td-m-elrs-2-4ghz-mini-true-diversity-receiver.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 20
+      }
+    },
+    {
+      "id": "holybro-m10-gps-module",
+      "category": "gps",
+      "name": "M10 GPS Module",
+      "brand": "Holybro",
+      "price_php": 2705,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://holybro.com/products/m10-gps",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS / GLONASS / Galileo / BeiDou",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 10,
+        "fix_time_s": 29,
+        "compass": true,
+        "connector": "JST-GH 6-pin"
+      }
+    },
+    {
+      "id": "rushfpv-cherry-ultra-extended",
+      "category": "antenna",
+      "name": "Cherry Ultra Extended 5.8GHz",
+      "brand": "RushFPV",
+      "price_php": 1045,
+      "weight_g": 3.4,
+      "in_stock": true,
+      "buy_url": "https://pyrodrone.com/products/rush-fpv-cherry-ultra-extended-5-8ghz-sma-antenna-2-pack-red-rhcp-or-lhcp",
+      "color": "#7a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.3,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "omni"
+      }
     }
   ],
   "compatibility_rules": [
