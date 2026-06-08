@@ -46388,6 +46388,182 @@
         "compass": true,
         "connector": "JST-GH 6-pin"
       }
+    },
+    {
+      "id": "axisflying-manta5-se-squashed-x",
+      "category": "frame",
+      "name": "Manta5 SE Frame Kit (Squashed X)",
+      "brand": "Axisflying",
+      "price_php": 2459,
+      "weight_g": 179,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/axisflying-manta-5-se-squashed-x-frame-kit.html",
+      "color": "#0d1f33",
+      "specs": {
+        "size_mm": 224,
+        "motor_mount_mm": 25.5,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30.5,
+        "material": "T700 carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=axisflying+manta5+se"
+      }
+    },
+    {
+      "id": "tmotor-mck-v2-2207-2250kv",
+      "category": "motor",
+      "name": "MCK V2.0 2207 2250KV",
+      "brand": "T-Motor",
+      "price_php": 1783,
+      "weight_g": 32.6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/t-motor-mck-v2-0-1950kv-2250kv-2550kv-motor.html",
+      "color": "#1f1f1f",
+      "specs": {
+        "kv": 2250,
+        "stator_size": "2207",
+        "motor_mount_mm": 16,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 4,
+        "peak_current_a": 38
+      }
+    },
+    {
+      "id": "foxeer-reaper-f4-128k-65a-4in1",
+      "category": "esc",
+      "name": "Reaper F4 128K 65A BL32 4-in-1 ESC (30x30)",
+      "brand": "Foxeer",
+      "price_php": 3499,
+      "weight_g": 13.5,
+      "in_stock": true,
+      "buy_url": "https://pyrodrone.com/products/foxeer-reaper-f4-128k-32bit-65a-3-8s-4in1-esc-30x30mm",
+      "color": "#1a1a1a",
+      "specs": {
+        "amp_rating": 65,
+        "input_voltage_s": 8,
+        "protocol": "BLHeli_32 / DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 100
+      }
+    },
+    {
+      "id": "micoair-h743-v2-aio-45a",
+      "category": "fc",
+      "name": "H743 V2 AIO 45A AM32 Flight Controller & ESC (25.5x25.5)",
+      "brand": "MicoAir",
+      "price_php": 6334,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://pyrodrone.com/products/micoair-h743-v2-aio-45a-am32-2-6s-flight-controller-esc-25-25mm",
+      "color": "#1a1a1a",
+      "specs": {
+        "gyro": "BMI088 + BMI270",
+        "firmware": "Betaflight",
+        "form_factor_mm": 25.5,
+        "stack_mount_mm": 25.5,
+        "barometer": true,
+        "blackbox": true,
+        "uart_count": 7,
+        "5v_pad_count": 2,
+        "curr_sensor": true,
+        "diagram_url": "https://micoair.com/flightcontroller_micoair743v2/"
+      }
+    },
+    {
+      "id": "dalprop-fold-f5-5-1-v2",
+      "category": "propeller",
+      "name": "Fold F5 5.1\" V2 Folding Propeller",
+      "brand": "DAL",
+      "price_php": 491,
+      "weight_g": 4.3,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/dalprop-fold-f5-5-1-v2-folding-propeller-set-of-4.html",
+      "color": "#222",
+      "specs": {
+        "diameter_inch": 5.1,
+        "pitch": 4.75,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "color_options": [
+          "crystal blue",
+          "grey",
+          "transparent purple"
+        ]
+      }
+    },
+    {
+      "id": "caddx-loris-4k-camera",
+      "category": "camera",
+      "name": "Loris 4K Recording & FPV Camera System",
+      "brand": "Caddx",
+      "price_php": 5842,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/caddx-loris-4k-recording-and-fpv-camera-system.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "sensor": "1/2.7\" CMOS",
+        "fov_deg": 165,
+        "format": "Analog + 4K HD recording",
+        "tvl": 800,
+        "voltage_range": "6.5-20V"
+      }
+    },
+    {
+      "id": "betafpv-p1-air-unit-hd-vtx",
+      "category": "vtx",
+      "name": "P1 Air Unit HD VTX (ArtLynk)",
+      "brand": "BetaFPV",
+      "price_php": 2336,
+      "weight_g": 6.8,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/betafpv-p1-air-unit-hd-vtx.html",
+      "color": "#1f1f1f",
+      "specs": {
+        "power_mw_max": 400,
+        "protocol": "Digital",
+        "bands": "ArtLynk",
+        "voltage_range": "6-17.5V",
+        "connector": "U.FL",
+        "video_system": "ArtLynk"
+      }
+    },
+    {
+      "id": "cnhl-black-series-v2-6s-1500mah",
+      "category": "battery",
+      "name": "Black Series V2.0 6S 1500mAh 130C",
+      "brand": "CNHL",
+      "price_php": 2090,
+      "weight_g": 251,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/cnhl-black-series-v2-0-1500mah-22-2v-6s-130c-lipo-battery-xt60.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1500,
+        "c_rating": 130,
+        "connector": "XT60",
+        "voltage_nominal": 22.2
+      }
+    },
+    {
+      "id": "betafpv-superx-gemini-xross-nano",
+      "category": "receiver",
+      "name": "SuperX Nano Gemini Xross Receiver (Dual LR1121, 2.4GHz/915MHz)",
+      "brand": "BetaFPV",
+      "price_php": 1537,
+      "weight_g": 1.45,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/betafpv-superx-gemini-xross-receiver-w-t-antennas-nano-elrs-2-4ghz-915mhz.html",
+      "color": "#1a001a",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 40
+      }
     }
   ],
   "compatibility_rules": [
