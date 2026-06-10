@@ -23,7 +23,7 @@ No frameworks. No build step. No install required.
 
 ## Features
 
-- **369 real parts** across 9 categories (frame, motor, ESC, FC, propeller, FPV camera, VTX, battery, receiver)
+- **2980 real parts** across 11 categories (frame, motor, ESC, FC, propeller, FPV camera, VTX, battery, receiver, GPS, antenna)
 - **Live SVG blueprint** — top-down drone diagram updates in real time as you select parts; each component takes the part's actual color and shows the brand name, key spec, and a gallery shortcut icon
 - **Parts gallery modal** — click the Gallery button or the camera icon on any blueprint component to see all selected parts as a visual card grid with product photos, specs, and retailer links
 - **Compatibility checker** — 9 rules covering motor mount sizing, voltage limits, prop clearance, ESC current, digital video system pairing (DJI O3, Walksnail, HDZero) and cross-system mismatches; violations shown inline and highlighted amber on the diagram
