@@ -1,3 +1,4 @@
 test-results/
 scripts/brand-catalog.json
 scripts/image-cache.json
+__pycache__/
