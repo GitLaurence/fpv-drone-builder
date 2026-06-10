@@ -23,7 +23,7 @@ No frameworks. No build step. No install required.
 
 ## Features
 
-- **369 real parts** across 9 categories (frame, motor, ESC, FC, propeller, FPV camera, VTX, battery, receiver)
+- **3000+ real parts** across 11 categories (frame, motor, ESC, FC, propeller, FPV camera, VTX, battery, receiver, GPS module, antenna)
 - **Live SVG blueprint** — top-down drone diagram updates in real time as you select parts; each component takes the part's actual color and shows the brand name, key spec, and a gallery shortcut icon
 - **Parts gallery modal** — click the Gallery button or the camera icon on any blueprint component to see all selected parts as a visual card grid with product photos, specs, and retailer links
 - **Compatibility checker** — 9 rules covering motor mount sizing, voltage limits, prop clearance, ESC current, digital video system pairing (DJI O3, Walksnail, HDZero) and cross-system mismatches; violations shown inline and highlighted amber on the diagram
@@ -289,7 +289,7 @@ The gallery modal (`js/gallery.js`) shows all 9 build slots as cards. Each fille
 
 ### `scripts/fetch-product-images.js`
 
-Populates `image_url` for all 369 parts by querying brand official sites and major FPV retailers. No API keys. No npm install. Requires Node 18+.
+Populates `image_url` for parts by querying brand official sites and major FPV retailers. No API keys. No npm install. Requires Node 18+.
 
 **Strategy per part (tried in order):**
 1. **Brand Shopify predictive search** — `/search/suggest.json` on the brand's own site; fastest and most accurate for Shopify brands (iFlight, BetaFPV, GEPRC, Holybro…)
