@@ -62467,6 +62467,240 @@
         "connector": "SMA",
         "type": "omni"
       }
+    },
+    {
+      "id": "iflight-cidora-sl5-v2-hd",
+      "category": "frame",
+      "name": "Cidora SL5 V2.1 HD",
+      "brand": "iFlight",
+      "price_php": 2999,
+      "weight_g": 87,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/iflight-cidora-sl5-v2-1-hd-frame-kit.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 215,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5.5,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=iflight+cidora+sl5"
+      }
+    },
+    {
+      "id": "axisflying-manta5-se-v2",
+      "category": "frame",
+      "name": "Manta 5 SE V2",
+      "brand": "AxisFlying",
+      "price_php": 2699,
+      "weight_g": 78,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/axisflying-manta-5-se-v2-frame-kit-squashed-x.html",
+      "color": "#0d0d0d",
+      "specs": {
+        "size_mm": 215,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 4,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=axisflying+manta5"
+      }
+    },
+    {
+      "id": "tmotor-velox-v2808",
+      "category": "motor",
+      "name": "VELOX V2808 1500KV",
+      "brand": "T-Motor",
+      "price_php": 2039,
+      "weight_g": 60.5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/t-motor-velox-v2808-cinematic-motor-1300kv-1500kv-1950kv.html",
+      "color": "#2a2a2a",
+      "specs": {
+        "kv": 1500,
+        "stator_size": "2808",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 3,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 74
+      }
+    },
+    {
+      "id": "flywoo-nin-2306-5-v2",
+      "category": "motor",
+      "name": "NIN 2306.5 V2 1750KV",
+      "brand": "Flywoo",
+      "price_php": 1319,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/flywoo-nin-2306-5-v2-1750kv-1350kv-2450kv-motor-1pc.html",
+      "color": "#2a2a2a",
+      "specs": {
+        "kv": 1750,
+        "stator_size": "2306.5",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 3,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 45
+      }
+    },
+    {
+      "id": "diatone-mamba-f45-128k",
+      "category": "esc",
+      "name": "Mamba F45_128K 4-in-1",
+      "brand": "Diatone",
+      "price_php": 2879,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/diatone-mamba-128k-3-6s-blheli-32-4-in-1-esc-f45-45a.html",
+      "color": "#003300",
+      "specs": {
+        "amp_rating": 45,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT1200",
+        "form_factor_mm": 30,
+        "burst_amp": 55
+      }
+    },
+    {
+      "id": "flywoo-goku-gn745-f7-40a",
+      "category": "fc",
+      "name": "Goku GN745 F7 40A AIO",
+      "brand": "Flywoo",
+      "price_php": 5999,
+      "weight_g": 11,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/flywoo-goku-gn745-f7-40a-2-6s-blheli32-aio-flight-controller.html",
+      "color": "#000033",
+      "specs": {
+        "gyro": "MPU6000",
+        "firmware": "Betaflight",
+        "form_factor_mm": 20,
+        "stack_mount_mm": 20,
+        "barometer": true,
+        "blackbox": true,
+        "uart_count": 7,
+        "5v_pad_count": 2,
+        "curr_sensor": true
+      }
+    },
+    {
+      "id": "gemfan-hurricane-51466-v2",
+      "category": "propeller",
+      "name": "Hurricane 51466 V2",
+      "brand": "Gemfan",
+      "price_php": 224,
+      "weight_g": 4.2,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/gemfan-hurricane-51466-v2-3-blade-propeller-mck-edition-set-of-4.html",
+      "color": "#222",
+      "specs": {
+        "diameter_inch": 5.1,
+        "pitch": 3.6,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "color_options": [
+          "black",
+          "gray",
+          "white"
+        ]
+      }
+    },
+    {
+      "id": "foxeer-toothless-2",
+      "category": "camera",
+      "name": "Toothless 2 Micro",
+      "brand": "Foxeer",
+      "price_php": 3059,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/foxeer-micro-toothless-2-1200tvl-1-2-sensor-switchable-fov-starlight-fpv-camera-1-7mm.html",
+      "color": "#111",
+      "specs": {
+        "sensor": "1/2\" CMOS",
+        "fov_deg": 165,
+        "format": "Analog",
+        "tvl": 1200,
+        "voltage_range": "4.6-20V"
+      }
+    },
+    {
+      "id": "tbs-unify-pro-hv",
+      "category": "vtx",
+      "name": "Unify Pro HV 5G8",
+      "brand": "TBS",
+      "price_php": 3057,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/tbs-unify-pro-5g8-hv-sma.html",
+      "color": "#220000",
+      "specs": {
+        "power_mw_max": 800,
+        "protocol": "Analog",
+        "bands": "A/B/E/F/R",
+        "voltage_range": "7.4-26.4V",
+        "connector": "SMA"
+      }
+    },
+    {
+      "id": "cnhl-black-series-6s-1300mah",
+      "category": "battery",
+      "name": "Black Series V2.0 1300mAh 6S 130C",
+      "brand": "CNHL",
+      "price_php": 1619,
+      "weight_g": 230,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/cnhl-black-series-v2-0-1300mah-22-2v-130c-6s-lipo-battery-xt60.html",
+      "color": "#1a0000",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 130,
+        "connector": "XT60",
+        "voltage_nominal": 22.2
+      }
+    },
+    {
+      "id": "radiomaster-rp3-plus",
+      "category": "receiver",
+      "name": "RP3 V2 ELRS Diversity Nano RX",
+      "brand": "RadioMaster",
+      "price_php": 959,
+      "weight_g": 1,
+      "in_stock": true,
+      "buy_url": "https://radiomasterrc.com/products/rp3-expresslrs-2-4ghz-nano-receiver",
+      "color": "#1a001a",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 30
+      }
+    },
+    {
+      "id": "geprc-gep-m10-dq-v2-gps",
+      "category": "gps",
+      "name": "GEP-M10-DQ GPS Module",
+      "brand": "GEPRC",
+      "price_php": 1199,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/geprc-m10-dq-gps-module.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS+Galileo+BeiDou",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 10,
+        "fix_time_s": 26,
+        "compass": true,
+        "connector": "JST-SH 4-pin"
+      }
     }
   ],
   "compatibility_rules": [
