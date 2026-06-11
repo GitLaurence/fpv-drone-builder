@@ -60676,6 +60676,309 @@
         "connector": "MMCX",
         "type": "omnidirectional"
       }
+    },
+    {
+      "id": "impulserc-apex",
+      "category": "frame",
+      "name": "Apex",
+      "brand": "ImpulseRC",
+      "price_php": 6159,
+      "weight_g": 105,
+      "in_stock": true,
+      "buy_url": "https://impulserc.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "size_mm": 225,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=impulserc+apex"
+      }
+    },
+    {
+      "id": "brotherhobby-avenger-2306.5",
+      "category": "motor",
+      "name": "Avenger 2306.5",
+      "brand": "BrotherHobby",
+      "price_php": 1399,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#2a2a2a",
+      "specs": {
+        "kv": 1900,
+        "stator_size": "2306.5",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 4,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 50
+      }
+    },
+    {
+      "id": "iflight-xing2-2207",
+      "category": "motor",
+      "name": "XING2 2207",
+      "brand": "iFlight",
+      "price_php": 1230,
+      "weight_g": 33,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com",
+      "color": "#2a2a2a",
+      "specs": {
+        "kv": 1800,
+        "stator_size": "2207",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 3,
+        "max_voltage_s": 6,
+        "shaft_mm": 5,
+        "peak_current_a": 48
+      }
+    },
+    {
+      "id": "holybro-tekko32-f4-55a",
+      "category": "esc",
+      "name": "Tekko32 F4 4-in-1 55A",
+      "brand": "Holybro",
+      "price_php": 4199,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://holybro.com",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 55,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 65
+      }
+    },
+    {
+      "id": "diatone-mamba-f45-128k",
+      "category": "esc",
+      "name": "Mamba F45_128K 45A 4-in-1",
+      "brand": "Diatone",
+      "price_php": 2799,
+      "weight_g": 10,
+      "in_stock": true,
+      "buy_url": "https://www.diatone.us",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 45,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 55
+      }
+    },
+    {
+      "id": "speedybee-f405-v4-50a",
+      "category": "esc",
+      "name": "F405 V4 50A 4-in-1 (BLS)",
+      "brand": "SpeedyBee",
+      "price_php": 2999,
+      "weight_g": 13,
+      "in_stock": true,
+      "buy_url": "https://www.speedybee.com",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 50,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 60
+      }
+    },
+    {
+      "id": "iflight-succex-e-f4",
+      "category": "fc",
+      "name": "SucceX-E F4 Flight Controller",
+      "brand": "iFlight",
+      "price_php": 1679,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com",
+      "color": "#000055",
+      "specs": {
+        "gyro": "MPU6000",
+        "firmware": "Betaflight",
+        "form_factor_mm": 30,
+        "stack_mount_mm": 30,
+        "barometer": false,
+        "blackbox": true,
+        "uart_count": 5,
+        "5v_pad_count": 2,
+        "curr_sensor": true,
+        "diagram_url": "https://shop.iflight.com/succex-e-f4-flight-controller"
+      }
+    },
+    {
+      "id": "hqprop-dp-5x4.3x3-v1s",
+      "category": "propeller",
+      "name": "DP 5x4.3x3 V1S",
+      "brand": "HQProp",
+      "price_php": 223,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#111",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch": 4.3,
+        "blade_count": 3,
+        "shaft_mm": 5,
+        "color_options": [
+          "black",
+          "blue",
+          "red"
+        ]
+      }
+    },
+    {
+      "id": "hglrc-sirius-2.5w",
+      "category": "vtx",
+      "name": "Sirius 2.5W VTX",
+      "brand": "HGLRC",
+      "price_php": 2519,
+      "weight_g": 13,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com",
+      "color": "#221100",
+      "specs": {
+        "power_mw_max": 2500,
+        "protocol": "Analog",
+        "bands": "A/B/E/F/R",
+        "voltage_range": "7-26V",
+        "connector": "MMCX"
+      }
+    },
+    {
+      "id": "iflight-forcevtx-5.8g-2w",
+      "category": "vtx",
+      "name": "ForceVTX 5.8G 2W",
+      "brand": "iFlight",
+      "price_php": 2239,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com",
+      "color": "#221100",
+      "specs": {
+        "power_mw_max": 2000,
+        "protocol": "Analog",
+        "bands": "A/B/E/F/R",
+        "voltage_range": "7-26V",
+        "connector": "MMCX"
+      }
+    },
+    {
+      "id": "tattu-rline4-1300mah-6s",
+      "category": "battery",
+      "name": "R-Line 4.0 1300mAh 6S",
+      "brand": "Tattu",
+      "price_php": 2799,
+      "weight_g": 245,
+      "in_stock": true,
+      "buy_url": "https://www.genstattu.com",
+      "color": "#1a0000",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 130,
+        "connector": "XT60",
+        "voltage_nominal": 22.2
+      }
+    },
+    {
+      "id": "cnhl-black-series-1300mah-6s",
+      "category": "battery",
+      "name": "Black Series 1300mAh 6S",
+      "brand": "CNHL",
+      "price_php": 2099,
+      "weight_g": 240,
+      "in_stock": true,
+      "buy_url": "https://www.racedayquads.com",
+      "color": "#1a0000",
+      "specs": {
+        "cell_count_s": 6,
+        "capacity_mah": 1300,
+        "c_rating": 100,
+        "connector": "XT60",
+        "voltage_nominal": 22.2
+      }
+    },
+    {
+      "id": "gnb-850mah-4s",
+      "category": "battery",
+      "name": "850mAh 4S 100C",
+      "brand": "GNB",
+      "price_php": 839,
+      "weight_g": 100,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a0000",
+      "specs": {
+        "cell_count_s": 4,
+        "capacity_mah": 850,
+        "c_rating": 100,
+        "connector": "XT30",
+        "voltage_nominal": 14.8
+      }
+    },
+    {
+      "id": "happymodel-ex-receiver",
+      "category": "receiver",
+      "name": "EP1 ELRS Receiver",
+      "brand": "HappyModel",
+      "price_php": 783,
+      "weight_g": 1.0,
+      "in_stock": true,
+      "buy_url": "https://www.banggood.com",
+      "color": "#1a001a",
+      "specs": {
+        "protocol": "ELRS",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 25
+      }
+    },
+    {
+      "id": "immersionrc-axii-2",
+      "category": "antenna",
+      "name": "AXII 2 5.8GHz",
+      "brand": "ImmersionRC",
+      "price_php": 1119,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.0,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "type": "omnidirectional"
+      }
+    },
+    {
+      "id": "rushfpv-cherry-antenna",
+      "category": "antenna",
+      "name": "Cherry 5.8GHz Antenna",
+      "brand": "Rush",
+      "price_php": 448,
+      "weight_g": 3,
+      "in_stock": true,
+      "buy_url": "https://rushfpv.com",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 2.2,
+        "polarization": "RHCP",
+        "connector": "MMCX",
+        "type": "omnidirectional"
+      }
     }
   ],
   "compatibility_rules": [
