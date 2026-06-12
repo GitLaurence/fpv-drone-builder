@@ -317,6 +317,7 @@ const BRAND_DOMAINS = {
   'Tattu':        'genstattu.com',
   'TBS':          'team-blacksheep.com',
   'T-Motor':      'tmotor.com',
+  'TrueRC':       'truerc.ca',
   'Walksnail':    'caddxfpv.com',
 };
 
