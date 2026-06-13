@@ -68192,6 +68192,216 @@
         "connector": "SMA",
         "type": "omnidirectional"
       }
+    },
+    {
+      "id": "armattan-rooster-5-frame",
+      "category": "frame",
+      "name": "Rooster 5\" FPV Frame",
+      "brand": "Armattan",
+      "price_php": 4799,
+      "weight_g": 88,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/armattan-rooster-5-fpv-frame.html",
+      "color": "#2c2c2c",
+      "specs": {
+        "size_mm": 225,
+        "motor_mount_mm": 30,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30,
+        "material": "carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 30,
+        "thingiverse_url": "https://www.thingiverse.com/search?q=armattan+rooster"
+      }
+    },
+    {
+      "id": "tmotor-f40-pro-iv-2306-2400kv",
+      "category": "motor",
+      "name": "F40 PRO IV 2306 2400KV",
+      "brand": "T-Motor",
+      "price_php": 1850,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/t-motor-f40-pro-iv-1950kv-2400kv-motor.html",
+      "color": "#2a2a2a",
+      "specs": {
+        "kv": 2400,
+        "stator_size": "2306",
+        "motor_mount_mm": 30,
+        "min_voltage_s": 3,
+        "max_voltage_s": 4,
+        "shaft_mm": 5,
+        "peak_current_a": 48
+      }
+    },
+    {
+      "id": "diatone-mamba-f60-60a-6s-esc",
+      "category": "esc",
+      "name": "Mamba F60 60A 6S BL32 4-in-1 ESC",
+      "brand": "Diatone",
+      "price_php": 3200,
+      "weight_g": 26,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/diatone-mamba-f60-60a-6s-bl32-4-in-1-esc.html",
+      "color": "#002200",
+      "specs": {
+        "amp_rating": 60,
+        "input_voltage_s": 6,
+        "protocol": "DSHOT600",
+        "form_factor_mm": 30,
+        "burst_amp": 70
+      }
+    },
+    {
+      "id": "diatone-mamba-mk4-h743-v2-fc",
+      "category": "fc",
+      "name": "Mamba MK4 H743 V2 Flight Controller",
+      "brand": "Diatone",
+      "price_php": 4900,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/diatone-mamba-mk4-h743-v2-flight-controller-dual-icm42688-p.html",
+      "color": "#000055",
+      "specs": {
+        "gyro": "ICM42688-P",
+        "firmware": "Betaflight",
+        "form_factor_mm": 30,
+        "stack_mount_mm": 30,
+        "barometer": true,
+        "blackbox": true,
+        "uart_count": 8,
+        "5v_pad_count": 3,
+        "curr_sensor": true
+      }
+    },
+    {
+      "id": "hqprop-durable-t5x3-toothpick",
+      "category": "propeller",
+      "name": "Durable T5x3 Toothpick Propeller",
+      "brand": "HQProp",
+      "price_php": 200,
+      "weight_g": 4,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/hqprop-durable-t5x3-toothpick-propeller-set-of-4.html",
+      "color": "#111",
+      "specs": {
+        "diameter_inch": 5,
+        "pitch": 3,
+        "blade_count": 2,
+        "shaft_mm": 1.5,
+        "color_options": [
+          "black",
+          "gray"
+        ]
+      }
+    },
+    {
+      "id": "foxeer-micro-toothless-2-cam",
+      "category": "camera",
+      "name": "Micro Toothless 2 1200TVL",
+      "brand": "Foxeer",
+      "price_php": 1900,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/foxeer-micro-toothless-2-1200tvl-1-2-sensor-switchable-fov-starlight-fpv-camera-1-7mm.html",
+      "color": "#111",
+      "specs": {
+        "sensor": "1/2\" CMOS",
+        "fov_deg": 160,
+        "format": "Analog",
+        "tvl": 1200,
+        "voltage_range": "5-25V"
+      }
+    },
+    {
+      "id": "hglrc-forward-mt-mini-vtx",
+      "category": "vtx",
+      "name": "Forward MT Mini 5.8GHz VTX",
+      "brand": "HGLRC",
+      "price_php": 1500,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/hglrc-forward-mt-mini-5-8ghz-20x20-vtx.html",
+      "color": "#221100",
+      "specs": {
+        "power_mw_max": 600,
+        "protocol": "Analog",
+        "bands": "A/B/E/F/R",
+        "voltage_range": "7-26V",
+        "connector": "MMCX"
+      }
+    },
+    {
+      "id": "tattu-r-line-1300mah-4s-95c",
+      "category": "battery",
+      "name": "R-Line 1300mAh 4S 95C",
+      "brand": "Tattu",
+      "price_php": 1450,
+      "weight_g": 165,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/tattu-r-line-1300mah-4s-95c-lipo-battery.html",
+      "color": "#1a0000",
+      "specs": {
+        "cell_count_s": 4,
+        "capacity_mah": 1300,
+        "c_rating": 95,
+        "connector": "XT60",
+        "voltage_nominal": 14.8
+      }
+    },
+    {
+      "id": "immersionrc-ghost-atto-rx",
+      "category": "receiver",
+      "name": "Ghost Atto 2.4GHz RX",
+      "brand": "ImmersionRC",
+      "price_php": 1680,
+      "weight_g": 0.6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/immersionrc-ghost-atto-2-4ghz-rx.html",
+      "color": "#1a001a",
+      "specs": {
+        "protocol": "GHST",
+        "frequency_mhz": 2400,
+        "telemetry": true,
+        "range_km": 25
+      }
+    },
+    {
+      "id": "geprc-m10-dq-gps",
+      "category": "gps",
+      "name": "M10 DQ GPS Module",
+      "brand": "GEPRC",
+      "price_php": 1400,
+      "weight_g": 8,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/geprc-m10-dq-gps-module.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "constellation": "GPS+GLONASS+Galileo+BeiDou",
+        "chipset": "u-blox M10",
+        "update_rate_hz": 10,
+        "fix_time_s": 25,
+        "compass": true,
+        "connector": "JST-SH 4-pin"
+      }
+    },
+    {
+      "id": "tbs-triumph-5-8ghz-antenna",
+      "category": "antenna",
+      "name": "Triumph 5.8GHz CP FPV Antenna",
+      "brand": "TBS",
+      "price_php": 1050,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/tbs-triumph-5-8ghz-cp-fpv-antenna.html",
+      "color": "#1a1a1a",
+      "specs": {
+        "frequency_mhz": 5800,
+        "gain_dbi": 1.26,
+        "polarization": "RHCP",
+        "connector": "RP-SMA",
+        "type": "omnidirectional"
+      }
     }
   ],
   "compatibility_rules": [
