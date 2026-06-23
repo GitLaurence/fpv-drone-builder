@@ -7,6 +7,7 @@ import { init as initCompare } from './compare.js';
 import { init as initSaves } from './saves.js';
 import { applyFromHash, copyShareLink } from './share.js';
 import { init as initGallery } from './gallery.js';
+import { init as initDataExport } from './data-export.js';
 
 const TOTAL_SLOTS = 9;
 
@@ -22,6 +23,7 @@ async function main() {
   initCompare(() => {});
   initSaves();
   initStepper();
+  initDataExport();
   applyFromHash();
   initMobileDrawer();
 

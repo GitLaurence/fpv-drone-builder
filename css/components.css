@@ -859,3 +859,74 @@ dialog.modal-gallery {
   }
   .gallery-card-visual { height: 80px; }
 }
+
+/* ── EXPORT MODAL ───────────────────────────────────── */
+dialog.modal-export { width: 420px; }
+
+.export-modal-body {
+  padding: 1.2rem 1.4rem 1.6rem;
+}
+.export-description {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.1rem;
+  line-height: 1.5;
+}
+.export-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.export-option-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  width: 100%;
+}
+.export-option-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  box-shadow: 0 2px 12px var(--accent-glow);
+}
+.export-option-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--bg-hover);
+  color: var(--accent);
+}
+.export-option-card:hover .export-option-icon {
+  background: rgba(37, 99, 235, 0.12);
+}
+.export-option-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+.export-option-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.export-option-desc {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  dialog.modal-export { width: 92vw; }
+  .export-modal-body { padding: 1rem; }
+}

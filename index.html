@@ -42,6 +42,7 @@
       <button id="btn-reset"     class="btn btn-ghost"  title="Clear build">Reset</button>
       <button id="btn-my-builds" class="btn btn-ghost"  title="Saved builds">Builds</button>
       <button id="btn-save"      class="btn btn-ghost"  title="Save to browser">Save</button>
+      <button id="btn-export"     class="btn btn-ghost"  title="Export parts data">Export</button>
       <button id="btn-share"     class="btn btn-accent" title="Copy share link">Share</button>
     </div>
   </header>
@@ -386,6 +387,50 @@
     </div>
     <div class="modal-body">
       <div id="saves-list"></div>
+    </div>
+  </dialog>
+
+  <!-- MODAL: EXPORT -->
+  <dialog id="modal-export" class="modal modal-export">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <h2 class="modal-title">Export Parts Data</h2>
+      </div>
+      <button id="modal-export-close" class="modal-close-btn" aria-label="Close">&#10005;</button>
+    </div>
+    <div class="modal-body export-modal-body">
+      <p class="export-description">Download your build's parts list with specs, prices, and weights.</p>
+      <div class="export-options">
+        <button id="btn-export-excel" class="export-option-card">
+          <div class="export-option-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="8" y1="13" x2="16" y2="13"/>
+              <line x1="8" y1="17" x2="16" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <div class="export-option-info">
+            <span class="export-option-title">Excel (CSV)</span>
+            <span class="export-option-desc">Spreadsheet with all parts, specs, prices and buy links</span>
+          </div>
+        </button>
+        <button id="btn-export-pdf" class="export-option-card">
+          <div class="export-option-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="15" x2="15" y2="15"/>
+              <line x1="12" y1="12" x2="12" y2="18"/>
+            </svg>
+          </div>
+          <div class="export-option-info">
+            <span class="export-option-title">PDF Document</span>
+            <span class="export-option-desc">Formatted parts list with specs summary for sharing</span>
+          </div>
+        </button>
+      </div>
     </div>
   </dialog>
 
