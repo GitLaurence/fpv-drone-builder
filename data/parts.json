@@ -99211,6 +99211,397 @@
         "arm_thickness_mm": 3.5,
         "standoff_height_mm": 22
       }
+    },
+    {
+      "id": "expresslrs-rp2-diversity-2-4ghz-rx",
+      "category": "receiver",
+      "name": "RP2 Diversity 2.4GHz ELRS Receiver",
+      "brand": "ExpressLRS",
+      "price_php": 896,
+      "weight_g": 1.3,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=ExpressLRS+RP2+Diversity+2.4GHz+Receiver",
+      "color": "#101010",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "frequency_ghz": 2.4,
+        "diversity": true,
+        "telemetry": true,
+        "output": "CRSF"
+      }
+    },
+    {
+      "id": "radiomaster-rp3-2-4ghz-rx",
+      "category": "receiver",
+      "name": "RP3 2.4GHz ELRS Receiver",
+      "brand": "RadioMaster",
+      "price_php": 728,
+      "weight_g": 1.1,
+      "in_stock": true,
+      "buy_url": "https://www.radiomasterrc.com/search?q=RP3+2.4GHz+ELRS+Receiver",
+      "color": "#0f0f0f",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "frequency_ghz": 2.4,
+        "diversity": false,
+        "telemetry": true,
+        "output": "CRSF"
+      }
+    },
+    {
+      "id": "happymodel-ep2-2-4ghz-rx",
+      "category": "receiver",
+      "name": "EP2 2.4GHz ELRS Receiver",
+      "brand": "HappyModel",
+      "price_php": 672,
+      "weight_g": 0.6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=HappyModel+EP2+2.4GHz+ELRS+Receiver",
+      "color": "#151515",
+      "specs": {
+        "protocol": "ExpressLRS",
+        "frequency_ghz": 2.4,
+        "diversity": false,
+        "telemetry": true,
+        "output": "CRSF"
+      }
+    },
+    {
+      "id": "flysky-fs-a8s-rx",
+      "category": "receiver",
+      "name": "FS-A8S 2.4GHz Receiver",
+      "brand": "FlySky",
+      "price_php": 560,
+      "weight_g": 5.6,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=FlySky+FS-A8S+2.4GHz+Receiver",
+      "color": "#1a1a1a",
+      "specs": {
+        "protocol": "FlySky AFHDS 2A",
+        "frequency_ghz": 2.4,
+        "diversity": true,
+        "telemetry": true,
+        "output": "iBUS/SBUS/PPM"
+      }
+    },
+    {
+      "id": "tbs-triumph-pro-rhcp-rp-sma",
+      "category": "antenna",
+      "name": "Triumph Pro 5.8GHz RHCP RP-SMA",
+      "brand": "TBS",
+      "price_php": 1288,
+      "weight_g": 9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=TBS+Triumph+Pro+5.8GHz+RHCP+RP-SMA",
+      "color": "#0d0d0d",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "polarization": "RHCP",
+        "connector": "RP-SMA",
+        "gain_dbi": 2.8,
+        "type": "omni"
+      }
+    },
+    {
+      "id": "rushfpv-cherry-2-lhcp-sma",
+      "category": "antenna",
+      "name": "Cherry 2 5.8GHz LHCP SMA",
+      "brand": "RushFPV",
+      "price_php": 784,
+      "weight_g": 6,
+      "in_stock": true,
+      "buy_url": "https://www.rushfpv.com/search?q=Cherry+2+5.8GHz+LHCP+SMA",
+      "color": "#8a1f1f",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "polarization": "LHCP",
+        "connector": "SMA",
+        "gain_dbi": 2.2,
+        "type": "cloverleaf"
+      }
+    },
+    {
+      "id": "foxeer-lollipop-4-rhcp-sma",
+      "category": "antenna",
+      "name": "Lollipop 4 5.8GHz RHCP SMA",
+      "brand": "Foxeer",
+      "price_php": 616,
+      "weight_g": 5,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/search?q=Lollipop+4+5.8GHz+RHCP+SMA",
+      "color": "#101010",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "gain_dbi": 2.3,
+        "type": "omni"
+      }
+    },
+    {
+      "id": "immersionrc-skew-planar-rhcp-sma",
+      "category": "antenna",
+      "name": "SkewPlanar Race 5.8GHz RHCP SMA",
+      "brand": "ImmersionRC",
+      "price_php": 896,
+      "weight_g": 6.5,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=ImmersionRC+SkewPlanar+Race+5.8GHz+RHCP+SMA",
+      "color": "#1f1f1f",
+      "specs": {
+        "frequency_ghz": 5.8,
+        "polarization": "RHCP",
+        "connector": "SMA",
+        "gain_dbi": 2.5,
+        "type": "cloverleaf"
+      }
+    },
+    {
+      "id": "expresslrs-2-4ghz-dipole-t-antenna",
+      "category": "antenna",
+      "name": "2.4GHz Dipole T-Antenna",
+      "brand": "ExpressLRS",
+      "price_php": 280,
+      "weight_g": 2,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=ExpressLRS+2.4GHz+Dipole+T-Antenna",
+      "color": "#151515",
+      "specs": {
+        "frequency_ghz": 2.4,
+        "polarization": "Linear",
+        "connector": "IPEX",
+        "gain_dbi": 2.0,
+        "type": "dipole"
+      }
+    },
+    {
+      "id": "hglrc-titan-vtx-5-8ghz",
+      "category": "vtx",
+      "name": "Titan 1W VTX 5.8GHz",
+      "brand": "HGLRC",
+      "price_php": 1848,
+      "weight_g": 7,
+      "in_stock": true,
+      "buy_url": "https://www.hglrc.com/search?q=Titan+1W+VTX+5.8GHz",
+      "color": "#0d0d0d",
+      "specs": {
+        "power_mw": 1000,
+        "frequency_ghz": 5.8,
+        "channels": 40,
+        "smart_audio": true,
+        "connector": "MMCX",
+        "mount_mm": 25.5
+      }
+    },
+    {
+      "id": "iflight-tranfpv-vtx-500mw",
+      "category": "vtx",
+      "name": "TranFPV VTX 500mW",
+      "brand": "iFlight",
+      "price_php": 1288,
+      "weight_g": 5.5,
+      "in_stock": true,
+      "buy_url": "https://shop.iflight.com/search?q=TranFPV+VTX+500mW",
+      "color": "#181818",
+      "specs": {
+        "power_mw": 500,
+        "frequency_ghz": 5.8,
+        "channels": 40,
+        "smart_audio": true,
+        "connector": "MMCX",
+        "mount_mm": 20
+      }
+    },
+    {
+      "id": "runcam-phoenix-2-fpv-camera",
+      "category": "camera",
+      "name": "Phoenix 2 Analog FPV Camera",
+      "brand": "RunCam",
+      "price_php": 1568,
+      "weight_g": 7.5,
+      "in_stock": true,
+      "buy_url": "https://www.runcam.com/search?q=Phoenix+2+Analog+FPV+Camera",
+      "color": "#101010",
+      "specs": {
+        "sensor": "1/2\" CMOS",
+        "tvl": 1000,
+        "fov_deg": 155,
+        "format": "Analog",
+        "min_illumination_lux": 0.001,
+        "voltage_range": "5-40V"
+      }
+    },
+    {
+      "id": "foxeer-falkor-3-micro-camera",
+      "category": "camera",
+      "name": "Falkor 3 Micro FPV Camera",
+      "brand": "Foxeer",
+      "price_php": 1904,
+      "weight_g": 5.8,
+      "in_stock": true,
+      "buy_url": "https://www.foxeer.com/search?q=Falkor+3+Micro+FPV+Camera",
+      "color": "#0f0f0f",
+      "specs": {
+        "sensor": "1/2\" CMOS",
+        "tvl": 1200,
+        "fov_deg": 165,
+        "format": "Analog",
+        "min_illumination_lux": 0.0001,
+        "voltage_range": "5-40V"
+      }
+    },
+    {
+      "id": "geprc-taker-f411-fc",
+      "category": "fc",
+      "name": "Taker F411 Flight Controller",
+      "brand": "GEPRC",
+      "price_php": 1568,
+      "weight_g": 5.5,
+      "in_stock": true,
+      "buy_url": "https://geprc.com/search?q=Taker+F411+Flight+Controller",
+      "color": "#181818",
+      "specs": {
+        "gyro": "MPU6000",
+        "firmware": "Betaflight",
+        "form_factor_mm": 20,
+        "stack_mount_mm": 20,
+        "barometer": false,
+        "blackbox": false,
+        "uart_count": 4,
+        "5v_pad_count": 1,
+        "curr_sensor": true
+      }
+    },
+    {
+      "id": "hobbywing-xrotor-micro-60a-esc",
+      "category": "esc",
+      "name": "XRotor Micro 60A 4-in-1 ESC",
+      "brand": "Hobbywing",
+      "price_php": 3360,
+      "weight_g": 12,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=Hobbywing+XRotor+Micro+60A+4-in-1+ESC",
+      "color": "#101010",
+      "specs": {
+        "current_rating_a": 60,
+        "voltage_s": "3-6S",
+        "firmware": "BLHeli_32",
+        "form_factor_mm": 30.5,
+        "continuous_current_a": 60,
+        "burst_current_a": 75
+      }
+    },
+    {
+      "id": "t-motor-f55a-pro-ii-esc",
+      "category": "esc",
+      "name": "F55A PRO II 4-in-1 ESC",
+      "brand": "T-Motor",
+      "price_php": 3808,
+      "weight_g": 11,
+      "in_stock": true,
+      "buy_url": "https://store.tmotor.com/search?q=F55A+PRO+II+4-in-1+ESC",
+      "color": "#181818",
+      "specs": {
+        "current_rating_a": 55,
+        "voltage_s": "3-6S",
+        "firmware": "BLHeli_32",
+        "form_factor_mm": 30.5,
+        "continuous_current_a": 55,
+        "burst_current_a": 65
+      }
+    },
+    {
+      "id": "brotherhobby-avenger-2306-5-motor",
+      "category": "motor",
+      "name": "Avenger 2306.5 1900KV Motor",
+      "brand": "BrotherHobby",
+      "price_php": 1176,
+      "weight_g": 32,
+      "in_stock": true,
+      "buy_url": "https://www.brotherhobby.com/search?q=Avenger+2306.5+1900KV+Motor",
+      "color": "#151515",
+      "specs": {
+        "stator_size": "2306.5",
+        "kv": 1900,
+        "shaft_mm": 5,
+        "voltage_s": "4-6S",
+        "weight_class": "freestyle",
+        "max_thrust_g": 2100
+      }
+    },
+    {
+      "id": "hqprop-r38-tri-blade-prop",
+      "category": "propeller",
+      "name": "R38 3.8\" Tri-Blade Prop",
+      "brand": "HQProp",
+      "price_php": 196,
+      "weight_g": 2.9,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=HQProp+R38+3.8+Tri-Blade+Prop",
+      "color": "#101010",
+      "specs": {
+        "diameter_inch": 3.8,
+        "pitch_inch": 3.5,
+        "blade_count": 3,
+        "hub_bore_mm": 1.5,
+        "material": "polycarbonate"
+      }
+    },
+    {
+      "id": "cnhl-black-series-1300mah-4s-battery",
+      "category": "battery",
+      "name": "Black Series 1300mAh 4S 100C LiPo",
+      "brand": "CNHL",
+      "price_php": 1568,
+      "weight_g": 168,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=CNHL+Black+Series+1300mAh+4S+100C+LiPo",
+      "color": "#0d0d0d",
+      "specs": {
+        "capacity_mah": 1300,
+        "cell_count_s": 4,
+        "c_rating": 100,
+        "connector": "XT60",
+        "voltage_v": 14.8
+      }
+    },
+    {
+      "id": "tattu-r-line-4-0-1300mah-6s-battery",
+      "category": "battery",
+      "name": "R-Line 4.0 1300mAh 6S 130C LiPo",
+      "brand": "Tattu",
+      "price_php": 2856,
+      "weight_g": 240,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=Tattu+R-Line+4.0+1300mAh+6S+130C+LiPo",
+      "color": "#7a1f1f",
+      "specs": {
+        "capacity_mah": 1300,
+        "cell_count_s": 6,
+        "c_rating": 130,
+        "connector": "XT60",
+        "voltage_v": 22.2
+      }
+    },
+    {
+      "id": "armattan-marmotte-frame",
+      "category": "frame",
+      "name": "Marmotte 5\" Frame",
+      "brand": "Armattan",
+      "price_php": 5320,
+      "weight_g": 92,
+      "in_stock": true,
+      "buy_url": "https://www.getfpv.com/catalogsearch/result/?q=Armattan+Marmotte+5+Frame",
+      "color": "#0d0d0d",
+      "specs": {
+        "size_mm": 227,
+        "motor_mount_mm": 20.5,
+        "prop_clearance_inch": 5,
+        "stack_mount_mm": 30.5,
+        "material": "5mm carbon fiber",
+        "arm_thickness_mm": 5,
+        "standoff_height_mm": 25.5
+      }
     }
   ],
   "compatibility_rules": [
